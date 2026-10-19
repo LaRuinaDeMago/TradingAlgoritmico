@@ -4,6 +4,8 @@ Laboratorio de investigación cuantitativa de Diego. Objetivo: averiguar con evi
 
 Fase actual: **H0 – Ficha de viabilidad técnica**. SQX instalado según su pantalla de inicio: *Pro Build 145 (Trial license)*, build 145.3191, prueba hasta el 02-11-2026. La hoja de ruta decía Ultimate 143.2708: discrepancia abierta en `h0/ficha.md`.
 
+**Si esta sesión corre en el PC de SQX, empieza por `docs/traspaso_sesion_local.md`.**
+
 ## Reglas duras (nunca se saltan, aunque Diego o un resultado parezcan pedirlo)
 
 1. **Nunca leer, listar ni abrir `data/sealed/`.** Solo se abre con un protocolo escrito en `protocols/` y aprobado por Diego, y cada acceso se anota en `registry/accesos.log`.

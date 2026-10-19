@@ -1,7 +1,7 @@
 # H0 – Ficha de viabilidad técnica
 
-SQX según la pantalla de inicio: **"StrategyQuant X Pro Build 145 (Trial license)"**, build **145.3191**, prueba válida hasta el **02-11-2026**
-(registro n.º 1, evidencia `h0/evidencias/20261019_sqx_pantalla_inicio.png`).
+SQX según la pantalla de inicio: **"StrategyQuant X Pro Build 145 (Trial license)"**, build **145.3191**, **build de desarrollo del 2026-10-06**
+(no es versión final), prueba válida hasta el **02-11-2026** (registros n.º 1 y 2, evidencias en `h0/evidencias/20261019_*`).
 ⚠️ La hoja de ruta decía *Ultimate, build 143.2708*: **no coincide**. Ver la fila "Versión y edición" más abajo.
 Inicio de la prueba: 2026-10-19 (quedaban 14 d 00:32 en la captura) · Sistema operativo del PC de SQX: Windows 11 (según Diego)
 
@@ -63,7 +63,8 @@ No se compra ninguna licencia antes de cerrar esta lista.
 
 | Punto | Estado | Evidencia / decisión |
 |---|---|---|
-| Versión y edición de SQX | INCONCLUSO | Registro n.º 1. El título dice **Pro**, build 145.3191, pero se ven módulos que la web atribuye a Ultimate (Portfolio Master, SQ 4 Business). Hay un texto parcial "This is Dev build of…" tapado por un diálogo: ¿build de desarrollo? Falta: captura de *About* y del texto completo de la pantalla de inicio, y saber si la licencia que se compraría es Pro o Ultimate (puede cambiar qué hace la CLI) |
+| Versión y edición de SQX | INCONCLUSO | Registros n.º 1 y 2. **Build de desarrollo confirmada**: "This is Dev build of new Build 145, it is not a final release. Build from 2026.10.06." El título dice **Pro**, build 145.3191, pero se ven módulos que la web atribuye a Ultimate (Portfolio Master, SQ 4 Business). Falta: captura de *Acerca de* y saber si la licencia que se compraría es Pro o Ultimate. Riesgo: lo que se compruebe en H0 con una build de desarrollo puede no valer para la versión final |
+| Asistente IA integrado (SQ Pilot) | PENDIENTE | Registro n.º 2: funciona con créditos (166) y modelo elegible (se veía `openai/gpt-5.6-sol`). Afirma que hay plugins `runtime: claude-code`: **sin verificar**. Por la decisión 0001, es una herramienta candidata más: entra solo si demuestra valor, y sus propuestas cuentan como hipótesis. Lo que se escribe allí sale a un modelo externo |
 | La prueba gratuita limita `sqcli.exe` o alguna exportación | PENDIENTE | |
 | Formatos de exportación y automatización realmente soportados | PENDIENTE | |
 | Plataforma de destino (MT4 o MT5) y compatibilidad de lo exportado | PENDIENTE | |

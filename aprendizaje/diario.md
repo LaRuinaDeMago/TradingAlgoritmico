@@ -30,3 +30,7 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   evidencia guardada, aunque el dato parezca obvio. Para eso existe H0.
 - **Claude en la nube no es Claude Code en el PC.** Esta sesión corre en un servidor Linux y no ve el PC de Diego. Lo que exige SQX
   (tareas 1–7 del H0) lo ejecuta Claude Code instalado en Windows, sobre el mismo repositorio de GitHub. → Siempre aclarar dónde corre cada sesión.
+- **Confirmado: SQX es una build de desarrollo** ("not a final release", del 2026-10-06). → Todo lo que verifiquemos en H0 lleva la build
+  anotada, y antes de comprar habrá que comprobar que sigue igual en la versión final.
+- **El asistente de SQX (SQ Pilot) contesta con seguridad cosas que no sabemos si son ciertas** (plugins `runtime: claude-code`).
+  Un LLM que suena convincente no es evidencia. → Sus respuestas se apuntan como hipótesis por verificar (regla 7).
