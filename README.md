@@ -10,10 +10,15 @@ Objetivo: averiguar con evidencia si una estrategia tiene ventaja real o es ruid
 
 ## Puesta en marcha en el PC de SQX (Windows)
 
-Requisitos: Python 3.10+ en el PATH como `python` (sin dependencias externas) y git.
+Requisitos:
+- **Git for Windows** (Claude Code lo usa también para ejecutar los hooks).
+- **Python 3.10+** desde python.org, marcando *Add python.exe to PATH*. Ojo: si `python` abre la Microsoft Store,
+  no está bien instalado, y el guardián fallaría **sin proteger nada**.
+- **Claude Code** (instalador oficial para Windows, en PowerShell: `irm https://claude.ai/install.ps1 | iex`).
 
 ```powershell
-git clone https://github.com/LaRuinaDeMago/TradingAlgoritmico.git
+python --version                              # debe decir 3.10 o superior
+git clone -b claude/proyecto-2026-fps66g https://github.com/LaRuinaDeMago/TradingAlgoritmico.git
 cd TradingAlgoritmico
 pip install -e .                              # o bien: $env:PYTHONPATH = "src"
 python -m unittest discover -s tests          # deben pasar todos

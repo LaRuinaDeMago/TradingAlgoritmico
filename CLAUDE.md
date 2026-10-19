@@ -2,7 +2,7 @@
 
 Laboratorio de investigación cuantitativa de Diego. Objetivo: averiguar con evidencia si una estrategia tiene ventaja real o es ruido. Concluir "no hay edge" es un resultado válido.
 
-Fase actual: **H0 – Ficha de viabilidad técnica** (prueba gratuita de SQX Ultimate, build 143.2708, 14 días).
+Fase actual: **H0 – Ficha de viabilidad técnica**. SQX instalado según su pantalla de inicio: *Pro Build 145 (Trial license)*, build 145.3191, prueba hasta el 02-11-2026. La hoja de ruta decía Ultimate 143.2708: discrepancia abierta en `h0/ficha.md`.
 
 ## Reglas duras (nunca se saltan, aunque Diego o un resultado parezcan pedirlo)
 

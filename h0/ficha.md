@@ -1,7 +1,9 @@
 # H0 – Ficha de viabilidad técnica
 
-SQX Ultimate, build 143.2708, prueba gratuita de 14 días.
-Inicio de la prueba: **PENDIENTE (Diego)** · Sistema operativo del PC de SQX: **PENDIENTE (Diego)**
+SQX según la pantalla de inicio: **"StrategyQuant X Pro Build 145 (Trial license)"**, build **145.3191**, prueba válida hasta el **02-11-2026**
+(registro n.º 1, evidencia `h0/evidencias/20261019_sqx_pantalla_inicio.png`).
+⚠️ La hoja de ruta decía *Ultimate, build 143.2708*: **no coincide**. Ver la fila "Versión y edición" más abajo.
+Inicio de la prueba: 2026-10-19 (quedaban 14 d 00:32 en la captura) · Sistema operativo del PC de SQX: Windows 11 (según Diego)
 
 Estados: **SÍ** / **NO** / **INCONCLUSO** / PENDIENTE (aún no probado).
 Regla: solo se marca SÍ o NO con evidencia guardada en `h0/evidencias/` y una entrada en `registry/experimentos.jsonl`.
@@ -61,7 +63,7 @@ No se compra ninguna licencia antes de cerrar esta lista.
 
 | Punto | Estado | Evidencia / decisión |
 |---|---|---|
-| Versión y edición de SQX: Ultimate, build 143.2708, prueba de 14 días | SÍ | Hoja de ruta v1.1 (pendiente guardar captura de "Acerca de") |
+| Versión y edición de SQX | INCONCLUSO | Registro n.º 1. El título dice **Pro**, build 145.3191, pero se ven módulos que la web atribuye a Ultimate (Portfolio Master, SQ 4 Business). Hay un texto parcial "This is Dev build of…" tapado por un diálogo: ¿build de desarrollo? Falta: captura de *About* y del texto completo de la pantalla de inicio, y saber si la licencia que se compraría es Pro o Ultimate (puede cambiar qué hace la CLI) |
 | La prueba gratuita limita `sqcli.exe` o alguna exportación | PENDIENTE | |
 | Formatos de exportación y automatización realmente soportados | PENDIENTE | |
 | Plataforma de destino (MT4 o MT5) y compatibilidad de lo exportado | PENDIENTE | |

@@ -25,3 +25,8 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   → Pendiente (decide Diego): proteger los archivos del guardián fuera del alcance de Claude (permisos de solo lectura de Windows
   o comprobar su hash al empezar cada sesión). Hasta entonces, cualquier cambio en `.claude/` se revisa en el diff de git.
 - **Mismo tipo de falso positivo pendiente:** `.find(` de Python puede confundirse con el comando `find`. No se toca sin permiso.
+- **Lo "ya comprobado" no estaba comprobado.** La hoja de ruta daba por hecho "Ultimate, build 143.2708" (la única casilla marcada del H0).
+  La primera captura real dice "Pro Build 145", build 145.3191, y quizá sea una build de desarrollo. → Una casilla solo se marca con
+  evidencia guardada, aunque el dato parezca obvio. Para eso existe H0.
+- **Claude en la nube no es Claude Code en el PC.** Esta sesión corre en un servidor Linux y no ve el PC de Diego. Lo que exige SQX
+  (tareas 1–7 del H0) lo ejecuta Claude Code instalado en Windows, sobre el mismo repositorio de GitHub. → Siempre aclarar dónde corre cada sesión.
