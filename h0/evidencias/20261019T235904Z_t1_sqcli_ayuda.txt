@@ -1,0 +1,14 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -h
+# inicio_utc: 2026-10-19T23:59:04+00:00
+# duracion_s: 4.117
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+01:59:08.129 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: 01234567
+01:59:08.134 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+It seems another instance of StrategyQuant X is running, SQ can run only with one instance at once.
+If you need to run multiple SQ instances you can create multiple installations (different installation folders).
+Exit app - Another instance of StrategyQuant X is running.
+
+=== STDERR ===
