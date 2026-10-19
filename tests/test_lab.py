@@ -130,6 +130,19 @@ class TestEjecutar(ConRaizTemporal):
                            capture_output=True, text=True, env=env)
         self.assertIn("1 entradas", r.stdout)
 
+    def test_su_propia_evidencia_no_ensucia_el_codigo(self):
+        git = ["git", "-c", "user.name=prueba", "-c", "user.email=prueba@example.invalid"]
+        subprocess.run(["git", "init", "-q"], cwd=self.raiz, check=True)
+        subprocess.run(git + ["add", "."], cwd=self.raiz, check=True)
+        subprocess.run(git + ["commit", "-qm", "inicial"], cwd=self.raiz, check=True)
+        e = ejecutar([sys.executable, "-c", "print(1)"], nombre="limpio", version_sqx="N/A", raiz=self.raiz)
+        self.assertFalse(e["codigo"]["sucio"])
+        subprocess.run(git + ["add", "."], cwd=self.raiz, check=True)
+        subprocess.run(git + ["commit", "-qm", "evidencia"], cwd=self.raiz, check=True)
+        (self.raiz / "data" / "raw" / "precios.csv").write_text("t,c\n1,99\n")
+        e = ejecutar([sys.executable, "-c", "print(1)"], nombre="sucio", version_sqx="N/A", raiz=self.raiz)
+        self.assertTrue(e["codigo"]["sucio"])
+
 
 class TestGuardian(unittest.TestCase):
     def test_autotest_del_hook(self):

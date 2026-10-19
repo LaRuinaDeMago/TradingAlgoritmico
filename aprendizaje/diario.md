@@ -34,3 +34,18 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   anotada, y antes de comprar habrá que comprobar que sigue igual en la versión final.
 - **El asistente de SQX (SQ Pilot) contesta con seguridad cosas que no sabemos si son ciertas** (plugins `runtime: claude-code`).
   Un LLM que suena convincente no es evidencia. → Sus respuestas se apuntan como hipótesis por verificar (regla 7).
+
+## 2026-10-20
+
+- **Primera sesión local (Windows) con la carpeta correcta.** La sesión anterior empezó en otra carpeta y el guardián no
+  encontraba su archivo: bloqueaba todo por error, no por funcionar. → Una prueba de fuego solo vale si el guardián arranca bien.
+- **Paso 0:** autotest del guardián 28/28, tests 12 OK, registro íntegro (2 entradas).
+- **Prueba de fuego con un archivo inexistente.** Si el guardián fallara, no se habría leído nada real.
+  → Read lo frenó la regla `deny` de `.claude/settings.json` *antes* del guardián; Bash lo frenó el guardián. Son dos capas distintas:
+  la prueba con Read no demuestra que el guardián funcione, solo la de Bash.
+- **`python -m lab` no funciona todavía:** falta `pip install -e .`. Mientras tanto vale `PYTHONPATH=src python -m lab ...`.
+- **Falso positivo nuevo:** `2>&1` en un comando que también nombra `.claude/hooks` cuenta como escritura (`>`). → Separar los comandos.
+- **Agujero confirmado: la herramienta PowerShell no pasa por el guardián.** Simulando llamadas (sin tocar datos), el guardián deja
+  pasar 4 de 4: leer la carpeta sellada, recorrido recursivo de `data`, borrar `registry/` y sobrescribir el propio guardián.
+  Dos causas: el `matcher` de `.claude/settings.json` no incluye `PowerShell` y el guardián solo analiza comandos de `Bash`.
+  → Pendiente (decide Diego): bloquear la herramienta PowerShell o enseñar al guardián a vigilarla.

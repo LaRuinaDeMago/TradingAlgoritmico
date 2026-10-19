@@ -67,12 +67,14 @@ def registrar(
     semilla: int | None = None,
     costes=None,
     notas: str = "",
+    codigo: dict | None = None,
     raiz: Path = RAIZ,
 ) -> dict:
     """Añade un experimento al registro y devuelve la entrada escrita.
 
     `version_sqx` es obligatoria: si el paso no usa SQX, se escribe "N/A".
     `datos` son rutas (archivos o carpetas) cuyo SHA-256 se guarda.
+    `codigo` es el estado del código tomado antes del experimento; si falta, se toma ahora.
     """
     if estado not in ESTADOS:
         raise ValueError(f"estado debe ser uno de {ESTADOS}, no {estado!r}")
@@ -88,7 +90,7 @@ def registrar(
         "comando": comando,
         "version_sqx": version_sqx,
         "datos": {str(Path(d).as_posix()): sha256_ruta(d, raiz) for d in (datos or [])},
-        "codigo": estado_codigo(raiz),
+        "codigo": codigo if codigo is not None else estado_codigo(raiz),
         "semilla": semilla,
         "costes": costes,
         "estado": estado,

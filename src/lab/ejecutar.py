@@ -11,7 +11,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .hashing import sha256_archivo
+from .hashing import estado_codigo, sha256_archivo
 from .registro import registrar
 from .rutas import RAIZ, AccesoSelladoError
 
@@ -43,6 +43,8 @@ def ejecutar(
     carpeta.mkdir(parents=True, exist_ok=True)
     evidencia = carpeta / f"{inicio:%Y%m%dT%H%M%SZ}_{nombre}.txt"
     texto_comando = subprocess.list2cmdline(comando) if os.name == "nt" else shlex.join(comando)
+    # Antes de escribir la evidencia: si no, el propio archivo nuevo marcaría el código como sucio.
+    codigo_previo = estado_codigo(raiz)
 
     t0 = time.perf_counter()
     try:
@@ -82,5 +84,6 @@ def ejecutar(
         datos=datos,
         semilla=semilla,
         costes=costes,
+        codigo=codigo_previo,
         raiz=raiz,
     )
