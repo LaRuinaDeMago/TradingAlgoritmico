@@ -16,8 +16,8 @@ Requisitos: Python 3.10+ en el PATH como `python` (sin dependencias externas) y 
 git clone https://github.com/LaRuinaDeMago/TradingAlgoritmico.git
 cd TradingAlgoritmico
 pip install -e .                              # o bien: $env:PYTHONPATH = "src"
-python -m unittest discover -s tests          # 12 tests, deben pasar todos
-python .claude/hooks/guardian.py --autotest   # el guardián debe dar 25/25
+python -m unittest discover -s tests          # deben pasar todos
+python .claude/hooks/guardian.py --autotest   # el guardián debe dar todos "correctos"
 ```
 
 Después, abrir Claude Code en esta carpeta y comprobar que el guardián bloquea de verdad

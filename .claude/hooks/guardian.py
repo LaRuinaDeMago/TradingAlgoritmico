@@ -41,7 +41,8 @@ EXCLUSIONES = [
     re.compile(r"(--glob|-g)[= ]['\"]?![^'\"\s]*sealed[^'\"\s]*['\"]?"),
 ]
 RECURSIVO = re.compile(
-    r"\b(find|tree|du|rg|ag|tar|zip|7z|robocopy|xcopy|rsync)\b"
+    r"\b(find|tree|du|rg|ag|tar|7z|robocopy|xcopy|rsync)\b"
+    r"|\bzip\b(?!\s*\()"  # zip( es la función de Python, no el compresor
     r"|\bls\s+(-\w*R\w*\b|--recursive)"
     r"|\b(e|f)?grep\b[^|;&]*\s-(\w*[rR]\w*\b|-recursive)"
     r"|\bcp\s+(-\w*[rR]\w*\b|--recursive)"
@@ -205,6 +206,9 @@ def autotest() -> int:
         ("Bash", {"command": "grep -rn foo . --exclude-dir=sealed"}, False),
         ("Bash", {"command": "grep -rn foo src tests"}, False),
         ("Bash", {"command": "git status"}, False),
+        ("Bash", {"command": "python -c \"print(list(zip(a, b)))\""}, False),
+        ("Bash", {"command": "zip -r copia.zip data"}, True),
+        ("Bash", {"command": "zip copia.zip notas.txt"}, True),
         ("Bash", {"command": "python -m unittest discover -s tests"}, False),
         ("Edit", {"file_path": "registry/experimentos.jsonl"}, True),
         ("Bash", {"command": "rm registry/experimentos.jsonl"}, True),
