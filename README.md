@@ -5,6 +5,8 @@ Objetivo: averiguar con evidencia si una estrategia tiene ventaja real o es ruid
 - Reglas y tareas activas: [`CLAUDE.md`](CLAUDE.md)
 - Hoja de ruta: [`docs/hoja_de_ruta.md`](docs/hoja_de_ruta.md)
 - Fase actual, H0: [`h0/ficha.md`](h0/ficha.md)
+- Decisiones: [`docs/decisiones/`](docs/decisiones/)
+- Aprendizaje (lecciones, ejercicios, glosario y diario): [`aprendizaje/`](aprendizaje/README.md)
 
 ## Puesta en marcha en el PC de SQX (Windows)
 

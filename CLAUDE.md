@@ -12,6 +12,10 @@ Fase actual: **H0 – Ficha de viabilidad técnica** (prueba gratuita de SQX Ult
 4. **No inventar comandos de SQX.** Descubrirlos con `sqcli.exe -h` y la documentación oficial. Si algo no se puede comprobar, se marca INCONCLUSO.
 5. **No declarar ventaja.** En H0 y H1 solo se prueba que el proceso funciona, no que una estrategia sea buena.
 6. **No comprar ni instalar software de pago** sin que Diego lo apruebe.
+7. **Toda hipótesis cuenta.** Cada hipótesis propuesta (por Diego, Claude, otra IA o SQX) se registra y entra en el número de pruebas usado para corregir resultados.
+8. **Los cambios de proceso también son pruebas.** Cambiar filtros, métricas, costes, periodos o umbrales después de ver resultados se registra como un grado de libertad más. Nunca se cambia el proceso mirando los datos sellados.
+
+Decisiones vigentes: `docs/decisiones/` (la 0001 fija cómo usamos la IA y en qué orden entran las herramientas).
 
 ## Estructura del repositorio
 
@@ -42,6 +46,16 @@ Para cada una, anota en `h0/ficha.md`: estado (SÍ / NO / INCONCLUSO), evidencia
 - Explicar a Diego en español, claro y breve.
 - Ante la duda entre avanzar rápido o registrar bien, registrar bien.
 - Diego decide; Claude construye, ejecuta, registra y avisa de cualquier resultado sospechosamente bueno.
+
+## Aprendizaje (desde el primer momento)
+
+El proyecto es también una escuela para Diego y para Claude. Ver `aprendizaje/README.md`.
+
+- Al empezar cada sesión, leer `aprendizaje/diario.md` para no repetir errores ya vistos.
+- Explicar cada paso importante: qué hacemos, por qué importa para no perder dinero y cómo comprobarlo.
+- Al cerrar un bloque de trabajo: añadir lo aprendido al diario (sobre todo los errores), los términos nuevos al glosario y, si hay concepto nuevo, una lección con ejercicio ejecutable y preguntas.
+- Subir el nivel poco a poco pero sin ir lento: no repetir lo que Diego ya domina y no simplificar hasta decir algo falso.
+- Enseñar con números del propio laboratorio siempre que se pueda, no con ejemplos inventados.
 
 ## Herramientas del repositorio
 
