@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./data/sealed/**)",
+      "Edit(./data/sealed/**)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|MultiEdit|Write|NotebookEdit|Glob|Grep|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/guardian.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+# Datos: nunca al repositorio. Los datos de origen se identifican por su hash en registry/.
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/sealed/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# Secretos y configuración local
+.env
+.env.*
+.claude/settings.local.json
+
+# Sistema
+.DS_Store
+Thumbs.db
