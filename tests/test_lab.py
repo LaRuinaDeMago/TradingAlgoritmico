@@ -209,6 +209,12 @@ class TestPrivacidad(ConRaizTemporal):
         self.assertNotIn(b"03DA4E", publica)
         self.assertNotIn(b"CAC3C722FAFD", publica)
 
+    def test_redactar_no_recuenta_sus_propias_marcas(self):
+        from lab.privacidad import redactar
+        una_vez, cuentas = redactar(b"x Licenser -- L: 01234567\nHardware ID: AB12\na@b.com\n")
+        self.assertEqual(cuentas, {"hardware_id": 1, "licencia": 1, "email": 1})
+        self.assertEqual(redactar(una_vez), (una_vez, {}))
+
 
 class TestGuardian(unittest.TestCase):
     def test_autotest_del_hook(self):

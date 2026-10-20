@@ -19,7 +19,8 @@ PATRONES: dict[str, tuple[re.Pattern[bytes], bytes]] = {
     # Identificador de máquina con el que SQX liga la licencia ("Hardware ID: CAC3...").
     "hardware_id": (re.compile(rb"(Hardware ID:[ \t]*)[0-9A-Fa-f]+"), rb"\1[REDACTADO:hardware_id]"),
     # Línea de depuración del gestor de licencias ("Licenser -- L: 01234567").
-    "licencia": (re.compile(rb"(Licenser -- L:[ \t]*)\S+"), rb"\1[REDACTADO:licencia]"),
+    # (?!\[REDACTADO) evita volver a contar una marca ya puesta al redactar una copia a medias.
+    "licencia": (re.compile(rb"(Licenser -- L:[ \t]*)(?!\[REDACTADO)\S+"), rb"\1[REDACTADO:licencia]"),
     # Identificador de la licencia ("... valid until 02.11.2026, license 03DA4E").
     "licencia_id": (re.compile(rb"(\blicense[ \t]+)[0-9A-Fa-f]{4,}\b"), rb"\1[REDACTADO:licencia_id]"),
     # Claves de API de Anthropic.
