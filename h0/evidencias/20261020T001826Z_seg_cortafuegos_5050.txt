@@ -1,0 +1,23 @@
+# comando: powershell.exe -NoProfile -Command "Get-NetFirewallProfile | Format-Table Name,Enabled,DefaultInboundAction -AutoSize; Get-NetConnectionProfile | Format-Table NetworkCategory,IPv4Connectivity -AutoSize; Get-NetFirewallApplicationFilter | Where-Object { $_.Program -like \"*StrategyQuant*\" -or $_.Program -like \"*j64*\" } | ForEach-Object { $r = $_ | Get-NetFirewallRule; \"{0} | {1} | {2} | enabled={3} | {4} | {5}\" -f $r.DisplayName,$r.Direction,$r.Action,$r.Enabled,$r.Profile,$_.Program }"
+# inicio_utc: 2026-10-20T00:18:26+00:00
+# duracion_s: 2.085
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+
+Name    Enabled DefaultInboundAction
+----    ------- --------------------
+Domain     True        NotConfigured
+Private    True        NotConfigured
+Public     True        NotConfigured
+
+
+
+NetworkCategory IPv4Connectivity
+--------------- ----------------
+        Private         Internet
+
+
+
+=== STDERR ===
