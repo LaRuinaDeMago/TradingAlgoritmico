@@ -1,0 +1,51 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -databank action=export project=Retester name=H0_USDCHF file=C:/StrategyQuantX145/user/lab_h0/t2_Results.csv
+# inicio_utc: 2026-10-20T10:11:28+00:00
+# duracion_s: 29.177
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+12:11:31.928 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+12:11:31.928 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 3382 ms
+Volume profile subscription verified: active=false
+Projects loaded in 6014 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -databank action=export project=Retester name=H0_USDCHF file=C:/StrategyQuantX145/user/lab_h0/t2_Results.csv 
+14:11:52 Exportar el contenido de la base de datos
+--------------------------------------------------
+Sincronización de bases de datos a partir de ficheros
+Loaded 7 strategies to databank Results
+Loaded 10 strategies to databank H0_USDCHF
+Synchronization finished.
+--------------------------------------------------
+Databank contents exported.
+--------------------------------------------------
+Databank 'Retester/Results' saved - files before sync 7 / after sync 7 / saved 7 / removed 0 in 0.34 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/Results' saved - files before sync 7 / after sync 7 / saved 7 / removed 0 in 0.34 s.
+Databank 'Retester/H0_USDCHF' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.20 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/H0_USDCHF' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.20 s.
+All tasks completed
+14:11:57 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
