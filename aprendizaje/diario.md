@@ -100,4 +100,12 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   está gracias al historial subido a GitHub (reescribirlo exige un force-push visible).
 - **`ANTHROPIC_API_KEY` está guardada como variable de usuario de Windows** (comprobado sin mostrar el valor). Rechazarla en
   una sesión no la elimina. → Diego decide si la reconoce, la revoca o la borra.
+- **La configuración de fábrica del Builder habría gastado datos y horas sin avisar:** GBPUSD 2003–2019, parada a las 1000
+  estrategias con 5 reinicios y filtros de calidad (eso ya es seleccionar). → Antes de lanzar un proyecto se exporta su
+  configuración (`saveconfig`), se lee y se cambia con un script que se para si algo no está donde se espera.
+- **"Config loaded" se comprobó, no se creyó:** se volvió a exportar la configuración y se comparó elemento a elemento con la
+  plantilla cargada. Coincide salvo el bloque de recursos, que SQX rehace al guardar (y vuelve a declarar EURUSD porque la
+  comprobación cruzada desactivada lo nombra).
+- **No hay semilla aleatoria documentada** para la generación: probablemente no sea repetible exactamente. La tarea 4 pide
+  repetir el backtest de una estrategia ya generada, no la generación.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
