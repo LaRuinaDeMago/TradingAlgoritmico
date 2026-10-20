@@ -72,3 +72,15 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   La salida de `sqcli` trae el identificador de hardware de la licencia. → Antes de subir una evidencia, mirar qué contiene.
 - **La documentación que trae SQX no coincide con su `-h`** (faltan `-sourcecode` y `darwinexsymbols`; `-ai` es distinto).
   → Ni la documentación oficial es prueba: manda lo que hace el programa instalado.
+- **Diego decide que el repositorio siga público.** → Las evidencias se redactan solas (`lab/privacidad.py`): el original va a
+  `h0/evidencias_privadas/` (fuera de git) y al repositorio, una copia con `[REDACTADO:tipo]`; el registro guarda los dos hashes.
+  El ejecutor se niega a lanzar comandos con datos privados, porque el registro copia el comando literal.
+- **Una lista de patrones solo atrapa lo que ya conoces.** En la primera evidencia nueva (licencia) se escapó `license 03DA4E`;
+  lo cazó leer el original entero antes del commit, no la herramienta. → Antes de cada commit se lee el original privado completo.
+  La redacción automática es una ayuda, no el control.
+- **Al redactar una copia ya redactada, el patrón volvió a contar su propia marca** (registro n.º 12 dice `licencia: 1` de más).
+  Corregido con un test; la entrada n.º 12 queda como está, porque el registro no se edita.
+- **"localhost" en un mensaje no significa localhost.** SQX anuncia `http://localhost:5050`, pero `netstat` muestra que escucha
+  en `0.0.0.0` (todas las interfaces). Lo que protege es el cortafuegos (BlockInbound y ninguna regla para SQX).
+  → Comprobar con el sistema, no con lo que dice el programa de sí mismo.
+- **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
