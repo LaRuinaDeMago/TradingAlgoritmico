@@ -15,7 +15,7 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | A6 | **Regla de proporcionalidad** como decisión: ningún control nuevo sin amenaza concreta, prueba que demuestre el fallo y criterio de aceptación | Adoptarla | Primera revisión externa (diario) |
 | A7 | **Éxito medido por rentabilidad neta conservadora frente al coste total** del proyecto (no por estrategias que pasan filtros) | Añadirlo a los criterios de abandono de 0003 | Revisión 04 |
 | A8 | **Procedencia y autorización** del material del curso (aparece "CURSOSDIGITALEX.COM") | Aclararla antes de usarlo más | Revisiones 01, 03 |
-| A9 | **Sesión de mantenimiento del guardián** (cerrar el agujero de PowerShell). Solo puede abrirla Diego | Borrador probado (44/44) en el scratchpad de la sesión | Ficha H0, Paso 0 |
+| A9 | **Sesión de mantenimiento del guardián** (cerrar el agujero de PowerShell). Solo puede abrirla Diego | Borrador probado (44/44) e instrucciones en  | Ficha H0, Paso 0 |
 | A10 | Variable de usuario **`ANTHROPIC_API_KEY`**: ¿la reconoce, la revoca, la borra? | Revocarla si no la reconoce | Sesión 2026-10-20 |
 | A11 | **Instalar MetaTrader** para compilar el código exportado (tareas 3e/3f) | Necesario antes de la demo | Ficha H0 |
 | A12 | **Edición y compra de la licencia de SQX**. La caducidad (02-11-2026) no es motivo para comprar | Decidir con la ficha H0 cerrada | Revisión 03, ficha H0 |
