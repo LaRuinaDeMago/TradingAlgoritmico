@@ -88,4 +88,7 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   llegó a GitHub. Lo destapó buscar los valores reales en todo el repositorio antes de subir.
   → En tests y ejemplos, siempre valores inventados y marcados como tales. Antes de cada subida, buscar los valores reales
   conocidos en archivos **y** en mensajes de commit.
+  → **Decisión de Diego (2026-10-20):** subir el historial tal cual. El identificador de la licencia de prueba queda en el
+  historial público (como ya estaba el ID de hardware), a cambio de no reescribir commits de los que dependen los registros
+  n.º 12–15. Prima la integridad del registro.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
