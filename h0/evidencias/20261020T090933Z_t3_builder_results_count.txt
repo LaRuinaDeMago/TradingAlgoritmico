@@ -1,0 +1,49 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -databank action=count project=Builder name=Results
+# inicio_utc: 2026-10-20T09:09:33+00:00
+# duracion_s: 31.319
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+11:09:36.925 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+11:09:36.931 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 5113 ms
+Volume profile subscription verified: active=false
+Projects loaded in 5848 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -databank action=count project=Builder name=Results 
+13:10:00 Número de estrategias
+--------------------------------------------------
+Sincronización de bases de datos a partir de ficheros
+Loaded 0 strategies to databank Results
+Loaded 0 strategies to databank Initial population
+Loaded 0 strategies to databank Last generation
+Loaded 0 strategies to databank Strategies to improve
+Loaded 0 strategies to databank Existing portfolio
+Synchronization finished.
+--------------------------------------------------
+Records: 0
+All tasks completed
+13:10:03 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
