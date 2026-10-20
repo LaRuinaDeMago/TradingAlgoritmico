@@ -1,0 +1,24 @@
+# comando: C:\Users\SERVILAB\AppData\Local\Programs\Python\Python314\python.exe -I h0/configs/inspeccion_tamanos_resultados.py C:/StrategyQuantX145/user/lab_h0/t2
+# inicio_utc: 2026-10-20T10:20:43+00:00
+# duracion_s: 0.136
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+Strategy 0.1   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 30624 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.11  CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 47176 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.13  CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 42072 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.15  CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 28012 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.17  CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 28136 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.4   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 81024 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.5   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 51032 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.6   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 52900 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.7   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 32988 B | WF: 10 runs : 20 % OOS: 0 B
+Strategy 0.9   CrossCheck_WhatIf: 0 B | Main: USDCHF_M1_dukas_LOM_H1: 31248 B | WF: 10 runs : 20 % OOS: 0 B
+
+Resumen por carpeta de resultados (archivos, bytes, estrategias con contenido):
+  CrossCheck_WhatIf                           10 archivos          0 bytes  0/10 con contenido
+  Main: USDCHF_M1_dukas_LOM_H1               330 archivos     425212 bytes  10/10 con contenido
+  WF: 10 runs : 20 % OOS                      10 archivos          0 bytes  0/10 con contenido
+
+=== STDERR ===
