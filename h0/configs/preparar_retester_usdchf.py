@@ -14,6 +14,7 @@ import zipfile
 
 SIMBOLO, DESDE, HASTA, MARCO = "USDCHF_M1_dukas", "2023.01.01", "2024.10.30", "H1"
 SPREAD_PIPS, DESLIZAMIENTO_PIPS = "2", "1"
+BANCO = "H0_USDCHF"
 
 
 def unico(raiz, ruta):
@@ -61,6 +62,11 @@ def main(origen: str, destino: str) -> None:
         fijar(condicion, "use", "false", "Filtro del banco")
 
     fijar(unico(raiz, "Settings/CrossChecks"), "use", "false", "Comprobaciones cruzadas")
+
+    # El banco Results del Retester ya trae 7 estrategias de ejemplo de SQX que no son nuestras y no se tocan:
+    # se lee y se escribe en un banco propio.
+    for banco in raiz.findall("Settings/Databanks/Databank"):
+        fijar(banco, "value", BANCO, f"Banco ({banco.get('name')})")
 
     simbolos = unico(raiz, "Settings/Resources/Symbols")
     for s in list(simbolos):
