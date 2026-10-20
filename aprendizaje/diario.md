@@ -136,4 +136,12 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   → No tocar el repositorio mientras se ejecuta un experimento.
 - **El CLI del laboratorio fallaba al imprimir "→"** en la consola de Windows (cp1252) *después* de registrar: devolvía error
   con la entrada ya escrita, y eso invita a repetirla y duplicarla. Arreglado con un test.
+- **Un indicador mal elegido casi da una conclusión falsa.** What If y Walk-Forward dejaron carpetas de resultados de
+  0 bytes y el log no decía nada: parecía el bloqueo de la licencia. El experimento discriminante (Walk-Forward Matrix, que
+  según la documentación no se bloquea) también salió vacío, y eso obligó a buscar dónde se guardaban de verdad:
+  dentro de `settings.xml`, con 11 periodos de walk-forward y parámetros reoptimizados. → La licencia de prueba **no**
+  bloquea WFO ni What If. Antes de concluir "no está", comprobar que se mira en el sitio correcto, con un caso que sí deba estar.
+- **La consola de `sqcli` va 2 horas adelantada** respecto al log interno (hora de España): 14:10 frente a 12:10.
+- **Tropiezo de Claude:** lanzar Python con su ruta completa volvió a meter el usuario de Windows en el registro (n.º 68–71).
+  Basta con `python`.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
