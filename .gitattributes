@@ -1,0 +1,6 @@
+# Evidencias: se guardan byte a byte, sin convertir saltos de línea, para que su SHA-256
+# coincida con el anotado en el registro en cualquier máquina (sqcli escribe CRLF).
+h0/evidencias/** -text
+# Registro: siempre LF, en el repositorio y al sacarlo (lab registrar escribe LF).
+# Su integridad la comprueba `python -m lab verificar`, que lee el JSON, no los bytes.
+registry/** text eol=lf
