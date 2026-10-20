@@ -158,4 +158,10 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   → Protocolo de sellado en borrador, para que Diego lo apruebe antes de descargar ningún precio.
 - **Un periodo sellado que siga dentro de SQX no está sellado:** SQX guarda toda la historia descargada y la generación
   lee de ahí. → El sellado se diseña fuera de SQX (descarga con fecha de fin, segunda instalación o, en último lugar, recorte).
+- **Auditoría del método del curso de Diego** (nota privada en `h0/evidencias_privadas/`, fuera del repositorio por
+  ser material de pago). Leído de sus configuraciones de SQX, no de los vídeos. Usa buenas herramientas (walk-forward,
+  Monte Carlo, permutación de parámetros), pero **usa el tramo fuera de muestra para seleccionar**, busca a gran escala
+  sin corregir por pruebas múltiples y pone deslizamiento 0. → Lo que se usa para elegir deja de ser fuera de muestra:
+  hace falta un bloque nunca tocado. Una estrategia seleccionada con datos hasta una fecha solo se evalúa con datos
+  posteriores a esa fecha.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
