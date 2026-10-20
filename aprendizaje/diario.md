@@ -75,7 +75,7 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Diego decide que el repositorio siga público.** → Las evidencias se redactan solas (`lab/privacidad.py`): el original va a
   `h0/evidencias_privadas/` (fuera de git) y al repositorio, una copia con `[REDACTADO:tipo]`; el registro guarda los dos hashes.
   El ejecutor se niega a lanzar comandos con datos privados, porque el registro copia el comando literal.
-- **Una lista de patrones solo atrapa lo que ya conoces.** En la primera evidencia nueva (licencia) se escapó `license 03DA4E`;
+- **Una lista de patrones solo atrapa lo que ya conoces.** En la primera evidencia nueva (licencia) se escapó el identificador de licencia (`license XXXXXX`);
   lo cazó leer el original entero antes del commit, no la herramienta. → Antes de cada commit se lee el original privado completo.
   La redacción automática es una ayuda, no el control.
 - **Al redactar una copia ya redactada, el patrón volvió a contar su propia marca** (registro n.º 12 dice `licencia: 1` de más).
@@ -83,4 +83,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **"localhost" en un mensaje no significa localhost.** SQX anuncia `http://localhost:5050`, pero `netstat` muestra que escucha
   en `0.0.0.0` (todas las interfaces). Lo que protege es el cortafuegos (BlockInbound y ninguna regla para SQX).
   → Comprobar con el sistema, no con lo que dice el programa de sí mismo.
+- **Filtré yo los datos que quería proteger.** Para los tests de la redacción copié el ID de hardware y el identificador de
+  licencia **reales** como ejemplos, en archivos públicos (tests, comentarios, diario y un mensaje de commit). El ID de hardware
+  llegó a GitHub. Lo destapó buscar los valores reales en todo el repositorio antes de subir.
+  → En tests y ejemplos, siempre valores inventados y marcados como tales. Antes de cada subida, buscar los valores reales
+  conocidos en archivos **y** en mensajes de commit.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.

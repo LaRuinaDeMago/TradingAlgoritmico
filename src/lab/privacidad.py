@@ -21,7 +21,7 @@ PATRONES: dict[str, tuple[re.Pattern[bytes], bytes]] = {
     # Línea de depuración del gestor de licencias ("Licenser -- L: 01234567").
     # (?!\[REDACTADO) evita volver a contar una marca ya puesta al redactar una copia a medias.
     "licencia": (re.compile(rb"(Licenser -- L:[ \t]*)(?!\[REDACTADO)\S+"), rb"\1[REDACTADO:licencia]"),
-    # Identificador de la licencia ("... valid until 02.11.2026, license 03DA4E").
+    # Identificador de la licencia ("... valid until 02.11.2026, license 1A2B3C"; valor inventado).
     "licencia_id": (re.compile(rb"(\blicense[ \t]+)[0-9A-Fa-f]{4,}\b"), rb"\1[REDACTADO:licencia_id]"),
     # Claves de API de Anthropic.
     "clave_api": (re.compile(rb"sk-ant-[\w-]+"), rb"[REDACTADO:clave_api]"),
