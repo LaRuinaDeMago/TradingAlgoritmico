@@ -1,0 +1,4 @@
+"Ticket";"Symbol";"Type";"Open time";"Open price";"Size";"Close time";"Close price";"Profit/Loss";"Balance";"Sample type";"Close type";"MAE ($)";"MFE ($)";"Time in trade";"Comment"
+"1";"USDCHF_M1_dukas";"Comprar";"2023.07.11 15:00:00";"0.88291";"0.1";"2023.07.12 00:00:00";"0.87881";"-47.22";"9952.78";"IST";"SL";"-47.22";"8.98";"9h 0m";""
+"2";"USDCHF_M1_dukas";"Vender";"2024.03.15 10:00:00";"0.88410";"0.1";"2024.03.15 21:00:00";"0.88439";"-3.34";"9949.44";"IST";"End Of Friday (Time)";"-15.43";"23.04";"11h 0m";""
+"3";"USDCHF_M1_dukas";"Comprar";"2024.08.05 10:00:00";"0.85248";"0.1";"2024.08.05 13:00:00";"0.84838";"-47.22";"9902.21";"IST";"SL";"-47.22";"10.60";"3h 0m";""

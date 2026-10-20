@@ -4,3 +4,5 @@ h0/evidencias/** -text
 # Registro: siempre LF, en el repositorio y al sacarlo (lab registrar escribe LF).
 # Su integridad la comprueba `python -m lab verificar`, que lee el JSON, no los bytes.
 registry/** text eol=lf
+# Guiones de shell: siempre LF (con CRLF, `sh` falla al leerlos en un clon nuevo en Windows).
+*.sh text eol=lf
