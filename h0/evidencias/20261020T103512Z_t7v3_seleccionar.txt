@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/t7_seleccionar_nuevas.py copiar C:/StrategyQuantX145/user/projects/Builder/databanks/Results C:/StrategyQuantX145/user/lab_h0/t7/antes.json C:/StrategyQuantX145/user/lab_h0/t7/estrategias 10
+# inicio_utc: 2026-10-20T10:35:12+00:00
+# duracion_s: 0.149
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+antes: 30; ahora: 40; nuevas copiadas: 10; de antes con otro tamaño: 30
+nuevas: Strategy 0.11(2).sqx, Strategy 0.16(2).sqx, Strategy 0.18(1).sqx, Strategy 0.22.sqx, Strategy 0.24.sqx, Strategy 0.26.sqx, Strategy 0.4(1).sqx, Strategy 0.6(3).sqx, Strategy 0.7(1).sqx, Strategy 0.8(2).sqx
+
+=== STDERR ===
