@@ -1,0 +1,23 @@
+# comando: C:\Users\SERVILAB\AppData\Local\Programs\Python\Python314\python.exe -I h0/configs/inspeccion_extraer_wf.py "C:/StrategyQuantX145/user/lab_h0/t2/Strategy 0.4.sqx"
+# inicio_utc: 2026-10-20T10:20:47+00:00
+# duracion_s: 0.163
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+== WalkForwardResult: 1 elementos
+   ruta: ResultsGroup/ResultsMap/Results/Result/ValuesMap/WalkForwardResult
+    <WalkForwardResult type="com.strategyquant.tradinglib.optimization.WalkForwardMatrixResult"><MatrixResult start1="20" stop1="0" increment1="0" start2="10" stop2="0" increment2="0" activeParam1="20" activeParam2="10" periodType="10"><RunResult param1="20" param2="10" testParams="BBBarOpensPeriod1=125,ExitAfterBars1=6,LinRegPeriod1=30,MAPeriod1=50,PriceEntryMult1=2.2,ProfitTarget1=165,StopLoss1=70,TrailingStop1=70," resultName="WF: 10 runs : 20 % OOS" stats="com.strategyquant.tradinglib.SQStats@49e7e8f1" statsOOS="com.strategyquant.tradinglib.SQStats@27bb4dc5"><stats type="com.strategyquant.tradinglib.SQStats"><SQStats version="2" e="b64">AQwAAAAAAxVBqAAAAy5BlVwpAz8AAAAAA0AAAAAAAx2/iPXDAyHBbHr
+== WalkForwardPeriod: 11 elementos
+   ruta: ResultsGroup/ResultsMap/Results/Result/ValuesMap/WalkForwardResult/MatrixResult/RunResult/Periods/WalkForwardPeriod
+    <WalkForwardPeriod optimizeFrom="1672531200000" optimizeTo="1691366399999" runFrom="1691366400000" runTo="1695168000000" futurePeriod="false" testParameters="BBBarOpensPeriod1=111,ExitAfterBars1=6,LinRegPeriod1=29,MAPeriod1=67,PriceEntryMult1=2.52,ProfitTarget1=126.5,StopLoss1=76.96,TrailingStop1=67.64,"><OptimizationStats><stats type="com.strategyquant.tradinglib.SQStats"><SQStats version="2" e="b64">AQwAAAAAAxU/3XCkAy5BjvXDAz8AAAAAA0AAAAAAAx0/qPXDAyFA2PXDAQEAAAAHA0YAAAAAAzQ/nCj2AzxCrfCkAzcAAAAAAwDCs64UAws/Sj1xAz5BnOFIA0QAAAAAAzFB+vXDAxRACZmaAQYAAAABAwM/7MzNAytCVqPXA0wAAAAAAyxBsqPXAztEKXwpA1ZClgAAA0IAAAAAAwxBu3CkA1BA2PXDA00AAAAAAw1DGZmaAydDJAAAA1wAAAAAA1tBgnrhA0UAAAAAAxo/nrhSAwFACj1xAzNAAAA
+   ruta: ResultsGroup/ResultsMap/Results/Result/ValuesMap/WalkForwardResult/MatrixResult/RunResult/Periods/WalkForwardPeriod
+    <WalkForwardPeriod optimizeFrom="1676419200000" optimizeTo="1695254399999" runFrom="1695254400000" runTo="1699056000000" futurePeriod="false" testParameters="BBBarOpensPeriod1=87,ExitAfterBars1=7,LinRegPeriod1=23,MAPeriod1=59,PriceEntryMult1=2.66,ProfitTarget1=115.5,StopLoss1=81.62,TrailingStop1=62.98,"><OptimizationStats><stats type="com.strategyquant.tradinglib.SQStats"><SQStats version="2" e="b64">AQwAAAAAAxVACZmaAy5BpOFIAz8AAAAAA0AAAAAAAx0/Vwo9AyFAgzMzAQEAAAAGA0YAAAAAAzQ/IUeuAzxDC4AAAzcAAAAAAwDCm7hSAws/OFHsAz5At64UA0QAAAAAAzFB9gAAAxQ/64UfAQYAAAABAwM/2FHsAytCUMzNA0wAAAAAAyxBsPXDAztDzTHsA1ZCSAAAA0IAAAAAAwxBta4UA1BAgzMzA00AAAAAAw1DRJmaAydDHwAAA1wAAAAAA1tBKR64A0UAAAAAAxo/kzMzAwE/rhR7AzM/gAAA
+   ruta: ResultsGroup/ResultsMap/Results/Result/ValuesMap/WalkForwardResult/MatrixResult/RunResult/Periods/WalkForwardPeriod
+    <WalkForwardPeriod optimizeFrom="1680307200000" optimizeTo="1699142399999" runFrom="1699142400000" runTo="1702944000000" futurePeriod="false" testParameters="BBBarOpensPeriod1=87,ExitAfterBars1=7,LinRegPeriod1=23,MAPeriod1=59,PriceEntryMult1=2.66,ProfitTarget1=115.5,StopLoss1=81.62,TrailingStop1=62.98,"><OptimizationStats><stats type="com.strategyquant.tradinglib.SQStats"><SQStats version="2" e="b64">AQwAAAAAAxVASZmaAy5BoeuFAz8AAAAAA0AAAAAAAx0+ij1xAyE/o9cKAQEAAAAGA0YAAAAAAzQ/oo9cAzxDpHrhAzcAAAAAAwDCmpR7Aws+zMzNAz5CDYUfA0QAAAAAAzFB8cKPAxQ/7hR7AQYAAAABAwM/4AAAAytCS9cKA0wAAAAAAyxB64UfAztDAHMzA1ZCK3CkA0IAAAAAAwxBs3CkA1A/o9cKA00AAAAAAw1DjszNAydDHQAAA1wAAAAAA1tAY9cKA0UAAAAAAxo/g9cKAwE+64UfAzNAAAAA
+== Resultados cuyo nombre o clave menciona CrossCheck_WhatIf o 'WF:'
+   ResultsGroup/ResultsMap/Results/Result/ValuesMap/WalkForwardResult/MatrixResult/RunResult {'param1': '20', 'param2': '10', 'testParams': 'BBBarOpensPeriod1=125,ExitAfterBars1=6,LinRegPeriod1=30,MAPeriod1=50,PriceEntryMult1=2.2,ProfitTarget1=165,StopLoss1=70,TrailingStop1=70,', 'resultName': 'WF: 10 runs : 20 % OOS'} hijos=3 tamaño_xml=43178
+   ResultsGroup/ResultsMap/Results/Result {'resultKey': 'CrossCheck_WhatIf', 'special': 'true'} hijos=3 tamaño_xml=26112
+   ResultsGroup/ResultsMap/Results/Result {'resultKey': 'WF: 10 runs : 20 % OOS', 'special': 'true'} hijos=3 tamaño_xml=32324
+
+=== STDERR ===
