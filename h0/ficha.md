@@ -25,7 +25,7 @@ Nota: `pip install -e .` no está hecho en este PC; mientras tanto se usa `PYTHO
 
 | # | Tarea | Estado | Evidencia | Tiempo |
 |---|---|---|---|---|
-| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | **SÍ** | `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. Registro n.º 9 · `h0/evidencias/20261020T000832Z_t1_sqcli_ayuda.txt`: `SQX version: 145.3191`, código 0, 24,5 s. Antes, registros n.º 3 y 4: **FALLIDO** con código 0 porque la GUI estaba abierta. La **edición** (Pro/Ultimate) sigue sin confirmar | 25 min |
+| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | **SÍ** | `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. Registro n.º 9 · copia pública redactada `h0/evidencias/20261020T000832Z_t1_sqcli_ayuda.redactada.txt` (registro n.º 10; el original, con el ID de hardware, solo en el PC): `SQX version: 145.3191`, código 0, 24,5 s. Antes, registros n.º 3 y 4: **FALLIDO** con código 0 porque la GUI estaba abierta. La **edición** (Pro/Ultimate) sigue sin confirmar | 25 min |
 | 2 | ¿La prueba gratuita limita alguna función de la línea de comandos? | PENDIENTE | | |
 | 3a | CLI: lanzar un proyecto de generación | PENDIENTE | | |
 | 3b | CLI: ejecutar un backtest | PENDIENTE | | |
