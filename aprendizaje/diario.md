@@ -153,4 +153,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **El experimento completo cuesta ~55 s, y el 90 % es arrancar `sqcli`.** Con este laboratorio, lo caro no será el
   cálculo de un experimento pequeño sino el número de arranques: agrupar órdenes en `-run`.
 - **SQX reutiliza nombres de estrategia** ("Strategy 0.11(2)"). → Identificar estrategias por hash, nunca por nombre.
+- **Antes de descargar los datos de verdad, se decide qué no se mirará nunca.** Darwinex da ~9 años de forex (desde
+  2017-10): todo el material para investigar, validar y examinar. Mirarlo "solo para ver qué hay" gastaría el examen final.
+  → Protocolo de sellado en borrador, para que Diego lo apruebe antes de descargar ningún precio.
+- **Un periodo sellado que siga dentro de SQX no está sellado:** SQX guarda toda la historia descargada y la generación
+  lee de ahí. → El sellado se diseña fuera de SQX (descarga con fecha de fin, segunda instalación o, en último lugar, recorte).
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
