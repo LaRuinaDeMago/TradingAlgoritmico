@@ -35,7 +35,9 @@ def redactar_evidencia(ruta: str | Path, *, version_sqx: str, raiz: Path = RAIZ)
         raise ValueError(f"{ruta} no contiene nada que redactar; se deja como está")
     privada = raiz / CARPETA_PRIVADA / ruta.name
     if privada.exists():
-        raise FileExistsError(f"ya existe {privada}; no se sobrescribe")
+        # Ya hay un original con ese nombre (p. ej., esta es una copia pública redactada a medias):
+        # se guarda con otro nombre, nunca encima.
+        privada = privada.with_name(f"{ruta.stem}.previa_{datetime.now(timezone.utc):%Y%m%dT%H%M%S%fZ}{ruta.suffix}")
     copia = ruta.with_name(f"{ruta.stem}.redactada{ruta.suffix}")
     codigo_previo = estado_codigo(raiz)
     privada.parent.mkdir(parents=True, exist_ok=True)

@@ -20,6 +20,8 @@ PATRONES: dict[str, tuple[re.Pattern[bytes], bytes]] = {
     "hardware_id": (re.compile(rb"(Hardware ID:[ \t]*)[0-9A-Fa-f]+"), rb"\1[REDACTADO:hardware_id]"),
     # Línea de depuración del gestor de licencias ("Licenser -- L: 01234567").
     "licencia": (re.compile(rb"(Licenser -- L:[ \t]*)\S+"), rb"\1[REDACTADO:licencia]"),
+    # Identificador de la licencia ("... valid until 02.11.2026, license 03DA4E").
+    "licencia_id": (re.compile(rb"(\blicense[ \t]+)[0-9A-Fa-f]{4,}\b"), rb"\1[REDACTADO:licencia_id]"),
     # Claves de API de Anthropic.
     "clave_api": (re.compile(rb"sk-ant-[\w-]+"), rb"[REDACTADO:clave_api]"),
     # Direcciones de correo.

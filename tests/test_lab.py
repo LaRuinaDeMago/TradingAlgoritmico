@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 SRC = Path(__file__).resolve().parents[1] / "src"
@@ -187,6 +188,26 @@ class TestPrivacidad(ConRaizTemporal):
         self.assertEqual((self.raiz / r["evidencia_privada"]).read_bytes(), b"Hardware ID: ABCDEF12\r\nresto\r\n")
         with self.assertRaises(ValueError):
             redactar_evidencia("h0/evidencias/vieja.redactada.txt", version_sqx="N/A", raiz=self.raiz)
+
+    def test_redactar_copia_publica_a_medias_sin_pisar_el_original(self):
+        from lab.ejecutar import redactar_evidencia
+        script = self.raiz / "imprime.py"
+        script.write_text("print('Hardware ID: CAC3C722FAFD'); print('valid until 02.11.2026, license 03DA4E')")
+        from lab import privacidad
+        sin_licencia_id = {k: v for k, v in privacidad.PATRONES.items() if k != "licencia_id"}
+        with unittest.mock.patch.dict(privacidad.PATRONES, sin_licencia_id, clear=True):
+            e = ejecutar([sys.executable, str(script)], nombre="medias", version_sqx="N/A", raiz=self.raiz)
+        r = e["resultado"]
+        original = (self.raiz / r["evidencia_privada"]).read_bytes()
+        self.assertIn(b"license 03DA4E", (self.raiz / r["evidencia"]).read_bytes())
+        e2 = redactar_evidencia(r["evidencia"], version_sqx="N/A", raiz=self.raiz)
+        r2 = e2["resultado"]
+        self.assertEqual(r2["redacciones"], {"licencia_id": 1})
+        self.assertNotEqual(r2["evidencia_privada"], r["evidencia_privada"])
+        self.assertEqual((self.raiz / r["evidencia_privada"]).read_bytes(), original)
+        publica = (self.raiz / r2["evidencia"]).read_bytes()
+        self.assertNotIn(b"03DA4E", publica)
+        self.assertNotIn(b"CAC3C722FAFD", publica)
 
 
 class TestGuardian(unittest.TestCase):
