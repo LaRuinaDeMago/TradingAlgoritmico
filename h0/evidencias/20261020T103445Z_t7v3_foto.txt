@@ -1,0 +1,10 @@
+# comando: python -I h0/configs/t7_seleccionar_nuevas.py foto C:/StrategyQuantX145/user/projects/Builder/databanks/Results C:/StrategyQuantX145/user/lab_h0/t7/antes.json
+# inicio_utc: 2026-10-20T10:34:45+00:00
+# duracion_s: 0.113
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+30 estrategias antes de generar
+
+=== STDERR ===
