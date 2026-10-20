@@ -41,6 +41,9 @@ def _comunes(p: argparse.ArgumentParser) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # En Windows la consola o la tubería pueden usar cp1252: sin esto, un carácter como "→" hacía fallar
+    # la impresión DESPUÉS de haber registrado, y el comando devolvía error con la entrada ya escrita.
+    sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(prog="python -m lab", description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="orden", required=True)

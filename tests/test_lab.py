@@ -131,6 +131,19 @@ class TestEjecutar(ConRaizTemporal):
                            capture_output=True, text=True, env=env)
         self.assertIn("1 entradas", r.stdout)
 
+    def test_cli_imprime_texto_no_ascii_sin_fallar(self):
+        # En Windows la salida por tubería usa cp1252: antes, imprimir "→" fallaba DESPUÉS de registrar,
+        # y el comando devolvía error con la entrada ya escrita.
+        env = {k: v for k, v in os.environ.items() if k not in ("PYTHONIOENCODING", "PYTHONUTF8")}
+        env.update(LAB_RAIZ=str(self.raiz), PYTHONPATH=str(SRC))
+        r = subprocess.run(
+            [sys.executable, "-m", "lab", "registrar", "--descripcion", "flecha", "--comando", "x",
+             "--version-sqx", "N/A", "--estado", "OK", "--resultado", "211→206"],
+            capture_output=True, env=env,
+        )
+        self.assertEqual(r.returncode, 0, r.stderr.decode("utf-8", "replace"))
+        self.assertIn("211→206", r.stdout.decode("utf-8"))
+
     def test_su_propia_evidencia_no_ensucia_el_codigo(self):
         git = ["git", "-c", "user.name=prueba", "-c", "user.email=prueba@example.invalid"]
         subprocess.run(["git", "init", "-q"], cwd=self.raiz, check=True)
