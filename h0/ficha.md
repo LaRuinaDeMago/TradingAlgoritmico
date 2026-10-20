@@ -102,5 +102,5 @@ No se compra ninguna licencia antes de cerrar esta lista.
 | Pasos con intervención humana y su frecuencia | PENDIENTE | |
 | Coste en tiempo y dinero de un experimento completo | PENDIENTE | |
 | Condiciones vigentes de Darwinex Zero, Axi Select y fondeadas de Imox | PENDIENTE | |
-| Criterios de elección del primer mercado, fijados antes de ver backtests | PENDIENTE (decide Diego) | |
-| Presupuesto de tiempo y dinero del proyecto y cifras de abandono | PENDIENTE (decide Diego) | |
+| Criterios de elección del primer mercado, fijados antes de ver backtests | PENDIENTE (decide Diego) | Criterios en `protocols/2026-10-20_sellado_darwinex.md` (sección 5) y propuesta (EURUSD) en `docs/decisiones/0003-reparto-mercado-presupuesto.md` |
+| Presupuesto de tiempo y dinero del proyecto y cifras de abandono | PENDIENTE (decide Diego) | Propuesta en la decisión 0003 (sección 3) |

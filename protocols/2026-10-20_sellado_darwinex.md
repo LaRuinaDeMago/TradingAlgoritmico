@@ -12,6 +12,9 @@ Protocolo anterior (si sustituye a otro): —
 > **Este protocolo no autoriza a leer `data/sealed/`.** No se usa nunca en la variable `LAB_PROTOCOLO_SELLADO`: el
 > guardián concedería acceso a cualquier protocolo aprobado que se le indique.
 
+Propuesta concreta para completar las secciones 3–5 y el presupuesto: `docs/decisiones/0003-reparto-mercado-presupuesto.md`
+(PROPUESTA; la decide Diego).
+
 ## 1. Lo que ya se sabe (solo metadatos, ningún precio visto)
 
 Registro n.º 87 (`-symbol action=darwinexsymbols`): la licencia permite 328 símbolos de Darwinex.
