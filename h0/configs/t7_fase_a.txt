@@ -1,0 +1,3 @@
+-project action=loadconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/Builder_H0_USDCHF_minimo.cfx
+-project action=start name=Builder
+-project action=loadconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/Builder_original_145.3191.cfx
