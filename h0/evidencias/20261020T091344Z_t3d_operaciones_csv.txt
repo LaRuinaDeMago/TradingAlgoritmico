@@ -1,0 +1,50 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -tools action=orderstocsv "file=C:/Users/SERVILAB/Documents/TRADING ALGORITMICO/h0/evidencias_privadas/t3/estrategias" "output=C:/Users/SERVILAB/Documents/TRADING ALGORITMICO/h0/evidencias_privadas/t3/operaciones"
+# inicio_utc: 2026-10-20T09:13:44+00:00
+# duracion_s: 24.156
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+11:13:47.185 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+11:13:47.189 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2864 ms
+Volume profile subscription verified: active=false
+Projects loaded in 5165 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -tools action=orderstocsv file=C:/Users/SERVILAB/Documents/TRADING ALGORITMICO/h0/evidencias_privadas/t3/estrategias output=C:/Users/SERVILAB/Documents/TRADING ALGORITMICO/h0/evidencias_privadas/t3/operaciones 
+13:14:04 Extracción de órdenes de estrategia en formato csv
+--------------------------------------------------
+Strategy 0.1 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.1.csv'.
+Strategy 0.11 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.11.csv'.
+Strategy 0.13 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.13.csv'.
+Strategy 0.15 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.15.csv'.
+Strategy 0.17 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.17.csv'.
+Strategy 0.4 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.4.csv'.
+Strategy 0.5 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.5.csv'.
+Strategy 0.6 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.6.csv'.
+Strategy 0.7 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.7.csv'.
+Strategy 0.9 - pedidos exportados a 'C:\Users\SERVILAB\Documents\TRADING ALGORITMICO\h0\evidencias_privadas\t3\operaciones\Strategy 0.9.csv'.
+All tasks completed
+13:14:08 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
