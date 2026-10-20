@@ -144,4 +144,13 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **La consola de `sqcli` va 2 horas adelantada** respecto al log interno (hora de España): 14:10 frente a 12:10.
 - **Tropiezo de Claude:** lanzar Python con su ruta completa volvió a meter el usuario de Windows en el registro (n.º 68–71).
   Basta con `python`.
+- **Tarea 7 en tres intentos.** (1) El Builder ignoró el banco de salida y escribió en `Results`. (2) La explicación
+  "el banco aún no existía" se puso a prueba y quedó **refutada**: también falla con el banco ya creado. (3) Funcionó
+  separando las estrategias nuevas por comparación de archivos, sin mover ni borrar nada. → Una hipótesis se prueba con un
+  experimento que pueda tumbarla; tumbada, se registra y se cambia de enfoque en vez de insistir.
+- **`-databank action=move` cortó y no pegó** ("Nothing to paste") porque el banco aún no estaba cargado en memoria.
+  No se perdió nada, pero con el banco cargado podría perder estrategias. → No se usa en la automatización.
+- **El experimento completo cuesta ~55 s, y el 90 % es arrancar `sqcli`.** Con este laboratorio, lo caro no será el
+  cálculo de un experimento pequeño sino el número de arranques: agrupar órdenes en `-run`.
+- **SQX reutiliza nombres de estrategia** ("Strategy 0.11(2)"). → Identificar estrategias por hash, nunca por nombre.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
