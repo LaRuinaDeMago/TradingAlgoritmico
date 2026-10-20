@@ -2,6 +2,10 @@
 
 Transcripción de `hoja_de_ruta_v1.1.pdf` (Diego, 20-oct-2026). Si hay diferencias, manda el PDF.
 
+> **Desfase conocido (2026-10-20):** donde dice "SQX disponible: edición Ultimate, build 143.2708, prueba de 14 días",
+> lo comprobado es **Pro Build 145.3191 (build de desarrollo), prueba hasta el 02-11-2026** (`h0/ficha.md`, registros
+> n.º 9 y 11). Fuente de verdad: estado en `h0/ficha.md`, decisiones en `docs/decisiones/`, hechos en `registry/`.
+
 ## Objetivo y alcance
 
 Construir un laboratorio de investigación cuantitativa que integre IA, StrategyQuant X (SQX) y validación propia, capaz de decir con evidencia si una estrategia tiene ventaja real o es ruido.
