@@ -77,7 +77,17 @@ Claude no recomienda uno por rendimiento: no lo conoce ni debe conocerlo.
 
 ## 6. Qué falta comprobar en H0 antes de descargar (tarea 5, sin precios)
 
-- Si `-symbol action=add … datasource=darwinex` admite fecha de fin (`dateto`). La ayuda solo la documenta para `mt5api`.
+- **Fecha de fin para Darwinex: según la documentación instalada, NO.** `-symbol action=add` solo registra el símbolo y
+  la descarga es `-data action=update`; con `datefrom`/`dateto` "solo está implementado para Dukascopy; las demás fuentes
+  informan de que el rango no está soportado" (`docs/cli/qdmcli.md`). Sin rango, se descarga **toda** la historia.
+  → La opción A de la sección 4 probablemente no es posible; **la B (segunda instalación) pasa a ser la preferida**.
+  No se ha comprobado intentándolo: si la documentación se equivocara, el intento metería precios en SQX antes de aprobar
+  este protocolo.
+- **Costes que trae SQX** (registro n.º 88, sin precios): perfiles de broker "Darwinex" y "Darwinex Zero"; spread por
+  defecto EURUSD 0,6 · GBPUSD 0,8 · USDJPY 1,4 · AUDUSD 1,4 · USDCAD 1,6 · XAUUSD 28 · SP500 6 · WS30 4 · XTIUSD 6
+  (en la unidad de cada instrumento). Son valores por defecto de SQX, **no** las condiciones oficiales de Darwinex Zero.
+  Comisión y swap no salen por línea de comandos: INCONCLUSO (interfaz o condiciones oficiales del broker).
+  El valor del punto de los pares que no cotizan en USD es fijo (p. ej. USDCAD 72.157,88): tipo de cambio congelado.
 - Granularidad real (la ayuda ofrece `datatype=M1` o `TICK`) y fecha final disponible.
 - Zona horaria y la incoherencia horaria ya vista en SQX (consola 2 h adelantada; aviso de cambio de convención en datos).
 - Modelo de costes que trae SQX para los instrumentos de Darwinex (spread, comisión, swap) frente a las condiciones

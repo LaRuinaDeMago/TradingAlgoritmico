@@ -1,0 +1,1048 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -run file=C:/StrategyQuantX145/user/lab_h0/t5_costes_listar.txt
+# inicio_utc: 2026-10-20T10:44:35+00:00
+# duracion_s: 24.742
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+12:44:38.797 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+12:44:38.800 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2954 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4953 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -run file=C:/StrategyQuantX145/user/lab_h0/t5_costes_listar.txt 
+14:44:56 Comando en ejecución: -brokerprofile action=list
+--------------------------------------------------
+14:44:56 List of available profiles
+--------------------------------------------------
+ID	Name
+11	[[Darwinex Zero]]
+4	[[Darwinex]]
+3	[[Dukascopy]]
+8	[[FTMO]]
+5	[[ICMarkets]]
+10	[[Monevis]]
+7	[[OANDA]]
+6	[[Pepperstone]]
+2	[[RoboForex]]
+9	[[The5ers]]
+1	[[XTB]]
+
+14:44:56 Comando en ejecución: -instrument action=list csv
+--------------------------------------------------
+Instrument,Description,Point value,Pip/Tick size,Pip/Tick step,Default spread,Default slippage,Data type,Order size multiplier,Order size step
+.DE40Cash_roboforex,Futures,1.173691,0.1,0.1,4.0,0.0,Index,1.0,0.01
+.JP225Cash_roboforex,Futures,0.004277,0.1,0.1,40.0,0.0,Index,1.0,0.01
+.US30Cash_roboforex,Futures,1.0,0.1,0.1,13.0,0.0,Index,1.0,0.01
+.US500Cash_roboforex,Futures,1.0,0.1,0.1,4.0,0.0,Index,1.0,0.01
+.USTECHCash_roboforex,Futures,1.0,0.1,0.1,3.0,0.0,Index,1.0,0.01
+A3M_CFD.ES_oanda,Futures_XMCE_ESP_Communication Services,1.07671,0.001,0.001,10.0,0.0,Index,1.0,1.0
+AAPL_darwinex,Futures_USA_Technology,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+AAPL_ftmo,USA_Technology,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+AAPL_roboforex,Futures_USA_Technology,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+AAVEUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,89.0,0.0,Crypto,1.0,1.0
+AAXJ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+ADAUSD_ftmo,Crypto Currency,100.0,0.0001,0.0001,10.0,0.0,Crypto,1.0,0.01
+ADAUSD_icmarkets,Futures_Crypto Currency,10.0,0.00001,0.00001,251.0,0.0,Crypto,1.0,0.01
+ADAUSD_monevis,Crypto Currency,1.0,0.0001,0.0001,11.0,0.0,Crypto,1.0,10.0
+ADAUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,71.0,0.0,Crypto,1.0,50.0
+ADBE_darwinex,Futures_USA_Technology,1.0,0.01,0.01,96.0,0.0,Index,1.0,1.0
+ADBE_roboforex,Futures_USA_Technology,100.0,0.01,0.01,14.0,0.0,Index,1.0,0.01
+AIRF_ftmo,,1.164845,0.01,0.01,8.0,0.0,Index,1.0,1.0
+ALVG_ftmo,,1.164867,0.01,0.01,13.0,0.0,Index,1.0,1.0
+AMZN_ftmo,USA_Consumer Cyclical,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+AMZN_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+ARKG_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+ARKK_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+ARKW_darwinex,Futures_USA_Financial,1.0,0.01,0.01,26.0,0.0,Index,1.0,1.0
+AU200.pro_oanda,,10.219074,0.1,0.1,82.0,0.0,Index,1.0,0.01
+AUDCAD.pro_oanda,FX_Currency,72064.800669,0.0001,0.00001,2.5,0.0,Forex,1.0,0.01
+AUDCAD_darwinex,Currency,72157.360772,0.0001,0.00001,2.0,0.0,Forex,1.0,0.01
+AUDCAD_dukascopy,FX_Forex_Currency,71848.371197,0.0001,0.00001,1.9,0.0,Forex,1.0,0.01
+AUDCAD_ftmo,FX_Currency,71861.795395,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+AUDCAD_icmarkets,FX_Currency,72058.049965,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+AUDCAD_monevis,FX_Currency,71824.632976,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+AUDCAD_pepperstone,Currency,72060.12697,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+AUDCAD_roboforex,FX_Currency,71833.40397,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+AUDCAD_the5ers,FX_Currency,71828.244302,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+AUDCHF.pro_oanda,FX_Currency,114225.664222,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+AUDCHF_darwinex,Currency,114681.529393,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+AUDCHF_dukascopy,FX_Forex_Currency,115172.874485,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+AUDCHF_ftmo,FX_Currency,115084.068912,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+AUDCHF_icmarkets,FX_Currency,114157.857485,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+AUDCHF_monevis,FX_Currency,115285.735696,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+AUDCHF_pepperstone,Currency,114151.341849,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+AUDCHF_roboforex,FX_Currency,115312.323428,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+AUDCHF_the5ers,FX_Currency,115283.077597,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+AUDDKK_pepperstone,Currency,14445.210041,0.0001,0.00001,30.1,0.0,Forex,1.0,0.01
+AUDHUF_pepperstone,Currency,264.37751,0.01,0.001,24.7,0.0,Forex,1.0,0.01
+AUDJPY.pro_oanda,FX_Currency,649.612182,0.01,0.001,1.8,0.0,Forex,1.0,0.01
+AUDJPY_darwinex,Currency,653.466641,0.01,0.001,3.0,0.0,Forex,1.0,0.01
+AUDJPY_dukascopy,FX_Forex_Currency,651.877734,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+AUDJPY_ftmo,FX_Currency,651.024713,0.01,0.001,1.4,0.0,Forex,1.0,0.01
+AUDJPY_icmarkets,FX_Currency,649.481389,0.01,0.001,0.3,0.0,Forex,1.0,0.01
+AUDJPY_monevis,FX_Currency,654.00085,0.01,0.001,1.0,0.0,Forex,1.0,0.01
+AUDJPY_pepperstone,Currency,649.198889,0.01,0.001,0.9,0.0,Forex,1.0,0.01
+AUDJPY_roboforex,FX_Currency,654.030792,0.01,0.001,0.7,0.0,Forex,1.0,0.01
+AUDJPY_the5ers,FX_Currency,653.92387,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+AUDNOK_pepperstone,Currency,9118.70456,0.0001,0.00001,131.2,0.0,Forex,1.0,0.01
+AUDNZD.pro_oanda,FX_Currency,59987.0,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+AUDNZD_darwinex,Currency,60239.0,0.0001,0.00001,2.8,0.0,Forex,1.0,0.01
+AUDNZD_dukascopy,FX_Forex_Currency,59630.0,0.0001,0.00001,2.3,0.0,Forex,1.0,0.01
+AUDNZD_ftmo,FX_Currency,59579.0,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+AUDNZD_icmarkets,FX_Currency,59997.0,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+AUDNZD_monevis,FX_Currency,59863.0,0.0001,0.00001,1.9,0.0,Forex,1.0,0.01
+AUDNZD_pepperstone,Currency,59996.0,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+AUDNZD_roboforex,FX_Currency,59880.0,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+AUDNZD_the5ers,FX_Currency,59872.0,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+AUDPLN_pepperstone,Currency,24835.156648,0.0001,0.00001,19.1,0.0,Forex,1.0,0.01
+AUDSGD_dukascopy,FX_Forex_Currency,75487.080386,0.0001,0.00001,1.7,0.0,Forex,1.0,0.01
+AUDSGD_icmarkets,FX_Currency,75421.037944,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+AUDSGD_pepperstone,Currency,75418.193885,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+AUDUSD.pro_oanda,FX_Currency,92863.444305,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+AUDUSD_darwinex,Currency,100000.0,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+AUDUSD_dukascopy,FX_Forex_Currency,100000.0,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+AUDUSD_ftmo,FX_Currency,100000.0,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+AUDUSD_icmarkets,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+AUDUSD_monevis,FX_Currency,100000.0,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+AUDUSD_pepperstone,Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+AUDUSD_roboforex,FX_Currency,100000.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+AUDUSD_the5ers,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+AUS.IDX_dukascopy,AUS_Indexes,0.65553,0.001,0.001,6782.0,0.0,Index,1.0,1.0
+AUS200.cash_ftmo,,0.429182,0.01,0.01,146.0,0.0,Index,1.0,0.01
+AUS200_darwinex,Futures,4.453827,0.1,0.1,16.0,0.0,Index,1.0,0.01
+AUS200_icmarkets,Futures,0.439993,0.01,0.01,80.0,0.0,Index,1.0,0.1
+AUS200_monevis,,6.5767,0.1,0.1,18.0,0.0,Index,1.0,0.1
+AUS200_pepperstone,Futures_AUS_Indexes,0.440352,0.1,0.1,18.0,0.0,Index,1.0,0.1
+AVAXUSD_monevis,Crypto Currency,1.0,0.01,0.01,11.0,0.0,Crypto,1.0,1.0
+AVAXUSD_oanda,Futures_Crypto Currency,1.0,0.001,0.001,669.0,0.0,Crypto,1.0,2.0
+AVXUSD_icmarkets,Futures_Crypto Currency,1.0,0.0001,0.0001,2142.0,0.0,Crypto,1.0,0.01
+Aluminium_pepperstone,Futures,1.0,0.001,0.001,4200.0,0.0,Index,1.0,1.0
+BABA_ftmo,USA_Consumer Cyclical,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+BAC_ftmo,USA_Financial,1.0,0.01,0.01,3.0,0.0,Index,1.0,1.0
+BAC_roboforex,Futures_USA_Financial,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+BAYGn_ftmo,,1.164867,0.01,0.01,4.0,0.0,Index,1.0,1.0
+BA_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,20.0,0.0,Index,1.0,0.01
+BCHUSD_dukascopy,FX_Crypto Currency,1.0,0.1,0.1,30.0,0.0,Crypto,1.0,1.0
+BCHUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,157.0,0.0,Crypto,1.0,0.01
+BCHUSD_monevis,Crypto Currency,1.0,0.001,0.001,428.0,0.0,Crypto,1.0,0.01
+BCHUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,132.0,0.0,Crypto,1.0,0.01
+BENCHMARK_DATA_TICK,BENCHMARK_DATA_TICK,100000.0,0.0001,0.00001,0.0,0.0,Forex,1.0,0.0
+BNBUSD_icmarkets,Futures_Crypto Currency,1.0,0.001,0.001,2830.0,0.0,Crypto,1.0,0.01
+BNBUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,162.0,0.0,Crypto,1.0,0.1
+BRENT.CMD_dukascopy,Commodities,100.0,0.001,0.001,45.0,0.0,CFDs,1.0,1.0
+BRENT_F5_icmarkets,Futures,100.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+BRENT_roboforex,Futures,1000.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+BRK.B_roboforex,Futures,100.0,0.01,0.01,7.0,0.0,Index,1.0,0.01
+BTCUSD_dukascopy,FX_Crypto Currency,1.0,0.1,0.1,358.0,0.0,Crypto,1.0,0.01
+BTCUSD_ftmo,Crypto Currency,1.0,0.01,0.01,2871.0,0.0,Crypto,1.0,0.01
+BTCUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,1500.0,0.0,Crypto,1.0,0.01
+BTCUSD_monevis,Crypto Currency,1.0,0.01,0.01,2593.0,0.0,Crypto,1.0,0.01
+BTCUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,6101.0,0.0,Crypto,1.0,0.0
+BTCUSD_the5ers,Crypto Currency,1.0,0.01,0.01,844.0,0.0,Crypto,1.0,0.01
+BUND.TR_dukascopy,Financial,1.0805,0.001,0.001,26.0,0.0,Index,1.0,1.0
+CA60_icmarkets,Futures,0.51918,0.01,0.01,60.0,0.0,Index,1.0,1.0
+CA60_pepperstone,Futures_CAN_Indexes,0.519266,0.01,0.01,80.0,0.0,Index,1.0,0.1
+CADCHF.pro_oanda,FX_Currency,114225.664222,0.0001,0.00001,2.0,0.0,Forex,1.0,0.01
+CADCHF_darwinex,Currency,114681.529393,0.0001,0.00001,2.2,0.0,Forex,1.0,0.01
+CADCHF_dukascopy,FX_Forex_Currency,115180.833909,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+CADCHF_ftmo,FX_Currency,115084.068912,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+CADCHF_icmarkets,FX_Currency,114156.554299,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+CADCHF_monevis,FX_Currency,115284.406631,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+CADCHF_pepperstone,Currency,114155.251142,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+CADCHF_roboforex,FX_Currency,115312.323428,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+CADCHF_the5ers,FX_Currency,115289.723074,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+CADHKD_dukascopy,FX_Forex_Currency,12869.068807,0.0001,0.00001,4.9,0.0,Forex,1.0,0.01
+CADJPY.pro_oanda,FX_Currency,649.616402,0.01,0.001,2.6,0.0,Forex,1.0,0.01
+CADJPY_darwinex,Currency,653.466641,0.01,0.001,1.6,0.0,Forex,1.0,0.01
+CADJPY_dukascopy,FX_Forex_Currency,651.890482,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+CADJPY_ftmo,FX_Currency,651.045905,0.01,0.001,2.0,0.0,Forex,1.0,0.01
+CADJPY_icmarkets,FX_Currency,649.481389,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+CADJPY_monevis,FX_Currency,654.00085,0.01,0.001,1.1,0.0,Forex,1.0,0.01
+CADJPY_pepperstone,Currency,649.203103,0.01,0.001,0.8,0.0,Forex,1.0,0.01
+CADJPY_roboforex,FX_Currency,654.026514,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+CADJPY_the5ers,FX_Currency,653.92387,0.01,0.001,0.1,0.0,Forex,1.0,0.01
+CADMXN_pepperstone,Currency,4980.625367,0.0001,0.00001,40.6,0.0,Forex,1.0,0.01
+CADSGD_pepperstone,Currency,75425.019988,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+CAT_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,5.0,0.0,Index,1.0,0.01
+CH20.pro_oanda,,12.112326,1,1,4.0,0.0,Index,1.0,0.01
+CH50_monevis,,10.0,0.01,0.01,904.0,0.0,Index,1.0,0.1
+CHE.IDX_dukascopy,CHE_Indexes,0.115177,0.001,0.001,4480.0,0.0,Index,1.0,1.0
+CHFDKK_pepperstone,Currency,14444.938782,0.0001,0.00001,46.9,0.0,Forex,1.0,0.01
+CHFHUF_pepperstone,Currency,264.382403,0.01,0.001,38.9,0.0,Forex,1.0,0.01
+CHFJPY.pro_oanda,FX_Currency,649.629062,0.01,0.001,4.7,0.0,Forex,1.0,0.01
+CHFJPY_darwinex,Currency,653.470911,0.01,0.001,3.8,0.0,Forex,1.0,0.01
+CHFJPY_dukascopy,FX_Forex_Currency,651.890482,0.01,0.001,1.6,0.0,Forex,1.0,0.01
+CHFJPY_ftmo,FX_Currency,651.024713,0.01,0.001,2.3,0.0,Forex,1.0,0.01
+CHFJPY_icmarkets,FX_Currency,649.481389,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+CHFJPY_monevis,FX_Currency,653.996573,0.01,0.001,1.5,0.0,Forex,1.0,0.01
+CHFJPY_pepperstone,Currency,649.190459,0.01,0.001,2.0,0.0,Forex,1.0,0.01
+CHFJPY_roboforex,FX_Currency,654.022237,0.01,0.001,1.5,0.0,Forex,1.0,0.01
+CHFJPY_the5ers,FX_Currency,653.92387,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+CHFNOK_pepperstone,Currency,9108.820344,0.0001,0.00001,246.9,0.0,Forex,1.0,0.01
+CHFPLN.pro_oanda,FX_Currency,24832.998088,0.001,0.0001,1.6,0.0,Forex,1.0,0.01
+CHFPLN_pepperstone,Currency,24834.724906,0.0001,0.00001,37.7,0.0,Forex,1.0,0.01
+CHFSEK_pepperstone,Currency,9258.487719,0.0001,0.00001,92.6,0.0,Forex,1.0,0.01
+CHFSGD_dukascopy,FX_Forex_Currency,75495.628803,0.0001,0.00001,2.7,0.0,Forex,1.0,0.01
+CHFSGD_icmarkets,FX_Currency,75421.037944,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+CHFSGD_pepperstone,Currency,75418.193885,0.0001,0.00001,1.7,0.0,Forex,1.0,0.01
+CHI.IDX_dukascopy,CHN_Indexes,1.0,0.001,0.001,22399.0,0.0,Index,1.0,0.1
+CHINA50_icmarkets,Futures,1.0,0.01,0.01,790.0,0.0,Index,1.0,0.1
+CHINAH_icmarkets,Futures,0.016551,0.01,0.01,260.0,0.0,Index,1.0,1.0
+CHINAH_pepperstone,Futures_HKG_Indexes,0.016552,0.01,0.01,1200.0,0.0,Index,1.0,0.1
+CMCSA_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+CN50_pepperstone,Futures_CHN_Crypto Currency,1.0,0.1,0.1,123.0,0.0,Crypto,1.0,0.1
+COCOA.CMD_dukascopy,Commodities,1.0,0.001,0.001,8783.0,0.0,CFDs,1.0,1.0
+COCOA.c_ftmo,,1.0,0.1,0.1,196.0,0.0,Index,1.0,1.0
+COCOA.pro_oanda,,10.0,1,1,9.0,0.0,Index,1.0,0.01
+COFFEE.CMD_dukascopy,Commodities,100.0,0.001,0.001,392.0,0.0,CFDs,1.0,10.0
+COFFEE.c_ftmo,,1.0,0.01,0.01,32.0,0.0,Index,1.0,1.0
+COFFEE.pro_oanda,,375.0,0.01,0.01,34.0,0.0,Index,1.0,0.01
+COPPER-US.pro_oanda,,1.0,0.00001,0.00001,550.0,0.0,Index,1.0,1.0
+COPPER.CMD_dukascopy,Commodities,100.0,0.0001,0.0001,38.0,0.0,CFDs,1.0,1.0
+CORN.c_ftmo,USA_Financial,1.0,0.01,0.01,95.0,0.0,Index,1.0,1.0
+COTTON.CMD_dukascopy,Commodities,100.0,0.001,0.001,186.0,0.0,CFDs,1.0,100.0
+COTTON.pro_oanda,,500.0,0.01,0.01,17.0,0.0,Index,1.0,0.01
+CSCO_roboforex,Futures_USA_Technology,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+CVX_roboforex,Futures_USA_Energy,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+C_roboforex,Futures_USA_Financial,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+Cattle_pepperstone,Futures,1000.0,0.00001,0.00001,80.0,0.0,Index,1.0,1.0
+Cocoa_pepperstone,Futures_Commodities,1.0,0.1,0.1,90.0,0.0,CFDs,1.0,1.0
+Coffee_pepperstone,Futures_Commodities,10.0,0.01,0.01,30.0,0.0,CFDs,1.0,1.0
+Copper_pepperstone,Futures_Commodities,2000.0,0.0001,0.0001,32.0,0.0,CFDs,1.0,0.01
+Corn_pepperstone,Futures,100.0,0.0001,0.0001,90.0,0.0,Index,1.0,1.0
+Cotton_pepperstone,Futures_Commodities,100.0,0.001,0.001,150.0,0.0,CFDs,1.0,1.0
+DAL_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+DASHUSD_ftmo,Crypto Currency,1.0,0.01,0.01,40.0,0.0,Crypto,1.0,0.01
+DAX40_the5ers,Indexes,11.735389,0.01,0.01,120.0,0.0,Index,1.0,0.01
+DBKGn_ftmo,,1.164867,0.01,0.01,4.0,0.0,Index,1.0,1.0
+DE30.pro_oanda,DEU_Indexes,26.91875,0.1,0.1,23.0,0.0,Index,1.0,0.01
+DE40_icmarkets,Futures_Indexes,1.157798,0.01,0.01,80.0,0.0,Index,1.0,0.1
+DEU.IDX_dukascopy,DEU_Indexes,1.0805,0.001,0.001,2657.0,0.0,Index,1.0,0.1
+DGRO_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+DIA_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+DIESEL.CMD_dukascopy,Commodities,4.0,0.001,0.001,663.0,0.0,CFDs,1.0,1.0
+DIS_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+DOGEUSD_ftmo,Crypto Currency,1000.0,0.00001,0.00001,20.0,0.0,Crypto,1.0,0.01
+DOGEUSD_monevis,Crypto Currency,1.0,0.00001,0.00001,62.0,0.0,Crypto,1.0,100.0
+DOGEUSD_oanda,Futures_Crypto Currency,1.0,0.00001,0.00001,161.0,0.0,Crypto,1.0,500.0
+DOGUSD_icmarkets,Futures_Crypto Currency,100.0,0.00001,0.00001,87.0,0.0,Crypto,1.0,0.01
+DOLLAR.IDX_dukascopy,USA_Indexes,1.0,0.001,0.001,36.0,0.0,Index,1.0,100.0
+DOTUSD_ftmo,Crypto Currency,10.0,0.001,0.001,20.0,0.0,Crypto,1.0,0.01
+DOTUSD_icmarkets,Futures_Crypto Currency,1.0,0.001,0.001,19.0,0.0,Crypto,1.0,1.0
+DOTUSD_monevis,Crypto Currency,1.0,0.001,0.001,35.0,0.0,Crypto,1.0,1.0
+DOTUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,2476.0,0.0,Crypto,1.0,5.0
+DSHUSD_dukascopy,FX_Crypto Currency,1.0,0.001,0.001,1556.0,0.0,Crypto,1.0,1.0
+DSHUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,64.0,0.0,Crypto,1.0,0.01
+DVY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,10.0,0.0,Index,1.0,1.0
+EA_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+EBAY_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+EEM_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+EFAV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,16.0,0.0,Index,1.0,1.0
+EFA_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+EFG_darwinex,Futures_USA_Financial,1.0,0.01,0.01,162.0,0.0,Index,1.0,1.0
+EFV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+EMB_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+EOSUSD_dukascopy,FX_Crypto Currency,1.0,0.0001,0.0001,66.0,0.0,Crypto,1.0,1000.0
+EOSUSD_icmarkets,Futures_Crypto Currency,1.0,0.0001,0.0001,113.0,0.0,Crypto,1.0,0.01
+EOSUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,366.0,0.0,Crypto,1.0,100.0
+ES35.pro_oanda,,10.7669,0.1,0.1,100.0,0.0,Index,1.0,0.01
+ES35_icmarkets,Futures,1.157733,0.01,0.01,430.0,0.0,Index,1.0,0.1
+ESGU_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+ESP.IDX_dukascopy,ESP_Indexes,1.0805,0.001,0.001,7000.0,0.0,Index,1.0,1.0
+ESZ24_roboforex,Futures_USA,50.0,0.01,0.01,25.0,0.0,Index,1.0,0.1
+ETHUSD_dukascopy,FX_Crypto Currency,1.0,0.1,0.1,37.0,0.0,Crypto,1.0,0.1
+ETHUSD_ftmo,Crypto Currency,1.0,0.01,0.01,380.0,0.0,Crypto,1.0,0.01
+ETHUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,300.0,0.0,Crypto,1.0,0.01
+ETHUSD_monevis,Crypto Currency,1.0,0.01,0.01,245.0,0.0,Crypto,1.0,0.01
+ETHUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,538.0,0.0,Crypto,1.0,0.01
+ETHUSD_the5ers,Crypto Currency,1.0,0.01,0.01,119.0,0.0,Crypto,1.0,0.01
+EU50.cash_ftmo,,1.164867,0.01,0.01,166.0,0.0,Index,1.0,0.01
+EU50.pro_oanda,,10.7669,0.1,0.1,30.0,0.0,Index,1.0,0.01
+EUR50_monevis,,10.8325,0.1,0.1,19.0,0.0,Index,1.0,0.1
+EURAUD.pro_oanda,FX_Currency,66345.0,0.0001,0.00001,2.3,0.0,Forex,1.0,0.01
+EURAUD_darwinex,Currency,66738.0,0.0001,0.00001,6.0,0.0,Forex,1.0,0.01
+EURAUD_dukascopy,FX_Forex_Currency,65567.0,0.0001,0.00001,2.9,0.0,Forex,1.0,0.01
+EURAUD_ftmo,FX_Currency,65505.0,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+EURAUD_icmarkets,FX_Currency,66340.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+EURAUD_monevis,FX_Currency,65761.0,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+EURAUD_pepperstone,Currency,66361.0,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+EURAUD_roboforex,FX_Currency,65780.0,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+EURAUD_the5ers,FX_Currency,65770.0,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+EURCAD.pro_oanda,FX_Currency,72064.800669,0.0001,0.00001,1.7,0.0,Forex,1.0,0.01
+EURCAD_darwinex,Currency,72157.360772,0.0001,0.00001,6.8,0.0,Forex,1.0,0.01
+EURCAD_dukascopy,FX_Forex_Currency,71848.371197,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+EURCAD_ftmo,FX_Currency,71860.762586,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+EURCAD_icmarkets,FX_Currency,72059.088453,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURCAD_monevis,FX_Currency,71824.632976,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+EURCAD_pepperstone,Currency,72060.64624,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+EURCAD_roboforex,FX_Currency,71832.371977,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+EURCAD_the5ers,FX_Currency,71828.244302,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+EURCHF.pro_oanda,FX_Currency,114225.664222,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+EURCHF_darwinex,Currency,114681.529393,0.0001,0.00001,5.0,0.0,Forex,1.0,0.01
+EURCHF_dukascopy,FX_Forex_Currency,115171.548021,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+EURCHF_ftmo,FX_Currency,115084.068912,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+EURCHF_icmarkets,FX_Currency,114156.554299,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+EURCHF_monevis,FX_Currency,115284.406631,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+EURCHF_pepperstone,Currency,114151.341849,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+EURCHF_roboforex,FX_Currency,115312.323428,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+EURCHF_the5ers,FX_Currency,115289.723074,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+EURCNH_monevis,FX_Currency,14017.951389,0.0001,0.00001,3.1,0.0,Forex,1.0,0.01
+EURCNH_pepperstone,,13954.085477,0.00001,0.00001,134.0,0.0,Forex,1.0,0.01
+EURCZK.pro_oanda,FX_Currency,4259.66945,0.01,0.001,2.8,0.0,Forex,1.0,0.01
+EURCZK_dukascopy,FX_Forex_Currency,4263.246974,0.001,0.0001,6.6,0.0,Forex,1.0,0.01
+EURCZK_ftmo,FX_Currency,4262.356572,0.001,0.0001,16.4,0.0,Forex,1.0,0.01
+EURCZK_monevis,FX_Currency,4269.143909,0.001,0.0001,10.6,0.0,Forex,1.0,0.01
+EURCZK_pepperstone,Currency,4260.268312,0.0001,0.00001,75.6,0.0,Forex,1.0,0.01
+EURDKK_dukascopy,FX_Forex_Currency,14482.112419,0.0001,0.00001,3.8,0.0,Forex,1.0,0.01
+EURDKK_icmarkets,FX_Currency,14431.597116,0.0001,0.00001,16.0,0.0,Forex,1.0,0.01
+EURDKK_monevis,FX_Currency,14518.276332,0.0001,0.00001,2.9,0.0,Forex,1.0,0.01
+EURDKK_pepperstone,Currency,14445.063977,0.0001,0.00001,35.4,0.0,Forex,1.0,0.01
+EURGBP.pro_oanda,FX_Currency,129327.0,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+EURGBP_darwinex,Currency,129882.0,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+EURGBP_dukascopy,FX_Forex_Currency,129994.0,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+EURGBP_ftmo,FX_Currency,129887.0,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+EURGBP_icmarkets,FX_Currency,129290.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURGBP_monevis,FX_Currency,129682.0,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+EURGBP_pepperstone,Currency,129258.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+EURGBP_roboforex,FX_Currency,129714.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+EURGBP_the5ers,FX_Currency,129677.0,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+EURHKD_dukascopy,FX_Forex_Currency,12868.605108,0.0001,0.00001,8.2,0.0,Forex,1.0,0.01
+EURHKD_icmarkets,Currency,12865.045671,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+EURHKD_monevis,FX_Currency,12868.687909,0.0001,0.00001,3.0,0.0,Forex,1.0,0.01
+EURHUF.pro_oanda,FX_Currency,264.403374,0.1,0.01,4.6,0.0,Forex,1.0,0.01
+EURHUF_dukascopy,FX_Forex_Currency,266.534466,0.01,0.001,13.8,0.0,Forex,1.0,0.01
+EURHUF_ftmo,FX_Currency,266.621874,0.01,0.001,18.0,0.0,Forex,1.0,0.01
+EURHUF_monevis,FX_Currency,265.784263,0.0001,0.00001,2160.4,0.0,Forex,1.0,0.01
+EURHUF_pepperstone,Currency,264.396383,0.01,0.001,31.0,0.0,Forex,1.0,0.01
+EURILS_pepperstone,Currency,26863.955556,0.0001,0.00001,44.1,0.0,Forex,1.0,0.01
+EURJPY.pro_oanda,FX_Currency,649.629062,0.01,0.001,1.8,0.0,Forex,1.0,0.01
+EURJPY_darwinex,Currency,653.466641,0.01,0.001,1.8,0.0,Forex,1.0,0.01
+EURJPY_dukascopy,FX_Forex_Currency,651.877734,0.01,0.001,0.9,0.0,Forex,1.0,0.01
+EURJPY_ftmo,FX_Currency,651.03319,0.01,0.001,1.8,0.0,Forex,1.0,0.01
+EURJPY_icmarkets,FX_Currency,649.481389,0.01,0.001,0.8,0.0,Forex,1.0,0.01
+EURJPY_monevis,FX_Currency,654.00085,0.01,0.001,1.0,0.0,Forex,1.0,0.01
+EURJPY_pepperstone,Currency,649.203103,0.01,0.001,1.1,0.0,Forex,1.0,0.01
+EURJPY_roboforex,FX_Currency,654.030792,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+EURJPY_the5ers,FX_Currency,653.92387,0.01,0.001,0.6,0.0,Forex,1.0,0.01
+EURMXN_darwinex,Currency,5034.397521,0.0001,0.00001,69.2,0.0,Forex,1.0,0.01
+EURMXN_monevis,FX_Currency,4987.949115,0.01,0.001,1.0,0.0,Forex,1.0,0.01
+EURMXN_pepperstone,Currency,4980.491415,0.0001,0.00001,48.9,0.0,Forex,1.0,0.01
+EURNOK.pro_oanda,FX_Currency,9104.151493,0.001,0.0001,5.9,0.0,Forex,1.0,0.01
+EURNOK_darwinex,Currency,9215.341332,0.0001,0.00001,69.8,0.0,Forex,1.0,0.01
+EURNOK_dukascopy,FX_Forex_Currency,9114.216629,0.0001,0.00001,71.1,0.0,Forex,1.0,0.01
+EURNOK_ftmo,FX_Currency,9106.530931,0.0001,0.00001,30.6,0.0,Forex,1.0,0.01
+EURNOK_icmarkets,FX_Currency,9081.703546,0.0001,0.00001,15.0,0.0,Forex,1.0,0.01
+EURNOK_monevis,FX_Currency,9138.77968,0.001,0.0001,3.3,0.0,Forex,1.0,0.01
+EURNOK_pepperstone,Currency,9119.72743,0.0001,0.00001,91.6,0.0,Forex,1.0,0.01
+EURNZD.pro_oanda,FX_Currency,59989.0,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+EURNZD_darwinex,Currency,60238.0,0.0001,0.00001,9.8,0.0,Forex,1.0,0.01
+EURNZD_dukascopy,FX_Forex_Currency,59630.0,0.0001,0.00001,3.3,0.0,Forex,1.0,0.01
+EURNZD_ftmo,FX_Currency,59577.0,0.0001,0.00001,2.6,0.0,Forex,1.0,0.01
+EURNZD_icmarkets,FX_Currency,59998.0,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+EURNZD_monevis,FX_Currency,59863.0,0.0001,0.00001,4.8,0.0,Forex,1.0,0.01
+EURNZD_pepperstone,Currency,59994.0,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+EURNZD_roboforex,FX_Currency,59881.0,0.0001,0.00001,3.9,0.0,Forex,1.0,0.01
+EURNZD_the5ers,FX_Currency,59875.0,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+EURPLN.pro_oanda,FX_Currency,24831.764794,0.001,0.0001,1.1,0.0,Forex,1.0,0.01
+EURPLN_dukascopy,FX_Forex_Currency,24892.216702,0.0001,0.00001,18.6,0.0,Forex,1.0,0.01
+EURPLN_ftmo,FX_Currency,24869.930265,0.0001,0.00001,15.6,0.0,Forex,1.0,0.01
+EURPLN_icmarkets,FX_Currency,24814.880988,0.0001,0.00001,6.8,0.0,Forex,1.0,0.01
+EURPLN_monevis,FX_Currency,24965.796858,0.0001,0.00001,12.6,0.0,Forex,1.0,0.01
+EURPLN_pepperstone,Currency,24835.156648,0.0001,0.00001,21.0,0.0,Forex,1.0,0.01
+EURRON_monevis,FX_Currency,21777.857146,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+EURRUB_dukascopy,FX_Forex_Currency,1.1794638517748E7,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURRUB_monevis,FX_Currency,1096.888128,0.0001,0.00001,1110.0,0.0,Forex,1.0,0.01
+EURSEK.pro_oanda,FX_Currency,9252.83368,0.001,0.0001,4.5,0.0,Forex,1.0,0.01
+EURSEK_darwinex,Currency,9342.825644,0.0001,0.00001,85.6,0.0,Forex,1.0,0.01
+EURSEK_dukascopy,FX_Forex_Currency,9383.318899,0.0001,0.00001,23.1,0.0,Forex,1.0,0.01
+EURSEK_icmarkets,FX_Currency,9245.245863,0.0001,0.00001,15.2,0.0,Forex,1.0,0.01
+EURSEK_monevis,FX_Currency,9383.635877,0.0001,0.00001,30.8,0.0,Forex,1.0,0.01
+EURSEK_pepperstone,Currency,9258.933482,0.0001,0.00001,33.5,0.0,Forex,1.0,0.01
+EURSGD_dukascopy,FX_Forex_Currency,75487.080386,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+EURSGD_icmarkets,FX_Currency,75415.35004,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+EURSGD_monevis,FX_Currency,75578.363426,0.0001,0.00001,1.7,0.0,Forex,1.0,0.01
+EURSGD_pepperstone,Currency,75423.882218,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+EURTRY.pro_oanda,FX_Currency,2921.693074,0.0001,0.00001,197.2,0.0,Forex,1.0,0.01
+EURTRY_darwinex,Currency,2920.37396,0.0001,0.00001,1264.2,0.0,Forex,1.0,0.01
+EURTRY_dukascopy,FX_Forex_Currency,2916.278316,0.0001,0.00001,355.0,0.0,Forex,1.0,0.01
+EURTRY_icmarkets,Currency,2920.506159,0.0001,0.00001,189.5,0.0,Forex,1.0,0.01
+EURTRY_monevis,FX_Currency,2916.379525,0.0001,0.00001,337.5,0.0,Forex,1.0,0.01
+EURTRY_pepperstone,Currency,2922.003828,0.0001,0.00001,260.2,0.0,Forex,1.0,0.01
+EURUSD,EURUSD,100000.0,0.0001,0.00001,2.0,0.0,Forex,1.0,0.0
+EURUSD.pro_oanda,FX_Currency,92862.581951,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+EURUSD_darwinex,Currency,100000.0,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+EURUSD_dukascopy,FX_Forex_Currency,100000.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+EURUSD_ftmo,FX_Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+EURUSD_icmarkets,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURUSD_monevis,FX_Currency,100000.0,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+EURUSD_pepperstone,Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURUSD_roboforex,FX_Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+EURUSD_the5ers,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+EURX_pepperstone,Futures_Indexes,115.930442,0.1,0.1,10.0,0.0,Index,1.0,0.1
+EURZAR.pro_oanda,FX_Currency,5726.163413,0.001,0.0001,11.6,0.0,Forex,1.0,0.01
+EURZAR_icmarkets,FX_Currency,5711.188618,0.0001,0.00001,114.5,0.0,Forex,1.0,0.01
+EURZAR_monevis,FX_Currency,5694.25171,0.0001,0.00001,99.4,0.0,Forex,1.0,0.01
+EURZAR_pepperstone,Currency,5723.679089,0.0001,0.00001,87.9,0.0,Forex,1.0,0.01
+EUS.IDX_dukascopy,DEU_Indexes,1.0805,0.001,0.001,2944.0,0.0,Index,1.0,1.0
+EUSTX50_pepperstone,Futures_Indexes,1.159261,0.1,0.1,16.0,0.0,Index,1.0,0.1
+EW - CME,History data instrument,100.0,0.1,0.1,0.0,0.0,Futures,1.0,0.0
+EWJ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+EWT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+EWY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+EWZ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+EZU_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+F40_icmarkets,Futures,1.157841,0.01,0.01,100.0,0.0,Index,1.0,0.1
+FCHI40_darwinex,Futures,11.662272,0.1,0.1,12.0,0.0,Index,1.0,0.01
+FDN_darwinex,Futures_USA_Financial,1.0,0.01,0.01,32.0,0.0,Index,1.0,1.0
+FOXA_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+FR40.pro_oanda,FRA,10.7671,0.1,0.1,14.0,0.0,Index,1.0,0.01
+FRA.IDX_dukascopy,FRA_Indexes,1.0805,0.001,0.001,1020.0,0.0,Index,1.0,1.0
+FRA40.cash_ftmo,,1.164867,0.01,0.01,131.0,0.0,Index,1.0,0.01
+FRA40_pepperstone,Futures_FRA_Indexes,1.159261,0.1,0.1,11.0,0.0,Index,1.0,0.1
+FRANCE40_monevis,,10.8325,0.1,0.1,16.0,0.0,Index,1.0,0.1
+FTEC_darwinex,Futures_USA_Financial,1.0,0.01,0.01,18.0,0.0,Index,1.0,1.0
+FVD_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+GAS.CMD_dukascopy,Commodities,100.0,0.0001,0.0001,52.0,0.0,CFDs,1.0,1.0
+GB100.pro_oanda,GBR,15.528177,0.1,0.1,15.0,0.0,Index,1.0,0.01
+GBPAUD.pro_oanda,FX_Currency,66343.0,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+GBPAUD_darwinex,Currency,66739.0,0.0001,0.00001,3.0,0.0,Forex,1.0,0.01
+GBPAUD_dukascopy,FX_Forex_Currency,65567.0,0.0001,0.00001,3.8,0.0,Forex,1.0,0.01
+GBPAUD_ftmo,FX_Currency,65512.0,0.0001,0.00001,2.3,0.0,Forex,1.0,0.01
+GBPAUD_icmarkets,FX_Currency,66348.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+GBPAUD_monevis,FX_Currency,65761.0,0.0001,0.00001,2.0,0.0,Forex,1.0,0.01
+GBPAUD_pepperstone,Currency,66361.0,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+GBPAUD_roboforex,FX_Currency,65780.0,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+GBPAUD_the5ers,FX_Currency,65774.0,0.0001,0.00001,1.9,0.0,Forex,1.0,0.01
+GBPCAD.pro_oanda,FX_Currency,72064.800669,0.0001,0.00001,2.2,0.0,Forex,1.0,0.01
+GBPCAD_darwinex,Currency,72157.881445,0.0001,0.00001,3.6,0.0,Forex,1.0,0.01
+GBPCAD_dukascopy,FX_Forex_Currency,71848.371197,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+GBPCAD_ftmo,FX_Currency,71865.926927,0.0001,0.00001,1.9,0.0,Forex,1.0,0.01
+GBPCAD_icmarkets,FX_Currency,72059.607707,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+GBPCAD_monevis,FX_Currency,71826.180643,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+GBPCAD_pepperstone,Currency,72062.204095,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+GBPCAD_roboforex,FX_Currency,71832.371977,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+GBPCAD_the5ers,FX_Currency,71830.30808,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+GBPCHF.pro_oanda,FX_Currency,114224.359487,0.0001,0.00001,1.9,0.0,Forex,1.0,0.01
+GBPCHF_darwinex,Currency,114678.899083,0.0001,0.00001,3.4,0.0,Forex,1.0,0.01
+GBPCHF_dukascopy,FX_Forex_Currency,115171.548021,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+GBPCHF_ftmo,FX_Currency,115084.068912,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+GBPCHF_icmarkets,FX_Currency,114156.554299,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+GBPCHF_monevis,FX_Currency,115284.406631,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+GBPCHF_pepperstone,Currency,114155.251142,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+GBPCHF_roboforex,FX_Currency,115309.664103,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+GBPCHF_the5ers,FX_Currency,115289.723074,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+GBPCNH_pepperstone,,13954.260724,0.00001,0.00001,205.0,0.0,Forex,1.0,0.01
+GBPCZK_monevis,FX_Currency,4269.071007,0.001,0.0001,15.4,0.0,Forex,1.0,0.01
+GBPDKK_icmarkets,FX_Currency,14429.993608,0.0001,0.00001,18.5,0.0,Forex,1.0,0.01
+GBPDKK_monevis,FX_Currency,14518.444958,0.0001,0.00001,8.5,0.0,Forex,1.0,0.01
+GBPDKK_pepperstone,Currency,14445.606513,0.0001,0.00001,59.6,0.0,Forex,1.0,0.01
+GBPHKD_monevis,FX_Currency,12868.687909,0.0001,0.00001,5.6,0.0,Forex,1.0,0.01
+GBPHUF_monevis,FX_Currency,265.796979,0.01,0.001,21.6,0.0,Forex,1.0,0.01
+GBPHUF_pepperstone,Currency,264.394985,0.01,0.001,45.4,0.0,Forex,1.0,0.01
+GBPJPY.pro_oanda,FX_Currency,649.629062,0.01,0.001,2.5,0.0,Forex,1.0,0.01
+GBPJPY_darwinex,Currency,653.436751,0.01,0.001,2.6,0.0,Forex,1.0,0.01
+GBPJPY_dukascopy,FX_Forex_Currency,651.877734,0.01,0.001,1.6,0.0,Forex,1.0,0.01
+GBPJPY_ftmo,FX_Currency,651.037428,0.01,0.001,2.1,0.0,Forex,1.0,0.01
+GBPJPY_icmarkets,FX_Currency,649.481389,0.01,0.001,0.7,0.0,Forex,1.0,0.01
+GBPJPY_monevis,FX_Currency,654.00085,0.01,0.001,1.5,0.0,Forex,1.0,0.01
+GBPJPY_pepperstone,Currency,649.203103,0.01,0.001,0.9,0.0,Forex,1.0,0.01
+GBPJPY_roboforex,FX_Currency,654.017959,0.01,0.001,0.9,0.0,Forex,1.0,0.01
+GBPJPY_the5ers,FX_Currency,653.92387,0.01,0.001,1.2,0.0,Forex,1.0,0.01
+GBPMXN_darwinex,Currency,5034.420332,0.0001,0.00001,228.8,0.0,Forex,1.0,0.01
+GBPMXN_monevis,FX_Currency,4987.90682,0.0001,0.00001,36.5,0.0,Forex,1.0,0.01
+GBPMXN_pepperstone,Currency,4980.610483,0.0001,0.00001,87.1,0.0,Forex,1.0,0.01
+GBPNOK_darwinex,Currency,9214.993162,0.0001,0.00001,124.6,0.0,Forex,1.0,0.01
+GBPNOK_icmarkets,FX_Currency,9079.724521,0.0001,0.00001,16.8,0.0,Forex,1.0,0.01
+GBPNOK_monevis,FX_Currency,9138.788032,0.0001,0.00001,52.5,0.0,Forex,1.0,0.01
+GBPNOK_pepperstone,Currency,9119.777332,0.0001,0.00001,121.5,0.0,Forex,1.0,0.01
+GBPNZD.pro_oanda,FX_Currency,59989.0,0.0001,0.00001,3.9,0.0,Forex,1.0,0.01
+GBPNZD_darwinex,Currency,60240.0,0.0001,0.00001,4.2,0.0,Forex,1.0,0.01
+GBPNZD_dukascopy,FX_Forex_Currency,59630.0,0.0001,0.00001,4.9,0.0,Forex,1.0,0.01
+GBPNZD_ftmo,FX_Currency,59583.0,0.0001,0.00001,2.3,0.0,Forex,1.0,0.01
+GBPNZD_icmarkets,FX_Currency,59996.0,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+GBPNZD_monevis,FX_Currency,59863.0,0.0001,0.00001,3.0,0.0,Forex,1.0,0.01
+GBPNZD_pepperstone,Currency,59994.0,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+GBPNZD_roboforex,FX_Currency,59881.0,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+GBPNZD_the5ers,FX_Currency,59875.0,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+GBPPLN.pro_oanda,FX_Currency,24832.381425,0.001,0.0001,2.5,0.0,Forex,1.0,0.01
+GBPPLN_monevis,FX_Currency,24965.796858,0.0001,0.00001,20.5,0.0,Forex,1.0,0.01
+GBPSEK_darwinex,Currency,9343.524004,0.0001,0.00001,94.0,0.0,Forex,1.0,0.01
+GBPSEK_icmarkets,FX_Currency,9244.297193,0.0001,0.00001,18.1,0.0,Forex,1.0,0.01
+GBPSEK_monevis,FX_Currency,9383.811986,0.0001,0.00001,55.0,0.0,Forex,1.0,0.01
+GBPSEK_pepperstone,Currency,9258.976346,0.0001,0.00001,73.0,0.0,Forex,1.0,0.01
+GBPSGD_icmarkets,FX_Currency,75415.35004,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+GBPSGD_monevis,FX_Currency,75578.363426,0.0001,0.00001,1.7,0.0,Forex,1.0,0.01
+GBPSGD_pepperstone,Currency,75423.882218,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+GBPTRY_darwinex,Currency,2920.371401,0.0001,0.00001,1530.2,0.0,Forex,1.0,0.01
+GBPTRY_icmarkets,Currency,2920.506159,0.0001,0.00001,229.8,0.0,Forex,1.0,0.01
+GBPTRY_monevis,FX_Currency,2916.401639,0.0001,0.00001,400.5,0.0,Forex,1.0,0.01
+GBPTRY_pepperstone,Currency,2922.003828,0.0001,0.00001,1114.9,0.0,Forex,1.0,0.01
+GBPUSD,GBPUSD,100000.0,0.0001,0.00001,2.5,0.0,Forex,1.0,0.0
+GBPUSD.pro_oanda,FX_Currency,92862.581951,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+GBPUSD_darwinex,Currency,100000.0,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+GBPUSD_dukascopy,FX_Forex_Currency,100000.0,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+GBPUSD_ftmo,FX_Currency,100000.0,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+GBPUSD_icmarkets,FX_Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+GBPUSD_monevis,FX_Currency,100000.0,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+GBPUSD_pepperstone,Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+GBPUSD_roboforex,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+GBPUSD_the5ers,FX_Currency,100000.0,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+GBPZAR_monevis,FX_Currency,5694.018263,0.0001,0.00001,70.5,0.0,Forex,1.0,0.01
+GBR.IDX_dukascopy,GBR_Indexes,1.29993,0.001,0.001,899.0,0.0,Index,1.0,1.0
+GDAXI_darwinex,Futures,11.66292,0.1,0.1,14.0,0.0,Index,1.0,0.01
+GDXJ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+GDX_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+GER30_monevis,,10.8325,0.1,0.1,16.0,0.0,Index,1.0,0.1
+GER40.cash_ftmo,,1.164888,0.01,0.01,85.0,0.0,Index,1.0,0.01
+GER40_pepperstone,Futures_DEU_Indexes,1.159606,0.1,0.1,9.0,0.0,Index,1.0,0.1
+GERTEC30_pepperstone,Futures_DEU_Indexes,1.159326,0.01,0.01,300.0,0.0,Index,1.0,0.1
+GE_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+GLD_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+GLMRUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,179.0,0.0,Crypto,1.0,25.0
+GLMUSD_icmarkets,Futures_Crypto Currency,10.0,0.00001,0.00001,1337.0,0.0,Crypto,1.0,0.01
+GM_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+GOLD.pro_oanda,USA_Basic Materials,100.0,0.01,0.01,33.0,0.0,Index,1.0,0.01
+GOOGL_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+GOOG_ftmo,USA_Communication Services,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+GSLC_darwinex,Futures_USA_Financial,1.0,0.01,0.01,20.0,0.0,Index,1.0,1.0
+GS_roboforex,Futures_USA_Financial,100.0,0.01,0.01,27.0,0.0,Index,1.0,0.01
+Gasoline_pepperstone,Futures,1000.0,0.0001,0.0001,30.0,0.0,Index,1.0,0.01
+HDV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+HK50.cash_ftmo,,0.01656,0.01,0.01,474.0,0.0,Index,1.0,0.01
+HK50_icmarkets,Futures,0.016551,0.01,0.01,660.0,0.0,Index,1.0,0.1
+HK50_monevis,,1.286869,0.1,0.1,50.0,0.0,Index,1.0,0.1
+HK50_pepperstone,Futures_HKG_Crypto Currency,0.016552,0.1,0.1,50.0,0.0,Crypto,1.0,0.1
+HKDJPY_dukascopy,FX_Forex_Currency,651.890482,0.0001,0.00001,22.8,0.0,Forex,1.0,0.01
+HKG.IDX_dukascopy,HKG_Indexes,0.12869,0.001,0.001,5151.0,0.0,Index,1.0,0.1
+HPE_roboforex,Futures_USA_Technology,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+IBB_darwinex,Futures_USA_Financial,1.0,0.01,0.01,10.0,0.0,Index,1.0,1.0
+IBE_ftmo,,1.164867,0.01,0.01,4.0,0.0,Index,1.0,1.0
+IBM_roboforex,Futures_USA_Technology,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+ICLN_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+IGV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IHI_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+IJH_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IJR_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IJS_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+INDA_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+INTC_roboforex,Futures_USA_Technology,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+IT40_icmarkets,Futures,1.157711,0.01,0.01,900.0,0.0,Index,1.0,0.1
+ITOT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IUSG_darwinex,Futures_USA_Financial,1.0,0.01,0.01,18.0,0.0,Index,1.0,1.0
+IUSV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IVE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,20.0,0.0,Index,1.0,1.0
+IVW_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+IWB_darwinex,Futures_USA_Financial,1.0,0.01,0.01,10.0,0.0,Index,1.0,1.0
+IWD_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IWF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,40.0,0.0,Index,1.0,1.0
+IWM_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IWN_darwinex,Futures_USA_Financial,1.0,0.01,0.01,26.0,0.0,Index,1.0,1.0
+IWO_darwinex,Futures_USA_Financial,1.0,0.01,0.01,140.0,0.0,Index,1.0,1.0
+IWS_darwinex,Futures_USA_Financial,1.0,0.01,0.01,14.0,0.0,Index,1.0,1.0
+IYR_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+IYW_darwinex,Futures_USA_Financial,1.0,0.01,0.01,12.0,0.0,Index,1.0,1.0
+JNJ_roboforex,Futures_USA_Healthcare,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+JP225.cash_ftmo,,0.06257,0.01,0.01,1054.0,0.0,Index,1.0,0.01
+JP225.pro_oanda,,5.0,0.1,0.1,220.0,0.0,Index,1.0,0.01
+JP225_icmarkets,Futures,0.00625,0.01,0.01,460.0,0.0,Index,1.0,1.0
+JPM_roboforex,Futures_USA_Financial,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+JPN.IDX_dukascopy,JPN_Indexes,0.006519,0.001,0.001,11064.0,0.0,Index,1.0,1.0
+JPN225_monevis,,6.540009,1,1,9.0,0.0,Index,1.0,0.1
+JPN225_pepperstone,Futures_JPN_Indexes,0.004214,0.1,0.1,80.0,0.0,Index,1.0,0.1
+JPN225_the5ers,Indexes,4.27E-4,0.01,0.01,400.0,0.0,Index,1.0,0.01
+JPYX_pepperstone,Futures_JPN_Indexes,0.004215,0.1,0.1,10.0,0.0,Index,1.0,0.1
+KO_roboforex,Futures_USA_Consumer Defensive,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+KRE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+KSMUSD_icmarkets,Futures_Crypto Currency,1.0,0.001,0.001,349.0,0.0,Crypto,1.0,0.01
+KSMUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,155.0,0.0,Crypto,1.0,1.0
+LDSugar_pepperstone,Futures_Commodities,1.0,0.1,0.1,8.0,0.0,CFDs,1.0,1.0
+LIGHT.CMD_dukascopy,Commodities,100.0,0.001,0.001,45.0,0.0,CFDs,1.0,1.0
+LINKUSD_monevis,Crypto Currency,1.0,0.001,0.001,17.0,0.0,Crypto,1.0,1.0
+LINKUSD_oanda,Futures_Crypto Currency,1.0,0.001,0.001,217.0,0.0,Crypto,1.0,5.0
+LLY_roboforex,Futures_USA_Healthcare,100.0,0.01,0.01,41.0,0.0,Index,1.0,0.01
+LNKUSD_icmarkets,Futures_Crypto Currency,1.0,0.001,0.001,231.0,0.0,Crypto,1.0,1.0
+LTCUSD_dukascopy,FX_Crypto Currency,1.0,0.1,0.1,10.0,0.0,Crypto,1.0,1.0
+LTCUSD_ftmo,Crypto Currency,1.0,0.01,0.01,19.0,0.0,Crypto,1.0,0.01
+LTCUSD_icmarkets,Futures_Crypto Currency,1.0,0.01,0.01,104.0,0.0,Crypto,1.0,0.01
+LTCUSD_monevis,Crypto Currency,1.0,0.001,0.001,56.0,0.0,Crypto,1.0,0.01
+LTCUSD_oanda,Futures_Crypto Currency,1.0,0.001,0.001,549.0,0.0,Crypto,1.0,0.01
+LVMH_ftmo,,1.164845,0.01,0.01,23.0,0.0,Index,1.0,1.0
+Lead_pepperstone,Futures,1.0,0.001,0.001,3450.0,0.0,Index,1.0,1.0
+LeanHogs_pepperstone,Futures,1000.0,0.00001,0.00001,100.0,0.0,Index,1.0,1.0
+Lumber_pepperstone,Futures,1.0,0.01,0.01,132.0,0.0,Index,1.0,1.0
+MATICUSD_monevis,Crypto Currency,1.0,0.0001,0.0001,37.0,0.0,Crypto,1.0,10.0
+MATICUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,318.0,0.0,Crypto,1.0,100.0
+MCD_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,5.0,0.0,Index,1.0,0.01
+MCHI_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+MDY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,34.0,0.0,Index,1.0,1.0
+META_ftmo,USA_Communication Services,1.0,0.01,0.01,18.0,0.0,Index,1.0,1.0
+META_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,7.0,0.0,Index,1.0,0.01
+MMM_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+MSFT_darwinex,Futures_USA_Technology,1.0,0.01,0.01,16.0,0.0,Index,1.0,1.0
+MSFT_ftmo,USA_Technology,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+MSFT_roboforex,Futures_USA_Technology,100.0,0.01,0.01,6.0,0.0,Index,1.0,0.01
+MTCUSD_icmarkets,Futures_Crypto Currency,100.0,0.00001,0.00001,664.0,0.0,Crypto,1.0,0.01
+MTUM_darwinex,Futures_USA_Financial,1.0,0.01,0.01,38.0,0.0,Index,1.0,1.0
+MXNJPY_pepperstone,Currency,649.165174,0.0001,0.00001,57.0,0.0,Forex,1.0,0.01
+MidDE50_icmarkets,Futures,1.157841,0.01,0.01,3340.0,0.0,Index,1.0,1.0
+MidDE50_pepperstone,Futures_DEU_Indexes,1.159326,0.01,0.01,1000.0,0.0,Index,1.0,0.1
+MidDE60_icmarkets,Futures,1.157841,0.01,0.01,3540.0,0.0,Index,1.0,1.0
+N25.cash_ftmo,,1.164867,0.01,0.01,50.0,0.0,Index,1.0,0.01
+NAS100_pepperstone,Futures_USA_Indexes,1.0,0.1,0.1,13.0,0.0,Index,1.0,0.1
+NAS100_the5ers,Indexes,10.0,0.01,0.01,190.0,0.0,Index,1.0,0.01
+NASDAQ Stock,History data instrument,1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+NATGAS.pro_oanda,,10000.0,0.001,0.001,11.0,0.0,Index,1.0,0.01
+NDX_darwinex,Futures_USA_Indexes,10.0,0.1,0.1,14.0,0.0,Index,1.0,0.01
+NEM_roboforex,Futures_USA_Basic Materials,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+NEOUSD_ftmo,Crypto Currency,1.0,0.01,0.01,35.0,0.0,Crypto,1.0,0.01
+NETH25_icmarkets,Futures,1.157776,0.01,0.01,19.0,0.0,Index,1.0,1.0
+NETH25_pepperstone,Futures_NLD_Indexes,1.159369,0.01,0.01,30.0,0.0,Index,1.0,0.1
+NFLX_ftmo,USA_Communication Services,1.0,0.01,0.01,43.0,0.0,Index,1.0,1.0
+NFLX_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,30.0,0.0,Index,1.0,0.01
+NI225_darwinex,Futures,0.653437,1,1,6.0,0.0,Index,1.0,0.1
+NIFTY50_monevis,Indexes,10.0,0.01,0.01,200.0,0.0,Index,1.0,0.1
+NKE_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+NLD.IDX_dukascopy,NLD_Indexes,1.0805,0.001,0.001,285.0,0.0,Index,1.0,20.0
+NOKJPY_icmarkets,FX_Currency,649.439209,0.01,0.001,0.3,0.0,Forex,1.0,0.01
+NOKJPY_pepperstone,Currency,649.173602,0.01,0.001,3.1,0.0,Forex,1.0,0.01
+NOKSEK_icmarkets,FX_Currency,9244.297193,0.0001,0.00001,4.1,0.0,Forex,1.0,0.01
+NOKSEK_monevis,FX_Currency,9383.811986,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+NOKSEK_pepperstone,Currency,9258.967773,0.0001,0.00001,13.6,0.0,Forex,1.0,0.01
+NOR25_icmarkets,Futures,0.008241,0.01,0.01,68.0,0.0,Index,1.0,1.0
+NOR25_pepperstone,Futures_NOR_Indexes,0.008274,0.01,0.01,100.0,0.0,Index,1.0,0.1
+NQZ24_roboforex,Futures_USA,20.0,0.01,0.01,75.0,0.0,Index,1.0,0.1
+NVDA_ftmo,USA_Technology,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+NVDA_roboforex,Futures_USA_Technology,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+NYSE Stock,History data instrument,1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+NZDCAD_darwinex,Currency,72157.881445,0.0001,0.00001,2.2,0.0,Forex,1.0,0.01
+NZDCAD_dukascopy,FX_Forex_Currency,71854.050054,0.0001,0.00001,2.3,0.0,Forex,1.0,0.01
+NZDCAD_ftmo,FX_Currency,71865.926927,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+NZDCAD_icmarkets,FX_Currency,72059.607707,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+NZDCAD_monevis,FX_Currency,71826.696547,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+NZDCAD_pepperstone,Currency,72060.12697,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+NZDCAD_roboforex,FX_Currency,71832.371977,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+NZDCAD_the5ers,FX_Currency,71828.760236,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+NZDCHF_darwinex,Currency,114685.475085,0.0001,0.00001,2.0,0.0,Forex,1.0,0.01
+NZDCHF_dukascopy,FX_Forex_Currency,115182.160587,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+NZDCHF_ftmo,FX_Currency,115089.366893,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+NZDCHF_icmarkets,FX_Currency,114156.554299,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+NZDCHF_monevis,FX_Currency,115284.406631,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+NZDCHF_pepperstone,Currency,114152.644917,0.0001,0.00001,1.2,0.0,Forex,1.0,0.01
+NZDCHF_roboforex,FX_Currency,115310.99375,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+NZDCHF_the5ers,FX_Currency,115289.723074,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+NZDCNH_pepperstone,,13954.104949,0.00001,0.00001,146.0,0.0,Forex,1.0,0.01
+NZDHUF_pepperstone,Currency,264.382403,0.01,0.001,22.9,0.0,Forex,1.0,0.01
+NZDJPY.pro_oanda,FX_Currency,649.629062,0.01,0.001,2.5,0.0,Forex,1.0,0.01
+NZDJPY_darwinex,Currency,653.44102,0.01,0.001,2.6,0.0,Forex,1.0,0.01
+NZDJPY_dukascopy,FX_Forex_Currency,651.890482,0.01,0.001,1.2,0.0,Forex,1.0,0.01
+NZDJPY_ftmo,FX_Currency,651.054383,0.01,0.001,1.8,0.0,Forex,1.0,0.01
+NZDJPY_icmarkets,FX_Currency,649.477171,0.01,0.001,1.1,0.0,Forex,1.0,0.01
+NZDJPY_monevis,FX_Currency,654.009405,0.01,0.001,1.4,0.0,Forex,1.0,0.01
+NZDJPY_pepperstone,Currency,649.207318,0.01,0.001,1.6,0.0,Forex,1.0,0.01
+NZDJPY_roboforex,FX_Currency,654.022237,0.01,0.001,0.8,0.0,Forex,1.0,0.01
+NZDJPY_the5ers,FX_Currency,653.876836,0.01,0.001,1.0,0.0,Forex,1.0,0.01
+NZDSGD_monevis,FX_Currency,75578.363426,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+NZDSGD_pepperstone,Currency,75424.451099,0.0001,0.00001,1.5,0.0,Forex,1.0,0.01
+NZDUSD.pro_oanda,FX_Currency,92865.169061,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+NZDUSD_darwinex,Currency,100000.0,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+NZDUSD_dukascopy,FX_Forex_Currency,2345640.0,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+NZDUSD_ftmo,FX_Currency,100000.0,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+NZDUSD_icmarkets,FX_Currency,100000.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+NZDUSD_monevis,FX_Currency,100000.0,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+NZDUSD_pepperstone,Currency,100000.0,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+NZDUSD_roboforex,FX_Currency,100000.0,0.0001,0.00001,0.4,0.0,Forex,1.0,0.01
+NZDUSD_the5ers,FX_Currency,100000.0,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+NatGas_pepperstone,Futures_Commodities,10000.0,0.001,0.001,5.0,0.0,CFDs,1.0,0.01
+Nickel_pepperstone,Futures,1.0,0.001,0.001,11690.0,0.0,Index,1.0,1.0
+OEF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,16.0,0.0,Index,1.0,1.0
+OILBRNT.pro_oanda,,1000.0,0.01,0.01,4.0,0.0,Index,1.0,0.01
+OILWTI.pro_oanda,,1000.0,0.01,0.01,4.0,0.0,Index,1.0,0.01
+OJUICE.CMD_dukascopy,Commodities,100.0,0.001,0.001,683.0,0.0,CFDs,1.0,20.0
+OJ_pepperstone,Futures_USA_Commodities,20.0,0.01,0.01,153.0,0.0,CFDs,1.0,1.0
+ORCL_roboforex,Futures_USA_Technology,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+Oats_pepperstone,Futures,1000.0,0.0001,0.0001,90.0,0.0,Index,1.0,1.0
+PALLAD.pro_oanda,,100.0,0.1,0.1,19.0,0.0,Index,1.0,0.01
+PEP_roboforex,Futures_USA_Consumer Defensive,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+PFE_ftmo,USA_Healthcare,1.0,0.01,0.01,3.0,0.0,Index,1.0,1.0
+PFE_roboforex,Futures_USA_Healthcare,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+PFF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+PG_roboforex,Futures_USA_Consumer Defensive,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+PL20.pro_oanda,,1.144541,0.1,0.1,25.0,0.0,Index,1.0,0.01
+PLATIN.pro_oanda,,50.0,0.1,0.1,53.0,0.0,Index,1.0,0.01
+PLN.IDX_dukascopy,POL_Indexes,0.249015,0.001,0.001,1549.0,0.0,Index,1.0,1.0
+PLNJPY_pepperstone,Currency,649.165174,0.01,0.001,10.4,0.0,Forex,1.0,0.01
+PM_roboforex,Futures_USA_Consumer Defensive,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+PRU_roboforex,Futures_USA_Financial,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+PYPL_roboforex,Futures_USA_Financial,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+QQQ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+QUAL_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+RACE_ftmo,USA_Consumer Cyclical,1.0,0.01,0.01,144.0,0.0,Index,1.0,1.0
+RSP_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+RghRice_pepperstone,Futures,100.0,0.001,0.001,40.0,0.0,Index,1.0,1.0
+SA40_icmarkets,Futures,0.003261,0.01,0.01,1630.0,0.0,Index,1.0,1.0
+SA40_pepperstone,Futures_ZAF_Indexes,0.003274,0.01,0.01,2580.0,0.0,Index,1.0,0.1
+SBUX_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+SCHB_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SCHD_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SCHF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+SCHG_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SCHV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SCI25_pepperstone,Futures_SGP_Indexes,0.56879,0.1,0.1,3.0,0.0,Index,1.0,0.1
+SCZ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SE30_icmarkets,Futures_Indexes,0.008543,0.01,0.01,38.0,0.0,Index,1.0,1.0
+SEKJPY_icmarkets,FX_Currency,649.439209,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+SEKJPY_pepperstone,Currency,649.173602,0.01,0.001,7.0,0.0,Forex,1.0,0.01
+SGD.IDX_dukascopy,SGP_Indexes,0.754951,0.001,0.001,500.0,0.0,Index,1.0,10.0
+SGDJPY_dukascopy,FX_Forex_Currency,651.890482,0.01,0.001,3.0,0.0,Forex,1.0,0.01
+SGDJPY_icmarkets,FX_Currency,649.439209,0.01,0.001,1.1,0.0,Forex,1.0,0.01
+SGDJPY_pepperstone,Currency,649.177816,0.01,0.001,1.3,0.0,Forex,1.0,0.01
+SILVER.pro_oanda,,5000.0,0.001,0.001,35.0,0.0,Index,1.0,0.01
+SKYY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,66.0,0.0,Index,1.0,1.0
+SLV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+SMH_darwinex,Futures_USA_Financial,1.0,0.01,0.01,18.0,0.0,Index,1.0,1.0
+SOA.IDX_dukascopy,,0.056562,0.01,0.01,3406.0,0.0,Index,1.0,1.0
+SOLUSD_icmarkets,Futures_Crypto Currency,1.0,0.0001,0.0001,2191.0,0.0,Crypto,1.0,0.01
+SOLUSD_monevis,Crypto Currency,1.0,0.0001,0.0001,2130.0,0.0,Crypto,1.0,0.0
+SOLUSD_oanda,Futures_Crypto Currency,1.0,0.01,0.01,97.0,0.0,Crypto,1.0,2.0
+SOXX_darwinex,Futures_USA_Financial,1.0,0.01,0.01,12.0,0.0,Index,1.0,1.0
+SOYBEAN.CMD_dukascopy,Commodities,100.0,0.001,0.001,1741.0,0.0,CFDs,1.0,400.0
+SOYBEAN.c_ftmo,,1.0,0.01,0.01,203.0,0.0,Index,1.0,1.0
+SOYBEAN.pro_oanda,,50.0,0.1,0.1,12.0,0.0,Index,1.0,0.01
+SP500_darwinex,Futures_Indexes,10.0,0.1,0.1,6.0,0.0,Index,1.0,0.01
+SP500_the5ers,Indexes,10.0,0.01,0.01,60.0,0.0,Index,1.0,0.01
+SPA35_darwinex,Futures,11.663136,0.1,0.1,104.0,0.0,Index,1.0,0.1
+SPA35_pepperstone,Futures_ESP_Indexes,1.159347,0.1,0.1,50.0,0.0,Index,1.0,0.1
+SPDW_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+SPLV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+SPN35.cash_ftmo,,1.164867,0.01,0.01,620.0,0.0,Index,1.0,0.01
+SPN35_monevis,,10.8325,0.1,0.1,55.0,0.0,Index,1.0,0.1
+SPX500_monevis,,100.0,0.1,0.1,9.0,0.0,Index,1.0,0.1
+SPYG_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+SPYV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+SPY_benchmark,History data instrument,1.0,0.01,0.01,0.0,0.0,ETF,1.0,0.0
+SPY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+STOXX50E_darwinex,Futures,11.662272,0.1,0.1,18.0,0.0,Index,1.0,0.01
+STOXX50_icmarkets,Futures,1.157841,0.01,0.01,100.0,0.0,Index,1.0,0.1
+SUGAR.CMD_dukascopy,Commodities,1.0,0.001,0.001,759.0,0.0,CFDs,1.0,10.0
+SUGAR.pro_oanda,,1120.0,0.01,0.01,5.0,0.0,Index,1.0,0.01
+SWI20_icmarkets,Futures,1.302592,0.01,0.01,300.0,0.0,Index,1.0,1.0
+SWI20_pepperstone,Futures_CHE_Indexes,1.302785,0.01,0.01,400.0,0.0,Index,1.0,0.1
+SoyMeal_pepperstone,Futures,1.0,0.01,0.01,70.0,0.0,Index,1.0,1.0
+SoyOil_pepperstone,Futures,1000.0,0.00001,0.00001,90.0,0.0,Index,1.0,1.0
+Soybeans_pepperstone,Futures_Commodities,1.0,0.1,0.1,14.0,0.0,CFDs,1.0,1.0
+SpotBrent_pepperstone,Futures_Commodities,100.0,0.001,0.001,20.0,0.0,CFDs,1.0,0.01
+SpotCrude_pepperstone,Futures_Commodities,100.0,0.001,0.001,30.0,0.0,CFDs,1.0,0.01
+Sugar_pepperstone,Futures_Commodities,100.0,0.001,0.001,40.0,0.0,CFDs,1.0,1.0
+TECH100_monevis,,10.0,0.1,0.1,16.0,0.0,Index,1.0,0.1
+TIP_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+TLT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+TRXUSD_dukascopy,FX_Crypto Currency,1.0,0.00001,0.00001,76.0,0.0,Crypto,1.0,1.0
+TRYJPY_dukascopy,FX_Forex_Currency,651.886233,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+TSLA_ftmo,USA_Consumer Cyclical,1.0,0.01,0.01,12.0,0.0,Index,1.0,1.0
+TSLA_roboforex,Futures_USA_Consumer Cyclical,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+T_ftmo,USA_Communication Services,1.0,0.01,0.01,3.0,0.0,Index,1.0,1.0
+TecDE30_icmarkets,Futures,1.157819,0.01,0.01,230.0,0.0,Index,1.0,1.0
+UK100.cash_ftmo,,1.687089,0.01,0.01,115.0,0.0,Index,1.0,0.01
+UK100_darwinex,Futures,16.869074,0.1,0.1,20.0,0.0,Index,1.0,0.01
+UK100_icmarkets,Futures,1.671461,0.01,0.01,140.0,0.0,Index,1.0,0.1
+UK100_monevis,,12.9679,0.1,0.1,16.0,0.0,Index,1.0,0.1
+UK100_pepperstone,Futures_GBR_Indexes,1.670815,0.1,0.1,10.0,0.0,Index,1.0,0.1
+UK100_the5ers,Indexes,16.81768,0.01,0.01,140.0,0.0,Index,1.0,0.01
+UKGILT.TR_dukascopy,Financial,1.29993,0.001,0.001,44.0,0.0,Index,1.0,1.0
+UKOIL.cash_ftmo,,100.0,0.001,0.001,24.0,0.0,Index,1.0,0.01
+UKOIL_monevis,,1000.0,0.001,0.001,24.0,0.0,Index,1.0,0.01
+UNIUSD_icmarkets,Futures_Crypto Currency,1.0,0.0001,0.0001,420.0,0.0,Crypto,1.0,0.01
+UNIUSD_oanda,Futures_Crypto Currency,1.0,0.001,0.001,361.0,0.0,Crypto,1.0,5.0
+UPS_roboforex,Futures_USA_Industrials,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+US100.cash_ftmo,,1.0,0.01,0.01,100.0,0.0,Index,1.0,0.01
+US100.pro_oanda,,20.0,0.1,0.1,11.0,0.0,Index,1.0,0.01
+US2000.cash_ftmo,USA_Indexes,1.0,0.01,0.01,109.0,0.0,Index,1.0,0.01
+US2000.pro_oanda,,100.0,0.1,0.1,5.0,0.0,Index,1.0,0.01
+US2000_icmarkets,Futures,1.0,0.01,0.01,40.0,0.0,Index,1.0,1.0
+US2000_pepperstone,Futures_USA_Crypto Currency,1.0,0.1,0.1,4.0,0.0,Crypto,1.0,0.1
+US30.cash_ftmo,,1.0,0.01,0.01,168.0,0.0,Index,1.0,0.01
+US30.pro_oanda,,5.0,1,1,5.0,0.0,Index,1.0,0.01
+US30_icmarkets,Futures,1.0,0.01,0.01,120.0,0.0,Index,1.0,0.1
+US30_pepperstone,Futures_USA_Indexes,1.0,0.1,0.1,26.0,0.0,Index,1.0,0.1
+US30_the5ers,Indexes,10.0,0.01,0.01,200.0,0.0,Index,1.0,0.01
+US30m_monevis,,1.0,0.01,0.01,200.0,0.0,Index,1.0,0.1
+US500.cash_ftmo,USA_Indexes,1.0,0.01,0.01,28.0,0.0,Index,1.0,0.01
+US500.pro_oanda,USA_Indexes,50.0,0.1,0.1,7.0,0.0,Index,1.0,0.01
+US500_icmarkets,Futures_USA_Indexes,1.0,0.01,0.01,60.0,0.0,Index,1.0,0.1
+US500_pepperstone,Futures_USA_Indexes,1.0,0.1,0.1,4.0,0.0,Index,1.0,0.1
+USA30.IDX_dukascopy,USA_Indexes,1.0,0.001,0.001,2476.0,0.0,Index,1.0,0.1
+USA500.IDX_dukascopy,USA_Indexes,1.0,0.001,0.001,460.0,0.0,Index,1.0,1.0
+USATECH.IDX_dukascopy,USA_Indexes,1.0,0.001,0.001,1503.0,0.0,Index,1.0,1.0
+USDBRL_pepperstone,Currency,17559.69418,0.0001,0.00001,29.8,0.0,Forex,1.0,0.01
+USDCAD.pro_oanda,FX_Currency,72064.800669,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+USDCAD_darwinex,Currency,72157.881445,0.0001,0.00001,1.6,0.0,Forex,1.0,0.01
+USDCAD_dukascopy,FX_Forex_Currency,71855.082669,0.0001,0.00001,1.0,0.0,Forex,1.0,0.01
+USDCAD_ftmo,FX_Currency,71860.762586,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+USDCAD_icmarkets,FX_Currency,72058.049965,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+USDCAD_monevis,FX_Currency,71824.632976,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+USDCAD_pepperstone,Currency,72057.530733,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+USDCAD_roboforex,FX_Currency,71832.371977,0.0001,0.00001,0.3,0.0,Forex,1.0,0.01
+USDCAD_the5ers,FX_Currency,71828.244302,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+USDCHF,USDCHF,100000.0,0.0001,0.00001,3.0,0.0,Forex,1.0,0.0
+USDCHF.pro_oanda,FX_Currency,114225.664222,0.0001,0.00001,1.4,0.0,Forex,1.0,0.01
+USDCHF_darwinex,Currency,114685.475085,0.0001,0.00001,0.8,0.0,Forex,1.0,0.01
+USDCHF_dukascopy,FX_Forex_Currency,115179.507262,0.0001,0.00001,0.7,0.0,Forex,1.0,0.01
+USDCHF_ftmo,FX_Currency,115084.068912,0.0001,0.00001,0.6,0.0,Forex,1.0,0.01
+USDCHF_icmarkets,FX_Currency,114160.463948,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+USDCHF_monevis,FX_Currency,115285.735696,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+USDCHF_pepperstone,Currency,114150.038811,0.0001,0.00001,0.1,0.0,Forex,1.0,0.01
+USDCHF_roboforex,FX_Currency,115312.323428,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+USDCHF_the5ers,FX_Currency,115285.735696,0.0001,0.00001,0.2,0.0,Forex,1.0,0.01
+USDCLP_pepperstone,Currency,103.832456,0.1,0.01,5.7,0.0,Forex,1.0,0.01
+USDCNH_dukascopy,FX_Forex_Currency,13994.077706,0.0001,0.00001,4.4,0.0,Forex,1.0,0.01
+USDCNH_icmarkets,,13946.009419,0.00001,0.00001,45.0,0.0,Forex,1.0,0.01
+USDCNH_monevis,FX_Currency,14017.971039,0.0001,0.00001,3.5,0.0,Forex,1.0,0.01
+USDCNH_pepperstone,,13953.890763,0.00001,0.00001,65.0,0.0,Forex,1.0,0.01
+USDCOP_pepperstone,Currency,22.604183,0.1,0.01,74.8,0.0,Forex,1.0,0.01
+USDCZK.pro_oanda,FX_Currency,4259.66945,0.01,0.001,2.6,0.0,Forex,1.0,0.01
+USDCZK_dukascopy,FX_Forex_Currency,4263.246974,0.001,0.0001,7.5,0.0,Forex,1.0,0.01
+USDCZK_ftmo,FX_Currency,4262.338404,0.001,0.0001,14.5,0.0,Forex,1.0,0.01
+USDCZK_icmarkets,FX_Currency,4253.871023,0.001,0.0001,5.3,0.0,Forex,1.0,0.01
+USDCZK_monevis,FX_Currency,4269.344399,0.001,0.0001,8.5,0.0,Forex,1.0,0.01
+USDCZK_pepperstone,Currency,4260.141266,0.0001,0.00001,100.0,0.0,Forex,1.0,0.01
+USDDKK_dukascopy,FX_Forex_Currency,14482.888467,0.0001,0.00001,3.6,0.0,Forex,1.0,0.01
+USDDKK_icmarkets,FX_Currency,14430.056075,0.0001,0.00001,6.6,0.0,Forex,1.0,0.01
+USDDKK_monevis,FX_Currency,14518.950861,0.0001,0.00001,2.5,0.0,Forex,1.0,0.01
+USDDKK_pepperstone,Currency,14444.25025,0.0001,0.00001,43.8,0.0,Forex,1.0,0.01
+USDHKD_dukascopy,FX_Forex_Currency,12869.035685,0.0001,0.00001,2.7,0.0,Forex,1.0,0.01
+USDHKD_ftmo,FX_Currency,12869.250984,0.0001,0.00001,8.4,0.0,Forex,1.0,0.01
+USDHKD_icmarkets,Currency,12865.012569,0.0001,0.00001,1.8,0.0,Forex,1.0,0.01
+USDHKD_monevis,FX_Currency,12868.687909,0.0001,0.00001,2.1,0.0,Forex,1.0,0.01
+USDHUF.pro_oanda,FX_Currency,264.403374,0.1,0.01,4.5,0.0,Forex,1.0,0.01
+USDHUF_dukascopy,FX_Forex_Currency,266.625429,0.01,0.001,12.7,0.0,Forex,1.0,0.01
+USDHUF_ftmo,FX_Currency,266.63396,0.01,0.001,16.3,0.0,Forex,1.0,0.01
+USDHUF_icmarkets,FX_Currency,263.73325,0.01,0.001,5.8,0.0,Forex,1.0,0.01
+USDHUF_monevis,FX_Currency,265.746828,0.01,0.001,16.5,0.0,Forex,1.0,0.01
+USDHUF_pepperstone,Currency,264.383102,0.01,0.001,31.0,0.0,Forex,1.0,0.01
+USDIDR_pepperstone,Currency,6.354249,1,0.1,14.6,0.0,Forex,1.0,0.01
+USDILS_dukascopy,FX_Forex_Currency,26899.436457,0.0001,0.00001,55.7,0.0,Forex,1.0,0.01
+USDILS_ftmo,FX_Currency,26830.511658,0.001,0.0001,1.6,0.0,Forex,1.0,0.01
+USDILS_monevis,FX_Currency,26962.172073,0.001,0.0001,3.4,0.0,Forex,1.0,0.01
+USDILS_pepperstone,Currency,26863.955556,0.0001,0.00001,44.0,0.0,Forex,1.0,0.01
+USDINR_pepperstone,Currency,1184.665687,0.01,0.001,9.0,0.0,Forex,1.0,0.01
+USDJPY,USDJPY,1000.0,0.01,0.001,3.0,0.0,Forex,1.0,0.0
+USDJPY.pro_oanda,FX_Currency,649.629062,0.01,0.001,1.5,0.0,Forex,1.0,0.01
+USDJPY_darwinex,Currency,653.436751,0.01,0.001,1.4,0.0,Forex,1.0,0.01
+USDJPY_dukascopy,FX_Forex_Currency,651.898982,0.01,0.001,0.5,0.0,Forex,1.0,0.01
+USDJPY_ftmo,FX_Currency,651.00776,0.01,0.001,0.9,0.0,Forex,1.0,0.01
+USDJPY_icmarkets,FX_Currency,649.477171,0.01,0.001,0.4,0.0,Forex,1.0,0.01
+USDJPY_monevis,FX_Currency,654.00085,0.01,0.001,0.5,0.0,Forex,1.0,0.01
+USDJPY_pepperstone,Currency,649.123035,0.01,0.001,0.2,0.0,Forex,1.0,0.01
+USDJPY_roboforex,FX_Currency,654.017959,0.01,0.001,0.3,0.0,Forex,1.0,0.01
+USDJPY_the5ers,FX_Currency,653.919594,0.01,0.001,0.1,0.0,Forex,1.0,0.01
+USDKRW_pepperstone,Currency,71.889176,0.1,0.01,6.0,0.0,Forex,1.0,0.01
+USDMXN_darwinex,Currency,5033.530866,0.0001,0.00001,69.8,0.0,Forex,1.0,0.01
+USDMXN_dukascopy,FX_Forex_Currency,4991.462104,0.0001,0.00001,48.9,0.0,Forex,1.0,0.01
+USDMXN_ftmo,FX_Currency,5000.627579,0.0001,0.00001,64.1,0.0,Forex,1.0,0.01
+USDMXN_icmarkets,FX_Currency,4972.356186,0.0001,0.00001,18.6,0.0,Forex,1.0,0.01
+USDMXN_monevis,FX_Currency,4988.008827,0.0001,0.00001,26.5,0.0,Forex,1.0,0.01
+USDMXN_pepperstone,Currency,4980.550949,0.0001,0.00001,36.0,0.0,Forex,1.0,0.01
+USDNOK.pro_oanda,FX_Currency,9104.151493,0.001,0.0001,6.5,0.0,Forex,1.0,0.01
+USDNOK_darwinex,Currency,9215.205458,0.0001,0.00001,58.6,0.0,Forex,1.0,0.01
+USDNOK_dukascopy,FX_Forex_Currency,9118.13917,0.0001,0.00001,43.0,0.0,Forex,1.0,0.01
+USDNOK_ftmo,FX_Currency,9106.489467,0.0001,0.00001,30.3,0.0,Forex,1.0,0.01
+USDNOK_icmarkets,FX_Currency,9079.477204,0.0001,0.00001,11.0,0.0,Forex,1.0,0.01
+USDNOK_monevis,FX_Currency,9139.155524,0.0001,0.00001,18.5,0.0,Forex,1.0,0.01
+USDNOK_pepperstone,Currency,9119.561094,0.0001,0.00001,173.2,0.0,Forex,1.0,0.01
+USDPLN.pro_oanda,FX_Currency,24831.764794,0.001,0.0001,1.2,0.0,Forex,1.0,0.01
+USDPLN_dukascopy,FX_Forex_Currency,24901.51451,0.0001,0.00001,15.0,0.0,Forex,1.0,0.01
+USDPLN_ftmo,FX_Currency,24869.930265,0.0001,0.00001,16.6,0.0,Forex,1.0,0.01
+USDPLN_icmarkets,FX_Currency,24810.879074,0.0001,0.00001,6.3,0.0,Forex,1.0,0.01
+USDPLN_monevis,FX_Currency,24959.876998,0.0001,0.00001,12.5,0.0,Forex,1.0,0.01
+USDPLN_pepperstone,Currency,24834.724906,0.0001,0.00001,35.0,0.0,Forex,1.0,0.01
+USDRON_dukascopy,FX_Forex_Currency,21725.339567,0.0001,0.00001,20.6,0.0,Forex,1.0,0.01
+USDRON_monevis,FX_Currency,21778.853169,0.0001,0.00001,14.7,0.0,Forex,1.0,0.01
+USDRON_pepperstone,Currency,21661.807201,0.0001,0.00001,86.0,0.0,Forex,1.0,0.01
+USDRUB_icmarkets,FX_Currency,964.49501,0.0001,0.00001,11031.0,0.0,Forex,1.0,0.01
+USDRUB_monevis,FX_Currency,1096.888128,0.001,0.0001,1.0,0.0,Forex,1.0,0.01
+USDSEK.pro_oanda,FX_Currency,9252.83368,0.001,0.0001,4.5,0.0,Forex,1.0,0.01
+USDSEK_darwinex,Currency,9343.349404,0.0001,0.00001,64.0,0.0,Forex,1.0,0.01
+USDSEK_dukascopy,FX_Forex_Currency,9385.159435,0.0001,0.00001,19.7,0.0,Forex,1.0,0.01
+USDSEK_ftmo,FX_Currency,9377.933535,0.0001,0.00001,30.7,0.0,Forex,1.0,0.01
+USDSEK_icmarkets,FX_Currency,9244.006648,0.0001,0.00001,13.4,0.0,Forex,1.0,0.01
+USDSEK_monevis,FX_Currency,9384.093773,0.0001,0.00001,14.5,0.0,Forex,1.0,0.01
+USDSEK_pepperstone,Currency,9259.276406,0.0001,0.00001,43.9,0.0,Forex,1.0,0.01
+USDSGD_darwinex,Currency,75707.104355,0.0001,0.00001,3.0,0.0,Forex,1.0,0.01
+USDSGD_dukascopy,FX_Forex_Currency,75495.058848,0.0001,0.00001,1.3,0.0,Forex,1.0,0.01
+USDSGD_icmarkets,FX_Currency,75421.037944,0.0001,0.00001,0.9,0.0,Forex,1.0,0.01
+USDSGD_monevis,FX_Currency,75580.648331,0.0001,0.00001,1.1,0.0,Forex,1.0,0.01
+USDSGD_pepperstone,Currency,75423.882218,0.0001,0.00001,0.5,0.0,Forex,1.0,0.01
+USDTHB_dukascopy,FX_Forex_Currency,2967.403077,0.001,0.0001,14.0,0.0,Forex,1.0,0.01
+USDTHB_icmarkets,FX_Currency,2921.157947,0.0001,0.00001,60.0,0.0,Forex,1.0,0.01
+USDTHB_monevis,FX_Currency,2965.687001,0.01,0.001,1.3,0.0,Forex,1.0,0.01
+USDTHB_pepperstone,Currency,2921.275709,0.0001,0.00001,37.6,0.0,Forex,1.0,0.01
+USDTRY.pro_oanda,FX_Currency,2921.693074,0.0001,0.00001,51.8,0.0,Forex,1.0,0.01
+USDTRY_darwinex,Currency,2920.372254,0.0001,0.00001,363.6,0.0,Forex,1.0,0.01
+USDTRY_dukascopy,FX_Forex_Currency,2917.144349,0.0001,0.00001,101.9,0.0,Forex,1.0,0.01
+USDTRY_icmarkets,Currency,2920.506159,0.0001,0.00001,30.8,0.0,Forex,1.0,0.01
+USDTRY_monevis,FX_Currency,2916.401639,0.0001,0.00001,50.5,0.0,Forex,1.0,0.01
+USDTRY_pepperstone,Currency,2921.965407,0.0001,0.00001,187.0,0.0,Forex,1.0,0.01
+USDTWD_pepperstone,Currency,3108.196314,0.01,0.001,3.0,0.0,Forex,1.0,0.01
+USDX_pepperstone,Futures_USA_Indexes,100.0,0.001,0.001,50.0,0.0,Index,1.0,0.1
+USDZAR.pro_oanda,FX_Currency,5725.966686,0.001,0.0001,19.1,0.0,Forex,1.0,0.01
+USDZAR_dukascopy,FX_Forex_Currency,5656.754901,0.0001,0.00001,74.2,0.0,Forex,1.0,0.01
+USDZAR_ftmo,FX_Currency,5656.550115,0.0001,0.00001,144.0,0.0,Forex,1.0,0.01
+USDZAR_icmarkets,FX_Currency,5710.820062,0.0001,0.00001,98.4,0.0,Forex,1.0,0.01
+USDZAR_monevis,FX_Currency,5694.530574,0.0001,0.00001,40.5,0.0,Forex,1.0,0.01
+USDZAR_pepperstone,Currency,5723.708574,0.0001,0.00001,33.0,0.0,Forex,1.0,0.01
+USGAS_monevis,,10000.0,0.001,0.001,9.0,0.0,Index,1.0,0.1
+USINDEX.pro_oanda,,1000.0,0.01,0.01,4.0,0.0,Index,1.0,0.01
+USMV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+USOIL.cash_ftmo,,100.0,0.001,0.001,32.0,0.0,Index,1.0,0.01
+USOIL_monevis,,1000.0,0.001,0.001,14.0,0.0,Index,1.0,0.01
+USSC2000.IDX_dukascopy,USA_Indexes,1.0,0.001,0.001,362.0,0.0,Index,1.0,1.0
+USTBOND.TR_dukascopy,Financial,1.0,0.001,0.001,51.0,0.0,Index,1.0,1.0
+USTEC_icmarkets,Futures,1.0,0.01,0.01,100.0,0.0,Index,1.0,0.1
+VDE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,20.0,0.0,Index,1.0,1.0
+VEA_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+VGT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,56.0,0.0,Index,1.0,1.0
+VHT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,16.0,0.0,Index,1.0,1.0
+VIX_pepperstone,Futures_USA_Indexes,1.0,0.01,0.01,16.0,0.0,Index,1.0,0.1
+VLUE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+VNQ_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+VOE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,12.0,0.0,Index,1.0,1.0
+VOL.IDX_dukascopy,,1.0,0.01,0.01,21.0,0.0,Index,1.0,1.0
+VOWG_p_ftmo,,1.164932,0.01,0.01,26.0,0.0,Index,1.0,1.0
+VPL_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+VTI_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+VT_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+VWO_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+VXF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,16.0,0.0,Index,1.0,1.0
+VXUS_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+VZ_roboforex,Futures_USA_Communication Services,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+V_ftmo,USA_Financial,1.0,0.01,0.01,15.0,0.0,Index,1.0,1.0
+V_roboforex,Futures_USA_Financial,100.0,0.01,0.01,3.0,0.0,Index,1.0,0.01
+WFC_roboforex,Futures_USA_Financial,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+WHEAT.c_ftmo,,1.0,0.01,0.01,126.0,0.0,Index,1.0,1.0
+WHEAT.pro_oanda,,50.0,0.1,0.1,11.0,0.0,Index,1.0,0.01
+WMT_ftmo,USA_Consumer Defensive,1.0,0.01,0.01,3.0,0.0,Index,1.0,1.0
+WMT_roboforex,Futures_USA_Consumer Defensive,100.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+WS30_darwinex,Futures,1.0,1,1,4.0,0.0,Index,1.0,0.01
+WTI_Z4_icmarkets,Futures_USA_Energy,100.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+WTI_roboforex,Futures_USA_Energy,1000.0,0.01,0.01,1.0,0.0,Index,1.0,0.01
+Wheat_pepperstone,Futures_Commodities,1.0,0.1,0.1,9.0,0.0,CFDs,1.0,1.0
+XAGAUD_ftmo,Commodities,2145.78005,0.001,0.001,9.0,0.0,CFDs,1.0,0.01
+XAGAUD_icmarkets,FX_Commodities,663.32,0.001,0.001,11.0,0.0,CFDs,1.0,0.01
+XAGAUD_pepperstone,Commodities,3318.25,0.001,0.001,23.0,0.0,CFDs,1.0,0.01
+XAGEUR_ftmo,Commodities,5824.334521,0.001,0.001,8.0,0.0,CFDs,1.0,0.01
+XAGEUR_icmarkets,FX_Commodities,1076.01,0.001,0.001,8.0,0.0,CFDs,1.0,0.01
+XAGEUR_pepperstone,Commodities,5384.4,0.001,0.001,17.0,0.0,CFDs,1.0,0.01
+XAGSGD_pepperstone,Commodities,3770.909694,0.001,0.001,20.0,0.0,CFDs,1.0,0.01
+XAGUSD_darwinex,Futures_Commodities,5000.0,0.001,0.001,22.0,0.0,CFDs,1.0,0.01
+XAGUSD_dukascopy,FX_Commodities,100.0,0.001,0.001,30.0,0.0,CFDs,1.0,0.01
+XAGUSD_ftmo,Commodities,5000.0,0.001,0.001,12.0,0.0,CFDs,1.0,0.01
+XAGUSD_icmarkets,FX_Commodities,1000.0,0.001,0.001,10.0,0.0,CFDs,1.0,0.01
+XAGUSD_monevis,Commodities,5000.0,0.001,0.001,16.0,0.0,CFDs,1.0,0.01
+XAGUSD_pepperstone,Commodities,5000.0,0.001,0.001,17.0,0.0,CFDs,1.0,0.01
+XAGUSD_roboforex,FX_Commodities,5000.0,0.00001,0.00001,300.0,0.0,CFDs,1.0,0.01
+XAGUSD_the5ers,Commodities,5000.0,0.001,0.001,17.0,0.0,CFDs,1.0,0.0
+XAUAUD_ftmo,Commodities,42.915601,0.01,0.01,33.0,0.0,CFDs,1.0,0.01
+XAUAUD_icmarkets,FX_Commodities,66.332,0.01,0.01,27.0,0.0,CFDs,1.0,0.01
+XAUAUD_pepperstone,Commodities,66.365,0.01,0.01,31.0,0.0,CFDs,1.0,0.01
+XAUCHF_icmarkets,FX_Commodities,114.140918,0.01,0.01,16.0,0.0,CFDs,1.0,0.01
+XAUCHF_pepperstone,Commodities,114.161767,0.01,0.01,23.0,0.0,CFDs,1.0,0.01
+XAUCNH_pepperstone,,13.952314,0.001,0.001,1853.0,0.0,Forex,1.0,0.1
+XAUEUR_ftmo,Commodities,116.48669,0.01,0.01,37.0,0.0,CFDs,1.0,0.01
+XAUEUR_icmarkets,FX_Commodities,107.601,0.01,0.01,28.0,0.0,CFDs,1.0,0.01
+XAUEUR_pepperstone,Commodities,107.69,0.01,0.01,20.0,0.0,CFDs,1.0,0.01
+XAUEUR_roboforex,FX_Commodities,108.336,0.001,0.001,240.0,0.0,CFDs,1.0,0.01
+XAUGBP_icmarkets,FX_Commodities,129.285,0.01,0.01,20.0,0.0,CFDs,1.0,0.01
+XAUGBP_pepperstone,Commodities,129.267,0.01,0.01,20.0,0.0,CFDs,1.0,0.01
+XAUJPY_icmarkets,FX_Commodities,0.649439,1,1,23.0,0.0,CFDs,1.0,0.01
+XAUJPY_pepperstone,Commodities,0.649241,1,1,30.0,0.0,CFDs,1.0,0.01
+XAUSGD_pepperstone,Commodities,75.419331,0.001,0.001,242.0,0.0,CFDs,1.0,0.01
+XAUTHB_pepperstone,Commodities,2.921276,0.001,0.001,41515.0,0.0,CFDs,1.0,0.1
+XAUUSD_darwinex,Futures_Commodities,100.0,0.01,0.01,28.0,0.0,CFDs,1.0,0.01
+XAUUSD_dukascopy,FX_Commodities,100.0,0.001,0.001,361.0,500.0,CFDs,1.0,0.01
+XAUUSD_ftmo,Commodities,100.0,0.01,0.01,20.0,0.0,CFDs,1.0,0.01
+XAUUSD_icmarkets,FX_Commodities,100.0,0.01,0.01,9.0,0.0,CFDs,1.0,0.01
+XAUUSD_monevis,Commodities,100.0,0.01,0.01,19.0,0.0,CFDs,1.0,0.01
+XAUUSD_pepperstone,Commodities,100.0,0.01,0.01,21.0,0.0,CFDs,1.0,0.01
+XAUUSD_roboforex,FX_Commodities,100.0,0.001,0.001,30.0,0.0,CFDs,1.0,0.01
+XAUUSD_the5ers,Commodities,100.0,0.01,0.01,19.0,0.0,CFDs,1.0,0.01
+XBI_darwinex,Futures_USA_Financial,1.0,0.01,0.01,8.0,0.0,Index,1.0,1.0
+XBNJPY_monevis,,7.0E-6,1,1,81.0,0.0,Index,1.0,0.01
+XBRUSD_icmarkets,,100.0,0.01,0.01,1.0,0.0,Forex,1.0,0.5
+XBRUSD_the5ers,Energy,100.0,0.01,0.01,4.0,0.0,Index,1.0,0.01
+XLB_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+XLC_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+XLE_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+XLF_darwinex,Futures_USA_Financial,1.0,0.01,0.01,2.0,0.0,Index,1.0,1.0
+XLI_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+XLK_darwinex,Futures_USA_Financial,1.0,0.01,0.01,14.0,0.0,Index,1.0,1.0
+XLMUSD_dukascopy,FX_Crypto Currency,1.0,0.00001,0.00001,66.0,0.0,Crypto,1.0,1.0
+XLMUSD_icmarkets,Futures_Crypto Currency,1.0,0.00001,0.00001,179.0,0.0,Crypto,1.0,100.0
+XLMUSD_oanda,Futures_Crypto Currency,1.0,0.00001,0.00001,410.0,0.0,Crypto,1.0,500.0
+XLP_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+XLU_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+XLV_darwinex,Futures_USA_Financial,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+XLY_darwinex,Futures_USA_Financial,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+XMRUSD_ftmo,Crypto Currency,1.0,0.01,0.01,220.0,0.0,Crypto,1.0,0.01
+XNGUSD_darwinex,Futures,10000.0,0.001,0.001,22.0,0.0,Index,1.0,0.1
+XNGUSD_icmarkets,,10000.0,0.0001,0.0001,130.0,0.0,Forex,1.0,0.5
+XOM_darwinex,Futures_USA_Energy,1.0,0.01,0.01,6.0,0.0,Index,1.0,1.0
+XOM_roboforex,Futures_USA_Energy,100.0,0.01,0.01,2.0,0.0,Index,1.0,0.01
+XPD.CMD_dukascopy,Commodities,1.0,0.001,0.001,2206.0,0.0,CFDs,1.0,0.1
+XPDUSD_ftmo,Commodities,100.0,0.01,0.01,321.0,0.0,CFDs,1.0,0.01
+XPDUSD_icmarkets,Commodities,100.0,0.01,0.01,287.0,0.0,CFDs,1.0,0.01
+XPDUSD_pepperstone,Commodities,100.0,0.01,0.01,385.0,0.0,CFDs,1.0,0.01
+XPT.CMD_dukascopy,Commodities,1.0,0.001,0.001,2666.0,0.0,CFDs,1.0,1.0
+XPTUSD_ftmo,Commodities,100.0,0.01,0.01,162.0,0.0,CFDs,1.0,0.01
+XPTUSD_icmarkets,Commodities,100.0,0.01,0.01,118.0,0.0,CFDs,1.0,0.01
+XPTUSD_pepperstone,Commodities,100.0,0.01,0.01,250.0,0.0,CFDs,1.0,0.01
+XRPUSD_ftmo,Crypto Currency,100.0,0.00001,0.00001,200.0,0.0,Crypto,1.0,0.01
+XRPUSD_icmarkets,Futures_Crypto Currency,1.0,0.0001,0.0001,102.0,0.0,Crypto,1.0,0.01
+XRPUSD_monevis,Crypto Currency,1.0,0.00001,0.00001,35.0,0.0,Crypto,1.0,1.0
+XTIUSD_darwinex,Futures,1000.0,0.01,0.01,6.0,0.0,Index,1.0,0.01
+XTIUSD_icmarkets,,100.0,0.01,0.01,3.0,0.0,Forex,1.0,0.5
+XTIUSD_the5ers,Energy,100.0,0.01,0.01,4.0,0.0,Index,1.0,0.01
+XTZUSD_icmarkets,Futures_Crypto Currency,10.0,0.00001,0.00001,1222.0,0.0,Crypto,1.0,0.01
+XTZUSD_oanda,Futures_Crypto Currency,1.0,0.0001,0.0001,437.0,0.0,Crypto,1.0,25.0
+YMZ24_roboforex,Futures_USA,5.0,0.01,0.01,200.0,0.0,Index,1.0,0.1
+ZARJPY_dukascopy,FX_Forex_Currency,651.894732,0.01,0.001,0.7,0.0,Forex,1.0,0.01
+ZARJPY_pepperstone,Currency,649.207318,0.01,0.001,1.6,0.0,Forex,1.0,0.01
+ZM_ftmo,USA_Communication Services,1.0,0.01,0.01,4.0,0.0,Index,1.0,1.0
+Zinc_pepperstone,Futures,1.0,0.001,0.001,4720.0,0.0,Index,1.0,1.0
+[[Dow Jones Industrial Average]],[[Dow Jones Industrial Average]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[Nasdaq 100]],[[Nasdaq 100]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[Nasdaq Biotechnology]],[[Nasdaq Biotechnology]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[Russell 1000]],[[Russell 1000]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[Russell 2000]],[[Russell 2000]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[Russell 3000]],[[Russell 3000]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[S&P 100 limited]],[[S&P 100 limited]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[S&P 100]],[[S&P 100]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[S&P 500]],[[S&P 500]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+[[S&P MidCap 400]],[[S&P MidCap 400]],1.0,0.01,0.01,0.0,0.0,Stock,1.0,0.0
+Instruments listed.
+--------------------------------------------------
+All tasks completed
+14:44:59 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
