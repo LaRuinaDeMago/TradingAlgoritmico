@@ -1,0 +1,38 @@
+# comando: C:\Users\SERVILAB\AppData\Local\Programs\Python\Python314\python.exe -I h0/configs/inspeccion_tamanos_resultados.py C:/StrategyQuantX145/user/lab_h0/t2wfm
+# inicio_utc: 2026-10-20T10:20:44+00:00
+# duracion_s: 0.136
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+Strategy 0.1   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.11  Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.13  Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.15  Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.17  Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.4   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.5   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.6   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.7   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+Strategy 0.9   Main: USDCHF_M1_dukas_LOM_H1: 8338 B | WF: 10 runs : 10 % OOS: 0 B | WF: 10 runs : 20 % OOS: 0 B | WF: 10 runs : 30 % OOS: 0 B | WF: 10 runs : 40 % OOS: 0 B | WF: 15 runs : 10 % OOS: 0 B | WF: 15 runs : 20 % OOS: 0 B | WF: 15 runs : 30 % OOS: 0 B | WF: 15 runs : 40 % OOS: 0 B | WF: 20 runs : 10 % OOS: 0 B | WF: 20 runs : 20 % OOS: 0 B | WF: 20 runs : 30 % OOS: 0 B | WF: 20 runs : 40 % OOS: 0 B | WF: 5 runs : 10 % OOS: 0 B | WF: 5 runs : 20 % OOS: 0 B | WF: 5 runs : 30 % OOS: 0 B | WF: 5 runs : 40 % OOS: 0 B
+
+Resumen por carpeta de resultados (archivos, bytes, estrategias con contenido):
+  Main: USDCHF_M1_dukas_LOM_H1                10 archivos      83380 bytes  10/10 con contenido
+  WF: 10 runs : 10 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 10 runs : 20 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 10 runs : 30 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 10 runs : 40 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 15 runs : 10 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 15 runs : 20 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 15 runs : 30 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 15 runs : 40 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 20 runs : 10 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 20 runs : 20 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 20 runs : 30 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 20 runs : 40 % OOS                      10 archivos          0 bytes  0/10 con contenido
+  WF: 5 runs : 10 % OOS                       10 archivos          0 bytes  0/10 con contenido
+  WF: 5 runs : 20 % OOS                       10 archivos          0 bytes  0/10 con contenido
+  WF: 5 runs : 30 % OOS                       10 archivos          0 bytes  0/10 con contenido
+  WF: 5 runs : 40 % OOS                       10 archivos          0 bytes  0/10 con contenido
+
+=== STDERR ===
