@@ -1,0 +1,15 @@
+-project action=loadconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/Builder_H0_T7.cfx
+-project action=start name=Builder
+-databank action=count project=Builder name=H0_T7
+-databank action=save project=Builder name=H0_T7 folder=C:/StrategyQuantX145/user/lab_h0/t7/estrategias
+-databank action=export project=Builder name=H0_T7 file=C:/StrategyQuantX145/user/lab_h0/t7/Results.csv
+-tools action=orderstocsv file=C:/StrategyQuantX145/user/lab_h0/t7/estrategias output=C:/StrategyQuantX145/user/lab_h0/t7/ops_generacion
+-project action=loadconfig name=Retester file=C:/StrategyQuantX145/user/lab_h0/Retester_H0_T7.cfx
+-databank action=load project=Retester name=H0_T7 folder=C:/StrategyQuantX145/user/lab_h0/t7/estrategias
+-databank action=synctofiles project=Retester name=H0_T7
+-databank action=count project=Retester name=H0_T7
+-project action=start name=Retester
+-databank action=save project=Retester name=H0_T7 folder=C:/StrategyQuantX145/user/lab_h0/t7/retest
+-tools action=orderstocsv file=C:/StrategyQuantX145/user/lab_h0/t7/retest output=C:/StrategyQuantX145/user/lab_h0/t7/ops_retest
+-project action=loadconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/Builder_original_145.3191.cfx
+-project action=loadconfig name=Retester file=C:/StrategyQuantX145/user/lab_h0/Retester_original_145.3191.cfx
