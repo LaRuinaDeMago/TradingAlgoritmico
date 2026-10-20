@@ -1,0 +1,10 @@
+# comando: python .claude/hooks/guardian.py --autotest
+# inicio_utc: 2026-10-20T00:01:23+00:00
+# duracion_s: 0.102
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+autotest: 28/28 correctos
+
+=== STDERR ===
