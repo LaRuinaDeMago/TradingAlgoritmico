@@ -1,0 +1,29 @@
+# comando: python -m unittest discover -s tests -v
+# inicio_utc: 2026-10-20T00:01:20+00:00
+# duracion_s: 2.547
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+
+=== STDERR ===
+test_cli (test_lab.TestEjecutar.test_cli) ... ok
+test_fallos_tambien_se_registran (test_lab.TestEjecutar.test_fallos_tambien_se_registran) ... ok
+test_ok_guarda_evidencia (test_lab.TestEjecutar.test_ok_guarda_evidencia) ... ok
+test_su_propia_evidencia_no_ensucia_el_codigo (test_lab.TestEjecutar.test_su_propia_evidencia_no_ensucia_el_codigo) ... warning: in the working copy of 'h0/evidencias/20261020T000121Z_limpio.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'registry/experimentos.jsonl', LF will be replaced by CRLF the next time Git touches it
+ok
+test_autotest_del_hook (test_lab.TestGuardian.test_autotest_del_hook) ... ok
+test_hook_bloquea_por_stdin (test_lab.TestGuardian.test_hook_bloquea_por_stdin) ... ok
+test_hash_carpeta_estable_y_sensible (test_lab.TestHash.test_hash_carpeta_estable_y_sensible) ... ok
+test_cadena_y_campos (test_lab.TestRegistro.test_cadena_y_campos) ... ok
+test_detecta_alteracion_y_borrado (test_lab.TestRegistro.test_detecta_alteracion_y_borrado) ... ok
+test_estado_invalido (test_lab.TestRegistro.test_estado_invalido) ... ok
+test_detecta_sellada_y_sus_ancestros (test_lab.TestSellado.test_detecta_sellada_y_sus_ancestros) ... ok
+test_ejecutar_se_niega_con_ruta_sellada (test_lab.TestSellado.test_ejecutar_se_niega_con_ruta_sellada) ... ok
+test_hash_se_niega_a_tocar_sellados (test_lab.TestSellado.test_hash_se_niega_a_tocar_sellados) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.316s
+
+OK
