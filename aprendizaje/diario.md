@@ -120,4 +120,8 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   Que salte un stop dentro de una vela H1 es una suposición del simulador, no un hecho. → Medirlo en H1.
 - **Hipótesis: el P/L en USD de USDCHF se convierte con un tipo fijo** (cuadra al céntimo con `pointValue` 115.179,5).
   Si se confirma, los resultados en dólares de pares no-USD no usan el tipo de cada momento.
+- **Decisión (Claude, por delegación de Diego, 2026-10-20): se sube con el usuario de Windows visible en las rutas.** Coherente
+  con la decisión anterior: no se reescriben commits de los que dependen registros (n.º 19 en adelante). Regla de
+  proporcionalidad: riesgo bajo y ninguna amenaza concreta que justifique romper la integridad del registro. En adelante, rutas
+  sin el usuario cuando haya alternativa.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
