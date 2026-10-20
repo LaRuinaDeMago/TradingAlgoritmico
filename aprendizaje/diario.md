@@ -180,4 +180,12 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   y no produce candidatas, y una **fase confirmatoria** cuyo límite se fija con esos datos antes de empezar. Además, la
   06 leía una versión anterior de la 0003. → Las decisiones que cambian llevan **historial de versiones**, para que
   cualquiera sepa contra qué versión opina.
+- **Leer un paper no es creérselo: se reproducen sus números.** El ejemplo del DSR salió idéntico al cuarto decimal, las
+  cifras de MinBTL también… y en el de la PBO apareció una **errata** (C(16,8) = 12.870, no 12.780). Sin consecuencias,
+  pero demuestra que hay que comprobar. Las fórmulas que el extractor de texto destrozó se leyeron en la imagen de la
+  página.
+- **Los tres papers coinciden en un requisito que no teníamos:** guardar la serie de resultados de **todas** las
+  estrategias probadas, también las descartadas. SQX hoy solo guarda las que pasan los filtros. → Comprobarlo en el piloto.
+- **Aplicado a nuestros números:** con 7 años para investigar caben ~139 configuraciones independientes antes de que la
+  mejor llegue a Sharpe 1 por azar; con 24 meses sellados, ~7. El tope de 3 candidatas al examen queda respaldado.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.

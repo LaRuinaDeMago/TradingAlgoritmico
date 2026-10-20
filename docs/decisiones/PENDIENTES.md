@@ -23,7 +23,7 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | A13 | **Identidad de los commits** (hoy `Claude <noreply@anthropic.com>`) | Mantenerla o poner la suya | Sesión 2026-10-20 |
 | A14 | **Copias de seguridad** de `h0/evidencias_privadas/` y `Documents/LAB_PRIVADO_CURSO/` (solo existen en este PC) | Copiarlas a un sitio suyo de vez en cuando | Diario |
 | A15 | **Proteger la rama en GitHub** contra `push --force` (refuerza el registro como referencia externa) | Activarlo | Primera revisión externa |
-| A16 | **Permiso para descargar los 3 papers** fundamentales (PDF gratuitos; se guardan fuera del repositorio y se enlazan) | Darlo: es la inversión de conocimiento más barata | Revisión 07 |
+| ~~A16~~ | ~~Permiso para descargar los 3 papers~~ **Cerrado:** permiso dado y papers descargados (registro n.º 89) | — | Revisión 07 |
 | A17 | **Piloto de vídeos del curso:** instalar FFmpeg y un transcriptor (Whisper o similar, gratuitos) y descargar su modelo (1–3 GB); depende de A8 | Darlo cuando A8 esté aclarado | Revisión 07 |
 | A18 | **Instalar numpy, pandas y scipy** con versiones fijadas (gratuitos; necesarios para H2, decisión 0001) | Darlo antes de H2 | Revisión 07 (hallazgo) |
 
@@ -42,7 +42,7 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`) | Afinar en mantenimiento, con permiso de Diego | Diario |
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
 | B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
-| B12 | **Fichas de los 3 papers** con la plantilla de `conocimiento/fundamentos/` | Tras A16 (permiso dado el 2026-10-20) | Revisión 07 |
+| ~~B12~~ | ~~Fichas de los 3 papers~~ **Cerrado:** tres fichas con verificaciones propias en `conocimiento/fundamentos/` | — | Revisión 07 |
 | B13 | **Auditoría maestra** con `docs/auditoria/prompt_auditoria_maestra.md`, en una **sesión independiente** de solo lectura (sin el contexto de quien construyó el laboratorio) | Propuesta; el resultado se separa en bloqueantes, alto valor y futuro | Revisión 08 |
 
 ## C. Requisitos fijados para fases futuras (no se olvidan al llegar)
@@ -61,6 +61,9 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | C10 | La **base de conocimiento** (`conocimiento/`) no entra en el motor crítico hasta estar validada y decidida; el bloque sellado queda fuera del ciclo de aprendizaje | Siempre | Revisión 07 |
 | C11 | **Banco de pruebas adversarias** del validador: casos con errores sembrados (fuga de información futura, costes omitidos, desfase de vela, selección por azar, sesgo de supervivencia) que el validador **tiene que detectar**; si no los detecta, no se fía de él | H1–H2 | Revisión 08, decisión 0001 |
 | C12 | **Ficha de datos y costes por instrumento**: procedencia, cobertura, huecos, zona horaria, sesiones, spread, comisión, swap y deslizamiento, contrastada con el vehículo (Darwinex Zero) | Antes de investigar un mercado | Revisión 08, tarea 5 |
+| C13 | **Conservar la serie diaria de resultados de TODAS las estrategias probadas**, también las descartadas por los filtros: sin ella no se pueden calcular DSR, PBO ni el N efectivo. Comprobar en el piloto si SQX permite conservarlas (hoy solo guarda las que pasan) | Piloto de la 0003 | Fichas DSR, PBO y MinBTL |
+| C14 | **No usar la PBO ni el DSR como objetivo de la búsqueda**: miden el proceso, no lo guían | H2 | Ficha PBO |
+| C15 | Comparar el **N efectivo** de cada búsqueda con el límite de ~139 configuraciones independientes que admite el bloque de investigación de 7 años (para no pasar de Sharpe 1 por azar) | Piloto y confirmatoria | Ficha MinBTL |
 
 ## D. Lo que NO se construye todavía (y cuándo reconsiderarlo)
 
