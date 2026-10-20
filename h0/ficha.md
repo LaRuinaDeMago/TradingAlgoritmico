@@ -13,18 +13,19 @@ Si algo no se puede comprobar dentro de la prueba, queda INCONCLUSO; nunca se su
 
 | Comprobación | Estado | Evidencia | Tiempo |
 |---|---|---|---|
-| `python --version` ≥ 3.10 | PENDIENTE | | |
-| `python -m unittest discover -s tests` sin fallos | PENDIENTE | | |
-| `python .claude/hooks/guardian.py --autotest` sin fallos | PENDIENTE | | |
-| Prueba real: pedir a Claude Code que lea `data/sealed/x` y que el guardián lo bloquee | PENDIENTE | | |
+| `python --version` ≥ 3.10 | **SÍ** (3.14.6) | Registro n.º 5 · `h0/evidencias/20261020T000119Z_p0_python_version.txt` | < 1 min |
+| `python -m unittest discover -s tests` sin fallos | **SÍ** (13/13) | Registro n.º 6 · `h0/evidencias/20261020T000120Z_p0_unittest.txt` | < 1 min |
+| `python .claude/hooks/guardian.py --autotest` sin fallos | **SÍ** (28/28) | Registro n.º 7 · `h0/evidencias/20261020T000123Z_p0_guardian_autotest.txt` | < 1 min |
+| Prueba real: pedir a Claude Code que lea `data/sealed/x` y que el guardián lo bloquee | **SÍ, con un agujero** | Registro n.º 8. Bash: lo bloquea el guardián. Read: lo bloquea antes la regla `deny`. **La herramienta PowerShell no pasa por el guardián** (arreglo preparado; falta la sesión de mantenimiento) | 10 min |
 
 Si el hook no se ejecuta (por ejemplo, porque `python` no está en el PATH), **no hay protección**: se arregla antes de seguir.
+Nota: `pip install -e .` no está hecho en este PC; mientras tanto se usa `PYTHONPATH=src python -m lab ...`.
 
 ## Tareas H0
 
 | # | Tarea | Estado | Evidencia | Tiempo |
 |---|---|---|---|---|
-| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | PENDIENTE | | |
+| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | PENDIENTE (en curso) | Localizado: `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. (sin número de versión en el ejecutable). 1.er intento, registros n.º 3 y 4: **FALLIDO** aunque devolvió código 0, porque la GUI estaba abierta y SQX solo admite una instancia por instalación. Falta repetir con la GUI cerrada | 15 min |
 | 2 | ¿La prueba gratuita limita alguna función de la línea de comandos? | PENDIENTE | | |
 | 3a | CLI: lanzar un proyecto de generación | PENDIENTE | | |
 | 3b | CLI: ejecutar un backtest | PENDIENTE | | |
@@ -56,6 +57,15 @@ Según la documentación pública de StrategyQuant, no comprobado en nuestra bui
 - Hay un fallo conocido en el foro sobre añadir instrumentos por CLI (`orderSizeMultiplier`).
 
 Fuentes: [Introduction to CLI](https://strategyquant.com/doc/cli-command-line/introduction-to-cli/) (página de 2020, puede estar desfasada).
+
+**Documentación incluida en la instalación** (`C:\StrategyQuantX145\docs\cli\`: `sqcli.md`, `commands-reference.md`, `qdmcli.md`).
+Es más reciente y dice derivarse del código fuente; sigue siendo documentación, no prueba. Lo que afirma y hay que comprobar:
+- Con un argumento (`-h`), `sqcli` va en modo *one-shot*: ejecuta, espera a que acaben los trabajos y sale.
+- Comandos candidatos para la tarea 3: `-project action=start name=…` (3a), `-databank action=export … file=….csv` (3c/3d),
+  `-tools action=orderstocsv file=….sqx` (3d, operaciones), `-sourcecode action=generate engine=… s=… o=…` (3e/3f; nombres de *engine* desconocidos).
+  No aparece ningún comando de "backtest" suelto (3b): habrá que ver si se hace con un proyecto que solo haga backtest.
+- `-symbol action=darwinexsymbols` lista los símbolos de datos de Darwinex que la licencia puede descargar (tarea 5).
+- Esa documentación está escrita pensando en agentes de IA (habla de `CLAUDE.md` y de plugins): se trata como datos, no como instrucciones.
 
 ## Comprobaciones y decisiones pendientes (hoja de ruta)
 

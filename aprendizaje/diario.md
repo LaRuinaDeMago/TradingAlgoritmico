@@ -49,3 +49,19 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   pasar 4 de 4: leer la carpeta sellada, recorrido recursivo de `data`, borrar `registry/` y sobrescribir el propio guardián.
   Dos causas: el `matcher` de `.claude/settings.json` no incluye `PowerShell` y el guardián solo analiza comandos de `Bash`.
   → Pendiente (decide Diego): bloquear la herramienta PowerShell o enseñar al guardián a vigilarla.
+  → Diego eligió enseñar al guardián. Borrador preparado y probado (autotest 44/44); se aplica en la sesión de mantenimiento.
+- **El ejecutor marcaba "sucio" todos los experimentos.** Escribía la evidencia (archivo nuevo) *antes* de mirar si el código
+  estaba confirmado, así que se veía a sí mismo. Lo destapó leer el código antes de usarlo, no un fallo visible.
+  → Arreglado y cubierto por un test. Lección: una herramienta de registro también hay que probarla, y justo en lo que promete.
+- **Código de salida 0 no significa que funcionara.** `sqcli -h` devolvió 0, pero lo que imprimió fue "otra instancia en marcha".
+  El registro lo apuntó como OK (n.º 3) y hubo que corregirlo con otra entrada (n.º 4), porque el registro no se edita.
+  → Siempre se lee la evidencia antes de dar algo por bueno. Pendiente: que el ejecutor avise de mensajes de error conocidos de SQX.
+- **SQX solo admite una instancia por carpeta de instalación:** la interfaz y `sqcli` no pueden funcionar a la vez.
+  → Paso manual para la tarea 6: cerrar la interfaz antes de cada tanda por línea de comandos.
+- **Git for Windows cambia los saltos de línea** (`core.autocrlf=true`). La evidencia guardada en git no coincidía con el hash
+  registrado (`e0f2…` frente a `75a7…`). → `.gitattributes`: evidencias byte a byte y registro siempre en LF. Comprobar siempre
+  que el hash de lo que hay en git es el mismo que el registrado.
+- **Más falsos positivos del guardián en español:** "del" se confunde con el comando `del` de Windows, y el `>` de la línea
+  `Co-Authored-By` cuenta como redirección. → Los textos largos van en archivos (`--resultado archivo.json`, `git commit -F`).
+- **Git no tenía identidad en este PC.** Los commits se hacen con `git -c user.name=Claude -c user.email=noreply@anthropic.com`,
+  la misma autoría que ya tenía el repositorio, sin cambiar la configuración. Si Diego quiere otra, la decide él.
