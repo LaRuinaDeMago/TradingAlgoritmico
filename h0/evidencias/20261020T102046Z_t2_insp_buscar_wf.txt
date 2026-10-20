@@ -1,0 +1,47 @@
+# comando: C:\Users\SERVILAB\AppData\Local\Programs\Python\Python314\python.exe -I h0/configs/inspeccion_buscar_wf.py "C:/StrategyQuantX145/user/lab_h0/retest1/Strategy 0.4.sqx" "C:/StrategyQuantX145/user/lab_h0/t2/Strategy 0.4.sqx" "C:/StrategyQuantX145/user/lab_h0/t2wfm/Strategy 0.4.sqx"
+# inicio_utc: 2026-10-20T10:20:46+00:00
+# duracion_s: 0.213
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+Tamaño de las entradas que no son Results/:
+  META-INF/MANIFEST.MF         sin comprobaciones=25  WFO + WhatIf + MC=25  WF Matrix=25
+  lastSettings.xml             sin comprobaciones=36932  WFO + WhatIf + MC=36938  WF Matrix=36945
+  orders.bin                   sin comprobaciones=71838  WFO + WhatIf + MC=218765  WF Matrix=1237252
+  settings.xml                 sin comprobaciones=28796  WFO + WhatIf + MC=135397  WF Matrix=1392709
+  strategy_Portfolio.xml       sin comprobaciones=32916  WFO + WhatIf + MC=35486  WF Matrix=35646
+  version.txt                  sin comprobaciones=1  WFO + WhatIf + MC=1  WF Matrix=1
+
+Menciones en strategy_Portfolio.xml y settings.xml:
+  [sin comprobaciones] strategy_Portfolio.xml: 0 distintas
+  [sin comprobaciones] settings.xml: 0 distintas
+  [WFO + WhatIf + MC] strategy_Portfolio.xml: 0 distintas
+  [WFO + WhatIf + MC] settings.xml: 11 distintas
+       CrossCheck_WhatIf
+       WF: 10 runs : 20 % OOS
+       WalkForwardConditions
+       WalkForwardConditions type=
+       WalkForwardMatrix
+       WalkForwardMatrixResult
+       WalkForwardOptimization
+       WalkForwardPeriod
+       WalkForwardPeriod optimizeFrom=
+       WalkForwardResult
+       WalkForwardResult type=
+  [WF Matrix] strategy_Portfolio.xml: 0 distintas
+  [WF Matrix] settings.xml: 25 distintas
+       WF: 10 runs : 10 % OOS
+       WF: 10 runs : 20 % OOS
+       WF: 10 runs : 30 % OOS
+       WF: 10 runs : 40 % OOS
+       WF: 15 runs : 10 % OOS
+       WF: 15 runs : 20 % OOS
+       WF: 15 runs : 30 % OOS
+       WF: 15 runs : 40 % OOS
+       WF: 20 runs : 10 % OOS
+       WF: 20 runs : 20 % OOS
+       WF: 20 runs : 30 % OOS
+       WF: 20 runs : 40 % OOS
+
+=== STDERR ===
