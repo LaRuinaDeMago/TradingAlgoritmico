@@ -1,0 +1,3 @@
+-databank action=load project=Retester name=H0_USDCHF folder=C:/StrategyQuantX145/user/lab_h0/estrategias
+-databank action=synctofiles project=Retester name=H0_USDCHF
+-databank action=count project=Retester name=H0_USDCHF
