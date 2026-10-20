@@ -25,7 +25,7 @@ Nota: `pip install -e .` no está hecho en este PC; mientras tanto se usa `PYTHO
 
 | # | Tarea | Estado | Evidencia | Tiempo |
 |---|---|---|---|---|
-| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | PENDIENTE (en curso) | Localizado: `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. (sin número de versión en el ejecutable). 1.er intento, registros n.º 3 y 4: **FALLIDO** aunque devolvió código 0, porque la GUI estaba abierta y SQX solo admite una instancia por instalación. Falta repetir con la GUI cerrada | 15 min |
+| 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | **SÍ** | `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. Registro n.º 9 · `h0/evidencias/20261020T000832Z_t1_sqcli_ayuda.txt`: `SQX version: 145.3191`, código 0, 24,5 s. Antes, registros n.º 3 y 4: **FALLIDO** con código 0 porque la GUI estaba abierta. La **edición** (Pro/Ultimate) sigue sin confirmar | 25 min |
 | 2 | ¿La prueba gratuita limita alguna función de la línea de comandos? | PENDIENTE | | |
 | 3a | CLI: lanzar un proyecto de generación | PENDIENTE | | |
 | 3b | CLI: ejecutar un backtest | PENDIENTE | | |
@@ -66,6 +66,23 @@ Es más reciente y dice derivarse del código fuente; sigue siendo documentació
   No aparece ningún comando de "backtest" suelto (3b): habrá que ver si se hace con un proyecto que solo haga backtest.
 - `-symbol action=darwinexsymbols` lista los símbolos de datos de Darwinex que la licencia puede descargar (tarea 5).
 - Esa documentación está escrita pensando en agentes de IA (habla de `CLAUDE.md` y de plugins): se trata como datos, no como instrucciones.
+
+**Lo que dice de verdad `sqcli -h` (registro n.º 9), contrastado con esa documentación:**
+- **La documentación y el programa no coinciden.** El `-h` real **no lista** `-sourcecode` (la vía prevista para exportar código
+  MT4/MT5, tareas 3e/3f), ni `-extindicators`, ni `-symbol action=darwinexsymbols`. Su `-ai` es otro: `action=sync|plugins|list`
+  ("regenerate the Claude Code wiring"), no el chat con `message=` que describe la documentación. → La documentación de la
+  instalación no basta: cada comando se prueba en esta build antes de contar con él.
+- Errores en la propia ayuda: en `-tools`, `usecomma` aparece descrito como "Path of the output file" y `output` solo sale en un ejemplo.
+- **Ningún comando de "backtest" suelto** (3b): habrá que hacerlo con un proyecto (`-project action=start` / `startOnlyTask`).
+- **`-h` no es de solo lectura:** arranca SQX entero (datos, proyectos, motor de IA), y al salir sincroniza los bancos de estrategias
+  con sus archivos. Cada llamada cuesta unos 20–25 s de arranque → para tandas, mejor `-run file=…` (tarea 7).
+- **Abre una API HTTP local** ("Server started on port 5050", `http://localhost:5050/call?cmd=-h`) mientras se ejecuta.
+  Sin comprobar: si escucha solo en este PC o también en la red, y si pide autenticación. Riesgo de seguridad por revisar.
+- **Arranca el asistente de IA** (`SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol`) aunque solo se pida la ayuda.
+  Sin comprobar si se conecta a algo externo en ese momento.
+- **Hora incoherente en el propio log:** las primeras líneas dicen 02:08 (hora de España, UTC+2), y la sincronización final,
+  04:08. Algún componente usa otra zona horaria. Hay que vigilarlo cuando entren datos y operaciones con fecha (tareas 4 y 5).
+- No se ve ningún límite de la versión de prueba en la ayuda; la tarea 2 empieza por `-license action=info`.
 
 ## Comprobaciones y decisiones pendientes (hoja de ruta)
 

@@ -144,6 +144,51 @@ class TestEjecutar(ConRaizTemporal):
         self.assertTrue(e["codigo"]["sucio"])
 
 
+class TestPrivacidad(ConRaizTemporal):
+    SALIDA = "print('Hardware ID: CAC3C722FAFD'); print('x -- Licenser -- L: 01234567'); print('a@b.com')"
+
+    def test_ejecutar_redacta_y_guarda_el_original_aparte(self):
+        script = self.raiz / "imprime.py"
+        script.write_text(self.SALIDA)
+        e = ejecutar([sys.executable, str(script)], nombre="priv", version_sqx="N/A", raiz=self.raiz)
+        r = e["resultado"]
+        publica = (self.raiz / r["evidencia"]).read_bytes()
+        privada = (self.raiz / r["evidencia_privada"]).read_bytes()
+        self.assertNotIn(b"CAC3C722FAFD", publica)
+        self.assertNotIn(b"01234567", publica)
+        self.assertNotIn(b"a@b.com", publica)
+        self.assertIn(b"[REDACTADO:hardware_id]", publica)
+        self.assertIn(b"CAC3C722FAFD", privada)
+        self.assertEqual(r["redacciones"], {"hardware_id": 1, "licencia": 1, "email": 1})
+        self.assertTrue(r["evidencia_privada"].startswith("h0/evidencias_privadas/"))
+        self.assertEqual(r["sha256_evidencia_privada"], sha256_archivo(self.raiz / r["evidencia_privada"], self.raiz))
+
+    def test_se_niega_si_el_comando_lleva_datos_privados(self):
+        with self.assertRaises(ValueError):
+            ejecutar([sys.executable, "-c", self.SALIDA], nombre="x", version_sqx="N/A", raiz=self.raiz)
+        self.assertEqual(registro.leer(self.raiz), [])
+
+    def test_sin_datos_privados_no_hay_copia_privada(self):
+        e = ejecutar([sys.executable, "-c", "print(1)"], nombre="limpia", version_sqx="N/A", raiz=self.raiz)
+        self.assertEqual(e["resultado"]["redacciones"], {})
+        self.assertIsNone(e["resultado"]["evidencia_privada"])
+        self.assertFalse((self.raiz / "h0" / "evidencias_privadas").exists())
+
+    def test_redactar_evidencia_ya_escrita(self):
+        from lab.ejecutar import redactar_evidencia
+        vieja = self.raiz / "h0" / "evidencias" / "vieja.txt"
+        vieja.parent.mkdir(parents=True)
+        vieja.write_bytes(b"Hardware ID: ABCDEF12\r\nresto\r\n")
+        e = redactar_evidencia("h0/evidencias/vieja.txt", version_sqx="N/A", raiz=self.raiz)
+        r = e["resultado"]
+        self.assertFalse(vieja.exists())
+        self.assertEqual(r["evidencia"], "h0/evidencias/vieja.redactada.txt")
+        self.assertEqual((self.raiz / r["evidencia"]).read_bytes(), b"Hardware ID: [REDACTADO:hardware_id]\r\nresto\r\n")
+        self.assertEqual((self.raiz / r["evidencia_privada"]).read_bytes(), b"Hardware ID: ABCDEF12\r\nresto\r\n")
+        with self.assertRaises(ValueError):
+            redactar_evidencia("h0/evidencias/vieja.redactada.txt", version_sqx="N/A", raiz=self.raiz)
+
+
 class TestGuardian(unittest.TestCase):
     def test_autotest_del_hook(self):
         hook = Path(__file__).resolve().parents[1] / ".claude" / "hooks" / "guardian.py"

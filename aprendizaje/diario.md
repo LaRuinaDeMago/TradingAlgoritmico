@@ -65,3 +65,10 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   `Co-Authored-By` cuenta como redirección. → Los textos largos van en archivos (`--resultado archivo.json`, `git commit -F`).
 - **Git no tenía identidad en este PC.** Los commits se hacen con `git -c user.name=Claude -c user.email=noreply@anthropic.com`,
   la misma autoría que ya tenía el repositorio, sin cambiar la configuración. Si Diego quiere otra, la decide él.
+- **"Ya lo hice" no es evidencia, tampoco cuando lo dice Diego.** La sesión de mantenimiento del guardián se dio por hecha, pero el
+  archivo seguía igual que en el clon (misma fecha, 28 casos en el autotest, ningún commit). → Todo cambio se comprueba en el
+  propio archivo, no en el relato.
+- **El repositorio de GitHub es público** (la API responde sin iniciar sesión). Todo lo subido se puede leer desde fuera.
+  La salida de `sqcli` trae el identificador de hardware de la licencia. → Antes de subir una evidencia, mirar qué contiene.
+- **La documentación que trae SQX no coincide con su `-h`** (faltan `-sourcecode` y `darwinexsymbols`; `-ai` es distinto).
+  → Ni la documentación oficial es prueba: manda lo que hace el programa instalado.

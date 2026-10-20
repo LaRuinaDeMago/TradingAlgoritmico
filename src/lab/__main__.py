@@ -4,6 +4,7 @@
     python -m lab verificar
     python -m lab registrar --descripcion ... --comando ... --version-sqx ... --estado OK --resultado ...
     python -m lab ejecutar --nombre tarea1_sqcli_ayuda --version-sqx 143.2708 -- "C:/ruta/sqcli.exe" -h
+    python -m lab redactar --version-sqx 145.3191-dev h0/evidencias/ARCHIVO.txt
 
 (Ejecutar desde la raíz del repositorio con PYTHONPATH=src, o tras `pip install -e .`)
 """
@@ -16,7 +17,7 @@ import sys
 from pathlib import Path
 
 from . import registro
-from .ejecutar import ejecutar
+from .ejecutar import ejecutar, redactar_evidencia
 from .hashing import sha256_ruta
 
 
@@ -65,6 +66,10 @@ def main(argv: list[str] | None = None) -> int:
     _comunes(p_eje)
     p_eje.add_argument("comando", nargs=argparse.REMAINDER, help="tras --, el comando a ejecutar")
 
+    p_red = sub.add_parser("redactar", help="redacta datos privados de una evidencia ya escrita y lo registra")
+    p_red.add_argument("--version-sqx", required=True, help='build de SQX que produjo la evidencia, o "N/A"')
+    p_red.add_argument("evidencia")
+
     a = parser.parse_args(argv)
 
     if a.orden == "hash":
@@ -87,6 +92,8 @@ def main(argv: list[str] | None = None) -> int:
             estado=a.estado, resultado=_json_o_texto(a.resultado), datos=a.datos,
             semilla=a.semilla, costes=_json_o_texto(a.costes), notas=a.notas,
         )
+    elif a.orden == "redactar":
+        entrada = redactar_evidencia(a.evidencia, version_sqx=a.version_sqx)
     else:
         comando = a.comando[1:] if a.comando[:1] == ["--"] else a.comando
         if not comando:

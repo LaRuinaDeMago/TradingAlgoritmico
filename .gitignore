@@ -4,6 +4,10 @@ data/raw/*
 !data/raw/README.md
 data/sealed/
 
+# Evidencias originales con datos privados: solo en el PC de SQX (el repositorio es público).
+# En h0/evidencias/ va la copia redactada; el registro guarda el hash de las dos.
+h0/evidencias_privadas/
+
 # Python
 __pycache__/
 *.pyc
