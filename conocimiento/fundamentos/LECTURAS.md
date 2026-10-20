@@ -16,6 +16,8 @@ reproducidas; combinatoria de la PBO comprobada (**errata del paper**: C(16,8) =
 
 ## Siguientes candidatas (citadas por estos papers; no leídas)
 
+Sullivan, Timmermann y White, *Data-Snooping, Technical Trading Rule Performance, and the Bootstrap* (Journal of
+Finance, 1999; propuesta por la revisión 09: corrección por *data snooping* aplicada a reglas técnicas) ·
 Harvey y Liu, *Backtesting* (2014, SSRN 2345489) · Harvey, Liu y Zhu, *…and the Cross-Section of Expected Returns*
 (2013) · White, *A Reality Check for Data Snooping* (Econometrica, 2000) · Romano y Wolf, *Stepwise multiple testing
 as formalized data snooping* (Econometrica, 2005) · Lo, *The Statistics of Sharpe Ratios* (FAJ, 2002) · Bailey y

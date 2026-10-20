@@ -25,6 +25,8 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | A15 | **Proteger la rama en GitHub** contra `push --force` (refuerza el registro como referencia externa) | Activarlo | Primera revisión externa |
 | ~~A16~~ | ~~Permiso para descargar los 3 papers~~ **Cerrado:** permiso dado y papers descargados (registro n.º 89) | — | Revisión 07 |
 | A17 | **Piloto de vídeos del curso:** instalar FFmpeg y un transcriptor (Whisper o similar, gratuitos) y descargar su modelo (1–3 GB); depende de A8 | Darlo cuando A8 esté aclarado | Revisión 07 |
+| A19 | **Primer mercado de investigación:** EURUSD (simplicidad, costes por verificar), oro (seguir el curso) o no decidir hasta contrastar costes y calidad de datos | EURUSD como candidato provisional (0003) | Revisión 09 |
+| A20 | **Prioridad principal:** máximo rigor aunque tarde más; rigor con límite temporal estricto; o aprender SQX y cuantitativa mientras se valida. Diego añadió en el chat: "además de utilizar Claude Code y Opus para optimizar el proceso en todos los sentidos" | Pendiente de que Diego elija una (pegó las tres opciones sin marcar) | Revisión 09 |
 | A18 | **Instalar numpy, pandas y scipy** con versiones fijadas (gratuitos; necesarios para H2, decisión 0001) | Darlo antes de H2 | Revisión 07 (hallazgo) |
 
 ## B. Trabajo técnico pendiente (Claude)
@@ -43,6 +45,9 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
 | B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
 | ~~B12~~ | ~~Fichas de los 3 papers~~ **Cerrado:** tres fichas con verificaciones propias en `conocimiento/fundamentos/` | — | Revisión 07 |
+| B14 | **Esquema de eventos tipados en el registro** (GENERACION, BACKTEST, VALIDACION, CAMBIO_PROCESO, OPERACION_TECNICA, REVISION), con **campo de familia** y campos obligatorios por tipo. Aceptación: reconstruir automáticamente el universo de pruebas de una tanda. Sin tocar las entradas ya escritas (solo se añade) | Antes de H1; con tests | Revisión 09 (H4) |
+| B15 | **Permiso de acceso al sellado demasiado amplio:** hoy cualquier protocolo "aprobado" en `LAB_PROTOCOLO_SELLADO` abre todo `data/sealed/`. Ligarlo a recurso, finalidad y salida | En la sesión de mantenimiento (A9) | Revisión 09 (H1) |
+| B16 | **Licencia frente a calendario:** documentar qué tareas de H1 se pueden hacer con la licencia de prueba (caduca 02-11-2026) y cuáles exigen licencia, con el coste de cada alternativa | Antes de comprometer H1 | Revisión 09 (H7) |
 | B13 | **Auditoría maestra** con `docs/auditoria/prompt_auditoria_maestra.md`, en una **sesión independiente** de solo lectura (sin el contexto de quien construyó el laboratorio) | Propuesta; el resultado se separa en bloqueantes, alto valor y futuro | Revisión 08 |
 
 ## C. Requisitos fijados para fases futuras (no se olvidan al llegar)
@@ -63,6 +68,10 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | C12 | **Ficha de datos y costes por instrumento**: procedencia, cobertura, huecos, zona horaria, sesiones, spread, comisión, swap y deslizamiento, contrastada con el vehículo (Darwinex Zero) | Antes de investigar un mercado | Revisión 08, tarea 5 |
 | C13 | **Conservar la serie diaria de resultados de TODAS las estrategias probadas**, también las descartadas por los filtros: sin ella no se pueden calcular DSR, PBO ni el N efectivo. Comprobar en el piloto si SQX permite conservarlas (hoy solo guarda las que pasan) | Piloto de la 0003 | Fichas DSR, PBO y MinBTL |
 | C14 | **No usar la PBO ni el DSR como objetivo de la búsqueda**: miden el proceso, no lo guían | H2 | Ficha PBO |
+| C16 | **Examen sellado:** preferible una candidata principal; con varias, se corrige como prueba múltiple; todo congelado con hashes antes de abrir | Examen | Revisión 09 |
+| C17 | Registrar las horas en **UTC** y normalizar aparte la hora de mercado (la consola de SQX va 2 h adelantada) | H1 | Revisión 09 |
+| C18 | **Semillas:** si SQX no permite fijarla, declarar en el registro que la generación no es reproducible; nunca inventar una semilla a posteriori | Siempre | Revisión 09 |
+| C19 | Toda ejecución **confirmatoria** con código limpio (sin cambios sin confirmar) | Fase confirmatoria | Revisión 09 |
 | C15 | Comparar el **N efectivo** de cada búsqueda con el límite de ~139 configuraciones independientes que admite el bloque de investigación de 7 años (para no pasar de Sharpe 1 por azar) | Piloto y confirmatoria | Ficha MinBTL |
 
 ## D. Lo que NO se construye todavía (y cuándo reconsiderarlo)

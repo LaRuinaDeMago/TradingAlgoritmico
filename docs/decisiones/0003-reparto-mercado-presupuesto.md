@@ -38,6 +38,9 @@ solo la mitad llega a 100 y varias tienen menos de 30. Por eso:
 
 - **Muestra mínima fijada antes del examen:** una candidata con **menos de 100 operaciones en el bloque sellado** recibe
   INCONCLUSO, nunca FAVORABLE. La frecuencia mínima se exige ya en la investigación, como criterio preregistrado.
+  **Necesaria, no suficiente** (revisión 09): 100 operaciones no son 100 observaciones independientes (dependencia
+  temporal, rachas, un mismo régimen). La muestra útil se justifica antes del examen con la frecuencia, la variabilidad y
+  la dependencia de las candidatas y con la ventaja mínima económicamente relevante.
 - Alternativas: 18 meses (más investigación, examen más débil) o 36 meses (examen más fuerte). No se elige mirando datos.
 
 ## 2. Primer mercado, puntuado solo con los criterios del protocolo (sección 5)
@@ -73,10 +76,17 @@ Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Ze
   1. **Piloto** (cifras fijadas ya): 1 familia preregistrada, como máximo **2.000 estrategias generadas** y
      **8 horas de cómputo**, sobre el bloque de investigación. Sirve para medir el coste por lote, la tasa de
      supervivencia a los filtros y los motivos de descarte. **Del piloto no sale ninguna candidata al examen sellado.**
+     Método de medición (revisión 09): **tres tamaños de lote**; tiempos separados de arranque, generación, validación,
+     optimización y exportación; **coste por estrategia válida para el análisis** (no por estrategia generada); y el
+     **tiempo humano** de revisión. También mide si SQX permite conservar todas las estrategias probadas (C13).
   2. **Fase confirmatoria**: su límite acumulado (estrategias, horas de cómputo y gasto) se fija **por escrito con los
      números del piloto y antes de empezar la búsqueda confirmatoria**; después no se toca. **Techos provisionales**
      que esa cifra no podrá superar sin una nueva decisión: 20 familias, 10.000 estrategias por familia, 100.000 en total.
-  3. Como máximo **3 candidatas** llegan al examen sellado.
+  3. Como máximo **3 candidatas** llegan al examen sellado. **Preferible una candidata principal** (o una cartera definida
+     por reglas previas). Si son varias, el examen **es una prueba múltiple** y se corrige como tal; nunca se examinan
+     varias para quedarse con la mejor y llamarla "fuera de muestra" (revisión 09). Las candidatas, su código, costes y
+     métricas se congelan con hashes antes de abrir el bloque.
+  4. Límites de **cómputo, evaluaciones y tiempo humano** con **parada automática** al alcanzar cualquiera.
 - **Qué cuenta como prueba:** no solo las estrategias generadas. También cada **variante, filtro y decisión de
   selección** se registra y entra en la corrección por selección (regla 7 y regla 8 de CLAUDE.md).
 - **Las fechas son hitos de revisión, no obligación de avanzar** (revisiones 04 y 06): si llega una fecha y faltan
@@ -121,3 +131,4 @@ Antes de descargar un solo precio:
 | 2 | Sellado con dos instalaciones (la opción B sola no bastaba) | Claude, autocorrección |
 | 3 | "Cientos de operaciones" corregido con datos propios; muestra mínima de 100; topes de búsqueda; precios de SQX; no comprar por la caducidad; exigencias de realismo; condiciones previas (puerto 5050, repositorio) | Revisión 03 |
 | 4 | Presupuesto escalonado (piloto con cifras ya fijadas → confirmatoria con límite fijado con datos del piloto; los topes de la v3 pasan a techos); variantes, filtros y selecciones cuentan como pruebas; fechas como hitos de revisión; causas de abandono distinguidas; el bloque sellado nunca selecciona, modifica ni rescata; reparto y EURUSD provisionales | Revisión 06 |
+| 5 | Muestra mínima necesaria pero no suficiente (dependencia); método de medición del piloto (tres lotes, coste por estrategia válida, tiempo humano); preferible una candidata principal y, si hay varias, el examen como prueba múltiple; congelación con hashes; parada automática por cualquier límite | Revisión 09 |
