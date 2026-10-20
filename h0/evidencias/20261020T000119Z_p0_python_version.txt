@@ -1,0 +1,10 @@
+# comando: python --version
+# inicio_utc: 2026-10-20T00:01:19+00:00
+# duracion_s: 0.026
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+Python 3.14.6
+
+=== STDERR ===
