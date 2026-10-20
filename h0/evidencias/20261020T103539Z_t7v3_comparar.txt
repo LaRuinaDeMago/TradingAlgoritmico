@@ -1,0 +1,20 @@
+# comando: python -I h0/configs/comparar_operaciones.py C:/StrategyQuantX145/user/lab_h0/t7/ops_generacion C:/StrategyQuantX145/user/lab_h0/t7/ops_retest
+# inicio_utc: 2026-10-20T10:35:39+00:00
+# duracion_s: 0.125
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+IDÉNTICA  Strategy 0.11(2).csv: 157 operaciones
+IDÉNTICA  Strategy 0.16(2).csv: 3 operaciones
+IDÉNTICA  Strategy 0.18(1).csv: 100 operaciones
+IDÉNTICA  Strategy 0.22.csv: 105 operaciones
+IDÉNTICA  Strategy 0.24.csv: 119 operaciones
+IDÉNTICA  Strategy 0.26.csv: 51 operaciones
+IDÉNTICA  Strategy 0.4(1).csv: 34 operaciones
+IDÉNTICA  Strategy 0.6(3).csv: 30 operaciones
+IDÉNTICA  Strategy 0.7(1).csv: 177 operaciones
+IDÉNTICA  Strategy 0.8(2).csv: 14 operaciones
+Resumen: 10 idénticas de 10 comparadas; solo en una carpeta: ninguna
+
+=== STDERR ===
