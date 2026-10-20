@@ -165,4 +165,10 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   múltiples (los vídeos no se han visto) y pone deslizamiento 0. → Afirmar solo lo que la evidencia examinada sostiene. → Lo que se usa para elegir deja de ser fuera de muestra:
   hace falta un bloque nunca tocado. Una estrategia seleccionada con datos hasta una fecha solo se evalúa con datos
   posteriores a esa fecha.
+- **Una cifra plausible no es una cifra comprobada.** En la propuesta 0003 escribí que 24 meses darían "cientos de
+  operaciones por estrategia". Con nuestras 20 estrategias de prueba (22 meses H1): mediana 75–90, solo la mitad llega a
+  100 y varias no pasan de 30. Lo señaló una revisión externa. → Toda cifra que sostenga una decisión se comprueba con
+  datos, aunque parezca obvia; y el examen final lleva una muestra mínima fijada antes (< 100 operaciones: INCONCLUSO).
+- **Registrar todo no es lo mismo que limitar la búsqueda.** Con un número ilimitado de estrategias, alguna saldrá
+  espectacular por azar aunque quede anotada. → Presupuesto de búsqueda con tope numérico y tope de candidatas.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
