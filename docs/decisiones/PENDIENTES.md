@@ -23,6 +23,9 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | A13 | **Identidad de los commits** (hoy `Claude <noreply@anthropic.com>`) | Mantenerla o poner la suya | Sesión 2026-10-20 |
 | A14 | **Copias de seguridad** de `h0/evidencias_privadas/` y `Documents/LAB_PRIVADO_CURSO/` (solo existen en este PC) | Copiarlas a un sitio suyo de vez en cuando | Diario |
 | A15 | **Proteger la rama en GitHub** contra `push --force` (refuerza el registro como referencia externa) | Activarlo | Primera revisión externa |
+| A16 | **Permiso para descargar los 3 papers** fundamentales (PDF gratuitos; se guardan fuera del repositorio y se enlazan) | Darlo: es la inversión de conocimiento más barata | Revisión 07 |
+| A17 | **Piloto de vídeos del curso:** instalar FFmpeg y un transcriptor (Whisper o similar, gratuitos) y descargar su modelo (1–3 GB); depende de A8 | Darlo cuando A8 esté aclarado | Revisión 07 |
+| A18 | **Instalar numpy, pandas y scipy** con versiones fijadas (gratuitos; necesarios para H2, decisión 0001) | Darlo antes de H2 | Revisión 07 (hallazgo) |
 
 ## B. Trabajo técnico pendiente (Claude)
 
@@ -38,6 +41,8 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | B8 | `pip install -e .` en este PC | Menor | Paso 0 |
 | B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`) | Afinar en mantenimiento, con permiso de Diego | Diario |
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
+| B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
+| B12 | **Fichas de los 3 papers** con la plantilla de `conocimiento/fundamentos/` | Tras A16 | Revisión 07 |
 
 ## C. Requisitos fijados para fases futuras (no se olvidan al llegar)
 
@@ -52,3 +57,4 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | C7 | Comparar **IA frente a sin IA** con métrica y tamaño fijados antes (poca potencia con pocas estrategias) | H3 | Revisión 02, decisión 0001 |
 | C8 | **VPS** solo para ejecución continua de una estrategia ya validada | H4–H5 | Revisión 05 |
 | C9 | Las fechas de 0003 son **puntos de control de gasto**, no plazos para declarar evidencia: sin muestra suficiente, INCONCLUSO | Siempre | Revisión 04 |
+| C10 | La **base de conocimiento** (`conocimiento/`) no entra en el motor crítico hasta estar validada y decidida; el bloque sellado queda fuera del ciclo de aprendizaje | Siempre | Revisión 07 |
