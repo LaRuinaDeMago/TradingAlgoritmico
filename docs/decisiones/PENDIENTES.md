@@ -42,7 +42,8 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`) | Afinar en mantenimiento, con permiso de Diego | Diario |
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
 | B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
-| B12 | **Fichas de los 3 papers** con la plantilla de `conocimiento/fundamentos/` | Tras A16 | Revisión 07 |
+| B12 | **Fichas de los 3 papers** con la plantilla de `conocimiento/fundamentos/` | Tras A16 (permiso dado el 2026-10-20) | Revisión 07 |
+| B13 | **Auditoría maestra** con `docs/auditoria/prompt_auditoria_maestra.md`, en una **sesión independiente** de solo lectura (sin el contexto de quien construyó el laboratorio) | Propuesta; el resultado se separa en bloqueantes, alto valor y futuro | Revisión 08 |
 
 ## C. Requisitos fijados para fases futuras (no se olvidan al llegar)
 
@@ -58,3 +59,18 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 | C8 | **VPS** solo para ejecución continua de una estrategia ya validada | H4–H5 | Revisión 05 |
 | C9 | Las fechas de 0003 son **puntos de control de gasto**, no plazos para declarar evidencia: sin muestra suficiente, INCONCLUSO | Siempre | Revisión 04 |
 | C10 | La **base de conocimiento** (`conocimiento/`) no entra en el motor crítico hasta estar validada y decidida; el bloque sellado queda fuera del ciclo de aprendizaje | Siempre | Revisión 07 |
+| C11 | **Banco de pruebas adversarias** del validador: casos con errores sembrados (fuga de información futura, costes omitidos, desfase de vela, selección por azar, sesgo de supervivencia) que el validador **tiene que detectar**; si no los detecta, no se fía de él | H1–H2 | Revisión 08, decisión 0001 |
+| C12 | **Ficha de datos y costes por instrumento**: procedencia, cobertura, huecos, zona horaria, sesiones, spread, comisión, swap y deslizamiento, contrastada con el vehículo (Darwinex Zero) | Antes de investigar un mercado | Revisión 08, tarea 5 |
+
+## D. Lo que NO se construye todavía (y cuándo reconsiderarlo)
+
+| Idea | Cuándo reconsiderarla | Origen |
+|---|---|---|
+| Más agentes de IA en paralelo | Cuando un experimento controlado demuestre mejora frente al proceso actual | Revisiones 05, 08 |
+| Entrenar un modelo propio | Con datos etiquetados suficientes y una tarea concreta que lo justifique | Revisión 08 |
+| VPS permanente | Cuando la ejecución prospectiva exija disponibilidad continua | Revisiones 05, 08 |
+| Base de datos compleja o infraestructura distribuida | Cuando el registro actual sea un cuello de botella **medido** | Revisión 08 |
+| Optimización automática continua | Tras validar la búsqueda controlada y sus límites contra el sobreajuste | Revisión 08 |
+| Muchos mercados a la vez | Cuando el primero tenga validación fiable y presupuesto definido | Revisión 08 |
+| Cientos de papers de golpe | Tras validar el método de extracción con las primeras fichas | Revisiones 07, 08 |
+| Otra arquitectura teórica | Solo la consolidación única de C5, al cerrar H0 | Revisiones 06, 08 |
