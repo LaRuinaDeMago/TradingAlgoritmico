@@ -7,7 +7,8 @@ registro que lo cierra. **Nada abierto vive solo en el chat.**
 
 | # | Asunto | Propuesta de Claude | Origen |
 |---|---|---|---|
-| A1 | Aprobar, cambiar o rechazar la **decisión 0003** (reparto 24 meses sellados, cómo sellar, primer mercado, topes de búsqueda, muestra mínima, fechas) | PROPUESTA en `0003-reparto-mercado-presupuesto.md` | Revisiones 01, 03 |
+| A1 | Aprobar, cambiar o rechazar la **decisión 0003** (reparto 24 meses sellados, cómo sellar, primer mercado provisional, presupuesto de búsqueda escalonado con piloto, muestra mínima, fechas como hitos, causas de abandono) | PROPUESTA v4 en `0003-reparto-mercado-presupuesto.md` (con historial de cambios) | Revisiones 01, 03, 06 |
+| A1b | **Cifras del piloto** de búsqueda (1 familia, ≤ 2.000 estrategias, ≤ 8 h de cómputo) | Las propone Claude; Diego puede cambiarlas antes de empezar | Revisión 06 |
 | A2 | **Dinero adicional que está dispuesto a perder** en el proyecto | — (solo Diego lo sabe) | Revisión 03 |
 | A3 | **Horas semanales** que puede dedicar sin perjudicar otras prioridades | — | Revisión 03 |
 | A4 | Repositorio de GitHub **público o privado** | Privado reduce exposición futura (no borra copias) | Revisión 03 |

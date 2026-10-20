@@ -175,4 +175,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   arquitecturas escritas y decisiones abiertas en varios archivos. → Índice único `docs/decisiones/PENDIENTES.md`:
   decisiones de Diego, trabajo técnico y requisitos futuros, cada uno con su origen. Y una advertencia: si las revisiones
   vienen del mismo modelo, que coincidan no es evidencia independiente.
+- **Dos revisiones pueden contradecirse y tener razón las dos.** La 03 pedía topes numéricos ya; la 06, no fijar cifras
+  sin conocer el coste de cada lote. Se concilian con un **piloto con cifras pequeñas fijadas ya**, que sirve para medir
+  y no produce candidatas, y una **fase confirmatoria** cuyo límite se fija con esos datos antes de empezar. Además, la
+  06 leía una versión anterior de la 0003. → Las decisiones que cambian llevan **historial de versiones**, para que
+  cualquiera sepa contra qué versión opina.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
