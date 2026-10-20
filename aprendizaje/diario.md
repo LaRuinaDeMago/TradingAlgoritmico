@@ -124,4 +124,16 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   con la decisión anterior: no se reescriben commits de los que dependen registros (n.º 19 en adelante). Regla de
   proporcionalidad: riesgo bajo y ninguna amenaza concreta que justifique romper la integridad del registro. En adelante, rutas
   sin el usuario cuando haya alternativa.
+- **Un resultado idéntico no prueba nada sin un control que pueda fallar.** Dos backtests dieron 1.353 operaciones idénticas,
+  y también iguales a la generación: tan bueno que podía ser una reexportación de lo guardado. Con spread 3 en vez de 2
+  (única diferencia), 0 de 10 iguales: el Retester recalcula de verdad. → Toda prueba de "sale igual" lleva su control negativo.
+- **Algunas órdenes de `sqcli` son asíncronas:** `-databank action=load` suelta dice "loaded" y sale sin guardar. Con `-run`
+  y `synctofiles` en el mismo proceso funciona, pero el log muestra una carrera. → Comprobar siempre el efecto (recuento,
+  archivos), no el mensaje.
+- **Las plantillas de fábrica no son homogéneas:** la del Retester no trae `<Swap>` (la del Builder sí). Sin él podría
+  aplicarse el swap del instrumento y el backtest repetido no sería comparable. El script se paró en vez de suponer.
+- **Error de procedimiento de Claude:** crear un archivo mientras corría una tanda dejó los registros n.º 44–48 como "sucios".
+  → No tocar el repositorio mientras se ejecuta un experimento.
+- **El CLI del laboratorio fallaba al imprimir "→"** en la consola de Windows (cp1252) *después* de registrar: devolvía error
+  con la entrada ya escrita, y eso invita a repetirla y duplicarla. Arreglado con un test.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
