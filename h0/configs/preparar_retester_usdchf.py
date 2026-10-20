@@ -1,6 +1,9 @@
 """Prepara la plantilla mínima del Retester para la tarea 4 de H0 (decisión 0002: datos quemados).
 
-Uso:  python -I h0/configs/preparar_retester_usdchf.py ORIGEN.cfx DESTINO.cfx
+Uso:  python -I h0/configs/preparar_retester_usdchf.py ORIGEN.cfx DESTINO.cfx [SPREAD_PIPS]
+
+SPREAD_PIPS (por defecto 2) solo se cambia para el control negativo de la tarea 4: con otro spread
+el backtest tiene que dar otras operaciones; si no, el Retester no está recalculando.
 
 Mismos datos y costes que la plantilla del Builder (preparar_builder_usdchf.py), para que el backtest
 repetido sea comparable con el de la generación. Sin filtros (no se descarta ninguna estrategia) y
@@ -24,7 +27,7 @@ def unico(raiz, ruta):
     return encontrados[0]
 
 
-def main(origen: str, destino: str) -> None:
+def main(origen: str, destino: str, spread: str = SPREAD_PIPS) -> None:
     with zipfile.ZipFile(origen) as z:
         if z.namelist() != ["config.xml"]:
             sys.exit(f"Se esperaba un .cfx con solo config.xml y tiene {z.namelist()}")
@@ -45,7 +48,7 @@ def main(origen: str, destino: str) -> None:
     grafico = unico(raiz, "Settings/Data/Setups/Setup/Chart")
     fijar(grafico, "symbol", SIMBOLO, "Datos")
     fijar(grafico, "timeframe", MARCO, "Datos")
-    fijar(grafico, "spread", SPREAD_PIPS, "Costes")
+    fijar(grafico, "spread", spread, "Costes")
     for metodo in raiz.findall("Settings/Data/Setups/Setup/Commissions/Method"):
         fijar(metodo, "use", "true" if metodo.get("type") == "None" else "false", "Costes (comisión)")
     # La plantilla de fábrica del Retester no trae <Swap> (la del Builder sí, desactivado). Sin él podría aplicarse
@@ -80,4 +83,4 @@ def main(origen: str, destino: str) -> None:
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:3])
+    main(*sys.argv[1:4])
