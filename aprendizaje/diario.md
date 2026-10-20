@@ -91,4 +91,13 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   → **Decisión de Diego (2026-10-20):** subir el historial tal cual. El identificador de la licencia de prueba queda en el
   historial público (como ya estaba el ID de hardware), a cambio de no reescribir commits de los que dependen los registros
   n.º 12–15. Prima la integridad del registro.
+- **Probar el proceso también gasta datos.** La tarea 3a genera estrategias con datos reales (los de ejemplo de SQX:
+  EURUSD, oro e índices de Dukascopy hasta 2024). Lo generado queda visto y cuenta como hipótesis (regla 7). → Antes de la
+  primera generación se decide y se registra qué datos se "queman" para pruebas de proceso, y no se usan después para investigar.
+- **Una revisión externa (otra IA, vía Diego) propuso una regla de proporcionalidad:** ningún control de seguridad nuevo sin
+  una amenaza concreta, una prueba que demuestre el fallo y un criterio de aceptación. Claude está de acuerdo; pendiente de
+  que Diego la fije como decisión. También señaló que un hash solo detecta cambios si la referencia está protegida: hoy lo
+  está gracias al historial subido a GitHub (reescribirlo exige un force-push visible).
+- **`ANTHROPIC_API_KEY` está guardada como variable de usuario de Windows** (comprobado sin mostrar el valor). Rechazarla en
+  una sesión no la elimina. → Diego decide si la reconoce, la revoca o la borra.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.

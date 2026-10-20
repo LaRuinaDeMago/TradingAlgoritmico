@@ -27,14 +27,14 @@ Nota: `pip install -e .` no está hecho en este PC; mientras tanto se usa `PYTHO
 |---|---|---|---|---|
 | 1 | Localizar `sqcli.exe`, confirmar la build y guardar la salida completa de `sqcli.exe -h` | **SÍ** | `C:\StrategyQuantX145\sqcli.exe`, SHA-256 `afa68ccb…a4f`, firma Authenticode **válida** de StrategyQuant s.r.o. Registro n.º 9 · copia pública redactada `h0/evidencias/20261020T000832Z_t1_sqcli_ayuda.redactada.txt` (registro n.º 10; el original, con el ID de hardware, solo en el PC): `SQX version: 145.3191`, código 0, 24,5 s. Antes, registros n.º 3 y 4: **FALLIDO** con código 0 porque la GUI estaba abierta. La **edición** (Pro/Ultimate) sigue sin confirmar | 25 min |
 | 2 | ¿La prueba gratuita limita alguna función de la línea de comandos? | PENDIENTE (en curso) | Registros n.º 11–12: `-license action=info` funciona y dice *"StrategyQuant X **Pro** Build 145 (Trial license) - valid until 02.11.2026"* (identificador de licencia redactado). Hasta ahora, `-h` y `-license` funcionan sin límites visibles. **Hipótesis por comprobar** (documentación de la instalación, `docs/overview/snippets/cross-checks.md`): con una licencia *Special Trial* se desactivan **What If, Optimización secuencial y Walk-Forward Optimization** (la Walk-Forward Matrix sigue). No se sabe si la nuestra es *Special Trial*. Se cierra cuando la tarea 3 haya probado los comandos reales y esas tres comprobaciones | 10 min |
-| 3a | CLI: lanzar un proyecto de generación | PENDIENTE | | |
+| 3a | CLI: lanzar un proyecto de generación | PENDIENTE (bloqueada por una decisión) | Pasos previos hechos. Registro n.º 16: `-project action=list` → 16 proyectos (módulos Builder, Retester, Optimizer, PortfolioMaster, PortfolioComposer y Ranger, y 10 ejemplos de SQ con datos de Dukascopy o Tradestation). Registro n.º 17: `-symbol action=list` → solo los **datos de ejemplo de SQX** (Dukascopy M1 hasta 30-10-2024, futuros SQ y acciones D1 hasta 2022). **Antes de generar, Diego decide qué datos se "queman" para las pruebas de proceso**: lo que se genere con ellos queda visto y cuenta como hipótesis (regla 7) | 5 min |
 | 3b | CLI: ejecutar un backtest | PENDIENTE | | |
 | 3c | CLI: exportar estrategias | PENDIENTE | | |
 | 3d | CLI: exportar resultados y operaciones a formato legible (CSV u otro) | PENDIENTE | | |
 | 3e | CLI: exportar código para MT4 | PENDIENTE | | |
 | 3f | CLI: exportar código para MT5 | PENDIENTE | | |
 | 4 | Recorrido mínimo: generar, exportar, registrar y reproducir el backtest dos veces con resultados idénticos | PENDIENTE | | |
-| 5 | Datos de Darwinex: procedencia, instrumentos, periodo, granularidad y modelo de costes | PENDIENTE | | |
+| 5 | Datos de Darwinex: procedencia, instrumentos, periodo, granularidad y modelo de costes | PENDIENTE | Registro n.º 17: **no hay datos de Darwinex instalados**. `sqcli -h` ofrece `-symbol action=add … datasource=darwinex datatype=M1` (sin probar; descarga datos y escribe en SQX). La documentación cita `-symbol action=darwinexsymbols`, que el `-h` real no lista | |
 | 6 | Pasos que exigen intervención manual y con qué frecuencia | PENDIENTE | | |
 | 7 | Tiempo y coste de un experimento completo de principio a fin | PENDIENTE | | |
 
