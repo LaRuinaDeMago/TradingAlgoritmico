@@ -108,4 +108,16 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   comprobación cruzada desactivada lo nombra).
 - **No hay semilla aleatoria documentada** para la generación: probablemente no sea repetible exactamente. La tarea 4 pide
   repetir el backtest de una estrategia ya generada, no la generación.
+- **El circuito por línea de comandos funciona:** generar → guardar estrategias → CSV de resultados y operaciones → código
+  MT4/MT5, todo sin tocar la interfaz (registros n.º 21–30). Cada llamada cuesta ~25 s de arranque; la generación, 6 s.
+- **La documentación de SQX se equivoca en el nombre del motor** (`mt4`); el programa espera `MetaTrader4`. Y `-sourcecode`
+  funciona aunque `-h` no lo liste. → Primero la fuente escrita; si falla, el nombre que usa la propia instalación; y parar
+  ahí, sin probar nombres a ciegas.
+- **Las rutas relativas de `sqcli` se resuelven desde la carpeta de SQX**, no desde donde se lanza el comando.
+- **El código exportado incrusta una librería con licencia limitada** (OrderReliable, solo para estrategias de SQ).
+  En un repositorio público se guarda solo su hash.
+- **Las operaciones que abren y cierran en la misma vela delatan un backtest solo con velas** (`testPrecision="1"`).
+  Que salte un stop dentro de una vela H1 es una suposición del simulador, no un hecho. → Medirlo en H1.
+- **Hipótesis: el P/L en USD de USDCHF se convierte con un tipo fijo** (cuadra al céntimo con `pointValue` 115.179,5).
+  Si se confirma, los resultados en dólares de pares no-USD no usan el tipo de cada momento.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
