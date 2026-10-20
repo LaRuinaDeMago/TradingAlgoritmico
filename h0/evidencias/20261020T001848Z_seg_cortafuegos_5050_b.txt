@@ -1,0 +1,36 @@
+# comando: powershell.exe -NoProfile -Command "netsh advfirewall show allprofiles | Select-String \"Perfil|Profile|Estado|State|Directiva|Policy\"; \"--- reglas con puerto local 5050:\"; Get-NetFirewallPortFilter | Where-Object { $_.LocalPort -contains \"5050\" } | Get-NetFirewallRule | Format-Table DisplayName,Direction,Action,Enabled,Profile -AutoSize; \"--- reglas de entrada activas que permiten java o sqcli:\"; Get-NetFirewallApplicationFilter | Where-Object { $_.Program -match \"java|sqcli\" } | ForEach-Object { $r = $_ | Get-NetFirewallRule; if ($r.Enabled -eq \"True\" -and $r.Direction -eq \"Inbound\") { \"{0} | {1} | {2} | {3}\" -f $r.DisplayName,$r.Action,$r.Profile,$_.Program } }; \"--- fin\""
+# inicio_utc: 2026-10-20T00:18:48+00:00
+# duracion_s: 4.831
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+
+Configuración de Perfil de dominio: 
+Estado                                ACTIVAR
+Directiva de firewall                 BlockInbound,AllowOutbound
+Configuración de Perfil privado: 
+Estado                                ACTIVAR
+Directiva de firewall                 BlockInbound,AllowOutbound
+Configuración de Perfil público: 
+Estado                                ACTIVAR
+Directiva de firewall                 BlockInbound,AllowOutbound
+--- reglas con puerto local 5050:
+--- reglas de entrada activas que permiten java o sqcli:
+OpenJDK Platform binary | Allow | Private | C:\program files (x86)\autofirma\autofirma\jre\bin\javaw.exe
+OpenJDK Platform binary | Allow | Private | C:\program files (x86)\autofirma\autofirma\jre\bin\javaw.exe
+OpenJDK Platform binary | Allow | Private | C:\program files\autofirma\autofirma\jre\bin\javaw.exe
+OpenJDK Platform binary | Allow | Private | C:\program files\autofirma\autofirma\jre\bin\javaw.exe
+--- fin
+
+
+
+=== STDERR ===
+Get-NetFirewallPortFilter : Acceso denegado. 
+En l�nea: 1 Car�cter: 137
++ ... --- reglas con puerto local 5050:"; Get-NetFirewallPortFilter | Where ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (MSFT_NetProtocolPortFilter:root/standardci...tocolPortFilter) [Get-Ne 
+   tFirewallPortFilter], CimException
+    + FullyQualifiedErrorId : Windows System Error 5,Get-NetFirewallPortFilter
+ 
