@@ -1,0 +1,111 @@
+# comando: python -I h0/configs/b1_diagnostico_operaciones.py C:/StrategyQuantX145/user/lab_h0/b1/ops_bis_USDCHF_M1_dukas C:/StrategyQuantX145/user/lab_h0/b1/ops_bis_USDCHF_B1
+# inicio_utc: 2026-10-21T14:36:48+00:00
+# duracion_s: 0.109
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "Strategy 0.1.csv": {
+  "operaciones_a": 28,
+  "operaciones_b": 28,
+  "comunes": 28,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 28
+ },
+ "Strategy 0.11.csv": {
+  "operaciones_a": 164,
+  "operaciones_b": 164,
+  "comunes": 164,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 164
+ },
+ "Strategy 0.13.csv": {
+  "operaciones_a": 124,
+  "operaciones_b": 124,
+  "comunes": 124,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 124
+ },
+ "Strategy 0.15.csv": {
+  "operaciones_a": 5,
+  "operaciones_b": 5,
+  "comunes": 5,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 5
+ },
+ "Strategy 0.17.csv": {
+  "operaciones_a": 7,
+  "operaciones_b": 7,
+  "comunes": 7,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 7
+ },
+ "Strategy 0.4.csv": {
+  "operaciones_a": 451,
+  "operaciones_b": 451,
+  "comunes": 451,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 451
+ },
+ "Strategy 0.5.csv": {
+  "operaciones_a": 200,
+  "operaciones_b": 200,
+  "comunes": 200,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 200
+ },
+ "Strategy 0.6.csv": {
+  "operaciones_a": 218,
+  "operaciones_b": 218,
+  "comunes": 218,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 218
+ },
+ "Strategy 0.7.csv": {
+  "operaciones_a": 45,
+  "operaciones_b": 45,
+  "comunes": 45,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 45
+ },
+ "Strategy 0.9.csv": {
+  "operaciones_a": 35,
+  "operaciones_b": 35,
+  "comunes": 35,
+  "solo_a": 0,
+  "solo_b": 0,
+  "apertura_mas_tardia_no_comun": null,
+  "tras_esa_fecha_identicas": true,
+  "operaciones_tras_esa_fecha": 35
+ }
+}
+
+=== STDERR ===
