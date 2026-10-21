@@ -1,0 +1,64 @@
+# comando: python -I h0/configs/b1_control_c1.py "C:/StrategyQuantX145/user/lab_h0/b1/EA1/USDCHF_M1_dukas-M1-No Session.csv" C:/StrategyQuantX145/user/lab_h0/b1/C1
+# inicio_utc: 2026-10-21T14:23:19+00:00
+# duracion_s: 99.49
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "sin_tocar": {
+  "detectado_como_se_espera": true,
+  "identicas": true,
+  "ausentes": 0,
+  "sobrantes": 0,
+  "duplicadas": 0,
+  "valores": 0
+ },
+ "vela_eliminada": {
+  "detectado_como_se_espera": true,
+  "identicas": false,
+  "ausentes_en_b": 1,
+  "ausentes": 1,
+  "sobrantes": 0,
+  "duplicadas": 0,
+  "valores": 0
+ },
+ "vela_duplicada": {
+  "detectado_como_se_espera": true,
+  "identicas": false,
+  "duplicadas_b": 1,
+  "ausentes": 0,
+  "sobrantes": 0,
+  "duplicadas": 1,
+  "valores": 0
+ },
+ "precio_mas_un_punto": {
+  "detectado_como_se_espera": true,
+  "identicas": false,
+  "valores_distintos": 1,
+  "ausentes": 0,
+  "sobrantes": 0,
+  "duplicadas": 0,
+  "valores": 1
+ },
+ "una_vela_mas_un_minuto": {
+  "detectado_como_se_espera": true,
+  "identicas": false,
+  "ausentes_en_b": 1,
+  "ausentes": 1,
+  "sobrantes": 0,
+  "duplicadas": 1,
+  "valores": 0
+ },
+ "todo_mas_una_hora": {
+  "detectado_como_se_espera": true,
+  "identicas": false,
+  "desplazamiento_global_min": 60,
+  "ausentes": 10799,
+  "sobrantes": 10799,
+  "duplicadas": 0,
+  "valores": 667222
+ }
+}
+
+=== STDERR ===
