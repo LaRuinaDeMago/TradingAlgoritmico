@@ -1,0 +1,30 @@
+# comando: python -I h0/configs/b1_comparar_velas.py "C:/StrategyQuantX145/user/lab_h0/b1/EA1/USDCHF_M1_dukas-M1-No Session.csv" "C:/StrategyQuantX145/user/lab_h0/b1/EB/USDCHF_M1_dukas-M1-No Session.csv" --tramo-a 2023.06.01 2023.06.30
+# inicio_utc: 2026-10-21T14:10:04+00:00
+# duracion_s: 11.766
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "velas_a": 31408,
+ "velas_b": 31408,
+ "primera_a": "2023-06-01 00:00:00",
+ "ultima_a": "2023-06-30 23:59:00",
+ "primera_b": "2023-06-01 00:00:00",
+ "ultima_b": "2023-06-30 23:59:00",
+ "duplicadas_a": 0,
+ "duplicadas_b": 0,
+ "ausentes_en_b": 0,
+ "sobrantes_en_b": 0,
+ "valores_distintos": 0,
+ "desordenadas_b": 0,
+ "desplazamiento_global_min": null,
+ "ejemplos": {
+  "ausentes": [],
+  "sobrantes": [],
+  "distintas": []
+ },
+ "identicas": true
+}
+
+=== STDERR ===
