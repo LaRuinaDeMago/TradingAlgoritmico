@@ -149,7 +149,9 @@ numpy/pandas/scipy.
    inclusivos/exclusivos), importación sin errores, velas idénticas tras normalizar, sin ausentes/duplicadas/desplazadas,
    zona horaria, repetible, y **mismo backtest antes y después**. Es la última pieza técnica antes de Darwinex.
 3. **Claude: esquema de eventos tipados del registro (B14)**, con tests, antes de H1.
-4. **Claude: licencia frente a calendario (B16)** antes del 2026-11-02: qué de H1 se puede hacer sin licencia.
+4. **B16 hecho** (`h0/b16_licencia_calendario.md`): no comprar antes del 02-11; Diego puede enviar al soporte el texto
+   del §5 (CLI en Professional, Darwinex, exportación MT, qué pasa al caducar, ampliación). **Antes del 02-11, exportar
+   desde SQX todo lo que H1 necesite** (velas de USDCHF quemado, operaciones y código de H0).
 5. **Auditoría maestra independiente (B13):** tarjeta de sesión propuesta el 2026-10-20 (`task_fe8910bc`, solo
    lectura; caduca hacia el 2026-10-27). Si caduca, volver a proponerla con el prompt guardado.
 6. **Curso completo (B11 → B18):** transcripción con *medium* (≈ 55 h de CPU, por tandas, nunca a la vez que una
