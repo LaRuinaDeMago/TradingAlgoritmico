@@ -191,9 +191,13 @@ pagar más máquina.
 2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación + estrategia de métricas conocidas; ¿afecta a la
    ordenación o la selección?
 3. Preparar para Diego el texto de la consulta a Darwinex (A22) y la de licencia (B16).
+4. **B22, curso a fondo (Diego lo pide):** arrancar la transcripción completa (*medium* + fotogramas, ≈ 50 h de CPU) por
+   tandas de noche, en paralelo y nunca a la vez que una medición de SQX; comprobar los historiales públicos del autor.
+   La **ficha exacta del método del curso** tiene que estar antes del protocolo de la fase 1, porque la fase 1 pone a
+   prueba precisamente ese método.
 
 **Fase 1 – calibración (después de cerrar la fase 0):**
-4. **Protocolo de la fase 1**, escrito y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
+4. **Protocolo de la fase 1** (con la ficha del método del curso de B22 como entrada), escrito y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
    (distintas familias, no solo semillas), construcción y tamaños de la ventaja sembrada (mínimo económico tras costes),
    niveles de error y detección, presupuesto (P13), condiciones que impiden escalar.
 5. **B14** (eventos tipados y registro de hipótesis) y **B19** (protocolo estadístico implementado, con tests de errores
@@ -202,8 +206,7 @@ pagar más máquina.
    dentro, frente a la referencia sencilla, también a nivel de cartera. Puerta: los dos exámenes en el juego de
    aceptación.
 
-**En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (curso por tandas de noche y demás fuentes de
-contaminación); B15 + B9 (mantenimiento del guardián, lo abre Diego); B13 (auditoría independiente: tarjeta
+**En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (con B22 y las demás fuentes de contaminación); B15 + B9 (mantenimiento del guardián, lo abre Diego); B13 (auditoría independiente: tarjeta
 `task_fe8910bc`, caduca hacia el 2026-10-27; si caduca, volver a proponerla con el prompt guardado).
 
 **Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → piloto → examen → prospectivo
