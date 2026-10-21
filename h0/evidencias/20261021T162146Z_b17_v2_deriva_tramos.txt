@@ -1,0 +1,26 @@
+# comando: python -I h0/configs/b17_deriva_tramos.py "real=C:/StrategyQuantX145/user/lab_h0/b1/EA1/USDCHF_M1_dukas-M1-No Session.csv" nulo1=C:/StrategyQuantX145/user/lab_h0/b17/USDCHF_SINT1.custom.csv nulo2=C:/StrategyQuantX145/user/lab_h0/b17/USDCHF_SINT2.custom.csv
+# inicio_utc: 2026-10-21T16:21:46+00:00
+# duracion_s: 35.021
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "real": {
+  "IS": -0.0167,
+  "OOS": -0.0382,
+  "mismo_sentido": true
+ },
+ "nulo1": {
+  "IS": -0.0139,
+  "OOS": 0.0165,
+  "mismo_sentido": false
+ },
+ "nulo2": {
+  "IS": 0.0423,
+  "OOS": -0.0342,
+  "mismo_sentido": false
+ }
+}
+
+=== STDERR ===
