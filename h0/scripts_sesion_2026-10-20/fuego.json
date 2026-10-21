@@ -1,0 +1,6 @@
+{
+  "read": "bloqueado por permissions.deny de .claude/settings.json antes del hook: 'File is in a directory that is denied by your permission settings'",
+  "bash": "bloqueado por el guardián: 'DATOS SELLADOS: el comando menciona la carpeta sellada. Requiere protocolo aprobado por Diego'",
+  "conclusion": "el hook se ejecuta y bloquea en Bash; a Read lo para una capa previa, así que no demuestra que el guardián funcione",
+  "fallo_conocido": "la herramienta PowerShell no pasa por el guardián (4 de 4 casos simulados pasan); arreglo preparado, pendiente de la sesión de mantenimiento autorizada por Diego"
+}

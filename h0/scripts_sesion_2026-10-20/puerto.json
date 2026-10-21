@@ -1,0 +1,7 @@
+{
+  "metodo": "netstat -ano filtrado por :5050, cada segundo durante 60 s, en paralelo con el registro n.º 11 (sqcli -license action=info). Script: vigilar_5050.sh (scratchpad de la sesión).",
+  "antes": "solo UDP 0.0.0.0:5050 del proceso 8276 = svchost (CDPSvc, servicio de Windows, no SQX)",
+  "durante": "TCP 0.0.0.0:5050 LISTENING del proceso 14460, de 02:15:28 a 02:15:50 hora local (dentro de la ejecución de sqcli, 02:15:24–02:15:50)",
+  "conclusion": "la API HTTP de sqcli escucha en TODAS las interfaces (0.0.0.0), no solo en localhost como dice su mensaje",
+  "limites": "no se comprobó que el PID 14460 fuera sqcli.exe (había terminado al revisarlo; la coincidencia de horas lo sugiere); tampoco el cortafuegos ni si la API pide autenticación"
+}

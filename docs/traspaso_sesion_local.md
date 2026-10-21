@@ -1,5 +1,9 @@
 # Traspaso: de la sesión en la nube a Claude Code en el PC de SQX
 
+> **HISTÓRICO (superado el 2026-10-20).** Describe la instalación inicial y el estado del 2026-10-19 (2 registros, nada
+> de la CLI comprobado). El estado vigente y el punto de continuación están en **`docs/ESTADO_Y_CONTINUACION.md`**.
+> Se conserva sin cambios por trazabilidad.
+
 Fecha: 2026-10-19 · Para: Diego y la sesión local de Claude Code (Windows 11).
 
 ## Dónde estamos

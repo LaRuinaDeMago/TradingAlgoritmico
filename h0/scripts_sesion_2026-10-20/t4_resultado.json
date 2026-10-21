@@ -1,0 +1,11 @@
+{
+  "metodo": "python -I h0/configs/comparar_operaciones.py A B (byte a byte y, si difiere, fila a fila)",
+  "pasada1_vs_pasada2": "10 de 10 estrategias idénticas byte a byte (1.353 operaciones). Registros n.43–48",
+  "pasada1_vs_generacion": "10 de 10 idénticas byte a byte frente a las operaciones de la generación (n.26)",
+  "control_negativo": "spread 3 en vez de 2 (única diferencia de configuración, comprobada): 0 de 10 idénticas; cambian el número de operaciones (p. ej. 211→206, 228→216), los precios y el P/L. Registros n.49–53. Demuestra que el Retester recalcula y no reexporta lo guardado",
+  "conclusion": "el backtest de SQX por CLI es reproducible: misma configuración y mismos datos dan las mismas operaciones byte a byte",
+  "observacion_para_H1": "el spread no afecta igual a todas las operaciones: en Strategy 0.7 (venta) entrada y salida se desplazan 1 pip y el P/L no cambia (7,95); en Strategy 0.6 solo cambia la salida y la pérdida crece. Hay que entender el modelo de costes al reconstruirlo en Python",
+  "limites": "una sola máquina, una build (145.3191-dev), backtest solo con velas H1 (testPrecision=1); la generación no se ha reproducido (no hay semilla documentada)",
+  "registros_sucios": "n.44–48 marcados como sucios por un archivo sin confirmar (comparar_operaciones.py) creado durante la ejecución: error de procedimiento de Claude; el hash de ese cambio queda en cada entrada",
+  "estado_sqx": "Builder y Retester restaurados y comprobados (n.32–33 y n.54–55). Quedan en SQX: 10 estrategias en Builder/Results y el banco nuevo Retester/H0_USDCHF con 10 estrategias; no se borran"
+}

@@ -1,0 +1,8 @@
+{
+  "corrige_n": 77,
+  "estado_real": "FALLIDO (no movió nada; sqcli devolvió 0)",
+  "salida": "'Strategies cut. Cannot paste strategies. Nothing to paste'; después: Results 30, H0_archivo 0, en el recuento y en el disco",
+  "explicacion": "los bancos se cargan desde el disco en diferido: 'Loaded 30 strategies to databank Results' aparece en el log DESPUÉS de la orden move; al ejecutarse, el banco estaba vacío en memoria y no cortó nada",
+  "riesgo": "un 'cortar' que no pega sobre un banco ya cargado podría perder estrategias. No se usa move en la automatización",
+  "perdidas": "ninguna: Builder/Results sigue con 30 archivos"
+}

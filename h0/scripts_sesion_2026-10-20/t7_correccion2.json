@@ -1,0 +1,8 @@
+{
+  "corrige_n": 74,
+  "estado_real": "FALLIDO (objetivo no cumplido; sqcli devolvió 0)",
+  "hipotesis_del_n73": "REFUTADA: con el banco H0_T7 ya existente desde un arranque anterior, la generación vuelve a escribir en Builder/Results (20 -> 30) e ignora el banco de salida de la plantilla",
+  "conclusion": "en el Builder, el banco de salida de la plantilla cargada con loadconfig no se aplica (en el Retester sí, tarea 4). Para automatizar hay que trabajar con Builder/Results",
+  "contaminacion": "Builder/Results: 30 estrategias, todas de la familia H0-proceso (n.23, n.72, n.74); antes del n.23 tenía 0 (n.20). No se borran",
+  "tiempo": "15 órdenes en un arranque: 90 s en total"
+}

@@ -1,0 +1,19 @@
+{
+  "receta": "sh h0/configs/t7_experimento.sh (foto -> fase A -> seleccionar -> fase B -> comparar), registros n.79–83",
+  "tiempo_total_s": 54.7,
+  "desglose_s": {"foto": 0.1, "fase_A_un_arranque": 25.0, "generar_10": "1-2", "seleccionar": 0.15, "fase_B_un_arranque": 25.0, "backtest_10": 0.85, "comparar": 0.13},
+  "conclusion_tiempo": "casi todo el tiempo es el arranque de sqcli (~22 s por arranque); el cálculo de este experimento mínimo son segundos",
+  "reproduccion": "operaciones de la generación y del backtest de reproducción idénticas byte a byte en 10 de 10 estrategias (n.83); el Retester probó las 10 ('str to test: 10')",
+  "restauracion": "Builder y Retester con su configuración original: 0 diferencias en 6 secciones cada uno (n.84–85)",
+  "coste_dinero": "0 durante la prueba (licencia trial); falta el precio de la licencia que se compraría",
+  "intervencion_manual": "solo cerrar la interfaz de SQX antes de empezar",
+  "hipotesis_familia": "H0-proceso: +10 estrategias guardadas (n.80), más >= 20 de los intentos fallidos n.72 y n.74",
+  "hallazgos": [
+    "el Builder ignora el banco de salida de la plantilla y escribe siempre en Results (n.72–75)",
+    "-databank action=move corta y no pega si el banco aún no está cargado en memoria: riesgo de pérdida; no se usa (n.77–78)",
+    "los bancos se cargan desde el disco en diferido; -project action=start sí espera a terminar dentro de -run",
+    "SQX reutiliza nombres de estrategia con sufijos ('Strategy 0.11(2)'): identificar por hash, no por nombre",
+    "cada arranque reescribe todos los archivos del banco: el hash de una carpeta de banco no es estable"
+  ],
+  "limites": "experimento mínimo (10 estrategias, 22 meses H1, sin comprobaciones cruzadas); con generación genética o WF el cálculo dominará"
+}

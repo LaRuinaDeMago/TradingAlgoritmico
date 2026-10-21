@@ -2,9 +2,9 @@
 
 Laboratorio de investigación cuantitativa de Diego. Objetivo: averiguar con evidencia si una estrategia tiene ventaja real o es ruido. Concluir "no hay edge" es un resultado válido.
 
-Fase actual: **H0 – Ficha de viabilidad técnica**. SQX instalado según su pantalla de inicio: *Pro Build 145 (Trial license)*, build 145.3191, prueba hasta el 02-11-2026. La hoja de ruta decía Ultimate 143.2708: discrepancia abierta en `h0/ficha.md`.
+Fase actual: **H0 – Ficha de viabilidad técnica, casi cerrada** (tareas 1–7 hechas; quedan condiciones previas antes de descargar datos de Darwinex). SQX: *Pro Build 145 (Trial license)*, build **145.3191 de desarrollo**, en `C:\StrategyQuantX145`; **la prueba caduca el 2026-11-02** (no es motivo para comprar). La hoja de ruta decía Ultimate 143.2708: la build real está confirmada por CLI; la edición que se compraría sigue INCONCLUSA (fila "Versión y edición" de `h0/ficha.md`).
 
-**Si esta sesión corre en el PC de SQX, empieza por `docs/traspaso_sesion_local.md`.**
+**Al empezar cualquier sesión, lee primero `docs/ESTADO_Y_CONTINUACION.md`** (estado exacto, cómo se trabaja, trampas conocidas y siguiente paso) y después `docs/decisiones/PENDIENTES.md` (todo lo abierto). `docs/traspaso_sesion_local.md` es histórico (instalación inicial del 2026-10-19).
 
 ## Reglas duras (nunca se saltan, aunque Diego o un resultado parezcan pedirlo)
 

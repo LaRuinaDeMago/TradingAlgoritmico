@@ -1,0 +1,9 @@
+{
+  "corrige_n": 72,
+  "estado_real": "FALLIDO (objetivo no cumplido; sqcli devolvió 0)",
+  "que_paso": "la generación (10 estrategias en 2 s) escribió en Builder/Results (10 -> 20 archivos) en vez de en H0_T7; H0_T7 quedó vacío, las exportaciones salieron vacías y el Retester respondió 'No hay estrategias para repetir las pruebas'",
+  "hipotesis": "el banco H0_T7 se creó en el mismo proceso justo antes de cargar la plantilla; según docs/custom-projects/project-config.md, el Output es el primer banco que exista y si no, Results. En la tarea 4 el banco se creó en un arranque anterior y el cambio de banco sí funcionó",
+  "util": "dentro de -run, '-project action=start' del Builder esperó a que terminara antes de la orden siguiente; la restauración de Builder y Retester se ejecutó (pendiente de comprobar)",
+  "contaminacion": "Builder/Results pasa de 10 a 20 estrategias de la familia H0-proceso (>= 10 hipótesis más); no se borran",
+  "siguiente": "repetir con los bancos ya creados (existen en disco desde esta ejecución), sin las órdenes de crear"
+}
