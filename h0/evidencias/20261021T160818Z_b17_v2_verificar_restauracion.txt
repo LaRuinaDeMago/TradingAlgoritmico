@@ -1,0 +1,42 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -project action=saveconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/b17/Builder_tras_b17v2.cfx
+# inicio_utc: 2026-10-21T16:08:18+00:00
+# duracion_s: 22.154
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+18:08:21.487 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+18:08:21.492 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2569 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4615 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -project action=saveconfig name=Builder file=C:/StrategyQuantX145/user/lab_h0/b17/Builder_tras_b17v2.cfx 
+20:08:36 Guardar configuración del proyecto Builder
+--------------------------------------------------
+Config saved.
+--------------------------------------------------
+All tasks completed
+20:08:40 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
