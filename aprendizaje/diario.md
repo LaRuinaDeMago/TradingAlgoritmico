@@ -308,3 +308,7 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Rendimientos decrecientes:** tres revisiones del mismo documento en una tarde; la 14 aportó lo más valioso (P12) y
   la 15 solo ajustes. → Cerrar el documento y dejar que lo siguiente lo corrija la evidencia (o un defecto demostrado,
   por la vía versionada de P7).
+- **Diego preguntó si era sobreingeniería. En parte sí:** trece principios y tres revisiones en una tarde, y aún ninguna
+  prueba sobre un mercado. El rigor no es sobreingeniería; pulir el método en vez de usarlo, sí. La fase 1 es, en el
+  fondo, repetir B17 más completo (B17 se hizo en un día). → Regla acordada: medir, no escribir; versión mínima de cada
+  paso; plazo cerrado; "¿qué error evita y qué decisión cambia?" (`ESTADO_Y_CONTINUACION.md` §7).

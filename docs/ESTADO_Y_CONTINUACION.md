@@ -170,6 +170,19 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 
 ## 7. Siguiente paso (fases de la 0004; poco a poco, una puerta cada vez)
 
+**Regla de trabajo acordada con Diego (2026-10-21): medir, no escribir.** La 0004 es un mapa y un conjunto de
+prohibiciones, no una obra que construir antes de empezar.
+1. **Ni documentos de diseño nuevos ni revisiones externas** hasta tener el resultado de la fase 1 (solo se corrige un
+   defecto demostrado, por la vía de P7).
+2. **Cada paso, en su versión mínima que responde la pregunta:** dos modelos nulos (el de B17 y un remuestreo por
+   bloques), no cinco; una ventaja sembrada con tres tamaños, no un catálogo; reutilizar `b17_sintetico.py` y
+   `b17_analizar.py`.
+3. **Plazo cerrado para la fase 1**, fijado en su protocolo; si se supera, se para y se revisa por qué.
+4. **Antes de hacer algo nuevo:** ¿qué error evita y qué decisión cambia? Si no hay respuesta, no se hace (P10, A6).
+Lo que no está en nuestra mano: que exista una ventaja, el acceso a Darwinex (A22) y la calidad real de datos y
+ejecución. Con este PC (i3, sin GPU), "millones de estrategias" son semanas de cálculo: la fase 1 dirá si merece la pena
+pagar más máquina.
+
 **Fase 0 – condiciones previas (lo siguiente):**
 1. **B21** con la aceptación de la 0004: copiar o archivar las 7.003 estrategias de `Builder/Results` con hash y
    metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad; ajustar la capacidad en una
