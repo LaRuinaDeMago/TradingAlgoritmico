@@ -189,3 +189,14 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Aplicado a nuestros números:** con 7 años para investigar caben ~139 configuraciones independientes antes de que la
   mejor llegue a Sharpe 1 por azar; con 24 meses sellados, ~7. El tope de 3 candidatas al examen queda respaldado.
 - **El código 0 volvió a mentir:** la consulta del cortafuegos devolvió 0 con un "Acceso denegado" dentro. Tercera vez hoy.
+
+## 2026-10-21
+
+- **Primer reinicio con el documento de continuación: funcionó.** La sesión nueva supo dónde estábamos leyendo
+  `ESTADO_Y_CONTINUACION.md`, `PENDIENTES.md` y este diario, y lo comprobó todo con comandos (tests, guardián, registro,
+  evidencias, git, hash de `sqcli`, recuento de bancos) antes de dar nada por bueno.
+- **La memoria persistente también se equivoca.** Una sesión intermedia escribió en la memoria que el cierre del 20-10
+  "NO estaba en git": lo miró antes del push. Al reiniciar, `git status` y `git rev-list` decían lo contrario.
+  → La memoria es una pista, no una evidencia: se contrasta con el sistema y se corrige.
+- **Otro falso positivo del guardián:** un `ls` no recursivo en la carpeta del curso (`…\IMOX TRADING.zip\`, que es una
+  carpeta) se bloquea como "recorrido recursivo". No se buscó otra vía; queda en B9 para la sesión de mantenimiento.

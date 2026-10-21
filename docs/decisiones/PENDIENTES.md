@@ -42,7 +42,7 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | B6 | Optimización secuencial | INCONCLUSO por proporcionalidad | Tarea 2 |
 | B7 | Hipótesis por verificar: **P/L con tipo de cambio fijo** en pares no USD; **efecto no uniforme del spread**; **consola de SQX 2 h adelantada**; aviso de **cambio de convención horaria** en los datos | Verificar en H1 (reconstrucción en Python) | Tareas 3d, 4, 2 |
 | B8 | `pip install -e .` en este PC | Menor | Paso 0 |
-| B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`) | Afinar en mantenimiento, con permiso de Diego | Diario |
+| B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`; desde el 2026-10-21 también `ls` no recursivo en la carpeta `IMOX TRADING.zip` del escritorio, tomado por recorrido recursivo) | Afinar en mantenimiento, con permiso de Diego | Diario |
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
 | B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
 | ~~B12~~ | ~~Fichas de los 3 papers~~ **Cerrado:** tres fichas con verificaciones propias en `conocimiento/fundamentos/` | — | Revisión 07 |

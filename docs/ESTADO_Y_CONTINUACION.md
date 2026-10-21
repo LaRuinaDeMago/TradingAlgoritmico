@@ -1,6 +1,8 @@
 # Estado del proyecto y punto de continuación
 
 **Actualizado: 2026-10-20 (cierre de la primera sesión local en el PC de SQX).** Último registro: n.º 89.
+**Comprobado al reiniciar el 2026-10-21:** tests 20/20, guardián 28/28, registro 89, evidencias 0 fallos, git limpio y
+0/0 con origin, `sqcli.exe` con el mismo SHA-256, bancos como en §3 (40 · 0 · 0 · 10 · 10 · 7). A9 sin hacer.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -66,7 +68,9 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
   `C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\` (auditoría del curso, herramientas para leer el zip, configs
   extraídas) y `C:\Users\SERVILAB\Documents\LAB_BIBLIOTECA\papers\` (3 PDF, su texto e imágenes de fórmulas).
 - **Curso de Imox:** `C:\Users\SERVILAB\Desktop\curso de trading algoritmico\IMOX TRADING.zip.001…008` (14,8 GB,
-  85 vídeos + configuraciones). Procedencia por aclarar (A8). Nada del curso va a GitHub.
+  85 vídeos + configuraciones). Procedencia por aclarar (A8). Nada del curso va a GitHub. Junto a las partes hay
+  además una **carpeta** llamada `IMOX TRADING.zip` (creada el 2026-10-20 13:30, probablemente lo extraído); no se
+  ha podido mirar dentro porque el guardián bloquea `ls` en esa ruta (falso positivo, B9).
 - **Repositorio de GitHub público** (`LaRuinaDeMago/TradingAlgoritmico`, rama `claude/proyecto-2026-fps66g`); A4.
   El historial ya contiene el ID de hardware, el de la licencia de prueba y el usuario de Windows (decisiones de
   Diego del 2026-10-20 de no reescribir historial).
