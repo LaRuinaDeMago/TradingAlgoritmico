@@ -12,8 +12,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 1. Leer `CLAUDE.md` (reglas duras), **este documento**, `aprendizaje/diario.md` (errores ya vistos) y
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
-   `python -m unittest discover -s tests` (20/20) · `python .claude/hooks/guardian.py --autotest` ·
-   `PYTHONPATH=src python -m lab verificar` (89 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `python -m unittest discover -s tests` (20/20) · `python .claude/hooks/guardian.py --autotest` (44/44 desde A9) ·
+   `PYTHONPATH=src python -m lab verificar` (91 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
 3. Mirar si Diego ha resuelto algo de la sección 6 (decisiones) o la sesión de mantenimiento del guardián (A9).
    Si la sesión es de terminal: que se haya abierto con `claude_lab.cmd` (sin "API Usage Billing").
@@ -30,7 +30,7 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 
 | Tarea H0 | Estado | Evidencia clave |
 |---|---|---|
-| 0. Banco de trabajo | SÍ, con un agujero | Registros 5–8. PowerShell no pasa por el guardián (arreglo listo, A9) |
+| 0. Banco de trabajo | SÍ | Registros 5–8; agujero de PowerShell cerrado el 2026-10-21 (A9, n.º 90) y comprobado con llamadas reales (B3, n.º 91) |
 | 1. `sqcli -h`, build | SÍ | 145.3191, firma válida (n.º 9–10) |
 | 2. Límites de la prueba | NO en lo probado | WFO y What If funcionan (n.º 57–71); optimización secuencial INCONCLUSA |
 | 3a–3d. Generar, backtest, exportar | SÍ | n.º 16–33, 34–48 |
@@ -134,7 +134,7 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 aceptada v6), A2 (0 € reales hasta superar la demo), A3 (horas variables, se registran), A8 (curso comprado), A17
 (transcriptor instalado), A19 (EURUSD), A20 (rigor con presupuesto de tiempo por fase), A21 (pausa de revisiones),
 A10 (la clave API es de Diego y se queda; el laboratorio abre Claude con `claude_lab.cmd`, que la quita).
-Las más urgentes que quedan: **A9** sesión de mantenimiento del guardián · **A12** licencia (la caducidad del
+A9 (guardián con PowerShell, n.º 90). Las más urgentes que quedan: **A12** licencia (la caducidad del
 2026-11-02 no es motivo para comprar; antes, B16) · **A1b** cifras del piloto (propuestas en la 0003). Después: A4
 repositorio público/privado, A5 enunciado del objetivo, A6 regla de proporcionalidad, A7 (recogida en la 0003 v6; falta
 fijar cifras), A11 MetaTrader, A13 identidad git, A14 copias de seguridad, A15 protección de rama, A18
@@ -142,12 +142,9 @@ numpy/pandas/scipy.
 
 ## 7. Siguiente paso (orden propuesto)
 
-1. **Diego: sesión de mantenimiento del guardián** (`docs/mantenimiento/README.md`): **solo el borrador de PowerShell**,
-   que es lo que está escrito y probado (44/44). B15 (permiso del sellado ligado a recurso y finalidad) y B9 (falsos
-   positivos) no tienen borrador todavía: Claude los prepara y probará, y van en una **segunda** sesión de
-   mantenimiento antes de descargar Darwinex (hasta entonces no hay nada sellado que proteger). Mientras Diego hace A9,
-   **Claude no hace commits ni lanza SQX** en esta carpeta (para no mezclar cambios ni dejar registros "sucios").
-   Después, **Claude comprueba con una llamada real de PowerShell** (B3).
+1. ~~A9 y B3~~ **Hechos el 2026-10-21** (registros n.º 90 y 91): el guardián vigila PowerShell y lo bloquea en
+   llamadas reales. Queda una **segunda sesión de mantenimiento** antes de descargar Darwinex para B15 (permiso del
+   sellado ligado a recurso y finalidad) y B9 (falsos positivos); Claude prepara y prueba antes su borrador.
 2. **Claude: prueba de integridad exportar/importar por fechas (B1)** con USDCHF quemado: intervalo exacto (límites
    inclusivos/exclusivos), importación sin errores, velas idénticas tras normalizar, sin ausentes/duplicadas/desplazadas,
    zona horaria, repetible, y **mismo backtest antes y después**. Es la última pieza técnica antes de Darwinex.

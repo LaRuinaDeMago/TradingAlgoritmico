@@ -154,7 +154,8 @@ Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Ze
 ## 5. Condiciones previas que no dependen de esta decisión
 
 Antes de descargar un solo precio:
-1. **Guardián sin el agujero de PowerShell**, comprobado con una llamada real.
+1. **Guardián sin el agujero de PowerShell**, comprobado con una llamada real. **Cumplida el 2026-10-21** (registros
+   n.º 90 y 91).
 2. **API de SQX en el puerto 5050** (escucha en todas las interfaces): comprobar si pide autenticación y si se alcanza
    desde otro equipo de la red; si se alcanza, bloquearla en el cortafuegos antes de seguir.
 3. **Visibilidad del repositorio** (decide Diego): la revisión 03 recomienda hacerlo privado para reducir exposición

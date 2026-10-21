@@ -246,3 +246,14 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   `docs/mantenimiento/` tal cual (`cmp`: idénticos) y añadió `PowerShell` al matcher. Autotest 44/44 y `settings.json`
   válido. → Que el autotest pase solo demuestra que la función decide bien; que Claude Code **llame** al guardián desde
   PowerShell falta probarlo con una llamada real en una sesión normal (B3).
+- **B3 superado (n.º 91), y verificado sin fiarse del relato:** desde esta sesión normal se comprobó que el commit de
+  mantenimiento solo tocaba los 3 archivos previstos y que el guardián activo es idéntico al borrador. Luego, llamadas
+  reales de PowerShell: leer un archivo sellado inexistente, recorrer `data` y borrar en `registry/` → bloqueadas; un
+  `Get-Date` → pasa (control positivo: el guardián no bloquea todo a ciegas). El cambio surtió efecto en esta sesión sin
+  reiniciarla: el primer comando bloqueado fue mío, al comprobarlo.
+- **El primer intento de A9 no hizo nada:** el `claude` de terminal no tenía sesión iniciada ("Login expired"). Bien:
+  falló antes de actuar. → Tras quitar la clave API, el terminal necesita `/login` con la suscripción.
+- **El guardián también lee los textos que se registran:** bloqueó un `--comando` que contenía literalmente
+  "Remove-Item registry/…". Vía sancionada: el texto exacto va en el archivo de resultado.
+- **Las líneas 1 y 2 del registro tienen CRLF en la copia de trabajo** (de antes de `.gitattributes`); en git está todo
+  en LF y el registrador escribe LF. No afecta a la cadena de hashes, que lee el JSON. No se toca.

@@ -28,7 +28,8 @@ Cripto: 9. Acciones de EE. UU.: 258 (desde 2019-12). La fecha final no se conoce
 
 1. **Guardián sin el agujero de PowerShell**, aplicado en la sesión de mantenimiento y comprobado con una llamada **real**
    de PowerShell sobre un archivo inexistente de la carpeta sellada (no solo simulada). Mientras no existían datos sellados
-   era un riesgo teórico; con ellos, deja de serlo.
+   era un riesgo teórico; con ellos, deja de serlo. **Cumplida el 2026-10-21** (registros n.º 90 y 91). Antes de
+   descargar falta además B15 (permiso de acceso ligado a recurso y finalidad).
 2. **Primer mercado elegido** con los criterios de la sección 5, aprobados antes de ver ningún backtest de ese mercado.
 3. **Presupuesto y criterios de abandono con cifras** (hoja de ruta: "se fijan en H0, antes de ver ningún resultado").
 4. **Comprobado en H0 cómo descarga SQX los datos de Darwinex** (sección 6): si admite una fecha de fin, su granularidad,

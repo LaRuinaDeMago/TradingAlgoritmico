@@ -16,7 +16,7 @@ Si algo no se puede comprobar dentro de la prueba, queda INCONCLUSO; nunca se su
 | `python --version` ≥ 3.10 | **SÍ** (3.14.6) | Registro n.º 5 · `h0/evidencias/20261020T000119Z_p0_python_version.txt` | < 1 min |
 | `python -m unittest discover -s tests` sin fallos | **SÍ** (13/13) | Registro n.º 6 · `h0/evidencias/20261020T000120Z_p0_unittest.txt` | < 1 min |
 | `python .claude/hooks/guardian.py --autotest` sin fallos | **SÍ** (28/28) | Registro n.º 7 · `h0/evidencias/20261020T000123Z_p0_guardian_autotest.txt` | < 1 min |
-| Prueba real: pedir a Claude Code que lea `data/sealed/x` y que el guardián lo bloquee | **SÍ, con un agujero** | Registro n.º 8. Bash: lo bloquea el guardián. Read: lo bloquea antes la regla `deny`. **La herramienta PowerShell no pasa por el guardián** (arreglo preparado; falta la sesión de mantenimiento) | 10 min |
+| Prueba real: pedir a Claude Code que lea `data/sealed/x` y que el guardián lo bloquee | **SÍ** (desde el 2026-10-21) | Registro n.º 8. Bash: lo bloquea el guardián. Read: lo bloquea antes la regla `deny`. La herramienta PowerShell no pasaba por el guardián: **cerrado** en la sesión de mantenimiento (n.º 90, autotest 44/44) y comprobado con llamadas reales de PowerShell: 3 bloqueos y 1 control positivo (n.º 91) | 10 min + 15 min |
 
 Si el hook no se ejecuta (por ejemplo, porque `python` no está en el PATH), **no hay protección**: se arregla antes de seguir.
 Nota: `pip install -e .` no está hecho en este PC; mientras tanto se usa `PYTHONPATH=src python -m lab ...`.

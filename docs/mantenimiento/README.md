@@ -1,8 +1,11 @@
 # Mantenimiento del guardián (asunto A9 de `docs/decisiones/PENDIENTES.md`)
 
-`guardian_borrador_powershell.py` es el guardián actual más la vigilancia de la herramienta PowerShell (hoy sin
-control). Autotest: 44/44 (los 28 de antes + 16 de PowerShell). **No está activo**: el guardián en uso sigue siendo
-`.claude/hooks/guardian.py`, que Claude no puede modificar.
+**Aplicado el 2026-10-21** (commit 7527489, registros n.º 90 y 91): el guardián activo es idéntico a
+`guardian_borrador_powershell.py` y vigila PowerShell. Lo de abajo queda como procedimiento para la **próxima** sesión de
+mantenimiento (B15 y B9), cambiando el texto de la petición por el del nuevo borrador.
+
+`guardian_borrador_powershell.py` es el guardián de entonces más la vigilancia de la herramienta PowerShell.
+Autotest: 44/44 (los 28 de antes + 16 de PowerShell).
 
 Para aplicarlo, Diego abre una sesión de mantenimiento en una ventana de PowerShell, desde la carpeta del proyecto:
 
