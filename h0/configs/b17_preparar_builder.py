@@ -17,6 +17,9 @@ import preparar_builder_usdchf as base  # noqa: E402
 
 DESDE = "2023.02.01"  # un mes de margen tras el primer dato importado (B1-bis)
 OOS_DESDE, OOS_HASTA = "2024.04.01", "2024.10.30"  # últimos 7 de 21 meses
+# v2: capacidad del banco. Con la de fábrica (1000) SQX desaloja las de peor fitness (Ret/DD dentro de muestra) cuando
+# el banco se llena: la primera ejecución de B17 quedó mezclada y seleccionada (registro n.º 181).
+CAPACIDAD = "100000"
 
 
 def main(origen: str, destino: str, simbolo: str, n: str) -> None:
@@ -30,6 +33,11 @@ def main(origen: str, destino: str, simbolo: str, n: str) -> None:
         sys.exit("Se esperaba un único <OutOfSample> vacío; no se escribe nada.")
     ET.SubElement(oos[0], "Range", {"dateFrom": OOS_DESDE, "dateTo": OOS_HASTA, "type": "oos"})
     print(f"Fuera de muestra: se añade <Range dateFrom={OOS_DESDE!r} dateTo={OOS_HASTA!r} type='oos'>")
+    capacidad = raiz.findall("Settings/Rankings/MaxStrategies")
+    if len(capacidad) != 1:
+        sys.exit("Se esperaba un único <MaxStrategies>; no se escribe nada.")
+    print(f"Capacidad del banco: MaxStrategies {capacidad[0].text!r} -> {CAPACIDAD!r}")
+    capacidad[0].text = CAPACIDAD
     with zipfile.ZipFile(destino, "x", compression=zipfile.ZIP_DEFLATED) as z:
         z.writestr("config.xml", ET.tostring(raiz, encoding="unicode"))
 

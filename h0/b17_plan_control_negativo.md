@@ -79,6 +79,25 @@ se replantea. El mismo N en los tres brazos.
 6. Restaurar el Builder y comprobarlo.
 7. Analizar con `b17_analizar.py`. Todo por el ejecutor con registro; commit antes de cada orden; nada más usando la CPU.
 
+## Enmienda v2 (cambio de proceso, regla 8), escrita ANTES de la segunda ejecución
+
+**Qué pasó en la primera ejecución (registros n.º 159–181):** el banco `Builder/Results` tiene **capacidad 1.000**
+(`<Rankings><MaxStrategies>1000`) y, al llenarse, SQX **desaloja las de peor fitness** (Ret/DD dentro de muestra). En el
+brazo real entraron 926 de las 1.000 nuevas; en el nulo 1, 399; en el nulo 2, 311, desplazando a las del brazo anterior:
+los brazos quedaron **mezclados y seleccionados por resultado**. La ejecución es **inválida** y sus datos **no se
+analizan** (solo se miraron recuentos y nombres). Además, SQX desalojó **17 de las 40 estrategias de prueba de H0** (8 sin
+copia en otra carpeta). Causa: Claude no comprobó la capacidad del banco antes de llenarlo.
+
+**Cambios (y nada más):**
+1. La plantilla fija `MaxStrategies = 100000` (`b17_preparar_builder.py`), para que no se desaloje nada.
+2. Cada brazo se comprueba al terminar: todas las de antes siguen y hay **exactamente N nuevas**; si no, la tanda se
+   para (`b17_brazo.sh`).
+3. Etiquetas nuevas (`v2_real`, `v2_nulo1`, `v2_nulo2`) para no pisar las evidencias de la primera ejecución.
+
+Sin cambios: datos, brazos, N = 1.000, embudo F, medidas, pruebas y reglas de decisión. La calibración no se repite (su
+única función era medir el tiempo). Nota: SQX descarta por defecto las estrategias "con problemas" (p. ej. sin
+operaciones) antes de contarlas; afecta igual a los tres brazos y no se puede desactivar sin cambiar otro ajuste.
+
 ## Lo que esta prueba NO demuestra
 
 Que haya o no ventaja en EURUSD; nada sobre la generación genética (solo aleatoria); nada sobre filtros más

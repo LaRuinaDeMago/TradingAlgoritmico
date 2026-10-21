@@ -22,4 +22,8 @@ lab --nombre "b17_${ETQ}_generar" --datos "C:/StrategyQuantX145/user/data/Histor
   -- "$SQ" -project action=start name=Builder
 lab --nombre "b17_${ETQ}_banco_despues" --descripcion "B17 $ETQ: exportar Builder/Results despues de generar" \
   -- "$SQ" -databank action=export project=Builder name=Results "file=$B17/Results_despues_$ETQ.csv"
+# v2: el brazo solo vale si están todas las de antes y exactamente N nuevas (0 desalojadas); si no, se para aquí.
+python -I -c "import sys; sys.path.insert(0, 'h0/configs'); import b17_analizar as ba; \
+print('comprobacion del brazo: nuevas', len(ba.nuevas(sys.argv[1], sys.argv[2], int(sys.argv[3]))), '- 0 desalojadas')" \
+  "$B17/Results_antes_$ETQ.csv" "$B17/Results_despues_$ETQ.csv" "$N"
 git status --short
