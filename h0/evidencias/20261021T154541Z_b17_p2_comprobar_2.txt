@@ -1,0 +1,21 @@
+# comando: python -I h0/configs/b1_analizar_diferencias.py C:/StrategyQuantX145/user/lab_h0/b17/USDCHF_SINT2.custom.csv "C:/StrategyQuantX145/user/lab_h0/b17/R2/USDCHF_SINT2-M1-No Session.csv"
+# inicio_utc: 2026-10-21T15:45:41+00:00
+# duracion_s: 24.004
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "velas_comunes": 678024,
+ "precio_distinto": 0,
+ "solo_volumen_distinto": 111,
+ "volumen_original_sobre_int32": 111,
+ "recortadas_exactamente_a_int32_max": 111,
+ "volumen_distinto_sin_explicar": 0,
+ "las_recortadas_son_todas_las_que_superan_int32": true,
+ "volumen_original_maximo": "6.72877002E+9",
+ "primera_recortada": "2023-01-09 04:29:00",
+ "ultima_recortada": "2024-10-30 02:50:00"
+}
+
+=== STDERR ===
