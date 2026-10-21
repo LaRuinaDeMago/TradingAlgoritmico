@@ -64,5 +64,8 @@ El proyecto es también una escuela para Diego y para Claude. Ver `aprendizaje/R
 - **Guardián** (`.claude/hooks/guardian.py`, activado en `.claude/settings.json`): bloquea el acceso a `data/sealed/`, los recorridos recursivos que podrían entrar en ella, la edición o borrado de `registry/` y los cambios al propio guardián. Si bloquea algo, no buscar otra forma de hacerlo: avisar a Diego.
 - **Ejecutor con registro**: todo comando de SQX se lanza con `python -m lab ejecutar --nombre <corto> --version-sqx <build> [--datos ...] [--semilla N] [--costes ...] -- <comando>`. Guarda la salida en `h0/evidencias/`, mide la duración y lo anota en `registry/experimentos.jsonl` aunque falle.
 - Pasos manuales (GUI): `python -m lab registrar --comando "MANUAL: <pasos>" ...`.
+- **Abrir Claude Code en terminal solo con `claude_lab.cmd`**: quita `ANTHROPIC_API_KEY` en esa ventana para usar la
+  suscripción (la clave es de Diego y se queda en Windows; el laboratorio no la usa, A10). Nunca `claude -p` sin quitarla:
+  en modo no interactivo la clave se usa siempre. La aplicación de escritorio no la lee.
 - Antes de cerrar una sesión: `python -m lab verificar`, `python -m unittest discover -s tests` y commit del registro y las evidencias.
 - Hoja de ruta completa: `docs/hoja_de_ruta.md`.

@@ -235,3 +235,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   exacto que el audio había convertido en "red de base" y "offtrade" (cifras solo en la nota privada: son contenido del
   curso). Es el mismo hallazgo de los `.cfx`, ahora visto en el vídeo: el curso **selecciona con el tramo fuera de
   muestra**.
+- **A10 resuelto sin tocar la clave de Diego:** según la documentación oficial, la aplicación de escritorio no lee
+  `ANTHROPIC_API_KEY`, el `claude` de terminal pregunta una vez y recuerda la respuesta, y `claude -p` la usa siempre.
+  → `claude_lab.cmd` la quita solo en su ventana. Se probó con una clave falsa y con un **control negativo** (la misma
+  copia sin la línea que la borra se niega a abrir): la prueba distingue de verdad.
+- **Dos ediciones mías salieron con el texto de reemplazo equivocado** ("x"). No se aplicaron porque el texto de
+  búsqueda tampoco coincidía, pero pudieron romper un documento. → Releer cada edición antes de enviarla.

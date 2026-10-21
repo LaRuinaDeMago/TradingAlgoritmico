@@ -7,10 +7,11 @@ control). Autotest: 44/44 (los 28 de antes + 16 de PowerShell). **No está activ
 Para aplicarlo, Diego abre una sesión de mantenimiento en una ventana de PowerShell, desde la carpeta del proyecto:
 
 ```
-$env:LAB_MANTENIMIENTO_GUARDIAN = "1"; claude
+Remove-Item Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue; $env:LAB_MANTENIMIENTO_GUARDIAN = "1"; claude
 ```
 
-(en la pregunta de la clave API, elegir "2. No") y pide:
+La primera parte quita la clave API solo en esa ventana (A10: la clave es de Diego y se queda, pero el laboratorio no
+la usa). Comprobar que la cabecera **no** dice "API Usage Billing" (o `/status`) antes de escribir nada. Después pide:
 
 > Modo mantenimiento autorizado por Diego, solo para esto: copia `docs/mantenimiento/guardian_borrador_powershell.py`
 > sobre `.claude/hooks/guardian.py` y añade `PowerShell` al matcher de `.claude/settings.json`. Ejecuta el autotest,

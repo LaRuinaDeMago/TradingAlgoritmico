@@ -16,6 +16,7 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    `PYTHONPATH=src python -m lab verificar` (89 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
 3. Mirar si Diego ha resuelto algo de la sección 6 (decisiones) o la sesión de mantenimiento del guardián (A9).
+   Si la sesión es de terminal: que se haya abierto con `claude_lab.cmd` (sin "API Usage Billing").
 4. Seguir por la sección 7 (siguiente paso).
 
 ## 1. Objetivo y fase
@@ -62,9 +63,9 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 - **Git:** sin identidad configurada; los commits se hacen con
   `git -c user.name=Claude -c user.email=noreply@anthropic.com commit -F <archivo>` (A13). `core.autocrlf=true`
   (por eso `.gitattributes`: evidencias byte a byte, registro y `.sh` en LF).
-- **Variable de usuario `ANTHROPIC_API_KEY`** definida en Windows (no se ha mirado su valor; A10). **Ojo:** hace que
-  `claude` lanzado desde PowerShell se cobre por consumo ("API Usage Billing"). Mientras A10 siga abierto, en cada
-  ventana: `Remove-Item Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue` antes de `claude`.
+- **Variable de usuario `ANTHROPIC_API_KEY`**: es de Diego y se queda (A10 cerrado el 2026-10-21), pero **el
+  laboratorio no la usa**. Con ella, `claude` de terminal se cobraba por consumo ("API Usage Billing"). Abrir siempre con
+  **`claude_lab.cmd`** (la quita solo en esa ventana). La aplicación de escritorio no la lee.
 - **Carpetas privadas fuera del repositorio** (solo en este PC; **copia de seguridad: A14**):
   `h0/evidencias_privadas/` (dentro del proyecto pero ignorada por git: originales con ID de hardware y licencia),
   `C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\` (auditoría del curso, herramientas para leer el zip, configs
@@ -131,13 +132,13 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 
 **Cerradas el 2026-10-21** (Diego, en el chat; varias por delegación explícita en el criterio de Claude): A1 (0003
 aceptada v6), A2 (0 € reales hasta superar la demo), A3 (horas variables, se registran), A8 (curso comprado), A17
-(transcriptor instalado), A19 (EURUSD), A20 (rigor con presupuesto de tiempo por fase), A21 (pausa de revisiones).
-Las más urgentes que quedan: **A9** sesión de mantenimiento del guardián · **A10** la clave API (urgente: hizo que
-`claude` en PowerShell se cobrara por consumo) · **A12** licencia (la caducidad del 2026-11-02 no es motivo para
-comprar; antes, B16) · **A1b** cifras del piloto (propuestas en la 0003). Después: A4 repositorio
-público/privado, A5 enunciado del objetivo, A6 regla de proporcionalidad, A7 éxito por rentabilidad neta frente al coste
-total, A8 procedencia del curso, A10 clave API, A11 MetaTrader, A13 identidad git, A14 copias de seguridad, A15
-protección de rama, A17 piloto de vídeos, A18 numpy/pandas/scipy.
+(transcriptor instalado), A19 (EURUSD), A20 (rigor con presupuesto de tiempo por fase), A21 (pausa de revisiones),
+A10 (la clave API es de Diego y se queda; el laboratorio abre Claude con `claude_lab.cmd`, que la quita).
+Las más urgentes que quedan: **A9** sesión de mantenimiento del guardián · **A12** licencia (la caducidad del
+2026-11-02 no es motivo para comprar; antes, B16) · **A1b** cifras del piloto (propuestas en la 0003). Después: A4
+repositorio público/privado, A5 enunciado del objetivo, A6 regla de proporcionalidad, A7 (recogida en la 0003 v6; falta
+fijar cifras), A11 MetaTrader, A13 identidad git, A14 copias de seguridad, A15 protección de rama, A18
+numpy/pandas/scipy.
 
 ## 7. Siguiente paso (orden propuesto)
 

@@ -6,3 +6,5 @@ h0/evidencias/** -text
 registry/** text eol=lf
 # Guiones de shell: siempre LF (con CRLF, `sh` falla al leerlos en un clon nuevo en Windows).
 *.sh text eol=lf
+# Lanzadores de Windows: siempre CRLF (cmd.exe puede leer mal etiquetas y bloques con LF).
+*.cmd text eol=crlf
