@@ -3,7 +3,9 @@ filtros ni cross checks) cambiando solo el símbolo, el inicio (margen de calent
 estrategias y un tramo fuera de muestra con el formato documentado en
 docs/custom-projects/task-settings/shared-sections.md de la instalación: <Range dateFrom= dateTo= type="oos"/>.
 
-Uso:  python -I h0/configs/b17_preparar_builder.py ORIGEN.cfx DESTINO.cfx SIMBOLO N
+Uso:  python -I h0/configs/b17_preparar_builder.py ORIGEN.cfx DESTINO.cfx SIMBOLO N [SPREAD DESLIZAMIENTO]
+
+SPREAD y DESLIZAMIENTO (pips) solo para la v3 sin costes; sin ellos, los de H0 (2 y 1).
 """
 
 import io
@@ -22,8 +24,10 @@ OOS_DESDE, OOS_HASTA = "2024.04.01", "2024.10.30"  # últimos 7 de 21 meses
 CAPACIDAD = "100000"
 
 
-def main(origen: str, destino: str, simbolo: str, n: str) -> None:
+def main(origen: str, destino: str, simbolo: str, n: str, spread: str | None = None, desliz: str | None = None) -> None:
     base.SIMBOLO, base.DESDE, base.ESTRATEGIAS = simbolo, DESDE, n
+    if spread is not None:
+        base.SPREAD_PIPS, base.DESLIZAMIENTO_PIPS = spread, desliz
     intermedio = io.BytesIO()
     base.main(origen, intermedio)
     with zipfile.ZipFile(intermedio) as z:
@@ -43,4 +47,4 @@ def main(origen: str, destino: str, simbolo: str, n: str) -> None:
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:5])
+    main(*sys.argv[1:7])

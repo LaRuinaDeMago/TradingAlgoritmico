@@ -1,12 +1,12 @@
 #!/bin/sh
 # B17 (plan h0/b17_plan_control_negativo.md): genera un brazo. Exporta Builder/Results antes, carga y comprueba la
 # plantilla del símbolo, genera N estrategias y exporta Results después. Las nuevas se separan en el análisis por nombre.
-# Uso: sh h0/configs/b17_brazo.sh MENSAJE_COMMIT ETIQUETA SIMBOLO N
+# Uso: sh h0/configs/b17_brazo.sh MENSAJE_COMMIT ETIQUETA SIMBOLO N [SPREAD DESLIZAMIENTO]
 . h0/configs/b1_funciones.sh "$1"
-ETQ="$2"; S="$3"; N="$4"
+ETQ="$2"; S="$3"; N="$4"; SPREAD="${5:-2}"; DESLIZ="${6:-1}"
 B17="C:/StrategyQuantX145/user/lab_h0/b17"
-COSTES='{"spread_pips": 2, "deslizamiento_pips": 1, "comision": "ninguna", "swap": "desactivado", "motor": "MetaTrader4", "nota": "los de H0; decision 0002"}'
-python -I h0/configs/b17_preparar_builder.py h0/configs/Builder_original_145.3191.cfx "$B17/Builder_B17_$ETQ.cfx" "$S" "$N" | tail -1
+COSTES="{\"spread_pips\": $SPREAD, \"deslizamiento_pips\": $DESLIZ, \"comision\": \"ninguna\", \"swap\": \"desactivado\", \"motor\": \"MetaTrader4\", \"nota\": \"B17; decision 0002\"}"
+python -I h0/configs/b17_preparar_builder.py h0/configs/Builder_original_145.3191.cfx "$B17/Builder_B17_$ETQ.cfx" "$S" "$N" "$SPREAD" "$DESLIZ" | grep -E "spread|slippage|Capacidad"
 lab --nombre "b17_${ETQ}_banco_antes" --descripcion "B17 $ETQ: exportar Builder/Results antes de generar" \
   -- "$SQ" -databank action=export project=Builder name=Results "file=$B17/Results_antes_$ETQ.csv"
 lab --nombre "b17_${ETQ}_loadconfig" --datos "$B17/Builder_B17_$ETQ.cfx" \

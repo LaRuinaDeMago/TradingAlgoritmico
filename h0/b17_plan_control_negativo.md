@@ -109,6 +109,30 @@ Solo se miraron recuentos y nombres, ninguna métrica.
 sesgar), con un exceso admitido de **hasta 7** (un hilo por núcleo); con más, se para. T1 trabaja con los recuentos
 reales de cada brazo. Nada más cambia. `v2_nulo1` no se repite: sus exportaciones están completas.
 
+## Resultado de la v2.1 (registros n.º 182–203): **INCONCLUSO** por la regla S
+
+- Embudo F completo: real 1 de 1.000; nulo 1, 2 de 1.001; nulo 2, 0 de 1.000. **T1: p = 0,70** (el real no supera a los
+  nulos). Tasa de falsos positivos del embudo en ruido: 2 de 2.001 (0,1 %).
+- **S no se cumple:** Spearman del Sharpe dentro/fuera en el nulo 2 = 0,221 (p = 0,0005). Por la regla fijada, **no se
+  concluye nada** sobre D1/D2.
+- Diagnósticos posteriores (n.º 202–203, no son criterios): el Sharpe se correlaciona con el número de operaciones
+  (≈ −0,3 en los tres brazos, dentro y fuera: los costes castigan igual en los dos tramos); controlando la frecuencia,
+  la persistencia desaparece en el real (0,066) y el nulo 1 (−0,017) pero **no en el nulo 2 (0,150)**. La hipótesis de
+  la tendencia por tramos queda **refutada** (el nulo 2 sube dentro y baja fuera). Hipótesis restante: el canal de costes
+  depende también del tamaño medio de las operaciones, no solo de su número. **Defecto del plan:** con costes, "sin
+  ventaja" no implica "sin persistencia"; S estaba mal planteada para datos con costes.
+
+## Enmienda v3 (cambio de proceso, regla 8), escrita ANTES de ejecutarla: los mismos tres brazos **sin costes**
+
+Mismos datos y plantilla salvo **spread 0 y deslizamiento 0** (ya sin comisión ni swap), N = 1.000 nuevas por brazo
+(+ hasta 7), etiquetas `v3_*`. Criterios fijados ahora:
+- **S0:** en cada brazo nulo, Spearman del Sharpe dentro/fuera con p ≥ 0,01. Si falla sin costes → el problema está en
+  el generador o en el backtest: se para y se investiga (p. ej. con otra semilla), sin concluir nada.
+- Si S0 se cumple: (a) la persistencia de la v2 queda atribuida a los costes (hipótesis apoyada, no demostrada en
+  general); (b) se aplican T1 y las reglas D1/D2 a la v3; (c) se informa del Spearman del real frente al de los nulos.
+- Lección que pasa a B19 pase lo que pase: **el patrón de comparación es la distribución nula simulada con los mismos
+  costes**, no el cero teórico.
+
 ## Lo que esta prueba NO demuestra
 
 Que haya o no ventaja en EURUSD; nada sobre la generación genética (solo aleatoria); nada sobre filtros más
