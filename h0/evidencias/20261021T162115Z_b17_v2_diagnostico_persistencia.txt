@@ -1,0 +1,35 @@
+# comando: python -I h0/configs/b17_diagnostico_persistencia.py 1000 C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_real.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_real.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_nulo1.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_nulo1.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_nulo2.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_nulo2.csv
+# inicio_utc: 2026-10-21T16:21:15+00:00
+# duracion_s: 0.469
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "real": {
+  "estrategias": 667,
+  "spearman_IS_OOS": 0.1338,
+  "spearman_sharpe_IS_con_operaciones": -0.3167,
+  "spearman_sharpe_OOS_con_operaciones": -0.2316,
+  "spearman_parcial_IS_OOS_sin_frecuencia": 0.0655,
+  "cota_aprox_95": 0.0774
+ },
+ "nulo1": {
+  "estrategias": 661,
+  "spearman_IS_OOS": 0.0545,
+  "spearman_sharpe_IS_con_operaciones": -0.2991,
+  "spearman_sharpe_OOS_con_operaciones": -0.235,
+  "spearman_parcial_IS_OOS_sin_frecuencia": -0.0171,
+  "cota_aprox_95": 0.0778
+ },
+ "nulo2": {
+  "estrategias": 659,
+  "spearman_IS_OOS": 0.221,
+  "spearman_sharpe_IS_con_operaciones": -0.2996,
+  "spearman_sharpe_OOS_con_operaciones": -0.2775,
+  "spearman_parcial_IS_OOS_sin_frecuencia": 0.1504,
+  "cota_aprox_95": 0.0779
+ }
+}
+
+=== STDERR ===
