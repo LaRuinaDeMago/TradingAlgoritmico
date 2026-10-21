@@ -1,0 +1,167 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -symbol action=list
+# inicio_utc: 2026-10-21T14:26:43+00:00
+# duracion_s: 22.308
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+16:26:46.508 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+16:26:46.512 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2563 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4735 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -symbol action=list 
+Symbol,Instrument,Timeframe,Timezone,Date from,Date to,Total days,Total records,Source,Data type
+@EW,EW - CME,M1,"Exchange",2009.01.02,2024.10.29,5780,2416659,SQ Futures data,Futures
+[[Dow Jones Industrial Average]],[[Dow Jones Industrial Average]],D1,"(UTC) Coordinated Universal Time, DST: No",2015.03.19,2022.04.06,2575,1000000,SQ Equity data,Stock
+[[Nasdaq 100]],[[Nasdaq 100]],D1,"(UTC) Coordinated Universal Time, DST: No",1993.10.01,2022.04.06,10414,1000000,SQ Equity data,Stock
+[[Nasdaq Biotechnology]],[[Nasdaq Biotechnology]],D1,"(UTC) Coordinated Universal Time, DST: No",,,0,1000000,SQ Equity data,Stock
+[[Russell 1000]],[[Russell 1000]],D1,"(UTC) Coordinated Universal Time, DST: No",1990.07.03,2022.04.06,11600,1000000,SQ Equity data,Stock
+[[Russell 2000]],[[Russell 2000]],D1,"(UTC) Coordinated Universal Time, DST: No",,,0,1000000,SQ Equity data,Stock
+[[Russell 3000]],[[Russell 3000]],D1,"(UTC) Coordinated Universal Time, DST: No",1990.07.03,2022.04.06,11600,1000000,SQ Equity data,Stock
+[[S&P 100 limited]],[[S&P 100 limited]],D1,"(UTC) Coordinated Universal Time, DST: No",2017.01.03,2022.03.31,1913,1000000,SQ Equity data,Stock
+[[S&P 100]],[[S&P 100]],D1,"(UTC) Coordinated Universal Time, DST: No",2007.06.01,2022.04.06,5423,1000000,SQ Equity data,Stock
+[[S&P 500]],[[S&P 500]],D1,"(UTC) Coordinated Universal Time, DST: No",1984.09.07,2022.04.06,13725,1000000,SQ Equity data,Stock
+[[S&P MidCap 400]],[[S&P MidCap 400]],D1,"(UTC) Coordinated Universal Time, DST: No",,,0,1000000,SQ Equity data,Stock
+AAPL,NASDAQ Stock,M1,"Exchange",2009.01.02,2022.04.06,4843,2195946,SQ Equity data,Stock
+AAPL.D,NASDAQ Stock,D1,"Exchange",1984.09.07,2022.04.06,13725,9550,SQ Equity data,Stock
+AAPL_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9547,SQ Equity data,Stock
+ABBV_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2366,SQ Equity data,Stock
+ABT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8814,SQ Equity data,Stock
+ACN_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5243,SQ Equity data,Stock
+ADBE_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8744,SQ Equity data,Stock
+AIG_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8798,SQ Equity data,Stock
+AMGN_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8697,SQ Equity data,Stock
+AMT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,6035,SQ Equity data,Stock
+AMZN_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,6265,SQ Equity data,Stock
+AVGO_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,3232,SQ Equity data,Stock
+AXP_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10796,SQ Equity data,Stock
+BA_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8803,SQ Equity data,Stock
+BAC_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+BIIB_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7679,SQ Equity data,Stock
+BK_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8814,SQ Equity data,Stock
+BKNG_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5770,SQ Equity data,Stock
+BLK_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5738,SQ Equity data,Stock
+BMY_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10793,SQ Equity data,Stock
+BRK.B_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,6520,SQ Equity data,Stock
+C_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10792,SQ Equity data,Stock
+CAT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+CHTR_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,3073,SQ Equity data,Stock
+CL_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10783,SQ Equity data,Stock
+CMCSA_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8796,SQ Equity data,Stock
+COF_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,6998,SQ Equity data,Stock
+COP_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10291,SQ Equity data,Stock
+COST_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9083,SQ Equity data,Stock
+CRM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,4477,SQ Equity data,Stock
+CSCO_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8136,SQ Equity data,Stock
+CVS_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9536,SQ Equity data,Stock
+CVX_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8811,SQ Equity data,Stock
+DD_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,727,SQ Equity data,Stock
+DHR_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8815,SQ Equity data,Stock
+DIS_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8746,SQ Equity data,Stock
+DJ_M1_dukas,USA30.IDX_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2013.09.30,2024.10.30,4048,3350262,Dukascopy,Index
+DOW_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,769,SQ Equity data,Stock
+DUK_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9972,SQ Equity data,Stock
+EMR_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+EURJPY_M1_dukas,EURJPY_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.08.04,2024.10.30,7758,7946978,Dukascopy,Forex
+EURUSD_M1_dukas,EURUSD_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.05.05,2024.10.30,7849,8034391,Dukascopy,Forex
+EXC_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10794,SQ Equity data,Stock
+F_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8761,SQ Equity data,Stock
+FB_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2484,SQ Equity data,Stock
+FDX_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10738,SQ Equity data,Stock
+GBPJPY_M1_dukas,GBPJPY_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.08.04,2024.10.30,7758,7945392,Dukascopy,Forex
+GBPUSD_M1_dukas,GBPUSD_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.05.05,2024.10.30,7849,8032276,Dukascopy,Forex
+GD_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8815,SQ Equity data,Stock
+GE_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8815,SQ Equity data,Stock
+GILD_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7633,SQ Equity data,Stock
+GM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2886,SQ Equity data,Stock
+GOOG_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2020,SQ Equity data,Stock
+GOOGL_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,4437,SQ Equity data,Stock
+GS_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5860,SQ Equity data,Stock
+HD_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+HON_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8814,SQ Equity data,Stock
+IBM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10793,SQ Equity data,Stock
+INTC_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8794,SQ Equity data,Stock
+JNJ_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10795,SQ Equity data,Stock
+JPM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9783,SQ Equity data,Stock
+KHC_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2439,SQ Equity data,Stock
+KO_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10796,SQ Equity data,Stock
+LIN_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,867,SQ Equity data,Stock
+LLY_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+LMT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,6919,SQ Equity data,Stock
+LOW_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+MA_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,4054,SQ Equity data,Stock
+MCD_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8788,SQ Equity data,Stock
+MDLZ_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5318,SQ Equity data,Stock
+MDT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8814,SQ Equity data,Stock
+MET_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5584,SQ Equity data,Stock
+MMM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+MO_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+MRK_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+MS_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7449,SQ Equity data,Stock
+MSFT_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8749,SQ Equity data,Stock
+NEE_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9924,SQ Equity data,Stock
+NFLX_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5002,SQ Equity data,Stock
+NKE_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8867,SQ Equity data,Stock
+NQ_M1_dukas,USATECH.IDX_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2012.01.19,2024.10.30,4668,3565053,Dukascopy,Index
+NVDA_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5880,SQ Equity data,Stock
+ORCL_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8751,SQ Equity data,Stock
+PEP_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+PFE_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+PG_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10797,SQ Equity data,Stock
+PM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,3585,SQ Equity data,Stock
+PYPL_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,1699,SQ Equity data,Stock
+QCOM_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7707,SQ Equity data,Stock
+RTX_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,511,SQ Equity data,Stock
+SBUX_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7551,SQ Equity data,Stock
+SO_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,10286,SQ Equity data,Stock
+SP_M1_dukas,USA500.IDX_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2012.01.19,2024.10.30,4668,3405527,Dukascopy,Index
+SPG_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,7239,SQ Equity data,Stock
+T_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,9644,SQ Equity data,Stock
+TGT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+TMO_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8741,SQ Equity data,Stock
+TMUS_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,3769,SQ Equity data,Stock
+TSLA_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,2962,SQ Equity data,Stock
+TXN_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+UNH_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8140,SQ Equity data,Stock
+UNP_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8813,SQ Equity data,Stock
+UPS_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,5723,SQ Equity data,Stock
+USB_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8810,SQ Equity data,Stock
+USDCHF_B1,USDCHF_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2023.01.02,2024.10.30,668,678024,File,Forex
+USDCHF_B1_TZ,USDCHF_dukascopy,M1,"(UTC) Coordinated Universal Time, DST: No",2023.01.02,2024.10.30,668,678024,File,Forex
+USDCHF_M1_dukas,USDCHF_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.05.05,2024.10.30,7849,8011864,Dukascopy,Forex
+USDJPY_M1_dukas,USDJPY_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.05.05,2024.10.30,7849,8031137,Dukascopy,Forex
+V_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,3590,SQ Equity data,Stock
+VZ_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8806,SQ Equity data,Stock
+WBA_limited.D,NASDAQ Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+WFC_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8814,SQ Equity data,Stock
+WMT_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8811,SQ Equity data,Stock
+XAUUSD_M1_dukas,XAUUSD_dukascopy,M1,"(EST+07) New York Trading hours, US DST, DST: Yes",2003.05.05,2024.10.30,7849,7279773,Dukascopy,CFDs
+XOM_limited.D,NYSE Stock,D1,"Exchange",2017.01.03,2022.03.31,1913,8812,SQ Equity data,Stock
+Data listed.
+--------------------------------------------------
+All tasks completed
+18:27:05 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
