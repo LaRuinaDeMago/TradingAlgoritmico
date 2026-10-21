@@ -1,0 +1,10 @@
+# comando: python -I h0/configs/b17_sintetico.py "C:/StrategyQuantX145/user/lab_h0/b1/EA1/USDCHF_M1_dukas-M1-No Session.csv" C:/StrategyQuantX145/user/lab_h0/b17/USDCHF_SINT2.csv 2
+# inicio_utc: 2026-10-21T15:42:59+00:00
+# duracion_s: 17.9
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+velas: 678024 · semilla: 2 · cierre inicial 0.92635 · final 0.92635 · deriva log total (debe ser ~0 salvo la primera vela): -0.000000
+
+=== STDERR ===
