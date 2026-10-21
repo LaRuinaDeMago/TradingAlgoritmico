@@ -1,0 +1,61 @@
+# comando: python -I h0/configs/b17_diagnostico_desalojo.py C:/StrategyQuantX145/user/lab_h0/b17 C:/StrategyQuantX145/user/lab_h0/estrategias C:/StrategyQuantX145/user/lab_h0/t7/estrategias C:/StrategyQuantX145/user/lab_h0/retest1 C:/StrategyQuantX145/user/lab_h0/t7/retest C:/StrategyQuantX145/user/projects/Retester/databanks/H0_USDCHF C:/StrategyQuantX145/user/projects/Retester/databanks/H0_T7
+# inicio_utc: 2026-10-21T16:00:38+00:00
+# duracion_s: 0.233
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "capacidad_y_fitness": "MaxStrategies=1000; FitnessCriteria Ranking=ReturnDDRatio (IS)",
+ "por_etapa": {
+  "cal": {
+   "antes": 40,
+   "despues": 90,
+   "nuevas_que_entraron": 50,
+   "desalojadas": 0
+  },
+  "real": {
+   "antes": 90,
+   "despues": 1000,
+   "nuevas_que_entraron": 926,
+   "desalojadas": 16
+  },
+  "nulo1": {
+   "antes": 1000,
+   "despues": 1000,
+   "nuevas_que_entraron": 399,
+   "desalojadas": 399
+  },
+  "nulo2": {
+   "antes": 1000,
+   "despues": 1000,
+   "nuevas_que_entraron": 311,
+   "desalojadas": 311
+  }
+ },
+ "estrategias_H0_al_empezar": 40,
+ "estrategias_H0_desalojadas": 17,
+ "desalojadas_H0_con_copia_por_nombre": [
+  "Strategy 0.13",
+  "Strategy 0.16(2)",
+  "Strategy 0.22",
+  "Strategy 0.24",
+  "Strategy 0.4(1)",
+  "Strategy 0.5",
+  "Strategy 0.6",
+  "Strategy 0.7",
+  "Strategy 0.9"
+ ],
+ "desalojadas_H0_sin_copia_por_nombre": [
+  "Strategy 0.11(1)",
+  "Strategy 0.16",
+  "Strategy 0.16(1)",
+  "Strategy 0.17(1)",
+  "Strategy 0.2",
+  "Strategy 0.5(2)",
+  "Strategy 0.6(2)",
+  "Strategy 0.9(1)"
+ ]
+}
+
+=== STDERR ===
