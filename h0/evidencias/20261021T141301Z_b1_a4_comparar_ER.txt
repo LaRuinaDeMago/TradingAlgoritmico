@@ -1,0 +1,82 @@
+# comando: python -I h0/configs/b1_comparar_velas.py "C:/StrategyQuantX145/user/lab_h0/b1/EA1/USDCHF_M1_dukas-M1-No Session.csv" "C:/StrategyQuantX145/user/lab_h0/b1/ER/USDCHF_B1-M1-No Session.csv"
+# inicio_utc: 2026-10-21T14:13:01+00:00
+# duracion_s: 23.542
+# codigo_salida: 1
+# incidencia: -
+
+=== STDOUT ===
+{
+ "velas_a": 678024,
+ "velas_b": 678024,
+ "primera_a": "2023-01-02 00:13:00",
+ "ultima_a": "2024-10-30 02:59:00",
+ "primera_b": "2023-01-02 00:13:00",
+ "ultima_b": "2024-10-30 02:59:00",
+ "duplicadas_a": 0,
+ "duplicadas_b": 0,
+ "ausentes_en_b": 0,
+ "sobrantes_en_b": 0,
+ "valores_distintos": 111,
+ "desordenadas_b": 0,
+ "desplazamiento_global_min": null,
+ "ejemplos": {
+  "ausentes": [],
+  "sobrantes": [],
+  "distintas": [
+   [
+    "2023-07-18 15:30:00",
+    [
+     "0.85732",
+     "0.85767",
+     "0.85543",
+     "0.85629",
+     "2.50193994E+9"
+    ],
+    [
+     "0.85732",
+     "0.85767",
+     "0.85543",
+     "0.85629",
+     "2147483647"
+    ]
+   ],
+   [
+    "2023-07-18 15:32:00",
+    [
+     "0.85716",
+     "0.85841",
+     "0.85696",
+     "0.85817",
+     "2.2868999E+9"
+    ],
+    [
+     "0.85716",
+     "0.85841",
+     "0.85696",
+     "0.85817",
+     "2147483647"
+    ]
+   ],
+   [
+    "2023-07-18 15:33:00",
+    [
+     "0.85818",
+     "0.85886",
+     "0.85811",
+     "0.85847",
+     "2.17958008E+9"
+    ],
+    [
+     "0.85818",
+     "0.85886",
+     "0.85811",
+     "0.85847",
+     "2147483647"
+    ]
+   ]
+  ]
+ },
+ "identicas": false
+}
+
+=== STDERR ===
