@@ -1,0 +1,54 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -databank action=export project=Builder name=Results file=C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_real.csv
+# inicio_utc: 2026-10-21T16:01:44+00:00
+# duracion_s: 30.49
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+18:01:46.979 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+18:01:46.984 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2623 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4504 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -databank action=export project=Builder name=Results file=C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_real.csv 
+20:02:02 Exportar el contenido de la base de datos
+--------------------------------------------------
+Sincronización de bases de datos a partir de ficheros
+Loaded 1000 strategies to databank Results
+Loaded 0 strategies to databank Initial population
+Loaded 0 strategies to databank Last generation
+Loaded 0 strategies to databank Strategies to improve
+Loaded 0 strategies to databank Existing portfolio
+Loaded 0 strategies to databank H0_T7
+Loaded 0 strategies to databank H0_archivo
+Synchronization finished.
+--------------------------------------------------
+Databank contents exported.
+--------------------------------------------------
+Databank 'Builder/Results' saved - files before sync 1000 / after sync 1000 / saved 1000 / removed 0 in 4.99 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Builder/Results' saved - files before sync 1000 / after sync 1000 / saved 1000 / removed 0 in 5.00 s.
+All tasks completed
+20:02:14 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
