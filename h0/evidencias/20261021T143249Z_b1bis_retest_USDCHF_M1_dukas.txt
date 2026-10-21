@@ -1,0 +1,77 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -project action=start name=Retester
+# inicio_utc: 2026-10-21T14:32:49+00:00
+# duracion_s: 24.352
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+16:32:52.493 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+16:32:52.497 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2535 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4858 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -project action=start name=Retester 
+18:33:07 Iniciar proyecto 'Retester'.
+--------------------------------------------------
+Sincronización de bases de datos a partir de ficheros
+Loaded 7 strategies to databank Results
+Loaded 10 strategies to databank H0_USDCHF
+Loaded 10 strategies to databank H0_T7
+Loaded 10 strategies to databank H0_B1
+Synchronization finished.
+--------------------------------------------------
+=========== Project started ===========
+================================
+Empezar a probar estrategias...
+Borrar datos de resultados
+Batch size computed to: 5, SingleOptims: true, str to test: 10, totalCores: 7, Backtest mode: 1
+Inicialización de los datos de backtest...
+USDCHF_M1_dukas: at 1 of the sampled market closes the series stops as one convention and resumes as the other - those days do not end where they begin.
+Cargando datos de backtest para Main test - USDCHF_M1_dukas / H1
+Creación del flujo de datos de backtest...
+Creado en 0.0240 s., ticks: 11879
+Cargado en memoria en 0.0130 s., memoria: 828.63 KB
+MarketData precalculado en 0.0380 s.
+Todos los datos de backtest están preparados
+-----------------------------
+Proyecto finalizado in 0.94 s.
+El proyecto se ejecuta en segundo plano. Para conocer el estado del proyecto, utilice
+-project action=status name=Retester
+--------------------------------------------------
+Databank 'Retester/Results' saved - files before sync 7 / after sync 7 / saved 7 / removed 0 in 0.24 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/Results' saved - files before sync 7 / after sync 7 / saved 7 / removed 0 in 0.24 s.
+Databank 'Retester/H0_USDCHF' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.77 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/H0_USDCHF' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.77 s.
+Databank 'Retester/H0_T7' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.04 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/H0_T7' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.04 s.
+Databank 'Retester/H0_B1' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.05 s. Sync triggered by 'Save all strategies before exiting SQX.'.
+Databank 'Retester/H0_B1' saved - files before sync 10 / after sync 10 / saved 10 / removed 0 in 0.05 s.
+All tasks completed
+18:33:13 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.strategyquant.lib.memory.OffHeapMemory
+WARNING: Please consider reporting this to the maintainers of class com.strategyquant.lib.memory.OffHeapMemory
+WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
