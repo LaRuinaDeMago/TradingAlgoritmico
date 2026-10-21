@@ -1,0 +1,82 @@
+# comando: python -I h0/configs/b17_analizar.py 1000 C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_real.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_real.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_nulo1.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_nulo1.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v2_nulo2.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v2_nulo2.csv
+# inicio_utc: 2026-10-21T16:20:22+00:00
+# duracion_s: 7.616
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+{
+ "real": {
+  "estrategias": 1000,
+  "pasan_F_IS": 1,
+  "pasan_F_completo": 1,
+  "tasa_F_completo": 0.001,
+  "tasa_OOS_entre_las_que_pasan_IS": 1.0,
+  "activas_para_spearman": 667,
+  "spearman_sharpe_IS_OOS": 0.1338,
+  "p_spearman": 0.0015,
+  "mediana_neto_OOS_decil_superior_RetDD_IS": -8.34,
+  "mediana_operaciones_IS": 63.0,
+  "mejor_sharpe_IS": {
+   "nombre": "Strategy 0.101",
+   "sharpe_is": 4.93,
+   "retdd_is": 10.0,
+   "pf_is": 5.0,
+   "sharpe_oos": 0.0,
+   "neto_oos": -93.3
+  }
+ },
+ "nulo1": {
+  "estrategias": 1001,
+  "pasan_F_IS": 3,
+  "pasan_F_completo": 2,
+  "tasa_F_completo": 0.002,
+  "tasa_OOS_entre_las_que_pasan_IS": 0.6667,
+  "activas_para_spearman": 661,
+  "spearman_sharpe_IS_OOS": 0.0545,
+  "p_spearman": 0.1564,
+  "mediana_neto_OOS_decil_superior_RetDD_IS": -26.14,
+  "mediana_operaciones_IS": 66.0,
+  "mejor_sharpe_IS": {
+   "nombre": "Strategy 0.561(2)",
+   "sharpe_is": 3.35,
+   "retdd_is": 10.0,
+   "pf_is": 5.0,
+   "sharpe_oos": 4.66,
+   "neto_oos": 138.22
+  }
+ },
+ "nulo2": {
+  "estrategias": 1000,
+  "pasan_F_IS": 1,
+  "pasan_F_completo": 0,
+  "tasa_F_completo": 0.0,
+  "tasa_OOS_entre_las_que_pasan_IS": 0.0,
+  "activas_para_spearman": 659,
+  "spearman_sharpe_IS_OOS": 0.221,
+  "p_spearman": 0.0005,
+  "mediana_neto_OOS_decil_superior_RetDD_IS": 0.0,
+  "mediana_operaciones_IS": 61.5,
+  "mejor_sharpe_IS": {
+   "nombre": "Strategy 0.1051(2)",
+   "sharpe_is": 2.85,
+   "retdd_is": 10.0,
+   "pf_is": 5.0,
+   "sharpe_oos": 0.0,
+   "neto_oos": 0.0
+  }
+ },
+ "prueba_T1_fisher_real_mayor_que_nulo": {
+  "real_pasan": 1,
+  "real_no": 999,
+  "nulo_pasan": 2,
+  "nulo_no": 1999,
+  "p_una_cola": 0.703704
+ },
+ "comprobacion_S_nulos_sin_persistencia": {
+  "cota_aprox_95": 0.0779,
+  "cumple": false
+ }
+}
+
+=== STDERR ===
