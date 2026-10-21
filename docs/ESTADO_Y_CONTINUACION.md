@@ -31,6 +31,14 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
   sencilla; embudo calibrado con ruido y con ventaja sembrada (controles de desarrollo y de aceptación separados);
   integridad temporal (P12) y presupuesto por fase (P13); fases 0–6 con puertas. Escalar (millones de estrategias,
   IA por API, VPS, muchos mercados) es el objetivo de Diego, **después** de superar la fase 1.
+- **Visión de Diego (2026-10-21): "la máquina", llevarla al techo y ser mejor que nadie.** Tres capas que casi nadie
+  junta: (1) **minería masiva** (SQX, VPS, muchos mercados); (2) **ciclo de mejora con IA** (Claude Code y, si se
+  demuestra útil, por API: "cambia este indicador, ¿qué pasa si…?", preparar tandas, leer resultados); (3) **un medidor
+  de errores dentro** (controles nulos, ventaja sembrada, todo contado). La ventaja que buscamos es la de proceso: con
+  la capa 3, las capas 1 y 2 dejan de fabricar estrategias bonitas y pasan a encontrar lo que hay. La fase 1 no está
+  para tumbar la idea: da permiso para escalar; si el embudo no distingue a la primera, **la IA tiene que demostrar que
+  sabe mejorarlo** (iteraciones contadas, con controles de aceptación sin mirar). Ruta de escalado: C23 en
+  `PENDIENTES.md`. Posibilidad pequeña pero real; no se promete, se persigue en serio.
 - **Fase: H0 (viabilidad técnica), casi cerrada = fase 0 de la 0004.** Siguiente: fase 1 (calibración), **no antes**
   de cerrar la fase 0 (sección 7).
 
