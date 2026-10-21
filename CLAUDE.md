@@ -1,8 +1,8 @@
 # Proyecto Trading Algorítmico — Laboratorio IA + SQX
 
-Laboratorio de investigación cuantitativa de Diego. Objetivo: averiguar con evidencia si una estrategia tiene ventaja real o es ruido. Concluir "no hay edge" es un resultado válido.
+Laboratorio de investigación cuantitativa de Diego. **Objetivo** (A5, adoptado el 2026-10-21): construir, dentro de nuestro presupuesto, un laboratorio de investigación cuantitativa **para trading algorítmico**, integrado (SQX, Python, IA y datos como herramientas que deben demostrar lo que aportan), para descubrir, validar y explotar ventajas netas de costes, o demostrar con evidencia que no las hemos encontrado y detenernos. Concluir "no hay edge" es un resultado válido.
 
-Fase actual: **H0 – Ficha de viabilidad técnica, casi cerrada** (tareas 1–7 hechas; quedan condiciones previas antes de descargar datos de Darwinex). SQX: *Pro Build 145 (Trial license)*, build **145.3191 de desarrollo**, en `C:\StrategyQuantX145`; **la prueba caduca el 2026-11-02** (no es motivo para comprar). La hoja de ruta decía Ultimate 143.2708: la build real está confirmada por CLI; la edición que se compraría sigue INCONCLUSA (fila "Versión y edición" de `h0/ficha.md`).
+Fase actual: **H0 – Ficha de viabilidad técnica, casi cerrada** (tareas 1–7 hechas; quedan condiciones previas antes de descargar datos de Darwinex). Decisión vigente de reparto, mercado (EURUSD), presupuesto y abandono: **0003 v6, aceptada**. SQX: *Pro Build 145 (Trial license)*, build **145.3191 de desarrollo**, en `C:\StrategyQuantX145`; **la prueba caduca el 2026-11-02** (no es motivo para comprar). La hoja de ruta decía Ultimate 143.2708: la build real está confirmada por CLI; la edición que se compraría sigue INCONCLUSA (fila "Versión y edición" de `h0/ficha.md`).
 
 **Al empezar cualquier sesión, lee primero `docs/ESTADO_Y_CONTINUACION.md`** (estado exacto, cómo se trabaja, trampas conocidas y siguiente paso) y después `docs/decisiones/PENDIENTES.md` (todo lo abierto). `docs/traspaso_sesion_local.md` es histórico (instalación inicial del 2026-10-19).
 

@@ -41,3 +41,19 @@ estrategias, mismas plantillas, **inicio del backtest 2023.02.01** (un mes de ma
 se usan datos nuevos) con `USDCHF_M1_dukas` y con `USDCHF_B1`.
 **Criterio A5-bis:** con `b1_diagnostico_operaciones.py`, 0 operaciones solo en un lado y todas las comunes idénticas
 en las 10 estrategias. Si no, el punto 1 no basta y se investiga antes de Darwinex.
+
+### Resultado de B1-bis (registros n.º 136–148): **A5-bis = SÍ**
+
+Las 10 estrategias dan **1.277 operaciones idénticas** con el símbolo original y con el importado (0 solo en un lado);
+las plantillas se cargaron sin diferencias (sin ajuste de fecha) y el Retester quedó restaurado (0 diferencias). Con un
+margen de calentamiento de un mes, exportar e importar **no cambia el backtest**. El mes basta para estas estrategias
+(todas sus diferencias acababan el 2023-01-06); para indicadores más largos el margen se fija con su periodo máximo.
+Nota de procedimiento: Diego cortó en el chat la orden que lanzó esta tanda, pero el proceso ya había arrancado y
+terminó solo; se dejó acabar para no dejar el Retester sin restaurar, y se verificó entero.
+
+## Estado final de B1
+
+Los puntos que fallaron (A4 volumen, A5 calentamiento, C2 diseño) tienen causa demostrada y remedio de procedimiento,
+y el del calentamiento ya está **probado** (B1-bis). El método de sellado de la 0003 §1 sigue siendo válido **con los
+cinco requisitos de arriba**, que pasan al protocolo de sellado. Queda abierto: el volumen y el reloj real de los datos
+de Darwinex (ficha C12 y B4).

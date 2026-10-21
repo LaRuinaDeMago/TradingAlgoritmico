@@ -257,3 +257,21 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   "Remove-Item registry/…". Vía sancionada: el texto exacto va en el archivo de resultado.
 - **Las líneas 1 y 2 del registro tienen CRLF en la copia de trabajo** (de antes de `.gitattributes`); en git está todo
   en LF y el registrador escribe LF. No afecta a la cadena de hashes, que lee el JSON. No se toca.
+- **B1: fijar los criterios antes sirvió de verdad.** Con el plan subido a git antes de la primera orden, dos criterios
+  fallaron (A4 volumen, A5 operaciones) y no hubo forma de "ajustarlos" para que pasaran. El diagnóstico se hizo aparte,
+  y la corrección (margen de calentamiento) se convirtió en una prueba nueva con su criterio escrito antes (B1-bis: 1.277
+  operaciones idénticas). → Fallar con criterios previos enseña más que aprobar con criterios elásticos.
+- **Hallazgos de SQX que nadie nos había contado:** el volumen importado se guarda en un entero de 32 bits y se recorta a
+  2.147.483.647 (111 velas); la importación exige `format` aunque la ayuda lo da por opcional; dice que ignorará filas
+  inválidas aunque se pida parar; la zona horaria al importar es **solo una etiqueta** y no cambia el backtest; SQX
+  adelanta el inicio del backtest al primer dato. → Cada uno pasa a ser un requisito del protocolo de sellado.
+- **Dos defectos de mi propio plan:** (1) comparar los CSV de operaciones byte a byte no podía salir igual porque llevan
+  el nombre del símbolo y el número de orden; (2) el control C2 suponía que la zona horaria convertía las horas, y no lo
+  hace. → Un control negativo también puede estar mal diseñado; si no podía fallar como se pensaba, no prueba lo que se
+  creía. Se dice y se rediseña, no se maquilla.
+- **"Cortar" una orden no siempre la para.** Diego cortó en el chat la tanda B1-bis, pero el proceso ya había arrancado
+  y terminó solo. Se dejó acabar para no dejar el Retester a medias, se verificó entero y se le contó. → Antes de lanzar
+  una tanda larga, avisar de que una vez lanzada sigue hasta el final.
+- **Un error mío de cifras, cazado al releer:** escribí "registros 93–149" en la ficha cuando el último era el 148, y
+  "restauración 147–148" cuando era 146–147. → Toda cifra que se escribe se comprueba contra el registro, también las
+  de los documentos de estado.

@@ -65,6 +65,17 @@ sellado que siga dentro de SQX **no está sellado**. Opciones, por orden de pref
 En cualquier opción: el bloque sellado no entra nunca en `data/raw/` ni en ningún proyecto de SQX de investigación, y
 cada paso se registra en `registry/` (sin abrir el contenido: solo nombres, tamaños y hashes).
 
+**Requisitos que añade B1** (`h0/b1_resultados.md`, 2026-10-21; obligatorios en la versión que se apruebe):
+1. **Margen de calentamiento:** ningún backtest empieza en el primer dato importado; en la instalación de examen se
+   importan investigación + sellado, para que el bloque sellado no empiece en seco (B1-bis: con margen, operaciones
+   idénticas).
+2. **Volumen:** comprobar el máximo antes de importar; SQX recorta a 2³¹−1 los volúmenes mayores.
+3. **Recuentos:** filas del archivo = filas importadas = velas reexportadas (SQX puede ignorar filas en silencio).
+4. **Zona horaria:** la etiqueta no convierte ni avisa; comprobar la zona declarada y el **reloj real** con referencias
+   externas (apertura y cierre semanal, cambios de horario de EE. UU. y Europa).
+5. Exportar con `datefrom`/`dateto` incluye los dos días enteros (00:00–23:59 en la hora del símbolo); la importación
+   exige `format`.
+
 ## 5. Criterios para elegir el primer mercado (fijados antes de ver backtests)
 
 Se puntúan **sin mirar precios ni resultados**, solo con información de contrato y de disponibilidad:
