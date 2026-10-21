@@ -200,3 +200,16 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   → La memoria es una pista, no una evidencia: se contrasta con el sistema y se corrige.
 - **Otro falso positivo del guardián:** un `ls` no recursivo en la carpeta del curso (`…\IMOX TRADING.zip\`, que es una
   carpeta) se bloquea como "recorrido recursivo". No se buscó otra vía; queda en B9 para la sesión de mantenimiento.
+  → Causa leída en el guardián: la regla `\bzip\b` toma el ".zip" del nombre de la carpeta por el compresor. Vía
+  sancionada: un script escrito con Write que lleva la ruta dentro (`LAB_PRIVADO_CURSO/herramientas/inventario_curso.py`).
+- **Medir antes de prometer:** antes de decir "transcribo el curso" se midió. 85 vídeos sin comprimir dentro del zip,
+  26,3 h en los MP4 y 7 MKV sin duración legible (no se estima a ojo); la carpeta del escritorio es una extracción parcial
+  (8 vídeos). El PC no tiene GPU: la velocidad de transcripción en CPU no se supone, se mide en el piloto de 3 vídeos.
+- **Tropiezo de Claude:** para leer el modelo de CPU usé la herramienta PowerShell, que es justo la que el guardián no
+  vigila (A9). Era una consulta inocua del sistema, pero mientras A9 no esté hecho, **todo por Bash**.
+- **Dos revisiones más (10 y 11), probablemente del mismo modelo:** de unos veinte puntos, dos ideas nuevas. La buena:
+  la 0003 abandona si las candidatas no baten "a las referencias comparables", pero no dice cuáles son; elegirlas
+  después de ver resultados sería un grado de libertad escondido. → C20: se preregistran antes del piloto.
+- **Idea propia: el control negativo también vale para la búsqueda.** Si SQX encuentra estrategias "buenas" en datos
+  sintéticos sin ventaja, sus filtros no distinguen ventaja de ruido (B17). Es la lección del 20-10 (un resultado igual
+  necesita un control que pueda fallar) aplicada a otra escala.

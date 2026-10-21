@@ -68,9 +68,13 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
   `C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\` (auditoría del curso, herramientas para leer el zip, configs
   extraídas) y `C:\Users\SERVILAB\Documents\LAB_BIBLIOTECA\papers\` (3 PDF, su texto e imágenes de fórmulas).
 - **Curso de Imox:** `C:\Users\SERVILAB\Desktop\curso de trading algoritmico\IMOX TRADING.zip.001…008` (14,8 GB,
-  85 vídeos + configuraciones). Procedencia por aclarar (A8). Nada del curso va a GitHub. Junto a las partes hay
-  además una **carpeta** llamada `IMOX TRADING.zip` (creada el 2026-10-20 13:30, probablemente lo extraído); no se
-  ha podido mirar dentro porque el guardián bloquea `ls` en esa ruta (falso positivo, B9).
+  85 vídeos + configuraciones). Procedencia por aclarar (A8: el zip trae 3 imágenes "WWW.CURSOSDIGITALEX.COM"). Nada
+  del curso va a GitHub. **Inventario del 2026-10-21** (privado, en `LAB_PRIVADO_CURSO`): los 85 vídeos están sin
+  comprimir dentro del zip; 78 MP4 = 26,3 h; 7 MKV (2,8 GB) sin duración legible. Junto a las partes hay una
+  **carpeta** `IMOX TRADING.zip` (2026-10-20 13:30) con una extracción **parcial**: 8 vídeos (3,3 h) de "Bonus 2025",
+  idénticos en tamaño al índice. El guardián bloquea cualquier comando que nombre esa ruta (`zip`, falso positivo B9):
+  se lee con scripts de `LAB_PRIVADO_CURSO/herramientas/` que llevan la ruta dentro. Transcribir es viable sin GPU y sin
+  FFmpeg aparte (A17), tras A8.
 - **Repositorio de GitHub público** (`LaRuinaDeMago/TradingAlgoritmico`, rama `claude/proyecto-2026-fps66g`); A4.
   El historial ya contiene el ID de hardware, el de la licencia de prueba y el usuario de Windows (decisiones de
   Diego del 2026-10-20 de no reescribir historial).
@@ -108,7 +112,7 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 | Decisiones: 0001 (IA y herramientas), 0002 (datos quemados), **0003 (PROPUESTA v5: reparto, mercado, presupuesto, abandono, con historial)** | `docs/decisiones/` |
 | **Índice único de asuntos abiertos** (A: Diego · B: técnico · C: requisitos futuros · D: no construir) | `docs/decisiones/PENDIENTES.md` |
 | Protocolo de sellado de Darwinex (BORRADOR) | `protocols/2026-10-20_sellado_darwinex.md` |
-| Revisiones externas 01–09 con la respuesta de Claude | `docs/revisiones/` |
+| Revisiones externas 01–11 con la respuesta de Claude | `docs/revisiones/` |
 | Prompt de auditoría maestra (para una sesión independiente) | `docs/auditoria/prompt_auditoria_maestra.md` |
 | Arreglo del guardián listo e instrucciones de mantenimiento | `docs/mantenimiento/` |
 | Ficha H0 (estado por tarea, con evidencias) | `h0/ficha.md` |
@@ -124,15 +128,20 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 Las más urgentes: **A9** sesión de mantenimiento del guardián · **A1** aprobar la 0003 (v5) y **A1b** cifras del piloto ·
 **A2** dinero que está dispuesto a perder · **A3** horas semanales · **A20** prioridad principal (pegó las tres
 opciones sin elegir; añadió "usar Claude Code y Opus para optimizar el proceso en todos los sentidos") · **A19** primer
-mercado · **A12** licencia (la caducidad del 2026-11-02 no es motivo para comprar). Después: A4 repositorio
+mercado · **A12** licencia (la caducidad del 2026-11-02 no es motivo para comprar) · **A21** pausa de revisiones externas
+hasta el piloto · **A8 + A17** procedencia del curso y permiso para instalar el transcriptor. Después: A4 repositorio
 público/privado, A5 enunciado del objetivo, A6 regla de proporcionalidad, A7 éxito por rentabilidad neta frente al coste
 total, A8 procedencia del curso, A10 clave API, A11 MetaTrader, A13 identidad git, A14 copias de seguridad, A15
 protección de rama, A17 piloto de vídeos, A18 numpy/pandas/scipy.
 
 ## 7. Siguiente paso (orden propuesto)
 
-1. **Diego: sesión de mantenimiento del guardián** (`docs/mantenimiento/README.md`), incluyendo B15 (permiso de acceso
-   ligado a recurso y finalidad). Después, **Claude comprueba con una llamada real de PowerShell** (B3).
+1. **Diego: sesión de mantenimiento del guardián** (`docs/mantenimiento/README.md`): **solo el borrador de PowerShell**,
+   que es lo que está escrito y probado (44/44). B15 (permiso del sellado ligado a recurso y finalidad) y B9 (falsos
+   positivos) no tienen borrador todavía: Claude los prepara y probará, y van en una **segunda** sesión de
+   mantenimiento antes de descargar Darwinex (hasta entonces no hay nada sellado que proteger). Mientras Diego hace A9,
+   **Claude no hace commits ni lanza SQX** en esta carpeta (para no mezclar cambios ni dejar registros "sucios").
+   Después, **Claude comprueba con una llamada real de PowerShell** (B3).
 2. **Claude: prueba de integridad exportar/importar por fechas (B1)** con USDCHF quemado: intervalo exacto (límites
    inclusivos/exclusivos), importación sin errores, velas idénticas tras normalizar, sin ausentes/duplicadas/desplazadas,
    zona horaria, repetible, y **mismo backtest antes y después**. Es la última pieza técnica antes de Darwinex.
@@ -141,14 +150,20 @@ protección de rama, A17 piloto de vídeos, A18 numpy/pandas/scipy.
 5. **Auditoría maestra independiente (B13):** tarjeta de sesión propuesta el 2026-10-20 (`task_fe8910bc`, solo
    lectura; caduca hacia el 2026-10-27). Si caduca, volver a proponerla con el prompt guardado.
 6. Con las decisiones de Diego: aprobar la 0003 → aprobar el protocolo de sellado → descargar Darwinex según el
-   protocolo → ficha de datos y costes del instrumento (C12) → piloto de búsqueda (0003 v5).
+   protocolo → ficha de datos y costes del instrumento (C12) → **referencias preregistradas (C20)** → piloto de búsqueda
+   (0003 v5) **con su control negativo sobre datos sintéticos (B17)**.
+7. **Curso (B11), tras A8 y A17:** piloto de 3 vídeos con transcripción (faster-whisper small frente a medium, en CPU),
+   fotogramas leídos por Claude y contraste con los `.cfx`; medir tiempo por hora de vídeo antes de decidir si se
+   transcribe el resto.
 
-## 8. Revisiones externas recibidas (todas el 2026-10-20, vía Diego)
+## 8. Revisiones externas recibidas (vía Diego)
 
 01 auditoría del curso y 0003 · 02 organización y fichas · 03 viabilidad para un particular y enmiendas a 0003 ·
 04 ¿camino razonable? · 05 laboratorio integrado y ciclo de aprendizaje · 06 enmiendas concretas a 0003 ·
 07 base de conocimiento · 08 auditoría de diseño y prompt maestro · 09 auditoría estática de un ZIP antiguo (cifras
-del registro verificadas: exactas). Varias leían versiones antiguas de la 0003: por eso lleva historial de versiones.
+del registro verificadas: exactas). **2026-10-21:** 10 evaluación sincera (casi nada nuevo: amplía A7 y sugiere A21) ·
+11 cambio de enfoque (idea clave: referencias definidas antes, C20; competición de métodos aplazada a D; Claude añade el
+control negativo B17). Varias leían versiones antiguas de la 0003: por eso lleva historial de versiones.
 Si vienen del mismo modelo, que coincidan no es evidencia independiente.
 
 ## 9. Lo esencial aprendido (detalle en `aprendizaje/diario.md`)

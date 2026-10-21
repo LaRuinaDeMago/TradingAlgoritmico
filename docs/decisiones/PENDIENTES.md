@@ -1,6 +1,6 @@
 # Asuntos abiertos – índice único
 
-Actualizado: 2026-10-20 · Lo mantiene Claude. Cuando un asunto se cierra, se tacha aquí y se enlaza la decisión o el
+Actualizado: 2026-10-21 · Lo mantiene Claude. Cuando un asunto se cierra, se tacha aquí y se enlaza la decisión o el
 registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y siguiente paso:
 `docs/ESTADO_Y_CONTINUACION.md`.
 
@@ -14,9 +14,9 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | A3 | **Horas semanales** que puede dedicar sin perjudicar otras prioridades | — | Revisión 03 |
 | A4 | Repositorio de GitHub **público o privado** | Privado reduce exposición futura (no borra copias) | Revisión 03 |
 | A5 | **Enunciado del objetivo** del proyecto (CLAUDE.md) | El de la revisión 05: "laboratorio cuantitativo integrado, reproducible, auditable y progresivamente automatizado, para encontrar —o descartar con evidencia— ventajas explotables por un particular" | Revisión 05 |
-| A6 | **Regla de proporcionalidad** como decisión: ningún control nuevo sin amenaza concreta, prueba que demuestre el fallo y criterio de aceptación | Adoptarla | Primera revisión externa (diario) |
-| A7 | **Éxito medido por rentabilidad neta conservadora frente al coste total** del proyecto (no por estrategias que pasan filtros) | Añadirlo a los criterios de abandono de 0003 | Revisión 04 |
-| A8 | **Procedencia y autorización** del material del curso (aparece "CURSOSDIGITALEX.COM") | Aclararla antes de usarlo más | Revisiones 01, 03 |
+| A6 | **Regla de proporcionalidad** como decisión: ningún control nuevo sin amenaza concreta, prueba que demuestre el fallo y criterio de aceptación. Formulación general de la revisión 10: "maximizar la evidencia útil por euro, hora y unidad de complejidad" (qué error reduce, cómo se demuestra, qué se deja de hacer) | Adoptarla | Primera revisión externa (diario), revisión 10 |
+| A7 | **Éxito medido por rentabilidad neta conservadora frente al coste total** del proyecto (no por estrategias que pasan filtros). Ampliado (revisiones 10 y 11): tres objetivos con criterios separados — A ventaja estadística, B rentabilidad neta explotable (capital necesario, ejecución real), C que el proyecto compense (licencias, datos, horas, fiscalidad, capital inmovilizado y **coste de oportunidad** frente a una alternativa diversificada de bajo coste) | Añadirlo a los criterios de abandono de 0003 | Revisiones 04, 10, 11 |
+| A8 | **Procedencia y autorización** del material del curso: el zip contiene **3 imágenes "WWW.CURSOSDIGITALEX.COM .png"** (sitio que redistribuye cursos de pago). ¿Lo compró Diego a Imox? | Aclararla antes de transcribir (B11) | Revisiones 01, 03 |
 | A9 | **Sesión de mantenimiento del guardián** (cerrar el agujero de PowerShell). Solo puede abrirla Diego | Borrador probado (44/44) e instrucciones en `docs/mantenimiento/` | Ficha H0, Paso 0 |
 | A10 | Variable de usuario **`ANTHROPIC_API_KEY`**: ¿la reconoce, la revoca, la borra? | Revocarla si no la reconoce | Sesión 2026-10-20 |
 | A11 | **Instalar MetaTrader** para compilar el código exportado (tareas 3e/3f) | Necesario antes de la demo | Ficha H0 |
@@ -25,10 +25,11 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | A14 | **Copias de seguridad** de `h0/evidencias_privadas/` y `Documents/LAB_PRIVADO_CURSO/` (solo existen en este PC) | Copiarlas a un sitio suyo de vez en cuando | Diario |
 | A15 | **Proteger la rama en GitHub** contra `push --force` (refuerza el registro como referencia externa) | Activarlo | Primera revisión externa |
 | ~~A16~~ | ~~Permiso para descargar los 3 papers~~ **Cerrado:** permiso dado y papers descargados (registro n.º 89) | — | Revisión 07 |
-| A17 | **Piloto de vídeos del curso:** instalar FFmpeg y un transcriptor (Whisper o similar, gratuitos) y descargar su modelo (1–3 GB); depende de A8 | Darlo cuando A8 esté aclarado | Revisión 07 |
+| A17 | **Piloto de vídeos del curso:** concretado el 2026-10-21. No hace falta FFmpeg aparte. Instalar en un **entorno virtual separado** dentro de `LAB_PRIVADO_CURSO` (para no tocar el Python del laboratorio, A18) `faster-whisper` 1.2.1 (MIT) y sus dependencias desde PyPI (~80 MB: ctranslate2, av —incluye FFmpeg—, onnxruntime, tokenizers, numpy), más los modelos `Systran/faster-whisper-small` (0,49 GB, MIT) y `-medium` (1,53 GB, MIT) de Hugging Face, para compararlos en el piloto. Todo gratuito; depende de A8 | Darlo cuando A8 esté aclarado | Revisión 07; inventario 2026-10-21 |
 | A19 | **Primer mercado de investigación:** EURUSD (simplicidad, costes por verificar), oro (seguir el curso) o no decidir hasta contrastar costes y calidad de datos | EURUSD como candidato provisional (0003) | Revisión 09 |
 | A20 | **Prioridad principal:** máximo rigor aunque tarde más; rigor con límite temporal estricto; o aprender SQX y cuantitativa mientras se valida. Diego añadió en el chat: "además de utilizar Claude Code y Opus para optimizar el proceso en todos los sentidos" | Pendiente de que Diego elija una (pegó las tres opciones sin marcar) | Revisión 09 |
 | A18 | **Instalar numpy, pandas y scipy** con versiones fijadas (gratuitos; necesarios para H2, decisión 0001) | Darlo antes de H2 | Revisión 07 (hallazgo) |
+| A21 | **Pausa de revisiones externas** hasta terminar el piloto de la 0003 (salvo la auditoría independiente B13). Once revisiones en dos días; las 10 y 11 aportaron dos ideas nuevas entre unos veinte puntos. Riesgo 1 de la revisión 10: que el laboratorio se convierta en el proyecto | Adoptarla; si llega otra, Claude solo extrae lo nuevo en una tabla corta | Revisión 10 |
 
 ## B. Trabajo técnico pendiente (Claude)
 
@@ -44,9 +45,10 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | B8 | `pip install -e .` en este PC | Menor | Paso 0 |
 | B9 | Falsos positivos del guardián ("del", `>`, `2>&1`, "zip", `.find(`; desde el 2026-10-21 también `ls` no recursivo en la carpeta `IMOX TRADING.zip` del escritorio, tomado por recorrido recursivo) | Afinar en mantenimiento, con permiso de Diego | Diario |
 | B10 | El ejecutor no detecta errores de SQX que salen con código 0 | Añadir detección de mensajes conocidos | Diario |
-| B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
+| B11 | **Piloto de 3 vídeos** (Builder, Retester, Optimizer): transcripción con marcas de tiempo + fotogramas leídos por Claude + contraste con los `.cfx`; medir calidad, tiempo y coste. **Inventario hecho el 2026-10-21** (privado, `LAB_PRIVADO_CURSO/duraciones_videos_zip.tsv`): 85 vídeos sin comprimir dentro del zip; los 78 MP4 suman **26,3 h**; 7 MKV (2,8 GB) sin duración legible; muchos temas repetidos entre "MENTORIA 1–9" y "BONUS 2025". En el escritorio hay una extracción **parcial** (8 vídeos, 3,3 h). PC sin GPU NVIDIA (i3-10100, 11,8 GB): la velocidad en CPU se mide en el piloto, no se supone | Tras A8 y A17; todo en `LAB_PRIVADO_CURSO` | Revisión 07 |
 | ~~B12~~ | ~~Fichas de los 3 papers~~ **Cerrado:** tres fichas con verificaciones propias en `conocimiento/fundamentos/` | — | Revisión 07 |
-| B14 | **Esquema de eventos tipados en el registro** (GENERACION, BACKTEST, VALIDACION, CAMBIO_PROCESO, OPERACION_TECNICA, REVISION), con **campo de familia** y campos obligatorios por tipo. Aceptación: reconstruir automáticamente el universo de pruebas de una tanda. Sin tocar las entradas ya escritas (solo se añade) | Antes de H1; con tests | Revisión 09 (H4) |
+| B14 | **Esquema de eventos tipados en el registro** (GENERACION, BACKTEST, VALIDACION, CAMBIO_PROCESO, OPERACION_TECNICA, REVISION), con **campo de familia** y campos obligatorios por tipo. Aceptación: reconstruir automáticamente el universo de pruebas de una tanda. Sin tocar las entradas ya escritas (solo se añade). Incluye el **registro de hipótesis** (0001, regla 7): al crearlo, dar de alta las ya propuestas, entre ellas las familias A–E de la revisión 11 y las referencias de C20 | Antes de H1; con tests | Revisión 09 (H4), 0001 |
+| B17 | **Control negativo de la búsqueda:** la misma búsqueda del piloto sobre **datos sintéticos sin ventaja** (paseo aleatorio con la volatilidad y costes del instrumento, o rendimientos barajados). Si SQX y sus filtros encuentran en el ruido estrategias tan buenas como en los datos reales, los filtros no discriminan. No gasta datos reales. Primero comprobar que SQX importa datos propios por CLI (B1) | Diseñar tras B1; ejecutar dentro del piloto | Claude, al analizar la revisión 11 |
 | B15 | **Permiso de acceso al sellado demasiado amplio:** hoy cualquier protocolo "aprobado" en `LAB_PROTOCOLO_SELLADO` abre todo `data/sealed/`. Ligarlo a recurso, finalidad y salida | En la sesión de mantenimiento (A9) | Revisión 09 (H1) |
 | B16 | **Licencia frente a calendario:** documentar qué tareas de H1 se pueden hacer con la licencia de prueba (caduca 02-11-2026) y cuáles exigen licencia, con el coste de cada alternativa | Antes de comprometer H1 | Revisión 09 (H7) |
 | B13 | **Auditoría maestra** con `docs/auditoria/prompt_auditoria_maestra.md`, en una **sesión independiente** de solo lectura (sin el contexto de quien construyó el laboratorio) | Propuesta como tarjeta de sesión `task_fe8910bc` el 2026-10-20 (caduca hacia el 2026-10-27; si caduca, se vuelve a proponer); el resultado se separa en bloqueantes, alto valor y futuro | Revisión 08 |
@@ -73,6 +75,8 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | C17 | Registrar las horas en **UTC** y normalizar aparte la hora de mercado (la consola de SQX va 2 h adelantada) | H1 | Revisión 09 |
 | C18 | **Semillas:** si SQX no permite fijarla, declarar en el registro que la generación no es reproducible; nunca inventar una semilla a posteriori | Siempre | Revisión 09 |
 | C19 | Toda ejecución **confirmatoria** con código limpio (sin cambios sin confirmar) | Fase confirmatoria | Revisión 09 |
+| C20 | **Referencias comparables definidas y preregistradas antes del piloto.** La 0003 §3 (b) abandona si las candidatas "no baten con claridad a las referencias comparables", pero no dice cuáles son; elegirlas después sería un grado de libertad (regla 8). Propuesta: no operar; una regla de tendencia con parámetros fijados sin optimizar; entradas al azar con la misma exposición y costes. Cada referencia cuenta como hipótesis (regla 7). Entra en la 0003 al revisarla Diego (A1) | Antes del piloto | Revisión 11 |
+| C21 | **SQX se mide como método de descubrimiento**, no se da por supuesto: coste por candidata válida y resultado frente a las referencias de C20 y al control negativo de B17. Si una vía más sencilla rinde igual con menos coste, no se paga la complejidad (ni la licencia) | Piloto y A12 | Revisión 11 |
 | C15 | Comparar el **N efectivo** de cada búsqueda con el límite de ~139 configuraciones independientes que admite el bloque de investigación de 7 años (para no pasar de Sharpe 1 por azar) | Piloto y confirmatoria | Ficha MinBTL |
 
 ## D. Lo que NO se construye todavía (y cuándo reconsiderarlo)
@@ -86,4 +90,5 @@ registro que lo cierra. **Nada abierto vive solo en el chat.** Estado general y 
 | Optimización automática continua | Tras validar la búsqueda controlada y sus límites contra el sobreajuste | Revisión 08 |
 | Muchos mercados a la vez | Cuando el primero tenga validación fiable y presupuesto definido | Revisión 08 |
 | Cientos de papers de golpe | Tras validar el método de extracción con las primeras fichas | Revisiones 07, 08 |
-| Otra arquitectura teórica | Solo la consolidación única de C5, al cerrar H0 | Revisiones 06, 08 |
+| Otra arquitectura teórica (incluidas las cinco capas de la revisión 11) | Solo la consolidación única de C5, al cerrar H0 | Revisiones 06, 08, 11 |
+| Competición de tres métodos en paralelo (referencia simple, SQX, vía por hipótesis) | Tras el piloto, si el coste por candidata válida lo permite y hay potencia para distinguirlos (C7) | Revisión 11 |

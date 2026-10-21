@@ -23,4 +23,7 @@ Términos aparecidos trabajando en H0 (2026-10-20), sin lección propia todavía
 - **Evidencia redactada**: copia pública de una evidencia con los datos privados sustituidos por `[REDACTADO:tipo]`; el original queda solo en el PC (n.º 10).
 - **Experimento discriminante**: el que da resultados distintos según cuál de dos explicaciones sea la cierta (Walk-Forward Matrix, n.º 62–65).
 - **Fuera de muestra (OOS)**: datos que no se usaron para construir u optimizar la estrategia; solo ahí se puede medir si generaliza.
+- **Referencia (benchmark)**: estrategia sencilla fijada de antemano (no operar, una regla sin optimizar, entradas al azar con la misma exposición) que una candidata debe batir con claridad. Si se elige después de ver resultados, deja de ser una referencia y pasa a ser un grado de libertad (C20).
+- **Control negativo de la búsqueda**: lanzar la misma búsqueda sobre datos sintéticos que, por construcción, no tienen ventaja. Lo que "encuentre" ahí mide cuánto fabrica el proceso por azar (B17).
+- **Coste de oportunidad**: lo que habrían rendido el mismo dinero y las mismas horas en la mejor alternativa sencilla; el proyecto solo compensa si lo supera (A7).
 - **Walk-forward**: optimizar con un tramo de datos, probar en el siguiente tramo no usado, avanzar la ventana y repetir. Mide si los parámetros optimizados aguantan en datos nuevos (n.º 59).
