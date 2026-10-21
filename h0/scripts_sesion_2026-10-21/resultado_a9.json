@@ -1,0 +1,10 @@
+{
+  "asunto": "A9",
+  "commit": "7527489",
+  "archivos_del_commit": [".claude/hooks/guardian.py", ".claude/settings.json", "aprendizaje/diario.md"],
+  "guardian_igual_al_borrador_probado": "cmp: identicos (docs/mantenimiento/guardian_borrador_powershell.py)",
+  "matcher": "Read|Edit|MultiEdit|Write|NotebookEdit|Glob|Grep|Bash|PowerShell",
+  "autotest": "44/44",
+  "verificado_por": "Claude en sesion normal tras el commit (no por el relato de la sesion de mantenimiento)",
+  "incidencias": ["Primer intento: Login expired en el claude de terminal; nada ejecutado", "Git sin identidad en esa ventana: commit con autor Claude <noreply@anthropic.com> solo para ese commit (A13)"]
+}

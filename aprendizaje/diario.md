@@ -275,3 +275,19 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Un error mío de cifras, cazado al releer:** escribí "registros 93–149" en la ficha cuando el último era el 148, y
   "restauración 147–148" cuando era 146–147. → Toda cifra que se escribe se comprueba contra el registro, también las
   de los documentos de estado.
+- **B17, el resultado más importante del día:** con generación aleatoria y un embudo de filtros típico, **SQX aprueba
+  estrategias en datos sin ninguna ventaja al mismo ritmo que en datos reales** (0,8 % sin costes; el real, 0,2 %;
+  p = 0,99). En el ruido salen estrategias con Sharpe 7,8 dentro de muestra. → "Pasa los filtros" no es evidencia; lo
+  que vale es comparar con una distribución nula simulada con el mismo procedimiento.
+- **Mi error más caro del día:** no comprobé la capacidad del banco del Builder antes de llenarlo. Tiene un tope de 1.000
+  y, al llenarse, **desaloja las de peor fitness sin avisar**: la primera ejecución quedó mezclada y seleccionada, y SQX
+  borró 17 de las 40 estrategias de prueba de H0 (8 sin copia). Lo detectó un recuento que no cuadraba (1.000 en vez de
+  1.090), no ningún aviso de SQX. → Antes de cualquier tanda, **contar lo que hay antes y después**, y leer la capacidad
+  de cada almacén. Se descartó la ejecución sin mirar sus métricas.
+- **Mi criterio de validez estaba mal planteado:** supuse que en datos sin ventaja no habría persistencia entre tramos,
+  pero con costes sí la hay (quien opera mucho pierde en los dos tramos). La regla escrita antes obligó a declarar
+  INCONCLUSO en vez de interpretar, y la prueba sin costes (v3) lo confirmó. → Un criterio previo también puede estar
+  equivocado; lo honrado es cumplirlo, diagnosticar y probar la corrección con datos nuevos.
+- **Una hipótesis refutada también es información:** la de la tendencia por tramos se descartó en un minuto con datos.
+- **Las protecciones que escribí sirvieron:** "exactamente N nuevas" paró la tanda cuando SQX metió 1.001 por sus 7
+  hilos. La corrección (usar todas, con un tope) se escribió antes de seguir.

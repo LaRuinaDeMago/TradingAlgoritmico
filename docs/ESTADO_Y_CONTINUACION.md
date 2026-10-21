@@ -1,6 +1,6 @@
 # Estado del proyecto y punto de continuación
 
-**Actualizado: 2026-10-21, tarde (segunda sesión local en el PC de SQX).** Último registro: **n.º 148**.
+**Actualizado: 2026-10-21, cierre de la segunda sesión local en el PC de SQX.** Último registro: **n.º 222**.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -10,8 +10,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 1. Leer `CLAUDE.md` (reglas duras y objetivo), **este documento**, `aprendizaje/diario.md` (errores ya vistos) y
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
-   `python -m unittest discover -s tests` (29/29) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (148 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `python -m unittest discover -s tests` (41/41) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
+   `PYTHONPATH=src python -m lab verificar` (222 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
 3. Si la sesión es de terminal: abierta con `claude_lab.cmd` (la cabecera no debe decir "API Usage Billing"; si pide
    iniciar sesión, `/login` con la suscripción).
@@ -43,10 +43,12 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 | 7. Experimento completo | SÍ: 54,7 s | n.º 72–86 |
 | B1. Exportar/importar por fechas | **NO por criterios; causas corregidas (B1-bis SÍ)** | n.º 93–148, `h0/b1_resultados.md`: precios idénticos; volumen > 2³¹−1 recortado al importar; sin margen de calentamiento se pierden las primeras operaciones (con un mes, 1.277 idénticas); zona horaria = solo etiqueta |
 | B11. Piloto de transcripción | SÍ | n.º 92: *medium* + fotogramas; ≈ 50 h de CPU para el curso entero |
+| B17. Control negativo de la búsqueda | **D1: el embudo de filtros no distingue el real del ruido** | n.º 149–222, `h0/b17_resultados.md`: sin costes, el embudo aprueba el 0,8 % de estrategias en datos sin ventaja y el real no lo supera (p = 0,99); con costes, 0,1 %. "Pasa los filtros" es compatible con el azar |
 
 **No demostrado (y no es objetivo de H0):** ninguna ventaja de mercado; reconstrucción independiente de SQX; costes
 reales de Darwinex Zero; reloj real y volumen de los datos de Darwinex; aislamiento real del bloque sellado; corrección
-por selección sobre el universo completo; que SQX distinga ventaja de ruido (B17).
+por selección sobre el universo completo; **que SQX distinga ventaja de ruido** (B17 dice que, con generación aleatoria y
+un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los filtros del piloto).
 
 ## 3. Estado exacto del PC de SQX (no está en git; comprobar al reiniciar)
 
@@ -56,14 +58,18 @@ por selección sobre el universo completo; que SQX distinga ventaja de ruido (B1
   tanda.
 - **Carpeta de intercambio:** `C:\StrategyQuantX145\user\lab_h0\` (plantillas, órdenes `-run`, salidas; B1 en
   `lab_h0\b1\`). Las rutas relativas de `sqcli` se resuelven **desde `C:\StrategyQuantX145`**.
-- **Proyectos:** Builder (sin tocar desde la tarea 7, n.º 84–85) y Retester (último: n.º 146–147) **restaurados y
-  comprobados** a su configuración original.
+- **Proyectos:** Builder (último: n.º 219–220, tras B17) y Retester (último: n.º 146–147, tras B1-bis) **restaurados y
+  comprobados** a su configuración original (0 diferencias en todos los bloques).
   Originales en `h0/configs/*_original_145.3191.cfx`.
-- **Bancos** (todo lo nuestro es familia `H0-proceso`, datos quemados): `Builder/Results` = **40**; `Builder/H0_T7` y
-  `Builder/H0_archivo` vacíos; `Retester/H0_USDCHF` = 10; `Retester/H0_T7` = 10; **`Retester/H0_B1` = 10** (B1);
-  `Retester/Results` = 7 ejemplos de SQX (**no tocar**). Nada se ha borrado.
-- **Símbolos creados por B1** (datos quemados, ventana 2023.01.02–2024.10.30): `USDCHF_B1` (zona EETUS) y
-  `USDCHF_B1_TZ` (etiqueta UTC, para el control C2). No se han borrado.
+- **Bancos** (todo lo nuestro es familia `H0-proceso`, datos quemados): **`Builder/Results` = 7.003** (23 de las 40 de
+  H0 + 28 de la calibración + 949 de la v1 de B17 + 3.001 de la v2 + 3.002 de la v3; contado el 2026-10-21); **ojo (B21): la capacidad restaurada es 1.000 y la próxima
+  generación desalojará sin avisar** → guardar el banco antes de volver a usar el Builder. `Builder/H0_T7` y
+  `Builder/H0_archivo` vacíos; `Retester/H0_USDCHF` = 10; `Retester/H0_T7` = 10; `Retester/H0_B1` = 10;
+  `Retester/Results` = 7 ejemplos de SQX (**no tocar**). **Pérdida registrada:** SQX desalojó 17 de las 40
+  estrategias de prueba de H0 durante la v1 de B17 (8 sin copia en otra carpeta; n.º 181).
+- **Símbolos de prueba** (datos quemados, ventana 2023.01.02–2024.10.30): `USDCHF_B1` (importado, EETUS),
+  `USDCHF_B1_TZ` (etiqueta UTC, control C2), `USDCHF_SINT1` y `USDCHF_SINT2` (sintéticos sin ventaja de B17, semillas
+  1 y 2). No se han borrado. Archivos de B1 y B17 en `lab_h0\b1\` y `lab_h0\b17\`.
 - **Datos quemados** (decisión 0002): `USDCHF_M1_dukas`, 2023-01-01 → 2024-10-30, zona "(EST+07) New York, US DST"
   (`EETUS`). Solo para pruebas de proceso; **USDCHF no será el primer mercado de investigación**.
 - **Python 3.14.6** del laboratorio; `pdfplumber` sí; **numpy, pandas y scipy NO** (A18). `pip install -e .` no hecho:
@@ -96,8 +102,9 @@ por selección sobre el universo completo; que SQX distinga ventaja de ruido (B1
    nuevo como cambio de proceso, escrito antes de volver a probar (B1-bis).
 4. **No fiarse del "OK" ni del código 0**: leer la evidencia entera y comprobar el efecto real (recuentos, archivos,
    reexportar la configuración y compararla con `h0/configs/comparar_bloque.py`).
-5. **Antes de cada subida:** tests, `lab verificar`, `comprobar_evidencias.py`, buscar datos privados en archivos y
-   mensajes, nada privado ni PDF ni código MT ni contenido del curso en git, `git fetch` antes de `push`.
+5. **Antes de cada subida:** tests, `lab verificar`, `comprobar_evidencias.py`,
+   `python -I h0/scripts_sesion_2026-10-21/barrido_privacidad.py` (datos privados y contenido del curso en lo que va a
+   salir), nada privado ni PDF ni código MT en git, `git fetch` antes de `push`.
 6. **Trampas de SQX ya vistas:** órdenes asíncronas (`-databank action=load` suelta no espera; usar `-run` con
    `synctofiles`); **el Builder escribe siempre en `Results`**; **`-databank action=move` corta y no pega: no usarlo**;
    SQX reutiliza nombres de estrategia (identificar por hash); ~22 s por arranque; la consola va 2 h adelantada; las
@@ -105,7 +112,12 @@ por selección sobre el universo completo; que SQX distinga ventaja de ruido (B1
    `-sourcecode` existe aunque `-h` no lo liste. **De B1:** la importación **exige** `format`; `-symbol action=list
    csv=true` no imprime nada (sin `csv`, sí); el volumen importado se recorta a 2³¹−1; la zona horaria al importar es una
    etiqueta; SQX ajusta el inicio del backtest al primer dato del símbolo; los CSV de operaciones llevan ticket, símbolo
-   y saldo (comparar con `b1_diagnostico_operaciones.py`).
+   y saldo (comparar con `b1_diagnostico_operaciones.py`). **De B17:** el banco tiene capacidad
+   (`<Rankings><MaxStrategies>`, 1.000 de fábrica) y, lleno, **desaloja por fitness sin avisar** (fijarla en la plantilla
+   y comprobar recuentos antes y después); genera alguna más de las pedidas (7 hilos); descarta las estrategias "con
+   problemas" antes de contarlas; las exportaciones del banco tardan más cuanto más grande es (de 22 a 74 s); posible
+   recorte de métricas (Ret/DD 10, factor de beneficio 5: B20); un tramo fuera de muestra se añade con
+   `<OutOfSample><Range dateFrom= dateTo= type="oos"/>`.
 7. **Falsos positivos del guardián** (no rodearlo: usar la vía sancionada): en un comando que nombra `registry` o
    `.claude`, evitar "del", `>`, `>=`, `2>&1`, `->`, `<…>`; los textos que contienen órdenes peligrosas literales
    también saltan; "zip" en rutas, `find` y `.find(` saltan. Vía sancionada: **commit con `-F archivo`**, código en un
@@ -128,8 +140,10 @@ por selección sobre el universo completo; que SQX distinga ventaja de ruido (B1
 | Ficha H0 | `h0/ficha.md` |
 | B1: plan con criterios previos y resultados | `h0/b1_plan_integridad.md`, `h0/b1_resultados.md` |
 | B16: licencia frente al calendario (precios, inconclusos, texto para el soporte) | `h0/b16_licencia_calendario.md` |
+| B17: control negativo (plan con enmiendas v2, v2.1 y v3, y resultados) | `h0/b17_plan_control_negativo.md`, `h0/b17_resultados.md` |
 | Plantillas, scripts de preparación, tandas y comparadores | `h0/configs/` |
 | Guiones exactos de las tandas del 2026-10-20 | `h0/scripts_sesion_2026-10-20/` |
+| Guiones auxiliares del 2026-10-21 (pruebas del lanzador, lector del registro) | `h0/scripts_sesion_2026-10-21/` |
 | Evidencias públicas (redactadas) | `h0/evidencias/` |
 | Base de conocimiento (3 fichas de papers con verificaciones) | `conocimiento/` |
 | Diario de lecciones, glosario, lección 01 | `aprendizaje/` |
@@ -148,19 +162,22 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 
 ## 7. Siguiente paso (orden propuesto)
 
-1. **Antes del 02-11 (con SQX):** exportar todo lo que H1 necesite sin SQX (velas de la ventana quemada: ya en
-   `lab_h0/b1/EA1`; operaciones y código de H0 ya exportados) y comprobarlo; decidir qué más conviene medir mientras
-   dure la prueba (p. ej. el coste de un lote del piloto con datos quemados).
-2. **B14: registro con eventos tipados** (tipo, familia, origen de la hipótesis, motivo de descarte) y **registro de
+1. **Antes de volver a usar el Builder:** B21 (guardar `Builder/Results`, 7.003 estrategias, o decidir con Diego qué
+   se conserva; fijar la capacidad en toda plantilla) y B20 (¿recorta SQX Ret/DD y factor de beneficio?).
+2. **Antes del 02-11 (mientras dure la prueba de SQX):** exportar y comprobar lo que H1 necesite sin SQX (velas de la
+   ventana quemada: ya en `lab_h0/b1/EA1`; operaciones y código de H0 ya exportados). **Propuesta de Claude, a decidir
+   al empezar la sesión:** repetir B17 con **generación genética** y un filtro de robustez (walk-forward), que es como se
+   usaría SQX de verdad; con su plan y criterios escritos antes. Es la evidencia que más pesa para A12.
+3. **B14: registro con eventos tipados** (tipo, familia, origen de la hipótesis, motivo de descarte) y **registro de
    hipótesis**, con tests, antes de H1.
-3. **B15 + B9: segunda sesión de mantenimiento del guardián** (Claude prepara y prueba el borrador; Diego la abre).
-4. **B18: revisión del curso** con *medium* + fotogramas, por tandas de noche y nunca a la vez que una medición de SQX →
+4. **B15 + B9: segunda sesión de mantenimiento del guardián** (Claude prepara y prueba el borrador; Diego la abre).
+5. **B18: revisión del curso** con *medium* + fotogramas, por tandas de noche y nunca a la vez que una medición de SQX →
    fecha máxima vista (provisional: 2025-03) → inicio del sellado.
-5. **B19: protocolo estadístico del piloto implementado y probado** (referencias C20, criterio de superación,
-   incertidumbre con dependencia, control negativo B17).
-6. Reescribir y aprobar el protocolo de sellado (con B18 y los requisitos de B1) → descargar Darwinex → ficha C12 de
-   EURUSD (costes de Darwinex Zero, reloj real, volumen, huecos) → piloto.
-7. **Auditoría maestra independiente (B13):** tarjeta `task_fe8910bc` propuesta el 2026-10-20 (caduca hacia el
+6. **B19: protocolo estadístico del piloto implementado y probado** (referencias C20, criterio de superación,
+   incertidumbre con dependencia y **distribución nula simulada con los mismos costes**, lección de B17).
+7. Reescribir y aprobar el protocolo de sellado (con B18 y los requisitos de B1) → descargar Darwinex → ficha C12 de
+   EURUSD (costes de Darwinex Zero, reloj real, volumen, huecos) → piloto con su propio control negativo.
+8. **Auditoría maestra independiente (B13):** tarjeta `task_fe8910bc` propuesta el 2026-10-20 (caduca hacia el
    2026-10-27); si caduca, volver a proponerla con el prompt guardado.
 
 ## 8. Revisiones externas recibidas (vía Diego)
@@ -180,3 +197,6 @@ comprobada; registrar sin límite no controla el sobreajuste; con 7 años caben 
 de Sharpe 1 por azar; hay que guardar los resultados de **todas** las estrategias probadas; un periodo sellado dentro de
 SQX no está sellado; lo que se ha visto (el curso, el conocimiento de Claude) no se puede sellar; "ignorado por git" no
 es "privado"; la memoria y los resúmenes también se equivocan; los criterios se fijan antes y no se tocan después.
+**De B17:** "pasa los filtros" es compatible con el azar (el embudo aprueba ruido al mismo ritmo que datos reales); la
+referencia es una distribución nula simulada con los mismos costes, no el cero; una herramienta puede borrar datos en
+silencio (el banco desaloja al llenarse): contar antes y después de cada paso.
