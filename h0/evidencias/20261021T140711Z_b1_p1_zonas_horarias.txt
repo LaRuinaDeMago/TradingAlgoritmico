@@ -1,0 +1,149 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -data action=timezones
+# inicio_utc: 2026-10-21T14:07:11+00:00
+# duracion_s: 23.488
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+16:07:14.568 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+16:07:14.571 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 2664 ms
+Volume profile subscription verified: active=false
+Projects loaded in 4973 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -data action=timezones 
+Timezone,Timezone name
+(EST+07),EETUS
+(UTC+02),EET
+(UTC),Etc/UCT
+(UTC),Europe/London
+(UTC-05),America/New_York
+(UTC-12),Etc/GMT+12
+(UTC-11),Etc/GMT+11
+(UTC-10),Pacific/Honolulu
+(UTC-09),America/Anchorage
+(UTC-08),America/Los_Angeles
+(UTC-08),America/Vancouver
+(UTC-07),America/Phoenix
+(UTC-07),America/Chihuahua
+(UTC-07),America/Denver
+(UTC-06),America/Chicago
+(UTC-06),America/Winnipeg
+(UTC-06),America/Mexico_City
+(UTC-06),America/Regina
+(UTC-05),America/Bogota
+(UTC-05),America/New_York
+(UTC-05),America/Indiana/Indianapolis
+(UTC-04:30),America/Caracas
+(UTC-04),America/Asuncion
+(UTC-04),America/Halifax
+(UTC-04),America/Cuiaba
+(UTC-04),America/Manaus
+(UTC-04),America/Santiago
+(UTC-03:30),America/St_Johns
+(UTC-03),America/Sao_Paulo
+(UTC-03),America/Argentina/Buenos_Aires
+(UTC-03),America/Cayenne
+(UTC-03),America/Cayenne
+(UTC-03),America/Montevideo
+(UTC-03),America/Montevideo
+(UTC-02),Etc/GMT+2
+(UTC-01),Atlantic/Azores
+(UTC-01),Atlantic/Cape_Verde
+(UTC),Africa/Casablanca
+(UTC),Atlantic/Reykjavik
+(UTC+01),Europe/Vienna
+(UTC+01),Europe/Prague
+(UTC+01),Europe/Paris
+(UTC+01),Europe/Warsaw
+(UTC+01),Africa/Brazzaville
+(UTC+01),Africa/Windhoek
+(UTC+02),Asia/Amman
+(UTC+02),Europe/Athens
+(UTC+02),Asia/Beirut
+(UTC+02),Africa/Cairo
+(UTC+02),Asia/Damascus
+(UTC+02),Africa/Harare
+(UTC+02),Europe/Helsinki
+(UTC+02),Europe/Istanbul
+(UTC+02),Asia/Jerusalem
+(UTC+02),Europe/Kaliningrad
+(UTC+02),Africa/Tripoli
+(UTC+03),Asia/Baghdad
+(UTC+03),Asia/Kuwait
+(UTC+03),Europe/Minsk
+(UTC+03),Europe/Moscow
+(UTC+03),Europe/Kiev
+(UTC+03),Africa/Nairobi
+(UTC+03:30),Asia/Tehran
+(UTC+04),Asia/Muscat
+(UTC+04),Asia/Baku
+(UTC+04),Europe/Samara
+(UTC+04),Asia/Tbilisi
+(UTC+04),Asia/Tbilisi
+(UTC+04),Asia/Yerevan
+(UTC+04:30),Asia/Kabul
+(UTC+05),Asia/Tashkent
+(UTC+05),Asia/Yekaterinburg
+(UTC+05),Asia/Karachi
+(UTC+05:30),Asia/Kolkata
+(UTC+05:30),Asia/Kolkata
+(UTC+05:45),Asia/Kathmandu
+(UTC+06),Asia/Dhaka
+(UTC+06),Asia/Dhaka
+(UTC+06),Asia/Novosibirsk
+(UTC+06:30),Asia/Rangoon
+(UTC+07),Asia/Bangkok
+(UTC+07),Asia/Krasnoyarsk
+(UTC+08),Asia/Urumqi
+(UTC+08),Asia/Irkutsk
+(UTC+08),Asia/Kuala_Lumpur
+(UTC+08),Australia/Perth
+(UTC+08),Asia/Taipei
+(UTC+08),Asia/Ulaanbaatar
+(UTC+09),Asia/Tokyo
+(UTC+09),Asia/Seoul
+(UTC+09),Asia/Yakutsk
+(UTC+09:30),Australia/Adelaide
+(UTC+09:30),Australia/Darwin
+(UTC+10),Australia/Brisbane
+(UTC+10),Australia/Sydney
+(UTC+10),Pacific/Guam
+(UTC+10),Australia/Hobart
+(UTC+10),Asia/Magadan
+(UTC+10),Asia/Vladivostok
+(UTC+11),Asia/Vladivostok
+(UTC+11),Pacific/Noumea
+(UTC+12),Asia/Anadyr
+(UTC+12),Pacific/Auckland
+(UTC+12),Etc/GMT-12
+(UTC+12),Pacific/Fiji
+(UTC+13),Pacific/Tongatapu
+(UTC+13),Etc/GMT-13
+(UTC+14),Pacific/Kiritimati
+Timezones listed.
+--------------------------------------------------
+All tasks completed
+18:07:34 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
