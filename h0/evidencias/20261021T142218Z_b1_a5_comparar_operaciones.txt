@@ -1,0 +1,40 @@
+# comando: python -I h0/configs/comparar_operaciones.py C:/StrategyQuantX145/user/lab_h0/b1/ops_USDCHF_M1_dukas C:/StrategyQuantX145/user/lab_h0/b1/ops_USDCHF_B1
+# inicio_utc: 2026-10-21T14:22:18+00:00
+# duracion_s: 0.121
+# codigo_salida: 1
+# incidencia: -
+
+=== STDOUT ===
+DISTINTA  Strategy 0.1.csv: 29 frente a 28 operaciones; primera fila distinta: 1
+   A: ['3', 'USDCHF_M1_dukas', 'Vender', '2023.01.05 13:00:00', '0.92631', '0.1', '2023.01.05 16:00:00', '0.93391', '-87.54', '9912.46', 'IST', 'SL', '-87.54', '0.69', '3h 0m', '']
+   B: ['10', 'USDCHF_B1', 'Comprar', '2023.02.13 15:00:00', '0.92158', '0.1', '2023.02.14 03:00:00', '0.91786', '-42.85', '9957.15', 'IST', 'TrailingStop', '-42.85', '20.96', '12h 0m', '']
+DISTINTA  Strategy 0.11.csv: 177 frente a 175 operaciones; primera fila distinta: 1
+   A: ['33', 'USDCHF_M1_dukas', 'Comprar', '2023.01.03 09:00:00', '0.92600', '0.1', '2023.01.03 13:00:00', '0.93950', '155.49', '10155.49', 'IST', 'PT', '0.00', '155.49', '4h 0m', '']
+   B: ['13', 'USDCHF_B1', 'Vender', '2023.01.06 17:00:00', '0.93543', '0.1', '2023.01.06 21:00:00', '0.92838', '81.20', '10081.20', 'IST', 'End Of Friday (Time)', '0.00', '86.96', '4h 0m', '']
+DISTINTA  Strategy 0.13.csv: 131 frente a 130 operaciones; primera fila distinta: 1
+   A: ['11', 'USDCHF_M1_dukas', 'Comprar', '2023.01.05 15:00:00', '0.92905', '0.1', '2023.01.06 05:00:00', '0.93598', '79.82', '10079.82', 'IST', 'Exit After X Bars', '0.00', '100.44', '14h 0m', '']
+   B: ['10', 'USDCHF_B1', 'Vender', '2023.01.10 16:00:00', '0.92137', '0.1', '2023.01.11 06:00:00', '0.92320', '-21.08', '9978.92', 'IST', 'Exit After X Bars', '-30.18', '7.95', '14h 0m', '']
+DISTINTA  Strategy 0.15.csv: 6 frente a 5 operaciones; primera fila distinta: 1
+   A: ['2', 'USDCHF_M1_dukas', 'Comprar', '2023.01.06 15:00:00', '0.94093', '0.1', '2023.01.06 15:00:00', '0.93733', '-41.46', '9958.54', 'IST', 'SL', '-41.46', '0.00', '0s', '']
+   B: ['10', 'USDCHF_B1', 'Vender', '2023.03.09 23:00:00', '0.93350', '0.1', '2023.03.10 15:00:00', '0.92450', '103.66', '10103.66', 'IST', 'PT', '0.00', '103.66', '16h 0m', '']
+DISTINTA  Strategy 0.17.csv: 7 frente a 7 operaciones; primera fila distinta: 1
+   A: ['1', 'USDCHF_M1_dukas', 'Comprar', '2023.02.03 15:00:00', '0.91469', '0.1', '2023.02.03 21:00:00', '0.92527', '121.86', '10121.86', 'IST', 'End Of Friday (Time)', '0.00', '140.63', '6h 0m', '']
+   B: ['1', 'USDCHF_B1', 'Comprar', '2023.02.03 15:00:00', '0.91469', '0.1', '2023.02.03 21:00:00', '0.92527', '121.86', '10121.86', 'IST', 'End Of Friday (Time)', '0.00', '140.63', '6h 0m', '']
+DISTINTA  Strategy 0.4.csv: 479 frente a 471 operaciones; primera fila distinta: 1
+   A: ['2', 'USDCHF_M1_dukas', 'Comprar', '2023.01.02 03:00:00', '0.92323', '0.1', '2023.01.02 09:00:00', '0.92327', '0.46', '10000.46', 'IST', 'Exit After X Bars', '-9.44', '14.28', '6h 0m', '']
+   B: ['1', 'USDCHF_B1', 'Comprar', '2023.01.09 23:00:00', '0.92173', '0.1', '2023.01.10 05:00:00', '0.92159', '-1.61', '9998.39', 'IST', 'Exit After X Bars', '-14.86', '5.76', '6h 0m', '']
+DISTINTA  Strategy 0.5.csv: 211 frente a 209 operaciones; primera fila distinta: 1
+   A: ['2', 'USDCHF_M1_dukas', 'Comprar', '2023.01.02 10:00:00', '0.92395', '0.1', '2023.01.03 16:00:00', '0.93559', '134.07', '10134.07', 'IST', 'Exit After X Bars', '-13.71', '183.02', '1d 6h 0m', '']
+   B: ['1', 'USDCHF_B1', 'Comprar', '2023.01.06 15:00:00', '0.93990', '0.1', '2023.01.06 17:00:00', '0.93380', '-70.26', '9929.74', 'IST', 'SL', '-70.26', '11.06', '2h 0m', '']
+DISTINTA  Strategy 0.6.csv: 228 frente a 226 operaciones; primera fila distinta: 1
+   A: ['6', 'USDCHF_M1_dukas', 'Comprar', '2023.01.02 16:00:00', '0.92508', '0.1', '2023.01.03 11:00:00', '0.93558', '120.94', '10120.94', 'IST', 'PT', '-26.72', '120.94', '19h 0m', '']
+   B: ['3', 'USDCHF_B1', 'Vender', '2023.01.06 19:00:00', '0.92878', '0.1', '2023.01.06 21:00:00', '0.92838', '4.61', '10004.61', 'IST', 'End Of Friday (Time)', '-0.69', '10.37', '2h 0m', '']
+DISTINTA  Strategy 0.7.csv: 50 frente a 49 operaciones; primera fila distinta: 1
+   A: ['24', 'USDCHF_M1_dukas', 'Comprar', '2023.01.03 10:00:00', '0.93161', '0.1', '2023.01.03 11:00:00', '0.93811', '74.87', '10074.87', 'IST', 'PT', '0.00', '74.87', '1h 0m', '']
+   B: ['6', 'USDCHF_B1', 'Vender', '2023.01.06 18:00:00', '0.92907', '0.1', '2023.01.06 21:00:00', '0.92838', '7.95', '10007.95', 'IST', 'End Of Friday (Time)', '-8.87', '13.71', '3h 0m', '']
+DISTINTA  Strategy 0.9.csv: 35 frente a 35 operaciones; primera fila distinta: 1
+   A: ['3', 'USDCHF_M1_dukas', 'Vender', '2023.02.09 11:00:00', '0.91853', '0.1', '2023.02.09 21:00:00', '0.92263', '-47.22', '9952.78', 'IST', 'SL', '-47.22', '26.49', '10h 0m', '']
+   B: ['2', 'USDCHF_B1', 'Vender', '2023.02.09 11:00:00', '0.91853', '0.1', '2023.02.09 21:00:00', '0.92263', '-47.22', '9952.78', 'IST', 'SL', '-47.22', '26.49', '10h 0m', '']
+Resumen: 0 idénticas de 10 comparadas; solo en una carpeta: ninguna
+
+=== STDERR ===
