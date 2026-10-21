@@ -213,3 +213,25 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Idea propia: el control negativo también vale para la búsqueda.** Si SQX encuentra estrategias "buenas" en datos
   sintéticos sin ventaja, sus filtros no distinguen ventaja de ruido (B17). Es la lección del 20-10 (un resultado igual
   necesita un control que pueda fallar) aplicada a otra escala.
+- **Diego delegó y decidió:** compró el curso (A8), aprueba instalar el transcriptor (A17), "primero cuentas demo" (A2),
+  horas variables (A3) y delega en el criterio de Claude A1, A19, A20 y A21. → 0003 aceptada en v6. Que Diego delegue
+  no convierte a Claude en quien decide: cada decisión queda escrita con su motivo y Diego puede revocarla.
+- **Lo que se ha visto no se puede sellar.** Al leer la 0003 para aprobarla: el curso usa datos de Darwinex hasta 2025-03
+  y se empaquetó el 2026-01-12, y el sellado empezaba el 2024-10-01. Transcribir el curso habría "abierto" el examen
+  sin tocar `data/sealed/`. → El inicio del sellado pasa a ser una **regla** (fecha más tardía vista en el curso), y
+  revisar el curso entero pasa a ser condición previa de la descarga (B18).
+- **El propio Claude es una fuente de contaminación:** se entrenó con datos hasta 2026-06 y sabe, a grandes rasgos,
+  qué hicieron los mercados en el periodo sellado. Diego también lo vivió. → Las candidatas salen de procedimientos
+  mecánicos; las hipótesis humanas o de IA llevan la marca "posible conocimiento posterior" (C22); el único examen
+  limpio del todo es el prospectivo.
+- **La captura de Diego destapó un coste oculto:** `claude` en PowerShell decía "API Usage Billing": la variable
+  `ANTHROPIC_API_KEY` (A10) haría pagar por consumo. → Mirar la cabecera de cada sesión nueva.
+- **Piloto de transcripción, con tres tropiezos:** (1) PyAV 19 rompe faster-whisper 1.2.1 (`metadata_errors`): se fijó
+  PyAV 18.1.0 tras comprobarlo, no por suposición; (2) creí fallida una ejecución en segundo plano que seguía en marcha y
+  la lancé otra vez: dos procesos a la vez, así que **esa medida de tiempo no vale** (la calidad sí); (3) escribí "zip"
+  dentro de un `awk` y el guardián lo paró, con razón según su regla.
+- **El audio da el relato; la pantalla, las cifras.** *Small* convierte "spread" en "express" y "Ret/DD" en "red", y un
+  vocabulario inicial no lo arregla; *medium* casi siempre acierta, pero tarda 3,4 veces más. Un fotograma enseña el filtro
+  exacto que el audio había convertido en "red de base" y "offtrade" (cifras solo en la nota privada: son contenido del
+  curso). Es el mismo hallazgo de los `.cfx`, ahora visto en el vídeo: el curso **selecciona con el tramo fuera de
+  muestra**.

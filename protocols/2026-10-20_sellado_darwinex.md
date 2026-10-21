@@ -13,7 +13,9 @@ Protocolo anterior (si sustituye a otro): —
 > guardián concedería acceso a cualquier protocolo aprobado que se le indique.
 
 Propuesta concreta para completar las secciones 3–5 y el presupuesto: `docs/decisiones/0003-reparto-mercado-presupuesto.md`
-(PROPUESTA; la decide Diego).
+(**ACEPTADA v6** el 2026-10-21). **Manda la 0003 v6** donde este borrador diga otra cosa: el inicio del sellado ya no es
+fijo (2024-10-01), sale de la regla de la 0003 §1 (fecha más tardía vista en el curso); el mercado es EURUSD. Este
+protocolo se reescribe y se aprueba **después de B1** (prueba de exportar/importar), con la fecha de corte calculada.
 
 ## 1. Lo que ya se sabe (solo metadatos, ningún precio visto)
 

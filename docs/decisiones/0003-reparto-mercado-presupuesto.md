@@ -1,21 +1,40 @@
 # Decisión 0003 – Reparto de los datos, primer mercado, presupuesto y abandono
 
-Fecha: 2026-10-20 · Estado: **PROPUESTA** (redactada por Claude; la decide y aprueba Diego) · Sustituye a: —
+Fecha: 2026-10-20 · Estado: **ACEPTADA (versión 6)** el 2026-10-21 por Diego, por delegación explícita en el chat
+("A1 Si crees que es lo mejor aprobar 0003 vamos con ello"; también delegó A19, A20 y A21 y respondió A2 y A3), con la
+recomendación de Claude, que la redactó · Sustituye a: — · Cambiarla exige una decisión nueva que cite a esta.
 
 > Todo lo de aquí se fija **antes de ver ningún precio de Darwinex ni ningún backtest** del mercado elegido.
 > Claude no ha visto precios ni resultados de ninguno de los candidatos con datos de Darwinex.
 > Al aprobarla, Diego cambia el estado a ACEPTADA y el protocolo `protocols/2026-10-20_sellado_darwinex.md` se
 > completa con ella.
 
-## 1. Reparto de los datos (protocolo de sellado, secciones 3 y 4) – provisional
+## 1. Reparto de los datos (protocolo de sellado, secciones 3 y 4)
 
-Provisional hasta verificar la cobertura real de los datos de Darwinex y el tamaño de muestra (revisión 06).
+La **regla** queda fijada; la fecha exacta de corte se calcula con ella antes de descargar (revisión 06: cobertura y
+muestra por verificar).
 
 | Bloque | Periodo | Uso |
 |---|---|---|
-| Investigación | 2017-10-01 → 2024-09-30 (7 años) | Generar, seleccionar y validar (walk-forward dentro del bloque) |
-| **Sellado** | 2024-10-01 → fecha de descarga (~24 meses) | Examen final, una sola vez |
+| Investigación | 2017-10-01 → día anterior al **inicio del sellado** | Generar, seleccionar y validar (walk-forward dentro del bloque) |
+| **Sellado** | **inicio del sellado** → fecha de descarga | Examen final, una sola vez |
 | Prospectivo | después de la descarga | Demo (H4) |
+
+**Inicio del sellado (v6).** El primer día del mes siguiente a la **fecha de mercado más tardía que aparezca en el
+material del curso de Imox** (configuraciones, vídeos y capturas), para **cualquier** instrumento (mismo corte para
+todos: protocolo §3), y **nunca antes del 2024-10-01**. Motivo: Diego tiene el curso y Claude lo está transcribiendo; lo
+que ya se ha visto no se puede sellar. El zip del curso se empaquetó el **2026-01-12** y sus configuraciones usan datos de
+Darwinex hasta al menos **2025-03**, que caen dentro del corte anterior (2024-10-01). La fecha se obtiene de la revisión
+completa del curso (B11), se registra con sus evidencias (solo fechas y hashes) y se fija **antes de descargar**.
+Si a la fecha de descarga el bloque sellado tiene **menos de 18 meses**, el examen se completa con el periodo
+**prospectivo** en demo, con una duración mínima fijada antes de empezarlo. No se recorta el bloque de investigación
+para compensar.
+
+**Conocimiento previo que no se puede sellar (v6).** Claude, entrenado con datos hasta 2026-06, y Diego conocen a grandes
+rasgos lo que hicieron los mercados en 2024–2026. Por eso: (a) las candidatas salen de **procedimientos mecánicos
+preregistrados** sobre el bloque de investigación, no de ideas elegidas sabiendo lo que pasó después; (b) toda hipótesis
+propuesta por una persona o una IA se registra con la marca "posible conocimiento posterior"; (c) el único examen
+totalmente limpio es el **prospectivo** (datos que no existían al congelar la candidata).
 
 **Cómo se sella.** La documentación indica que Darwinex no admite descargar hasta una fecha (registro n.º 88): cualquier
 instalación que descargue tendrá dentro el bloque sellado. Propuesta, con dos instalaciones de SQX:
@@ -31,7 +50,8 @@ instalación que descargue tendrá dentro el bloque sellado. Propuesta, con dos 
 exactamente los límites, que la importación reproduce los mismos datos (mismo backtest antes y después) y el formato
 de archivo que conserva la zona horaria. Si algo falla, se replantea por escrito antes de descargar.
 
-Por qué 24 meses: deja 7 años para investigar y un examen razonable. **Corrección (revisión 03):** la primera versión
+Por qué 24 meses (v1–v5; desde la v6 la longitud la da la regla de arriba y puede ser menor): deja 7 años para
+investigar y un examen razonable. **Corrección (revisión 03):** la primera versión
 decía que daría "cientos de operaciones por estrategia"; era una suposición y es falsa para la mitad de los casos. Con
 las 20 estrategias de prueba del propio laboratorio (22 meses H1, registros n.º 43 y 82): mediana 75–90 operaciones,
 solo la mitad llega a 100 y varias tienen menos de 30. Por eso:
@@ -53,9 +73,11 @@ solo la mitad llega a 100 y varias tienen menos de 30. Por eso:
 | Muy minado por usuarios de SQX (hoja de ruta) | No | No | **Sí** | **Sí** |
 | Es mercado del curso de Imox | Divisas, fase posterior | Ídem | **Sí** | **Sí** |
 
-**Propuesta: EURUSD, como candidato provisional** (revisión 06): se confirma o se cambia cuando se verifiquen costes
-reales de Darwinex Zero, calidad y cobertura de datos y viabilidad técnica; nunca por rentabilidad histórica ni por
-seguir el curso. Cumple todos los criterios, tiene el coste por defecto más bajo y no está entre los mercados
+**Decisión (v6, A19): EURUSD.** Queda confirmada salvo que la ficha de datos y costes del instrumento (C12) muestre un
+problema de costes reales en Darwinex Zero, de cobertura o de calidad de datos; en ese caso se pasa a GBPUSD con los
+mismos criterios. Nunca se cambia por rentabilidad histórica ni por seguir el curso. Razón añadida en v6: cotiza en USD,
+así que en un backtest en USD el resultado no depende del tipo de cambio fijo que SQX parece usar en los pares que no
+cotizan en USD (hipótesis B7). Cumple todos los criterios, tiene el coste por defecto más bajo y no está entre los mercados
 que la hoja de ruta marca como muy minados. **La contrapartida** es que el curso empieza por oro, Nasdaq y DAX: si Diego
 da más peso a seguir el curso, la alternativa sería XAUUSD, con un coste por defecto mucho mayor. Esa ponderación es de
 Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Zero antes de usarlos.)
@@ -66,9 +88,17 @@ Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Ze
   la ficha H0 delante (edición, precio y límites comprobados). **Que caduque la prueba el 02-11-2026 no es un motivo
   para comprar.** Precios según la revisión 03 (web oficial, sin verificar por Claude, en USD y sin IVA): Professional
   1.490; Ultimate 2.900 en promoción (4.900 de lista). Se trata como un gasto que quizá no se recupere nunca.
-- **Tope de pérdida total y horas semanales: los fija Diego** (pendiente: "¿cuánto dinero adicional estoy dispuesto a
-  perder en el proyecto?" y "¿cuántas horas a la semana sin perjudicar otras prioridades?"). Agotado el presupuesto
-  sin evidencia suficiente, se detiene o se replantea: **no se amplía por llevar meses trabajando**.
+- **Capital real (A2, v6): 0 €** hasta superar la demo (H4) con criterios preregistrados. Diego: "primero usaremos
+  cuentas demo". El tope de pérdida con dinero real se fija por escrito **antes** de H5. Gasto del proyecto: 0 €
+  adicional; cualquier compra (licencia, A12; datos; VPS) es una decisión aparte de Diego.
+- **Horas (A3, v6):** variables; no hay compromiso semanal. Se **registran** las horas humanas por fase, porque son
+  coste del proyecto (objetivo C) y del piloto. Las fechas de H1 y H2 siguen siendo hitos de revisión.
+- **Prioridad (A20, v6): rigor con presupuesto de tiempo por fase.** El rigor no se negocia en lo que decide (datos,
+  selección, examen y registro); cuando falta tiempo se **recorta el alcance**, nunca el rigor. Aprender es un
+  subproducto que se registra (`aprendizaje/`), no un motivo para gastar más. Usar Claude Code y Opus para optimizar
+  el proceso entra igual que cualquier herramienta: se queda donde demuestre que mejora el resultado (decisión 0001).
+- Agotado el presupuesto sin evidencia suficiente, se detiene o se replantea: **no se amplía por llevar meses
+  trabajando**.
 - **Tiempo:** H1 (puente SQX completo con MetaTrader) antes del **2026-12-31**; H2 (motor de validación) antes del
   **2027-03-31**. Si se pasa más de un mes de cualquiera de las dos fechas, se replantea el proyecto por escrito.
 - **Presupuesto de búsqueda escalonado** (revisión 03: registrar sin límite no controla el sobreajuste; revisión 06:
@@ -79,6 +109,11 @@ Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Ze
      Método de medición (revisión 09): **tres tamaños de lote**; tiempos separados de arranque, generación, validación,
      optimización y exportación; **coste por estrategia válida para el análisis** (no por estrategia generada); y el
      **tiempo humano** de revisión. También mide si SQX permite conservar todas las estrategias probadas (C13).
+     **Antes del piloto (v6):** se preregistran las **referencias comparables** (C20): no operar, una regla de
+     tendencia con parámetros fijados sin optimizar y entradas al azar con la misma exposición y costes. Cada una cuenta
+     como hipótesis. **Dentro del piloto (v6):** el **control negativo** (B17), la misma búsqueda sobre datos
+     sintéticos sin ventaja; si encuentra en el ruido estrategias tan buenas como en los datos reales, los filtros no
+     discriminan y no se pasa a la fase confirmatoria sin cambiarlos (cambio registrado, regla 8).
   2. **Fase confirmatoria**: su límite acumulado (estrategias, horas de cómputo y gasto) se fija **por escrito con los
      números del piloto y antes de empezar la búsqueda confirmatoria**; después no se toca. **Techos provisionales**
      que esa cifra no podrá superar sin una nueva decisión: 20 familias, 10.000 estrategias por familia, 100.000 en total.
@@ -98,7 +133,10 @@ Diego. (Los costes son valores por defecto de SQX: se contrastan con Darwinex Ze
     repite lo afectado, registrado.
   - **Evidencia de que no hay ventaja** → se detiene o se replantea el enfoque: (a) a 2027-06-30 ninguna estrategia con
     EDGE favorable en datos no sellados; (b) en el examen sellado las candidatas no baten con claridad a las referencias
-    comparables; (c) se agota el presupuesto aprobado sin evidencia suficiente. **El presupuesto no se amplía por llevar
+    **preregistradas** (C20); (c) se agota el presupuesto aprobado sin evidencia suficiente; (d) **v6, A7:** aun con
+    ventaja estadística, lo esperable no compensa el coste total del proyecto (licencias, datos, horas, capital
+    inmovilizado y coste de oportunidad frente a una alternativa sencilla). Se juzgan por separado tres objetivos:
+    A ventaja estadística, B rentabilidad neta explotable, C que el proyecto compense. **El presupuesto no se amplía por llevar
     meses trabajando.**
 - **El bloque sellado no se usa nunca para seleccionar, modificar ni rescatar estrategias** (revisión 06). Se abre una
   vez para evaluar un procedimiento congelado; si después se cambia algo, ese bloque deja de servir de examen y hay que
@@ -123,7 +161,7 @@ Antes de descargar un solo precio:
    futura (el historial público ya contiene el ID de hardware y el de la licencia de prueba; hacerlo privado no borra
    copias existentes). El ID de licencia de prueba caduca el 02-11-2026; el de hardware no se puede "revocar".
 
-## Historial de esta propuesta (sigue sin aprobar)
+## Historial de esta decisión (aceptada en la versión 6)
 
 | Versión | Cambio | Origen |
 |---|---|---|
@@ -132,3 +170,4 @@ Antes de descargar un solo precio:
 | 3 | "Cientos de operaciones" corregido con datos propios; muestra mínima de 100; topes de búsqueda; precios de SQX; no comprar por la caducidad; exigencias de realismo; condiciones previas (puerto 5050, repositorio) | Revisión 03 |
 | 4 | Presupuesto escalonado (piloto con cifras ya fijadas → confirmatoria con límite fijado con datos del piloto; los topes de la v3 pasan a techos); variantes, filtros y selecciones cuentan como pruebas; fechas como hitos de revisión; causas de abandono distinguidas; el bloque sellado nunca selecciona, modifica ni rescata; reparto y EURUSD provisionales | Revisión 06 |
 | 5 | Muestra mínima necesaria pero no suficiente (dependencia); método de medición del piloto (tres lotes, coste por estrategia válida, tiempo humano); preferible una candidata principal y, si hay varias, el examen como prueba múltiple; congelación con hashes; parada automática por cualquier límite | Revisión 09 |
+| 6 | **Aceptada.** Inicio del sellado por regla (fecha más tardía vista en el curso, nunca antes de 2024-10-01; si quedan menos de 18 meses, se completa con prospectivo); conocimiento previo de Claude y Diego declarado; EURUSD decidido con salida a GBPUSD si falla C12; capital real 0 € hasta superar la demo; horas registradas sin compromiso semanal; prioridad "rigor con presupuesto de tiempo por fase"; referencias preregistradas y control negativo en el piloto; tres objetivos (A7) en el abandono | Diego (A1, A2, A3, A19, A20 delegadas en el chat del 2026-10-21); Claude: la regla del sellado, al ver que el curso usa datos hasta 2025-03 y se empaquetó el 2026-01-12; revisiones 10 y 11 |

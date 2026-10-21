@@ -62,7 +62,9 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 - **Git:** sin identidad configurada; los commits se hacen con
   `git -c user.name=Claude -c user.email=noreply@anthropic.com commit -F <archivo>` (A13). `core.autocrlf=true`
   (por eso `.gitattributes`: evidencias byte a byte, registro y `.sh` en LF).
-- **Variable de usuario `ANTHROPIC_API_KEY`** definida en Windows (no se ha mirado su valor; A10).
+- **Variable de usuario `ANTHROPIC_API_KEY`** definida en Windows (no se ha mirado su valor; A10). **Ojo:** hace que
+  `claude` lanzado desde PowerShell se cobre por consumo ("API Usage Billing"). Mientras A10 siga abierto, en cada
+  ventana: `Remove-Item Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue` antes de `claude`.
 - **Carpetas privadas fuera del repositorio** (solo en este PC; **copia de seguridad: A14**):
   `h0/evidencias_privadas/` (dentro del proyecto pero ignorada por git: originales con ID de hardware y licencia),
   `C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\` (auditoría del curso, herramientas para leer el zip, configs
@@ -73,8 +75,10 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
   comprimir dentro del zip; 78 MP4 = 26,3 h; 7 MKV (2,8 GB) sin duración legible. Junto a las partes hay una
   **carpeta** `IMOX TRADING.zip` (2026-10-20 13:30) con una extracción **parcial**: 8 vídeos (3,3 h) de "Bonus 2025",
   idénticos en tamaño al índice. El guardián bloquea cualquier comando que nombre esa ruta (`zip`, falso positivo B9):
-  se lee con scripts de `LAB_PRIVADO_CURSO/herramientas/` que llevan la ruta dentro. Transcribir es viable sin GPU y sin
-  FFmpeg aparte (A17), tras A8.
+  se lee con scripts de `LAB_PRIVADO_CURSO/herramientas/` que llevan la ruta dentro. Con los 7 MKV (2,4 h): **28,7 h**.
+  El zip se empaquetó el **2026-01-12**. Transcriptor en `LAB_PRIVADO_CURSO/.venv_transcripcion` (Python aparte;
+  faster-whisper 1.2.1, PyAV 18.1.0, modelos small y medium); herramientas: `extraer_videos.py`, `transcribir.py`,
+  `fotogramas.py`, `duraciones_zip.py`, `duracion_mkv_av.py`.
 - **Repositorio de GitHub público** (`LaRuinaDeMago/TradingAlgoritmico`, rama `claude/proyecto-2026-fps66g`); A4.
   El historial ya contiene el ID de hardware, el de la licencia de prueba y el usuario de Windows (decisiones de
   Diego del 2026-10-20 de no reescribir historial).
@@ -109,7 +113,7 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 |---|---|
 | Reglas duras y estilo | `CLAUDE.md` |
 | Hoja de ruta (PDF de Diego y transcripción, con nota de desfase) | `docs/hoja_de_ruta*.{md,pdf}` |
-| Decisiones: 0001 (IA y herramientas), 0002 (datos quemados), **0003 (PROPUESTA v5: reparto, mercado, presupuesto, abandono, con historial)** | `docs/decisiones/` |
+| Decisiones: 0001 (IA y herramientas), 0002 (datos quemados), **0003 (ACEPTADA v6 el 2026-10-21: reparto por regla, EURUSD, presupuesto, abandono, con historial)** | `docs/decisiones/` |
 | **Índice único de asuntos abiertos** (A: Diego · B: técnico · C: requisitos futuros · D: no construir) | `docs/decisiones/PENDIENTES.md` |
 | Protocolo de sellado de Darwinex (BORRADOR) | `protocols/2026-10-20_sellado_darwinex.md` |
 | Revisiones externas 01–11 con la respuesta de Claude | `docs/revisiones/` |
@@ -125,11 +129,12 @@ reales de Darwinex Zero; aislamiento real del bloque sellado; corrección por se
 
 ## 6. Decisiones de Diego pendientes (resumen; detalle en `PENDIENTES.md`, sección A)
 
-Las más urgentes: **A9** sesión de mantenimiento del guardián · **A1** aprobar la 0003 (v5) y **A1b** cifras del piloto ·
-**A2** dinero que está dispuesto a perder · **A3** horas semanales · **A20** prioridad principal (pegó las tres
-opciones sin elegir; añadió "usar Claude Code y Opus para optimizar el proceso en todos los sentidos") · **A19** primer
-mercado · **A12** licencia (la caducidad del 2026-11-02 no es motivo para comprar) · **A21** pausa de revisiones externas
-hasta el piloto · **A8 + A17** procedencia del curso y permiso para instalar el transcriptor. Después: A4 repositorio
+**Cerradas el 2026-10-21** (Diego, en el chat; varias por delegación explícita en el criterio de Claude): A1 (0003
+aceptada v6), A2 (0 € reales hasta superar la demo), A3 (horas variables, se registran), A8 (curso comprado), A17
+(transcriptor instalado), A19 (EURUSD), A20 (rigor con presupuesto de tiempo por fase), A21 (pausa de revisiones).
+Las más urgentes que quedan: **A9** sesión de mantenimiento del guardián · **A10** la clave API (urgente: hizo que
+`claude` en PowerShell se cobrara por consumo) · **A12** licencia (la caducidad del 2026-11-02 no es motivo para
+comprar; antes, B16) · **A1b** cifras del piloto (propuestas en la 0003). Después: A4 repositorio
 público/privado, A5 enunciado del objetivo, A6 regla de proporcionalidad, A7 éxito por rentabilidad neta frente al coste
 total, A8 procedencia del curso, A10 clave API, A11 MetaTrader, A13 identidad git, A14 copias de seguridad, A15
 protección de rama, A17 piloto de vídeos, A18 numpy/pandas/scipy.
@@ -149,12 +154,12 @@ protección de rama, A17 piloto de vídeos, A18 numpy/pandas/scipy.
 4. **Claude: licencia frente a calendario (B16)** antes del 2026-11-02: qué de H1 se puede hacer sin licencia.
 5. **Auditoría maestra independiente (B13):** tarjeta de sesión propuesta el 2026-10-20 (`task_fe8910bc`, solo
    lectura; caduca hacia el 2026-10-27). Si caduca, volver a proponerla con el prompt guardado.
-6. Con las decisiones de Diego: aprobar la 0003 → aprobar el protocolo de sellado → descargar Darwinex según el
-   protocolo → ficha de datos y costes del instrumento (C12) → **referencias preregistradas (C20)** → piloto de búsqueda
-   (0003 v5) **con su control negativo sobre datos sintéticos (B17)**.
-7. **Curso (B11), tras A8 y A17:** piloto de 3 vídeos con transcripción (faster-whisper small frente a medium, en CPU),
-   fotogramas leídos por Claude y contraste con los `.cfx`; medir tiempo por hora de vídeo antes de decidir si se
-   transcribe el resto.
+6. **Curso completo (B11 → B18):** transcripción con *medium* (≈ 55 h de CPU, por tandas, nunca a la vez que una
+   medición de tiempo de SQX) + fotogramas → **fecha de mercado más tardía vista en el curso = inicio del sellado**
+   (0003 v6 §1). Plan: `LAB_PRIVADO_CURSO/plan_revision_curso.md`.
+7. 0003 ya aceptada (v6) → reescribir y aprobar el protocolo de sellado con la fecha de B18 y lo aprendido en B1 →
+   descargar Darwinex según el protocolo → ficha de datos y costes de EURUSD (C12) → **referencias preregistradas
+   (C20)** → piloto de búsqueda **con su control negativo sobre datos sintéticos (B17)**.
 
 ## 8. Revisiones externas recibidas (vía Diego)
 
