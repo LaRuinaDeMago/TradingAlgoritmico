@@ -241,3 +241,8 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   copia sin la línea que la borra se niega a abrir): la prueba distingue de verdad.
 - **Dos ediciones mías salieron con el texto de reemplazo equivocado** ("x"). No se aplicaron porque el texto de
   búsqueda tampoco coincidía, pero pudieron romper un documento. → Releer cada edición antes de enviarla.
+- **Guardián con PowerShell (A9), aplicado en sesión de mantenimiento:** Diego abrió la sesión con
+  `LAB_MANTENIMIENTO_GUARDIAN=1` (comprobado antes de tocar nada) y Claude copió el borrador revisado de
+  `docs/mantenimiento/` tal cual (`cmp`: idénticos) y añadió `PowerShell` al matcher. Autotest 44/44 y `settings.json`
+  válido. → Que el autotest pase solo demuestra que la función decide bien; que Claude Code **llame** al guardián desde
+  PowerShell falta probarlo con una llamada real en una sesión normal (B3).

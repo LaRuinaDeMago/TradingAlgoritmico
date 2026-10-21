@@ -12,6 +12,8 @@ Bloquea (exit 2) antes de que se ejecute la herramienta:
   4. Modificar este guardián o .claude/settings*.json, salvo que Diego arranque
      la sesión con LAB_MANTENIMIENTO_GUARDIAN=1.
 
+Los comandos de Bash y de PowerShell se analizan con las mismas reglas.
+
 Es una red de seguridad heurística, no una garantía absoluta: la protección
 fuerte es guardar los datos sellados cifrados (ver protocols/README.md).
 Autocomprobación: python .claude/hooks/guardian.py --autotest
@@ -31,6 +33,7 @@ RAIZ = Path(os.environ.get("CLAUDE_PROJECT_DIR") or Path(__file__).resolve().par
 
 CAMPOS_RUTA = ("file_path", "path", "notebook_path", "pattern", "glob")
 HERRAMIENTAS_RUTA_PATRON = {"Glob"}  # en Grep, "pattern" es el texto buscado, no una ruta
+CONSOLAS = {"Bash", "PowerShell"}  # herramientas cuyo "command" se analiza como texto
 
 SELLADA = re.compile(r"data/+(sealed|s[^/\s\"']*[*?\[{])")
 # Formas reconocidas de excluir la carpeta sellada en un recorrido recursivo.
@@ -46,13 +49,16 @@ RECURSIVO = re.compile(
     r"|\bls\s+(-\w*R\w*\b|--recursive)"
     r"|\b(e|f)?grep\b[^|;&]*\s-(\w*[rR]\w*\b|-recursive)"
     r"|\bcp\s+(-\w*[rR]\w*\b|--recursive)"
-    r"|\b(get-childitem|gci|dir)\b[^|;&]*(-r(ecurse)?\b|/s\b)"
+    r"|\b(get-childitem|gci|dir|ls|copy-item|cpi)\b[^|;&]*(-r(ecurse)?\b|/s\b)"
+    r"|\b(compress-archive|expand-archive)\b"
     r"|\bos\.walk\b|\brglob\b|\bglob\.glob\b|\bshutil\.(copytree|make_archive)\b"
 )
 DESTINO_SEGURO = re.compile(r"(^|[\s'\"=])(\./)?(src|tests|h0|registry|protocols|docs|\.claude)(/|\b)")
 MENCIONA_DATA = re.compile(r"(^|[\s'\"=(,])(\./)?data\b")
 ESCRITURA_BASH = re.compile(
     r"\b(rm|del|erase|mv|move|ren|rename|truncate|shred|remove-item|set-content|clear-content|out-file)\b"
+    r"|\b(new-item|ni|ri|rni|mi|cpi|sc|rmdir|rd)\b"  # PowerShell y sus alias
+    r"|::(copy|move|delete|replace|write\w*)\b"  # [IO.File]::WriteAllText(...) y similares
     r"|\bsed\s+(-\w*i|--in-place)|\bgit\s+(rm|mv|checkout|restore|clean)\b"
     r"|(^|[^>])>(?!>)|\bcp\b|\bcopy\b|\btee\b(?!\s+-a)"
 )
@@ -74,7 +80,7 @@ def relativa(ruta: str) -> str:
 
 
 def motivo_sellado(herramienta: str, entrada: dict) -> str | None:
-    if herramienta == "Bash":
+    if herramienta in CONSOLAS:
         cmd = normalizar(entrada.get("command", ""))
         excluida = False
         for patron in EXCLUSIONES:
@@ -119,7 +125,7 @@ def motivo_registro(herramienta: str, entrada: dict) -> str | None:
         r = relativa(entrada.get("file_path", ""))
         if r.startswith("registry/") and (RAIZ / r).exists():
             return "registry/ solo admite añadir; no se sobrescribe un archivo existente"
-    if herramienta == "Bash":
+    if herramienta in CONSOLAS:
         cmd = normalizar(entrada.get("command", ""))
         if "registry" in cmd and ESCRITURA_BASH.search(cmd):
             return "comando que podría borrar o sobrescribir registry/ (usa >> o python -m lab)"
@@ -134,7 +140,7 @@ def motivo_guardian(herramienta: str, entrada: dict) -> str | None:
         r = relativa(entrada.get("file_path") or entrada.get("notebook_path") or "")
         if any(r.startswith(p) for p in protegidas):
             return "el guardián y la configuración de hooks solo los cambia Diego (LAB_MANTENIMIENTO_GUARDIAN=1)"
-    if herramienta == "Bash":
+    if herramienta in CONSOLAS:
         cmd = normalizar(entrada.get("command", ""))
         if (".claude/hooks" in cmd or ".claude/settings" in cmd) and ESCRITURA_BASH.search(cmd):
             return "comando que podría alterar el guardián o la configuración de hooks"
@@ -217,6 +223,23 @@ def autotest() -> int:
         ("Edit", {"file_path": ".claude/settings.json"}, True),
         ("Bash", {"command": "rm .claude/hooks/guardian.py"}, True),
         ("Write", {"file_path": "h0/ficha.md"}, False),
+        # PowerShell: mismas reglas que Bash
+        ("PowerShell", {"command": "Get-Content data/sealed/a.csv"}, True),
+        ("PowerShell", {"command": "Get-Content C:\\Lab\\data\\Sealed\\a.csv"}, True),
+        ("PowerShell", {"command": "Get-ChildItem -Recurse data"}, True),
+        ("PowerShell", {"command": "gci -r -Filter *.csv"}, True),
+        ("PowerShell", {"command": "Get-ChildItem -Recurse src"}, False),
+        ("PowerShell", {"command": "Get-ChildItem data"}, False),
+        ("PowerShell", {"command": "Compress-Archive data copia.zip"}, True),
+        ("PowerShell", {"command": "Remove-Item registry/experimentos.jsonl"}, True),
+        ("PowerShell", {"command": "Set-Content registry/accesos.log x"}, True),
+        ("PowerShell", {"command": "Move-Item registry/a.log registry/b.log"}, True),
+        ("PowerShell", {"command": "Add-Content registry/notas.log x"}, False),
+        ("PowerShell", {"command": "Set-Content .claude/hooks/guardian.py x"}, True),
+        ("PowerShell", {"command": "Copy-Item x.json .claude\\settings.json"}, True),
+        ("PowerShell", {"command": "[IO.File]::WriteAllText('.claude/hooks/guardian.py', 'x')"}, True),
+        ("PowerShell", {"command": "git status"}, False),
+        ("PowerShell", {"command": "python -m unittest discover -s tests"}, False),
     ]
     fallos = 0
     for herramienta, entrada, bloquear in casos:
