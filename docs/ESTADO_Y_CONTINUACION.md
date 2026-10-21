@@ -1,6 +1,7 @@
 # Estado del proyecto y punto de continuación
 
-**Actualizado: 2026-10-21, cierre de la segunda sesión local en el PC de SQX.** Último registro: **n.º 222**.
+**Actualizado: 2026-10-21, cierre de la segunda sesión local en el PC de SQX; por la tarde, conversación de rumbo que
+dio la decisión 0004 (sin experimentos nuevos).** Último registro: **n.º 222**.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -25,8 +26,13 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
   detenernos. **Concluir "no hay edge" es un resultado válido.**
 - **Decisión vigente:** 0003 **v6, aceptada** (reparto de datos por regla, EURUSD, 0 € reales hasta superar la demo,
   presupuesto escalonado con piloto, referencias preregistradas, control negativo, tres objetivos en el abandono).
-- **Fase: H0 (viabilidad técnica), casi cerrada.** Siguiente hito: H1 (puente SQX → MetaTrader y reconstrucción
-  independiente), **no antes** de cerrar las condiciones previas de la sección 7.
+- **Rumbo: 0004 v3, aceptada** (`docs/decisiones/0004-rumbo-medir-antes-de-escalar.md`): medir antes de escalar.
+  Cartera como unidad de decisión (cada prueba como unidad de registro); SQX, IA y Python frente a una referencia
+  sencilla; embudo calibrado con ruido y con ventaja sembrada (controles de desarrollo y de aceptación separados);
+  integridad temporal (P12) y presupuesto por fase (P13); fases 0–6 con puertas. Escalar (millones de estrategias,
+  IA por API, VPS, muchos mercados) es el objetivo de Diego, **después** de superar la fase 1.
+- **Fase: H0 (viabilidad técnica), casi cerrada = fase 0 de la 0004.** Siguiente: fase 1 (calibración), **no antes**
+  de cerrar la fase 0 (sección 7).
 
 ## 2. Qué está demostrado (H0) y qué no
 
@@ -131,7 +137,7 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 |---|---|
 | Reglas duras, objetivo y estilo | `CLAUDE.md` |
 | Hoja de ruta (PDF de Diego y transcripción, con nota de desfase) | `docs/hoja_de_ruta*.{md,pdf}` |
-| Decisiones: 0001 (IA y herramientas), 0002 (datos quemados), **0003 (ACEPTADA v6)** | `docs/decisiones/` |
+| Decisiones: 0001 (IA y herramientas), 0002 (datos quemados), **0003 (ACEPTADA v6)**, **0004 (ACEPTADA v3: rumbo, principios P1–P13, fases 0–6)** | `docs/decisiones/` |
 | **Índice único de asuntos abiertos** (A: Diego · B: técnico · C: requisitos futuros · D: no construir) | `docs/decisiones/PENDIENTES.md` |
 | Protocolo de sellado de Darwinex (BORRADOR; manda la 0003 v6; con los requisitos de B1) | `protocols/2026-10-20_sellado_darwinex.md` |
 | Revisiones externas 01–12 con la respuesta de Claude | `docs/revisiones/` |
@@ -155,30 +161,40 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 **Cerradas el 2026-10-21** (varias por delegación explícita en el criterio de Claude): A1 (0003 v6), A2 (0 € reales
 hasta superar la demo), A3 (horas variables, se registran), A5 (objetivo), A8 (curso comprado), A9 (guardián), A10
 (clave API: se queda, el laboratorio no la usa), A17 (transcriptor), A19 (EURUSD), A20 (rigor con presupuesto de tiempo
-por fase), A21 (pausa de revisiones externas hasta el piloto).
-**Abiertas:** A12 licencia (se usa la prueba; se decide con evidencia después del 02-11) · A1b cifras del piloto
+por fase), A21 (pausa de revisiones externas hasta el piloto). **Por la tarde:** 0004 aceptada en v3; varios mercados
+como dirección; la caducidad de SQX deja de ser fecha límite (se puede renovar la prueba; no verificado).
+**Abiertas:** **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
+licencia (se decide con la evidencia de la fase 1) · A1b cifras del piloto
 (propuestas en la 0003) · A4 repositorio público/privado · A6 regla de proporcionalidad · A7 cifras del criterio
 económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · A15 protección de rama · A18 numpy/pandas/scipy.
 
-## 7. Siguiente paso (orden propuesto)
+## 7. Siguiente paso (fases de la 0004; poco a poco, una puerta cada vez)
 
-1. **Antes de volver a usar el Builder:** B21 (guardar `Builder/Results`, 7.003 estrategias, o decidir con Diego qué
-   se conserva; fijar la capacidad en toda plantilla) y B20 (¿recorta SQX Ret/DD y factor de beneficio?).
-2. **Antes del 02-11 (mientras dure la prueba de SQX):** exportar y comprobar lo que H1 necesite sin SQX (velas de la
-   ventana quemada: ya en `lab_h0/b1/EA1`; operaciones y código de H0 ya exportados). **Propuesta de Claude, a decidir
-   al empezar la sesión:** repetir B17 con **generación genética** y un filtro de robustez (walk-forward), que es como se
-   usaría SQX de verdad; con su plan y criterios escritos antes. Es la evidencia que más pesa para A12.
-3. **B14: registro con eventos tipados** (tipo, familia, origen de la hipótesis, motivo de descarte) y **registro de
-   hipótesis**, con tests, antes de H1.
-4. **B15 + B9: segunda sesión de mantenimiento del guardián** (Claude prepara y prueba el borrador; Diego la abre).
-5. **B18: revisión del curso** con *medium* + fotogramas, por tandas de noche y nunca a la vez que una medición de SQX →
-   fecha máxima vista (provisional: 2025-03) → inicio del sellado.
-6. **B19: protocolo estadístico del piloto implementado y probado** (referencias C20, criterio de superación,
-   incertidumbre con dependencia y **distribución nula simulada con los mismos costes**, lección de B17).
-7. Reescribir y aprobar el protocolo de sellado (con B18 y los requisitos de B1) → descargar Darwinex → ficha C12 de
-   EURUSD (costes de Darwinex Zero, reloj real, volumen, huecos) → piloto con su propio control negativo.
-8. **Auditoría maestra independiente (B13):** tarjeta `task_fe8910bc` propuesta el 2026-10-20 (caduca hacia el
-   2026-10-27); si caduca, volver a proponerla con el prompt guardado.
+**Fase 0 – condiciones previas (lo siguiente):**
+1. **B21** con la aceptación de la 0004: copiar o archivar las 7.003 estrategias de `Builder/Results` con hash y
+   metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad; ajustar la capacidad en una
+   **copia de trabajo** de la plantilla y **probar** que una generación nueva no desaloja lo conservado. Plan con
+   criterios escritos y en git antes de la primera orden (como B1). Cerrar la interfaz de SQX antes.
+2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación + estrategia de métricas conocidas; ¿afecta a la
+   ordenación o la selección?
+3. Preparar para Diego el texto de la consulta a Darwinex (A22) y la de licencia (B16).
+
+**Fase 1 – calibración (después de cerrar la fase 0):**
+4. **Protocolo de la fase 1**, escrito y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
+   (distintas familias, no solo semillas), construcción y tamaños de la ventaja sembrada (mínimo económico tras costes),
+   niveles de error y detección, presupuesto (P13), condiciones que impiden escalar.
+5. **B14** (eventos tipados y registro de hipótesis) y **B19** (protocolo estadístico implementado, con tests de errores
+   sembrados) y comprobaciones P12 automatizables, antes de la primera tanda que cuente. Probable: A18 (numpy/scipy).
+6. Ejecutar la calibración: embudo del curso (genética, walk-forward, Monte Carlo, otros mercados) con el ciclo de IA
+   dentro, frente a la referencia sencilla, también a nivel de cartera. Puerta: los dos exámenes en el juego de
+   aceptación.
+
+**En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (curso por tandas de noche y demás fuentes de
+contaminación); B15 + B9 (mantenimiento del guardián, lo abre Diego); B13 (auditoría independiente: tarjeta
+`task_fe8910bc`, caduca hacia el 2026-10-27; si caduca, volver a proponerla con el prompt guardado).
+
+**Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → piloto → examen → prospectivo
+→ capital. Detalle y puertas en la 0004 §4.
 
 ## 8. Revisiones externas recibidas (vía Diego)
 
@@ -186,7 +202,8 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. Si vienen del mismo modelo, que coincidan no es evidencia
+A5). Desde la 10, en formato corto por la pausa A21. **13–15** (tarde del 2026-10-21): sobre el rumbo → 0004 v3
+(`docs/revisiones/2026-10-21_13-15_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 
 ## 9. Lo esencial aprendido (detalle en `aprendizaje/diario.md`)

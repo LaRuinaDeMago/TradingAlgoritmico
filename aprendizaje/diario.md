@@ -291,3 +291,20 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Una hipótesis refutada también es información:** la de la tendencia por tramos se descartó en un minuto con datos.
 - **Las protecciones que escribí sirvieron:** "exactamente N nuevas" paró la tanda cuando SQX metió 1.001 por sus 7
   hilos. La corrección (usar todas, con un tope) se escribió antes de seguir.
+- **Tarde: conversación de rumbo → decisión 0004 (sin experimentos).** Diego explicó su objetivo original (SQX "al
+  techo", IA por API, VPS, millones de estrategias, muchos mercados). La lección de B17 lo reordena: más potencia sin
+  calibrar es más falsos positivos; primero se demuestra que el proceso distingue (fase 1), después se escala.
+- **Un texto pegado puede ser de otro proyecto.** Al empezar, Diego pegó por error el cierre de una sesión de
+  contabilidad (ContaPlus, IVA). Se comprobó en el repositorio que no tenía nada que ver antes de usarlo. → Contrastar
+  siempre lo pegado con el estado real.
+- **Mis errores de la conversación, cazados por revisiones externas:** di por cosechable el carry en CFD minoristas,
+  propuse "8–10 mercados" sin base, y dije que examinar una cartera era "una sola prueba" como si borrase la búsqueda.
+  Y no mencioné las **fugas de información**, que invalidan cualquier Sharpe. → Una idea atractiva también se revisa
+  como un resultado: qué supuestos tiene y qué la tumbaría.
+- **Las revisiones externas también se verifican:** de sus citas, dos no aparecen (un "NBER 2026" y un "preprint de
+  agosto de 2026") y una fecha estaba mal (la página de Darwinex Zero dice 2024-01-30). Lo importante sí se confirmó en
+  la fuente oficial: no hay demo de MetaTrader de Darwinex para residentes en España (A22). → Hecho que sostiene una
+  decisión, se comprueba en fuente primaria.
+- **Rendimientos decrecientes:** tres revisiones del mismo documento en una tarde; la 14 aportó lo más valioso (P12) y
+  la 15 solo ajustes. → Cerrar el documento y dejar que lo siguiente lo corrija la evidencia (o un defecto demostrado,
+  por la vía versionada de P7).
