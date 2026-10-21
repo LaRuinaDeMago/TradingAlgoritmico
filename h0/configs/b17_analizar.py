@@ -47,14 +47,19 @@ def leer(ruta: str | Path) -> list[dict]:
     return salida
 
 
+# v2.1: SQX genera con 7 hilos y al parar puede entrar alguna más de las pedidas (registro n.º 191: 1001 de 1000).
+# Se usan TODAS las nuevas (quitar alguna exigiría elegir cuál); se admite un exceso de hasta un hilo por núcleo.
+EXCESO_MAXIMO = 7
+
+
 def nuevas(antes: str, despues: str, n: int) -> list[dict]:
     viejas = {e["nombre"] for e in leer(antes)}
     todas = leer(despues)
     if not viejas <= {e["nombre"] for e in todas}:
         sys.exit(f"PARADA: falta alguna estrategia de antes en {despues}")
     sel = [e for e in todas if e["nombre"] not in viejas]
-    if len(sel) != n:
-        sys.exit(f"PARADA: {despues} tiene {len(sel)} estrategias nuevas y se esperaban {n}")
+    if not n <= len(sel) <= n + EXCESO_MAXIMO:
+        sys.exit(f"PARADA: {despues} tiene {len(sel)} estrategias nuevas y se esperaban entre {n} y {n + EXCESO_MAXIMO}")
     return sel
 
 
@@ -124,12 +129,12 @@ def main(argv: list[str]) -> int:
     brazos = [nuevas(a, d, n) for a, d in pares]
     nombres = ["real"] + [f"nulo{k}" for k in range(1, len(brazos))]
     res = {nom: resumen_brazo(es) for nom, es in zip(nombres, brazos)}
-    a = res["real"]["pasan_F_completo"]
+    a, n_real = res["real"]["pasan_F_completo"], res["real"]["estrategias"]
     c = sum(res[nom]["pasan_F_completo"] for nom in nombres[1:])
-    nulos = n * (len(brazos) - 1)
-    res["prueba_T1_fisher_real_mayor_que_nulo"] = {"real_pasan": a, "real_no": n - a, "nulo_pasan": c,
+    nulos = sum(res[nom]["estrategias"] for nom in nombres[1:])
+    res["prueba_T1_fisher_real_mayor_que_nulo"] = {"real_pasan": a, "real_no": n_real - a, "nulo_pasan": c,
                                                     "nulo_no": nulos - c,
-                                                    "p_una_cola": round(fisher_una_cola(a, n - a, c, nulos - c), 6)}
+                                                    "p_una_cola": round(fisher_una_cola(a, n_real - a, c, nulos - c), 6)}
     cota = 2 / math.sqrt(max(1, min(res[nom]["activas_para_spearman"] for nom in nombres[1:])))
     res["comprobacion_S_nulos_sin_persistencia"] = {
         "cota_aprox_95": round(cota, 4),

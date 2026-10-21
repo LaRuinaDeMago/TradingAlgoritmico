@@ -62,8 +62,15 @@ class AnalisisB17(unittest.TestCase):
             antes = exportacion(d / "a.csv", [fila("Strategy 0.1"), fila("Strategy 0.2")])
             despues = exportacion(d / "b.csv", [fila("Strategy 0.1"), fila("Strategy 0.2"), fila("Strategy 0.3")])
             self.assertEqual([e["nombre"] for e in ba.nuevas(antes, despues, 1)], ["Strategy 0.3"])
-            with self.assertRaises(SystemExit):
+            with self.assertRaises(SystemExit):  # menos de las pedidas: para
                 ba.nuevas(antes, despues, 2)
+            sobra_una = exportacion(d / "e.csv", [fila("Strategy 0.1"), fila("Strategy 0.2"), fila("Strategy 0.3"),
+                                                   fila("Strategy 0.4")])
+            self.assertEqual(len(ba.nuevas(antes, sobra_una, 1)), 2)  # exceso de un hilo: se usan todas
+            muchas = exportacion(d / "f.csv", [fila("Strategy 0.1"), fila("Strategy 0.2")] +
+                                 [fila(f"Strategy 1.{i}") for i in range(ba.EXCESO_MAXIMO + 2)])
+            with self.assertRaises(SystemExit):  # exceso mayor que el número de hilos: para
+                ba.nuevas(antes, muchas, 1)
             sin_una = exportacion(d / "c.csv", [fila("Strategy 0.1"), fila("Strategy 0.3")])
             with self.assertRaises(SystemExit):
                 ba.nuevas(antes, sin_una, 1)

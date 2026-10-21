@@ -98,6 +98,17 @@ Sin cambios: datos, brazos, N = 1.000, embudo F, medidas, pruebas y reglas de de
 única función era medir el tiempo). Nota: SQX descarta por defecto las estrategias "con problemas" (p. ej. sin
 operaciones) antes de contarlas; afecta igual a los tres brazos y no se puede desactivar sin cambiar otro ajuste.
 
+## Enmienda v2.1 (cambio de proceso, regla 8), escrita ANTES del brazo nulo 2 y del análisis
+
+**Qué pasó:** el brazo `v2_real` dio exactamente 1.000 nuevas y 0 desalojadas (registros 182–186). En `v2_nulo1` SQX
+informó "1000 estrategias" pero el banco recibió **1.001** (registros 187–191), sin desalojos ni nombres repetidos: SQX
+genera con **7 hilos** y al alcanzar la parada puede entrar alguna más. La comprobación "exactamente N" paró la tanda.
+Solo se miraron recuentos y nombres, ninguna métrica.
+
+**Cambio:** se usan **todas** las estrategias nuevas de cada brazo (quitar alguna exigiría elegir cuál, y elegir podría
+sesgar), con un exceso admitido de **hasta 7** (un hilo por núcleo); con más, se para. T1 trabaja con los recuentos
+reales de cada brazo. Nada más cambia. `v2_nulo1` no se repite: sus exportaciones están completas.
+
 ## Lo que esta prueba NO demuestra
 
 Que haya o no ventaja en EURUSD; nada sobre la generación genética (solo aleatoria); nada sobre filtros más
