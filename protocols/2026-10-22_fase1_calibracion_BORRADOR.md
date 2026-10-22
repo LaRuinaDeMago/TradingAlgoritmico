@@ -80,6 +80,10 @@ ciertos tipos de ruido (0004 §1).
   curso** (Builder, Retester, Optimizer, ya extraídas en `LAB_PRIVADO_CURSO`) son la especificación más exacta: se cargan
   cambiando solo símbolo, fechas, costes y capacidad del banco; los vídeos completan el orden de los pasos y la
   selección manual ("las 50–100 de mayor Ret/DD"). **[PENDIENTE: B22 para lo que no esté en los `.cfx`]**
+  **Si B20 confirma que SQX recorta Ret/DD o el factor de beneficio** (revisión 18): se conservan dos cosas distintas,
+  (a) la **reproducción fiel** del curso, ordenando por la columna de SQX tal cual (con el empate que provoque el
+  recorte, resuelto por una regla fija y escrita), y (b) una **evaluación corregida** con las métricas recalculadas
+  en Python. Se documenta la diferencia; nunca se corrige en silencio la reproducción del curso.
 - **L, laboratorio:** los mismos bloques de robustez pero **sin elegir con el OOS** (walk-forward dentro de IS + OOS
   como un tramo más del walk-forward), filtros por **expectativa neta por operación** y su incertidumbre (C24), umbral
   ajustado al número de estrategias probadas (B19), y comprobación de que Ret/DD y PF no están recortados (B20).
@@ -116,7 +120,10 @@ Todo en el tramo RESERVA de los brazos de **aceptación** (N3, S2):
 5. **Diagnósticos, sin decidir:** el brazo real; las rachas y caídas observadas frente a las esperadas (C24 d).
 
 **Reglas de decisión** (P3.5):
-- **Pasa** el embudo que cumple 1 y 2 → permiso para el piloto (fase 3) con ese embudo y para el escalón (b) de C23.
+- **Pasa** el embudo que cumple 1 y 2 → permiso para el **piloto limitado** de la 0003 (≤ 2.000 estrategias, ≤ 8 h,
+  fase 3) con ese embudo y para el escalón (b) de C23. **No** autoriza escalar a cientos de miles de estrategias,
+  varios mercados, API ni una VPS de producción, ni extrapolar a otros activos u horizontes: cada ampliación con sus
+  datos, costes y prueba (revisión 18). Pasar no es haber encontrado una estrategia rentable.
 - **Ninguno pasa** → no se escala; se identifica la pieza (los brazos de desarrollo lo dicen) y se prueba una versión
   nueva **con réplicas de aceptación nuevas** (P3.4); como máximo **[PENDIENTE: n.º de vueltas]** antes de replantear.
 - Si C y L pasan, se elige el de menor coste por candidata válida (C21). Si solo pasa C, el método del curso queda
@@ -150,9 +157,13 @@ un embudo no acepta ninguna cartera de ruido en R réplicas, el límite superior
 | 29 | 10 % |
 
 Por eso **el núcleo mínimo (R = 3) es EXPLORATORIO**: sirve para encontrar errores, comprobar que el experimento
-funciona y ver si hay diferencias grandes. **Nunca se presenta como "embudo calibrado"**. La calibración completa fija R
-en la v1 según la precisión que necesitemos (orientativo: ~30 réplicas por familia de aceptación para acotar los falsos
-positivos en torno al 10 %), lo que solo es viable si la medición del brazo completo dice que cada réplica cuesta poco.
+funciona y ver si hay diferencias grandes. **Nunca se presenta como "embudo calibrado"**.
+
+**R se deriva del objetivo, no al revés (revisión 18).** La v1 fija primero qué tasa de falsos positivos queremos poder
+descartar y con qué potencia, y de ahí sale R: con 0 aceptadas, 30 réplicas solo acotan en torno al **9,5 %**; para
+acotar por debajo del **5 %** hacen falta unas **59**. Además, las réplicas sintéticas salen de la **misma serie base**
+de USDCHF y no son del todo independientes: la v1 lo declara y, si es viable, reparte las réplicas entre varios tramos
+de la serie base. Ningún número de réplicas es un sello automático de validez.
 
 **Interpretación fijada antes de ver resultados** (revisión 17):
 

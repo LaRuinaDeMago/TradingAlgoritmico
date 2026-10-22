@@ -194,7 +194,8 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 **Regla de trabajo acordada con Diego (2026-10-21): medir, no escribir.** La 0004 es un mapa y un conjunto de
 prohibiciones, no una obra que construir antes de empezar.
 1. **Ni documentos de diseño nuevos ni revisiones externas** hasta tener el resultado de la fase 1 (solo se corrige un
-   defecto demostrado, por la vía de P7). El diseño de la fase 1 está cerrado (revisiones 13–17).
+   defecto demostrado, por la vía de P7). **Única excepción, ya autorizada (A21, 0004 §7): la auditoría independiente
+   B13.** El diseño de la fase 1 está cerrado (revisiones 13–18; la 18 es la última antes de ejecutar).
 2. **Cada paso, en su versión mínima que responde la pregunta**, reutilizando lo que hay (`b17_sintetico.py`,
    `b17_analizar.py`, plantillas de H0, los `.cfx` del curso).
 3. **Plazo cerrado para la fase 1**, fijado en su protocolo; si se supera, se para y se revisa por qué.
@@ -220,6 +221,10 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
 6. Cerrar la interfaz de SQX antes de cada tanda por línea de comandos.
 
 ### Lo que hace Claude, en orden
+
+**Orden al abrir la próxima sesión (revisión 18):** (1) Diego hace las copias de A14 y Claude comprueba con él que se
+abren (B21 no toca esas carpetas, pero se empieza por proteger lo que no tiene copia); (2) B21; (3) B20; (4) textos de
+renovación de SQX y B13 antes de sus fechas; (5) A23 y v1 del protocolo; (6) medir y ejecutar.
 
 **Fase 0 – condiciones previas:**
 1. **B21:** plan corto con criterios en git antes de la primera orden (como B1); copiar las 7.003 estrategias de
@@ -260,7 +265,7 @@ la 0004 §4; escalado de la máquina en C23.
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. **13–17** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
+A5). Desde la 10, en formato corto por la pausa A21. **13–18** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
 (`docs/revisiones/2026-10-21_13-16_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 

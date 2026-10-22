@@ -339,3 +339,6 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Al repasar el estado aparecieron contradicciones mías entre documentos** ("semanas de cálculo" ya refutado, "dos
   nulos" cuando el diseño tiene tres familias, pasos numerados dos veces). → Cada vez que cambia el plan, releer el
   documento de entrada entero, no solo añadirle líneas.
+- **Revisión 18, la última antes de ejecutar:** cinco cierres de coherencia (orden de las copias, excepción de B13,
+  métricas recortadas en la selección del curso, réplicas derivadas del objetivo, calidad de los años añadidos). Dieciocho
+  revisiones en total: a partir de aquí el método lo corrigen las mediciones.
