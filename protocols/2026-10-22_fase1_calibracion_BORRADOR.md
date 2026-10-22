@@ -68,8 +68,8 @@ ciertos tipos de ruido (0004 §1).
   *aceptación* (N3, S2: versión congelada, una vez, sin corregir después). El walk-forward interno del embudo L tampoco
   se usa para elegir variantes mirando sus resultados.
 - **Semillas** fijadas en la v1 antes de ejecutar; las réplicas de aceptación **no se miran** hasta congelar los embudos.
-- **Réplicas:** R por familia **[PENDIENTE: R con el tiempo medido en la calibración de coste; si R < 5 por familia de
-  aceptación, la conclusión a nivel de cartera solo valdrá para efectos grandes y se dirá así]**.
+- **Réplicas:** R por familia **[PENDIENTE: R según la precisión buscada y el tiempo medido de un brazo completo]**. La
+  unidad de observación es la réplica; con pocas réplicas el resultado es exploratorio (tabla de límites en el §8).
 
 ## 5. Embudos (iguales en todos los brazos)
 
@@ -137,6 +137,35 @@ v1: medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese
 menos brazos: embudos C y L sobre **N3 y S2 (tamaño 1)**, R = 3, con la ventana de datos más corta si hace falta.
 Responde si el embudo del curso distingue una ventaja útil de un ruido realista. Se declara como **parcial**: no
 sustituye a la calibración completa ni da por sí solo el permiso para escalar.
+
+**Cuántas réplicas hacen falta (revisión 17), con números.** La unidad de observación es la **réplica**, no la
+estrategia: las miles de estrategias de una réplica comparten datos, generador y selección, y no son independientes. Si
+un embudo no acepta ninguna cartera de ruido en R réplicas, el límite superior de su tasa de falsos positivos (95 %) es
+1 − 0,05^(1/R):
+
+| R | Límite superior con 0 aceptadas |
+|---|---|
+| 3 | 63 % |
+| 14 | 19 % |
+| 29 | 10 % |
+
+Por eso **el núcleo mínimo (R = 3) es EXPLORATORIO**: sirve para encontrar errores, comprobar que el experimento
+funciona y ver si hay diferencias grandes. **Nunca se presenta como "embudo calibrado"**. La calibración completa fija R
+en la v1 según la precisión que necesitemos (orientativo: ~30 réplicas por familia de aceptación para acotar los falsos
+positivos en torno al 10 %), lo que solo es viable si la medición del brazo completo dice que cada réplica cuesta poco.
+
+**Interpretación fijada antes de ver resultados** (revisión 17):
+
+| Resultado | Qué significa | Qué se hace |
+|---|---|---|
+| C y L aceptan ruido N3 | Ningún embudo discrimina con estos controles | No se escala; se mira en desarrollo qué pieza deja pasar el ruido |
+| C y L no capturan S2 | Sin potencia para ese tamaño: o el embudo, o SQX no genera esa forma | Se comprueba el tamaño 2; si tampoco, se mira si el generador puede expresar la regla ideal |
+| C ≈ L, los dos rechazan ruido y capturan S2 | Los dos funcionan; nuestras correcciones no añaden | Se usa el más barato (C21); el método del curso queda validado en lo que importa |
+| L mejor que C | Mejor discriminación (no solo "rechaza más") con el mismo presupuesto | L pasa al piloto; se anota qué pieza marcó la diferencia |
+| C y L parecidos e inconcluyentes | Puede ser el diseño de los controles, falta de potencia o que no hay mejora | No se concluye "inútiles": se revisan controles y potencia antes de nada más |
+
+La unidad final sigue siendo la **cartera**: un embudo "gana" si produce carteras que discriminan ruido de señal, no si
+aprueba o rechaza más estrategias.
 
 ## 9. Qué no demuestra
 

@@ -42,3 +42,5 @@ Términos aparecidos trabajando en H0 (2026-10-20), sin lección propia todavía
 - **Racha de pérdidas esperada**: con un acierto p, en n operaciones la racha más larga de pérdidas ronda ln(n·p) / ln(1/(1−p)). Con 30 % y 300 operaciones, ~12 pérdidas seguidas: es lo normal, no una avería (C24).
 - **Tramo de reserva**: parte final de cada serie que ningún filtro ni selección toca; sirve de examen dentro de una prueba de proceso (fase 1).
 - **Remuestreo por bloques**: fabricar series nuevas reordenando trozos (días, semanas) de la original en vez de velas sueltas, para conservar parte de su estructura (volatilidad, horarios) sin su dirección (fase 1, nulos N2 y N3).
+- **Réplica**: repetición completa de un experimento con datos nuevos del mismo tipo (otra semilla, otra serie sintética). Es la unidad de observación cuando se calibra un procedimiento: las estrategias de una misma réplica no son independientes (fase 1).
+- **Regla del tres**: si algo no ocurre en R intentos independientes, su probabilidad todavía puede ser de hasta ~3/R (95 %). Con 3 réplicas sin falsos positivos, la tasa real puede llegar al 63 % (cálculo exacto: 1 − 0,05^(1/R)).

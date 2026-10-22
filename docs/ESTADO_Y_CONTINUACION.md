@@ -1,7 +1,7 @@
 # Estado del proyecto y punto de continuación
 
-**Actualizado: 2026-10-21, cierre de la segunda sesión local en el PC de SQX; por la tarde, conversación de rumbo que
-dio la decisión 0004 (sin experimentos nuevos).** Último registro: **n.º 222**.
+**Actualizado: 2026-10-22.** Tras la segunda sesión local (21-10), dos días de conversación de rumbo **sin
+experimentos nuevos**: decisión 0004 y diseño cerrado de la fase 1. Último registro: **n.º 222**.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -184,7 +184,7 @@ hasta superar la demo), A3 (horas variables, se registran), A5 (objetivo), A8 (c
 (clave API: se queda, el laboratorio no la usa), A17 (transcriptor), A19 (EURUSD), A20 (rigor con presupuesto de tiempo
 por fase), A21 (pausa de revisiones externas hasta el piloto). **Por la tarde:** 0004 aceptada en v3; varios mercados
 como dirección; la caducidad de SQX deja de ser fecha límite (se puede renovar la prueba; no verificado).
-**Abiertas:** **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
+**Abiertas:** **A23 ampliar USDCHF quemado para calibrar** · **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
 licencia (se decide con la evidencia de la fase 1) · A1b cifras del piloto
 (propuestas en la 0003) · A4 repositorio público/privado · A6 regla de proporcionalidad · A7 cifras del criterio
 económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · A15 protección de rama · A18 numpy/pandas/scipy.
@@ -194,50 +194,65 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 **Regla de trabajo acordada con Diego (2026-10-21): medir, no escribir.** La 0004 es un mapa y un conjunto de
 prohibiciones, no una obra que construir antes de empezar.
 1. **Ni documentos de diseño nuevos ni revisiones externas** hasta tener el resultado de la fase 1 (solo se corrige un
-   defecto demostrado, por la vía de P7).
-2. **Cada paso, en su versión mínima que responde la pregunta:** dos modelos nulos (el de B17 y un remuestreo por
-   bloques), no cinco; una ventaja sembrada con tres tamaños, no un catálogo; reutilizar `b17_sintetico.py` y
-   `b17_analizar.py`.
+   defecto demostrado, por la vía de P7). El diseño de la fase 1 está cerrado (revisiones 13–17).
+2. **Cada paso, en su versión mínima que responde la pregunta**, reutilizando lo que hay (`b17_sintetico.py`,
+   `b17_analizar.py`, plantillas de H0, los `.cfx` del curso).
 3. **Plazo cerrado para la fase 1**, fijado en su protocolo; si se supera, se para y se revisa por qué.
 4. **Antes de hacer algo nuevo:** ¿qué error evita y qué decisión cambia? Si no hay respuesta, no se hace (P10, A6).
+5. **Antes de dar un plazo o una cifra:** buscar en el registro lo ya medido y decir qué falta por medir.
+
 Lo que no está en nuestra mano: que exista una ventaja, el acceso a Darwinex (A22) y la calidad real de datos y
-ejecución. Con este PC (i3, sin GPU), "millones de estrategias" son semanas de cálculo: la fase 1 dirá si merece la pena
-pagar más máquina.
+ejecución. **Lo medido** (B17, n.º 204–222): 1.000 estrategias aleatorias en 74–87 s; un brazo completo en 5–6 min.
+**Sin medir:** genética, walk-forward, Monte Carlo, retest de mayor precisión y 22 años de datos (A23). La VPS para
+calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS como incubadora, en la fase 5.
 
-**Fase 0 – condiciones previas (lo siguiente):**
-1. **B21** con la aceptación de la 0004: copiar o archivar las 7.003 estrategias de `Builder/Results` con hash y
-   metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad; ajustar la capacidad en una
-   **copia de trabajo** de la plantilla y **probar** que una generación nueva no desaloja lo conservado. Plan con
-   criterios escritos y en git antes de la primera orden (como B1). Cerrar la interfaz de SQX antes.
-2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación + estrategia de métricas conocidas; ¿afecta a la
-   ordenación o la selección?
-3. Preparar para Diego el texto de la consulta a Darwinex (A22) y la de licencia (B16).
-4. **B22, curso a fondo (Diego lo pide):** arrancar la transcripción completa (*medium* + fotogramas, ≈ 50 h de CPU) por
-   tandas de noche, en paralelo y nunca a la vez que una medición de SQX; comprobar los historiales públicos del autor.
-   La **ficha exacta del método del curso** tiene que estar antes del protocolo de la fase 1, porque la fase 1 pone a
-   prueba precisamente ese método.
+### Lo que depende de Diego (cuanto antes)
 
-**Fase 1 – calibración (después de cerrar la fase 0):**
-4. **Protocolo de la fase 1**: diseño ya hecho en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md` (B17 mejorado:
-   genética, embudos C del curso y L del laboratorio, nulos N1–N3, ventaja sembrada S1–S2, tramo de reserva, cartera,
-   brazo con IA). El embudo C se monta con los **`.cfx` del propio curso** (atajo: no hay que esperar a toda la
-   transcripción). Primer paso: **medir un brazo completo** (genética + embudo C) y dimensionar con ese dato; si SQX no
-   se renueva antes del 02-11, **núcleo mínimo** (C y L sobre N3 y S2, R = 3), declarado parcial. Hasta el 02-11, la CPU
-   es primero para SQX y la transcripción del curso va en los huecos. La v1 solo **rellena sus huecos** (B20, B21, B22,
-   B5, A23), escrita y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
-   (distintas familias, no solo semillas), construcción y tamaños de la ventaja sembrada (mínimo económico tras costes),
-   niveles de error y detección, presupuesto (P13), condiciones que impiden escalar.
-5. **B14** (eventos tipados y registro de hipótesis) y **B19** (protocolo estadístico implementado, con tests de errores
-   sembrados) y comprobaciones P12 automatizables, antes de la primera tanda que cuente. Probable: A18 (numpy/scipy).
-6. Ejecutar la calibración: embudo del curso (genética, walk-forward, Monte Carlo, otros mercados) con el ciclo de IA
-   dentro, frente a la referencia sencilla, también a nivel de cartera. Puerta: los dos exámenes en el juego de
-   aceptación.
+1. **A14, copias de seguridad:** `Documents/LAB_PRIVADO_CURSO/` y `h0/evidencias_privadas/` solo existen en este PC;
+   copiarlas a un sitio suyo y comprobar que se abren.
+2. **A12, renovar la prueba de SQX** (caduca el **2026-11-02**): pedirla ya, sin suponer que se renueva sola. Claude
+   prepara el texto (B16).
+3. **A22, Darwinex:** enviar la consulta (Claude prepara el texto).
+4. **A23:** ¿ampliar USDCHF quemado a 2003–2024 para la calibración? (más operaciones y regímenes; ~10× más tiempo de
+   cálculo; no gasta datos de investigación).
+5. **B13, auditoría independiente:** la tarjeta `task_fe8910bc` caduca hacia el **2026-10-27**; empezarla o, si
+   caduca, volver a proponerla con `docs/auditoria/prompt_auditoria_maestra.md`.
+6. Cerrar la interfaz de SQX antes de cada tanda por línea de comandos.
 
-**En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (con B22 y las demás fuentes de contaminación); B15 + B9 (mantenimiento del guardián, lo abre Diego); B13 (auditoría independiente: tarjeta
-`task_fe8910bc`, caduca hacia el 2026-10-27; si caduca, volver a proponerla con el prompt guardado).
+### Lo que hace Claude, en orden
 
-**Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → piloto → examen → prospectivo
-→ capital. Detalle y puertas en la 0004 §4.
+**Fase 0 – condiciones previas:**
+1. **B21:** plan corto con criterios en git antes de la primera orden (como B1); copiar las 7.003 estrategias de
+   `Builder/Results` con hash y metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad;
+   ajustar la capacidad en una **copia de trabajo** de la plantilla y **probar** que una generación nueva no desaloja
+   lo conservado.
+2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación y una estrategia de métricas conocidas; ¿afecta a
+   la ordenación o la selección?
+3. Textos para Diego: renovación o ampliación de SQX (B16) y consulta a Darwinex (A22).
+4. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
+   SQX tiene prioridad); historiales públicos del autor.
+
+**Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
+5. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
+   del curso (cambiando solo símbolo, fechas, costes y capacidad); embudo L; análisis en el tramo de reserva.
+6. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
+7. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
+   presupuesto, plazo) y subirla **antes** de ejecutar. B14 y B19 en su versión mínima antes de la primera tanda que
+   cuente; probable A18 (numpy/scipy).
+8. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
+   de ruido aceptadas en 3 réplicas, el límite superior de falsos positivos sigue siendo 63 %. Interpretación con la
+   tabla fijada en el borrador §8.
+9. **Calibración completa** si hay SQX y la medición lo permite (R según la precisión; ~30 réplicas por familia de
+   aceptación para acotar en torno al 10 %), con el brazo con IA. Puerta: los dos exámenes de aceptación.
+10. Decidir la siguiente inversión con esa evidencia: si hay diferencias informativas, ampliar; si no, investigar el
+    motivo antes de añadir filtros, activos, API o infraestructura.
+
+**En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (B22 y las demás fuentes de contaminación); B15 + B9
+(mantenimiento del guardián, lo abre Diego).
+
+**Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → reconstrucción en Python (H1,
+P12) → piloto con cartera (fase 3) → examen → MetaTrader y prospectivo (fase 5) → capital (fase 6). Detalle y puertas en
+la 0004 §4; escalado de la máquina en C23.
 
 ## 8. Revisiones externas recibidas (vía Diego)
 
@@ -245,7 +260,7 @@ pagar más máquina.
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. **13–16** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1
+A5). Desde la 10, en formato corto por la pausa A21. **13–17** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
 (`docs/revisiones/2026-10-21_13-16_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 

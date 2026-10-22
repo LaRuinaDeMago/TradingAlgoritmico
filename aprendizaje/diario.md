@@ -332,3 +332,10 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   medir. El cuello de botella probable no es la CPU, sino construir y comprobar las piezas.
 - **El guardián volvió a saltar dos veces** con `>` en comandos que leían el registro (un `>300` en Python y un `awk`).
   Vía sancionada: el script en un archivo escrito con Write.
+- **La unidad es la réplica, no la estrategia.** Mil estrategias de una misma búsqueda comparten datos, generador y
+  selección: no son mil observaciones. Si un embudo no acepta ningún ruido en 3 réplicas, su tasa de falsos positivos
+  aún puede ser del 63 % (límite superior al 95 %); con 29 réplicas, del 10 %. → El primer experimento corto es
+  exploratorio y se dice así.
+- **Al repasar el estado aparecieron contradicciones mías entre documentos** ("semanas de cálculo" ya refutado, "dos
+  nulos" cuando el diseño tiene tres familias, pasos numerados dos veces). → Cada vez que cambia el plan, releer el
+  documento de entrada entero, no solo añadirle líneas.
