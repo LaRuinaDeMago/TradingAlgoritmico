@@ -117,7 +117,10 @@ Todo en el tramo RESERVA de los brazos de **aceptación** (N3, S2):
 3. **Por estrategia:** tasa de falsos positivos del embudo (como M1 de B17) y supervivencia en S2.
 4. **Comparaciones:** C frente a L; L + IA frente a L; las dos frente a las referencias sencillas. Con incertidumbre por
    remuestreo por bloques (B19), no solo con recuentos.
-5. **Diagnósticos, sin decidir:** el brazo real; las rachas y caídas observadas frente a las esperadas (C24 d).
+5. **Supervivencia por etapa** (revisión 20, sin tandas extra): cuántas estrategias de ruido y de ventaja sembrada
+   sobreviven a **cada** filtro del embudo, para ver qué etapa elimina falsas señales sin destruir ventajas y cuál solo
+   reduce candidatas sin mejorar la discriminación.
+6. **Diagnósticos, sin decidir:** el brazo real; las rachas y caídas observadas frente a las esperadas (C24 d).
 
 **Reglas de decisión** (P3.5):
 - **Pasa** el embudo que cumple 1 y 2 → permiso para el **piloto limitado** de la 0003 (≤ 2.000 estrategias, ≤ 8 h,

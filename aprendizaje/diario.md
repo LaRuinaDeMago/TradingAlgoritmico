@@ -342,3 +342,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
 - **Revisión 18, la última antes de ejecutar:** cinco cierres de coherencia (orden de las copias, excepción de B13,
   métricas recortadas en la selección del curso, réplicas derivadas del objetivo, calidad de los años añadidos). Dieciocho
   revisiones en total: a partir de aquí el método lo corrigen las mediciones.
+- **Revisiones 19 y 20: lo que sí valía.** Faltaba concretar lo que más le importa a Diego (perfiles beneficio/riesgo y
+  carteras que se complementan): ahora es C25. Y corrigieron un exceso mío: "mismo peso" para la tendencia sencilla
+  no es "mismas horas", sino misma importancia como vara de decisión. Lo que podía ser contraproducente (motor Python
+  completo ya, agentes autónomos, API) queda por disparador o fuera.
+- **Una cifra de otra IA, verificada antes de escribirla:** los precios de Darwinex Zero (45 €/mes CFD) cuadran con la
+  página oficial; el "15 % de comisión" era lo que **cobra** el proveedor, no lo que paga.

@@ -195,7 +195,7 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 prohibiciones, no una obra que construir antes de empezar.
 1. **Ni documentos de diseño nuevos ni revisiones externas** hasta tener el resultado de la fase 1 (solo se corrige un
    defecto demostrado, por la vía de P7). **Única excepción, ya autorizada (A21, 0004 §7): la auditoría independiente
-   B13.** El diseño de la fase 1 está cerrado (revisiones 13–18; la 18 es la última antes de ejecutar).
+   B13.** El diseño de la fase 1 está cerrado (revisiones 13–20; la 20 es la última antes de ejecutar).
 2. **Cada paso, en su versión mínima que responde la pregunta**, reutilizando lo que hay (`b17_sintetico.py`,
    `b17_analizar.py`, plantillas de H0, los `.cfx` del curso).
 3. **Plazo cerrado para la fase 1**, fijado en su protocolo; si se supera, se para y se revisa por qué.
@@ -234,29 +234,33 @@ renovación de SQX y B13 antes de sus fechas; (5) A23 y v1 del protocolo; (6) me
 2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación y una estrategia de métricas conocidas; ¿afecta a
    la ordenación o la selección?
 3. Textos para Diego: renovación o ampliación de SQX (B16) y consulta a Darwinex (A22).
-4. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
+4. **B5 en paralelo:** recoger las condiciones públicas de Darwinex Zero (spread, comisión, swap por instrumento;
+   suscripción verificada: 45 €/mes CFD) para EURUSD y los candidatos del universo. Sin precios: no contamina.
+5. **Al cerrar la fase 0, Diego decide B23** (registro prospectivo de una regla de tendencia congelada; necesita el
+   simulador mínimo de B24).
+6. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
    SQX tiene prioridad); historiales públicos del autor.
 
 **Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
-5. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
+7. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
    del curso (cambiando solo símbolo, fechas, costes y capacidad); embudo L; análisis en el tramo de reserva.
-6. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
-7. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
+8. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
+9. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
    presupuesto, plazo) y subirla **antes** de ejecutar. B14 y B19 en su versión mínima antes de la primera tanda que
    cuente; probable A18 (numpy/scipy).
-8. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
+10. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
    de ruido aceptadas en 3 réplicas, el límite superior de falsos positivos sigue siendo 63 %. Interpretación con la
    tabla fijada en el borrador §8.
-9. **Calibración completa** si hay SQX y la medición lo permite (R según la precisión; ~30 réplicas por familia de
+11. **Calibración completa** si hay SQX y la medición lo permite (R según la precisión; ~30 réplicas por familia de
    aceptación para acotar en torno al 10 %), con el brazo con IA. Puerta: los dos exámenes de aceptación.
-10. Decidir la siguiente inversión con esa evidencia: si hay diferencias informativas, ampliar; si no, investigar el
+12. Decidir la siguiente inversión con esa evidencia: si hay diferencias informativas, ampliar; si no, investigar el
     motivo antes de añadir filtros, activos, API o infraestructura.
 
 **En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (B22 y las demás fuentes de contaminación); B15 + B9
-(mantenimiento del guardián, lo abre Diego).
+(mantenimiento del guardián, lo abre Diego); B24 solo si salta uno de sus disparadores.
 
-**Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → reconstrucción en Python (H1,
-P12) → piloto con cartera (fase 3) → examen → MetaTrader y prospectivo (fase 5) → capital (fase 6). Detalle y puertas en
+**Fase 2 en adelante:** protocolo de sellado → datos (vía verificada, A22) → fichas C12 → umbral de viabilidad (A7) → reconstrucción en Python (H1, B24 pieza 1,
+P12) → piloto con su módulo de cartera (C25: perfiles beneficio/riesgo, complementariedad, estructuras de cartera previas; referencia de tendencia, C20) (fase 3) → examen → MetaTrader y prospectivo (fase 5) → capital (fase 6). Detalle y puertas en
 la 0004 §4; escalado de la máquina en C23.
 
 ## 8. Revisiones externas recibidas (vía Diego)
@@ -265,7 +269,7 @@ la 0004 §4; escalado de la máquina en C23.
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. **13–18** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
+A5). Desde la 10, en formato corto por la pausa A21. **13–20** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
 (`docs/revisiones/2026-10-21_13-16_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 
