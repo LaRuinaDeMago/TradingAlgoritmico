@@ -55,6 +55,18 @@ ciertos tipos de ruido (0004 §1).
   ni el de 2, no ve nada útil. La regla ideal es una referencia, no un objetivo para SQX.
 - **Limitación escrita** (P3.2): una ventaja sembrada tan simple puede ser más fácil o más difícil de encontrar que una
   real; por eso la de aceptación tiene otra forma (S2) que la de desarrollo (S1).
+- **Tamaño sembrado, sin ambigüedad:** el Sharpe ideal es **neto** de los costes del §6; la v1 escribe además, para cada
+  tamaño, la expectativa por operación de la regla ideal, cuántas operaciones produce en IS, OOS y RESERVA, y cuándo deja
+  de funcionar (fuera de su franja o condición). La potencia se mide **desde la generación** (SQX tiene que descubrir la
+  ventaja desde cero), nunca dándole una estrategia que ya la trae.
+- **Validez de los nulos** (que no sean "fáciles" para SQX): antes de usarlos, cada familia se compara con el real en lo
+  que **debe** conservar (N2: perfil horario de la volatilidad; N3: agrupación de volatilidad y colas), y en todos los
+  brazos se compara el número de operaciones y su duración, como en B17. Si una familia se aleja de lo que dice
+  conservar, se corrige antes de ejecutar.
+- **Tres funciones separadas** (revisión 16): *desarrollo* (N1, N2, S1: se miran y se corrige el embudo), *calibración*
+  (los mismos brazos de desarrollo con réplicas nuevas: miden potencia y falsos positivos de la versión corregida) y
+  *aceptación* (N3, S2: versión congelada, una vez, sin corregir después). El walk-forward interno del embudo L tampoco
+  se usa para elegir variantes mirando sus resultados.
 - **Semillas** fijadas en la v1 antes de ejecutar; las réplicas de aceptación **no se miran** hasta congelar los embudos.
 - **Réplicas:** R por familia **[PENDIENTE: R con el tiempo medido en la calibración de coste; si R < 5 por familia de
   aceptación, la conclusión a nivel de cartera solo valdrá para efectos grandes y se dirá así]**.
@@ -64,7 +76,10 @@ ciertos tipos de ruido (0004 §1).
 - **Generación:** genética, **[PENDIENTE: parámetros del curso (B22) y N por brazo según el tiempo medido]**. Capacidad
   del banco por encima de lo generado, con recuento antes y después de cada brazo (B17, B21).
 - **C, curso tal cual:** filtros, umbrales y orden de los pasos de la ficha del método (B22), incluida la selección con
-  OOS, walk-forward, Monte Carlo y el retest de mayor precisión. **[PENDIENTE: B22]**
+  OOS, walk-forward, Monte Carlo y el retest de mayor precisión. **Atajo:** las **configuraciones `.cfx` del propio
+  curso** (Builder, Retester, Optimizer, ya extraídas en `LAB_PRIVADO_CURSO`) son la especificación más exacta: se cargan
+  cambiando solo símbolo, fechas, costes y capacidad del banco; los vídeos completan el orden de los pasos y la
+  selección manual ("las 50–100 de mayor Ret/DD"). **[PENDIENTE: B22 para lo que no esté en los `.cfx`]**
 - **L, laboratorio:** los mismos bloques de robustez pero **sin elegir con el OOS** (walk-forward dentro de IS + OOS
   como un tramo más del walk-forward), filtros por **expectativa neta por operación** y su incertidumbre (C24), umbral
   ajustado al número de estrategias probadas (B19), y comprobación de que Ret/DD y PF no están recortados (B20).
@@ -73,6 +88,10 @@ ciertos tipos de ruido (0004 §1).
 - **L + IA:** tras ver **solo los brazos de desarrollo**, Claude propone hasta **3 cambios** al embudo L, cada uno
   registrado como cambio de proceso (regla 8) con su motivo; se congela la versión final **antes** de abrir la
   aceptación. Se compara con L sin IA.
+- **Comparaciones justas** (revisión 16): C, L y L + IA con el **mismo** número de estrategias generadas, el mismo tiempo
+  de cálculo y el mismo presupuesto de variantes; se registran además la intervención humana, las variantes probadas y,
+  en el brazo con IA, el modelo, las instrucciones y los cambios propuestos. Dos preguntas separadas: ¿mejora la IA la
+  calidad? y ¿la mejora lo suficiente para justificar su coste (C23 d)?
 - **Referencias sencillas** (C20) en todos los brazos: una regla de tendencia con parámetros fijos y entradas al azar
   con la misma frecuencia y costes.
 
@@ -105,9 +124,19 @@ Todo en el tramo RESERVA de los brazos de **aceptación** (N3, S2):
 
 ## 8. Presupuesto y plazo (P13)
 
-**[PENDIENTE: cifras en la v1]**: horas de CPU (mide primero un brazo pequeño), horas de Diego, plazo de calendario y
-llamadas de IA (0 por API en esta fase: el ciclo lo hace Claude Code). **Riesgo conocido:** la prueba de SQX caduca el
-2026-11-02 y esta fase probablemente no termina antes (A12).
+**[PENDIENTE: cifras en la v1]**: horas de CPU, horas de Diego, plazo de calendario y llamadas de IA (0 por API en esta
+fase: el ciclo lo hace Claude Code).
+
+**Lo medido (registro n.º 204–222):** en B17, generar **1.000 estrategias aleatorias** (USDCHF H1, 21 meses) tardó
+**74–87 s**, y cada brazo completo (exportar el banco antes y después, cargar y comprobar la plantilla) unos **5–6 min**.
+**Lo que no está medido:** la generación genética, el walk-forward, Monte Carlo y el retest de mayor precisión sobre
+las supervivientes, ni el efecto de 22 años de datos (A23), que puede multiplicar el tiempo por ~10. **Primer paso de la
+v1: medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese número, no con estimaciones.
+
+**Si SQX no se renueva a tiempo (caduca el 2026-11-02, A12): núcleo mínimo antes de esa fecha.** Lo más informativo con
+menos brazos: embudos C y L sobre **N3 y S2 (tamaño 1)**, R = 3, con la ventana de datos más corta si hace falta.
+Responde si el embudo del curso distingue una ventaja útil de un ruido realista. Se declara como **parcial**: no
+sustituye a la calibración completa ni da por sí solo el permiso para escalar.
 
 ## 9. Qué no demuestra
 

@@ -326,3 +326,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   es una racha de ~12 pérdidas en 300 operaciones: el peligro es apagar el bot en la décima (C24).
 - **B17 mejorado (diseño de la fase 1):** lo que B17 no probó es justo lo que usaríamos (genética, robustez, cartera,
   costes realistas, IA) y le faltaba medir la potencia. Diseño con huecos marcados, para rellenar sin rediseñar.
+- **Otra cifra plausible sin comprobar, mía:** dije que la fase 1 llevaría "semanas" de cálculo. Al mirar el registro:
+  1.000 estrategias aleatorias tardan 74–87 s y un brazo completo, 5–6 min. Lo caro de verdad (genética, robustez, 22
+  años de datos) no está medido. → Antes de dar un plazo, buscar en el registro lo ya medido y decir qué falta por
+  medir. El cuello de botella probable no es la CPU, sino construir y comprobar las piezas.
+- **El guardián volvió a saltar dos veces** con `>` en comandos que leían el registro (un `>300` en Python y un `awk`).
+  Vía sancionada: el script en un archivo escrito con Write.

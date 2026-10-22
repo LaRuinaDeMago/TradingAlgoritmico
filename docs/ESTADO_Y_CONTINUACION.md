@@ -220,7 +220,11 @@ pagar más máquina.
 **Fase 1 – calibración (después de cerrar la fase 0):**
 4. **Protocolo de la fase 1**: diseño ya hecho en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md` (B17 mejorado:
    genética, embudos C del curso y L del laboratorio, nulos N1–N3, ventaja sembrada S1–S2, tramo de reserva, cartera,
-   brazo con IA). La v1 solo **rellena sus huecos** (B20, B21, B22, B5, A23), escrita y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
+   brazo con IA). El embudo C se monta con los **`.cfx` del propio curso** (atajo: no hay que esperar a toda la
+   transcripción). Primer paso: **medir un brazo completo** (genética + embudo C) y dimensionar con ese dato; si SQX no
+   se renueva antes del 02-11, **núcleo mínimo** (C y L sobre N3 y S2, R = 3), declarado parcial. Hasta el 02-11, la CPU
+   es primero para SQX y la transcripción del curso va en los huecos. La v1 solo **rellena sus huecos** (B20, B21, B22,
+   B5, A23), escrita y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
    (distintas familias, no solo semillas), construcción y tamaños de la ventaja sembrada (mínimo económico tras costes),
    niveles de error y detección, presupuesto (P13), condiciones que impiden escalar.
 5. **B14** (eventos tipados y registro de hipótesis) y **B19** (protocolo estadístico implementado, con tests de errores
@@ -241,8 +245,8 @@ pagar más máquina.
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. **13–15** (tarde del 2026-10-21): sobre el rumbo → 0004 v3
-(`docs/revisiones/2026-10-21_13-15_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
+A5). Desde la 10, en formato corto por la pausa A21. **13–16** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1
+(`docs/revisiones/2026-10-21_13-16_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 
 ## 9. Lo esencial aprendido (detalle en `aprendizaje/diario.md`)

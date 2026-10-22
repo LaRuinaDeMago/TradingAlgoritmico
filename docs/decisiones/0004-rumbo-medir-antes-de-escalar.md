@@ -6,7 +6,7 @@ v6 (no la sustituye; donde choquen se saca una 0003 v7 explícita, nunca un camb
 decisión nueva que cite a esta, o una versión nueva registrada (P7).
 
 > Origen: conversación Diego–Claude del 2026-10-21 (sin tocar el repositorio) y tres revisiones externas aportadas por
-> Diego, de las que solo se incorpora lo nuevo (A21): `docs/revisiones/2026-10-21_13-15_revisiones_0004.md`.
+> Diego, de las que solo se incorpora lo nuevo (A21): `docs/revisiones/2026-10-21_13-16_revisiones_0004.md`.
 > Diego planteó su objetivo original: aprovechar SQX "al techo", con IA por API y una VPS, para analizar muchísimas
 > estrategias, en varios mercados, y acabar con una cartera que tenga ventaja. Esta decisión es cómo se persigue ese
 > objetivo sin engañarnos.
