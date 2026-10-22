@@ -260,6 +260,11 @@ puertas (borrador de la fase 1, §7).
 **Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
 8. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
    del curso (cambiando solo símbolo, fechas, costes y capacidad); embudo L; análisis en el tramo de reserva.
+   **Cómo se construye (2026-10-23):** cada brazo y réplica como un **archivo de especificación** (símbolo, plantilla,
+   N, semilla, costes, tramos y hashes de entrada) que un único lanzador ejecuta por el ejecutor con registro:
+   preparar → importar → generar → exportar → analizar → registrar → comprobar recuentos. Así la fase 1 deja hecho el
+   **primer ciclo completo y reproducible de la máquina** (nivel 2 de C23) sin construir nada aparte, y con decenas de
+   brazos se evitan los errores de hacerlos a mano (B17 ya lo hacía a medias con `b17_brazo.sh`).
 9. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
 10. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
    presupuesto, plazo) y subirla **antes** de ejecutar. B14 y B19 en su versión mínima antes de la primera tanda que

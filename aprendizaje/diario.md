@@ -366,3 +366,13 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   existe, la incubadora se diseña para que cuenten (A22).
 - **"Que B17 no nos limite":** un resultado negativo vale para lo que se probó. Si la vía SQX falla, la vía por
   hipótesis sigue con sus propias puertas.
+
+## 2026-10-23
+
+- **Dos ideas que sí cambian cómo construimos (sin documentos nuevos):** (1) la fase 1 se monta como un **ciclo por
+  especificación** (un archivo por brazo y un único lanzador): es el primer ciclo reproducible de la máquina, no un
+  añadido; (2) un **punto ciego**: SQX solo ve precios, y si en el precio no hay información predictiva, más minería
+  no la crea. Fuentes de información nueva (COT, calendario macro, volatilidad implícita, flujos) quedan como familia
+  candidata.
+- **La prueba de fuego de la máquina** no es cuántas pruebas hace ni cuántas IAs conecta, sino si descubre mejoras
+  validadas que antes no sabíamos buscar. Si no lo hace, se diagnostica la causa antes de ampliar.
