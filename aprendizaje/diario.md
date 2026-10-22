@@ -358,3 +358,11 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   las operaciones a GPT, me dice a qué horas es rentable, y voy ajustando hasta que consigo la estrategia rentable". Eso
   es optimizar sobre el mismo histórico hasta que sale bien; nuestro brazo de IA lo hace igual, pero aceptando solo con
   datos que no se miraron. Y "50 operaciones al año es una mierda" vale para una estrategia sola, no para una cartera.
+- **Memoria experimental (Diego: "importantísimo").** Al mirarlo: el registro tiene cadena de hashes y los archivos de
+  entrada de B17 tienen su hash anotado, pero **solo existen en `lab_h0`, en este disco**. Un hash prueba que algo no ha
+  cambiado; no impide perderlo. → B25: copia fuera del PC y **prueba de restauración** (rehacer B17 desde un clon
+  limpio y obtener los mismos números). Una copia que no se ha restaurado nunca no es una copia comprobada.
+- **Capital desde el principio (Diego):** los meses de historial no se recuperan; si la vía de capital de terceros
+  existe, la incubadora se diseña para que cuenten (A22).
+- **"Que B17 no nos limite":** un resultado negativo vale para lo que se probó. Si la vía SQX falla, la vía por
+  hipótesis sigue con sus propias puertas.

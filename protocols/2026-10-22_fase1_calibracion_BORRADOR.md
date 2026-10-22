@@ -133,6 +133,11 @@ solo, no demuestra igualdad (la lección del p = 0,99 de B17).
   datos, costes y prueba (revisión 18). Pasar no es haber encontrado una estrategia rentable.
 - **Ninguno pasa** → no se escala; se identifica la pieza (los brazos de desarrollo lo dicen) y se prueba una versión
   nueva **con réplicas de aceptación nuevas** (P3.4); como máximo **[PENDIENTE: n.º de vueltas]** antes de replantear.
+- **Que el embudo de SQX no pase no frena el proyecto** (Diego, 2026-10-22: "que B17 no nos limite"): limita la vía de
+  **minería con SQX**, no las demás. La **vía por hipótesis** (pocas reglas fijadas antes, como la tendencia o las
+  rupturas de máximos de C25 i) apenas sufre selección múltiple y puede seguir a las fases 2–3 con su propio control
+  nulo y sus propias puertas. Y ni B17 ni esta fase se generalizan más allá de lo probado: B17 midió generación
+  **aleatoria**, un embudo genérico y 21 meses de USDCHF; no condena a SQX ni al método del curso.
 - Si C y L pasan, se elige el de menor coste por candidata válida (C21). Si solo pasa C, el método del curso queda
   validado en lo que importa.
 

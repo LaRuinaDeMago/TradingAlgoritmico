@@ -209,11 +209,14 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
 
 ### Lo que depende de Diego (cuanto antes)
 
-1. **A14, copias de seguridad:** `Documents/LAB_PRIVADO_CURSO/` y `h0/evidencias_privadas/` solo existen en este PC;
-   copiarlas a un sitio suyo y comprobar que se abren.
+1. **A14, copias de seguridad (base de la memoria experimental, B25):** `Documents/LAB_PRIVADO_CURSO/`,
+   `h0/evidencias_privadas/` **y `C:\StrategyQuantX145\user\lab_h0\`** (entradas de todos los experimentos de SQX, p. ej.
+   los CSV de B17) solo existen en este PC; copiarlas a un sitio suyo (USB o nube privada, nunca GitHub) y comprobar
+   que se abren.
 2. **A12, renovar la prueba de SQX** (caduca el **2026-11-02**): pedirla ya, sin suponer que se renueva sola. Claude
    prepara el texto (B16).
-3. **A22, Darwinex:** enviar la consulta (Claude prepara el texto).
+3. **A22, Darwinex:** enviar la consulta (Claude prepara el texto), incluidos los requisitos de DarwinIA: el capital de
+   terceros es un **objetivo desde el principio**, y la incubadora se diseñará para que su historial cuente.
 4. **A23:** ¿ampliar USDCHF quemado a 2003–2024 para la calibración? (más operaciones y regímenes; ~10× más tiempo de
    cálculo; no gasta datos de investigación).
 5. **B13, auditoría independiente:** la tarjeta `task_fe8910bc` caduca hacia el **2026-10-27**; empezarla o, si
@@ -222,38 +225,47 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
 
 ### Lo que hace Claude, en orden
 
-**Orden al abrir la próxima sesión (revisión 18):** (1) Diego hace las copias de A14 y Claude comprueba con él que se
-abren (B21 no toca esas carpetas, pero se empieza por proteger lo que no tiene copia); (2) B21; (3) B20; (4) textos de
-renovación de SQX y B13 antes de sus fechas; (5) A23 y v1 del protocolo; (6) medir y ejecutar.
+**Orden al abrir la próxima sesión:** (1) Diego hace las copias de A14 y Claude comprueba con él que se abren (B21 no
+toca esas carpetas, pero se empieza por proteger lo que no tiene copia); (2) B21; (3) **B25: inventario y prueba de
+restauración** (rehacer B17 v3 desde un clon limpio + la copia y obtener los mismos números); (4) B20; (5) textos de
+renovación de SQX, Darwinex y B13 antes de sus fechas; (6) A23 y v1 del protocolo; (7) medir y ejecutar.
+
+**Que B17 no nos limite:** B17 midió generación aleatoria, un embudo genérico y 21 meses de USDCHF; no se generaliza.
+Si en la fase 1 el embudo de SQX no distingue, se limita **la vía de minería con SQX**, no el proyecto: la vía por
+hipótesis (pocas reglas fijadas antes: tendencia, rupturas de máximos; C25 i) sigue con su propio control nulo y sus
+puertas (borrador de la fase 1, §7).
 
 **Fase 0 – condiciones previas:**
 1. **B21:** plan corto con criterios en git antes de la primera orden (como B1); copiar las 7.003 estrategias de
    `Builder/Results` con hash y metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad;
    ajustar la capacidad en una **copia de trabajo** de la plantilla y **probar** que una generación nueva no desaloja
    lo conservado.
-2. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación y una estrategia de métricas conocidas; ¿afecta a
+2. **B25, memoria experimental fiable:** inventario de qué vive dónde y qué hace falta para reproducir cada
+   experimento; con la copia de A14, **prueba de restauración** (B17 v3: falsos positivos 16/2.002, p = 0,99, mismos
+   hashes). Desde la fase 1, todo lo que lea un análisis queda en `lab_h0` con hash y entra en la copia.
+3. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación y una estrategia de métricas conocidas; ¿afecta a
    la ordenación o la selección?
-3. Textos para Diego: renovación o ampliación de SQX (B16) y consulta a Darwinex (A22).
-4. **B5 en paralelo:** recoger las condiciones públicas de Darwinex Zero (spread, comisión, swap por instrumento;
+4. Textos para Diego: renovación o ampliación de SQX (B16) y consulta a Darwinex (A22, con DarwinIA).
+5. **B5 en paralelo:** recoger las condiciones públicas de Darwinex Zero (spread, comisión, swap por instrumento;
    suscripción verificada: 45 €/mes CFD) para EURUSD y los candidatos del universo. Sin precios: no contamina.
-5. **Al cerrar la fase 0, Diego decide B23** (registro prospectivo de una regla de tendencia congelada; necesita el
+6. **Al cerrar la fase 0, Diego decide B23** (registro prospectivo de una regla de tendencia congelada; necesita el
    simulador mínimo de B24).
-6. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
+7. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
    SQX tiene prioridad); historiales públicos del autor.
 
 **Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
-7. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
+8. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
    del curso (cambiando solo símbolo, fechas, costes y capacidad); embudo L; análisis en el tramo de reserva.
-8. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
-9. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
+9. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
+10. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
    presupuesto, plazo) y subirla **antes** de ejecutar. B14 y B19 en su versión mínima antes de la primera tanda que
    cuente; probable A18 (numpy/scipy).
-10. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
+11. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
    de ruido aceptadas en 3 réplicas, el límite superior de falsos positivos sigue siendo 63 %. Interpretación con la
    tabla fijada en el borrador §8.
-11. **Calibración completa** si hay SQX y la medición lo permite (R según la precisión; ~30 réplicas por familia de
+12. **Calibración completa** si hay SQX y la medición lo permite (R según la precisión; ~30 réplicas por familia de
    aceptación para acotar en torno al 10 %), con el brazo con IA. Puerta: los dos exámenes de aceptación.
-12. Decidir la siguiente inversión con esa evidencia: si hay diferencias informativas, ampliar; si no, investigar el
+13. Decidir la siguiente inversión con esa evidencia: si hay diferencias informativas, ampliar; si no, investigar el
     motivo antes de añadir filtros, activos, API o infraestructura.
 
 **En paralelo, sin chocar con mediciones de SQX:** B18 ampliada (B22 y las demás fuentes de contaminación); B15 + B9
