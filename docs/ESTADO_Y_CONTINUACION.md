@@ -178,6 +178,7 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 | Diario de lecciones, glosario, lección 01 | `aprendizaje/` |
 | Núcleo Python y tests | `src/lab/`, `tests/` |
 | Lanzador de Claude Code sin la clave API | `claude_lab.cmd` |
+| Prompt de arranque de sesión (para pegar al abrir Claude Code) | `docs/prompt_inicio_sesion.md` |
 
 ## 6. Decisiones de Diego (detalle en `PENDIENTES.md`, sección A)
 
