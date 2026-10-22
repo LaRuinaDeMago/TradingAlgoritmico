@@ -39,6 +39,18 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
   para tumbar la idea: da permiso para escalar; si el embudo no distingue a la primera, **la IA tiene que demostrar que
   sabe mejorarlo** (iteraciones contadas, con controles de aceptación sin mirar). Ruta de escalado: C23 en
   `PENDIENTES.md`. Posibilidad pequeña pero real; no se promete, se persigue en serio.
+- **Correspondencia entre las fases de la 0004 y los hitos de la hoja de ruta** (revisión completa del 2026-10-22; las
+  fechas de la 0003 §3 siguen siendo hitos de revisión, no obligaciones):
+
+  | Hito (hoja de ruta) | Dónde cae en la 0004 |
+  |---|---|
+  | H0 ficha técnica | Fase 0 |
+  | H2 motor de validación (EDGE con incertidumbre) | Fase 1: B19 implementado y probado en la calibración |
+  | H3 IA analista frente a sin IA (0001) | Fase 1, con datos sintéticos: el ciclo de IA es un brazo del embudo, comparado con el mismo embudo sin IA |
+  | H1 reconstrucción independiente en Python | Comprobación P12, **antes del piloto (fase 3)**: reproducir operación a operación algunas estrategias de SQX |
+  | H1 puente a MetaTrader (compilar y ejecutar) | **Antes de la fase 5** (A11; para compilar vale cualquier MetaTrader de demo, no hace falta Darwinex) |
+  | Veredicto VIABILIDAD por vehículo | Fases 5–6, con el vehículo que salga de A22 |
+  | H4 demo · H5 real · H6 panel | Fase 5 · fase 6 · después |
 - **Fase: H0 (viabilidad técnica), casi cerrada = fase 0 de la 0004.** Siguiente: fase 1 (calibración), **no antes**
   de cerrar la fase 0 (sección 7).
 
@@ -155,6 +167,7 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 | B1: plan con criterios previos y resultados | `h0/b1_plan_integridad.md`, `h0/b1_resultados.md` |
 | B16: licencia frente al calendario (precios, inconclusos, texto para el soporte) | `h0/b16_licencia_calendario.md` |
 | B17: control negativo (plan con enmiendas v2, v2.1 y v3, y resultados) | `h0/b17_plan_control_negativo.md`, `h0/b17_resultados.md` |
+| Fase 1 (calibración del embudo, B17 mejorado): diseño BORRADOR v0 | `protocols/2026-10-22_fase1_calibracion_BORRADOR.md` |
 | Plantillas, scripts de preparación, tandas y comparadores | `h0/configs/` |
 | Guiones exactos de las tandas del 2026-10-20 | `h0/scripts_sesion_2026-10-20/` |
 | Guiones auxiliares del 2026-10-21 (pruebas del lanzador, lector del registro) | `h0/scripts_sesion_2026-10-21/` |
@@ -205,7 +218,9 @@ pagar más máquina.
    prueba precisamente ese método.
 
 **Fase 1 – calibración (después de cerrar la fase 0):**
-4. **Protocolo de la fase 1** (con la ficha del método del curso de B22 como entrada), escrito y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
+4. **Protocolo de la fase 1**: diseño ya hecho en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md` (B17 mejorado:
+   genética, embudos C del curso y L del laboratorio, nulos N1–N3, ventaja sembrada S1–S2, tramo de reserva, cartera,
+   brazo con IA). La v1 solo **rellena sus huecos** (B20, B21, B22, B5, A23), escrita y en git antes de ejecutar: modelos nulos de desarrollo y de aceptación
    (distintas familias, no solo semillas), construcción y tamaños de la ventaja sembrada (mínimo económico tras costes),
    niveles de error y detección, presupuesto (P13), condiciones que impiden escalar.
 5. **B14** (eventos tipados y registro de hipótesis) y **B19** (protocolo estadístico implementado, con tests de errores

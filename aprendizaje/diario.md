@@ -312,3 +312,17 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   prueba sobre un mercado. El rigor no es sobreingeniería; pulir el método en vez de usarlo, sí. La fase 1 es, en el
   fondo, repetir B17 más completo (B17 se hizo en un día). → Regla acordada: medir, no escribir; versión mínima de cada
   paso; plazo cerrado; "¿qué error evita y qué decisión cambia?" (`ESTADO_Y_CONTINUACION.md` §7).
+
+## 2026-10-22
+
+- **Revisión completa de todo lo escrito (decisiones 0001–0004, hoja de ruta, protocolo, ficha, B17).** Cuatro cabos
+  sueltos: (1) la 0004 hablaba de fases 0–6 y la 0003 y la hoja de ruta de hitos H0–H6 con fechas: faltaba decir dónde
+  cae cada uno (la reconstrucción en Python y el puente a MetaTrader no aparecían); (2) no estaba escrito con qué datos se
+  hace la calibración (solo quemados y sintéticos); (3) los vehículos alternativos de la hoja de ruta (fondeadas, otro
+  bróker) se habían quedado fuera de A22; (4) la ventana quemada de 22 meses es corta para calibrar (A23). → Al añadir
+  una decisión nueva, cruzarla con las anteriores y con la hoja de ruta, no solo con la conversación.
+- **Ratios 1:3 (Diego):** la cuenta con nuestros números enseña más que la regla: un 1:3 con 30 % de acierto necesita
+  ~340 operaciones para distinguirse del azar y nuestras estrategias de H0 hacían 75–90. Y con 30 % de acierto lo normal
+  es una racha de ~12 pérdidas en 300 operaciones: el peligro es apagar el bot en la décima (C24).
+- **B17 mejorado (diseño de la fase 1):** lo que B17 no probó es justo lo que usaríamos (genética, robustez, cartera,
+  costes realistas, IA) y le faltaba medir la potencia. Diseño con huecos marcados, para rellenar sin rediseñar.

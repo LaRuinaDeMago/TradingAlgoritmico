@@ -38,3 +38,7 @@ Términos aparecidos trabajando en H0 (2026-10-20), sin lección propia todavía
 - **Fuga de información (sesgo de anticipación)**: usar, al decidir una operación, datos que en ese momento aún no existían (el cierre de la vela en curso, un dato corregido después). Invalida cualquier resultado, por bueno que sea el resto (0004, P12).
 - **Controles de desarrollo y de aceptación**: los primeros se usan para ajustar el procedimiento; los segundos se fijan antes y no se miran hasta el final, para que el procedimiento no se "adapte" a sus propios controles (0004, P3).
 - **Amplitud efectiva**: número de apuestas de verdad independientes de una cartera. Diez pares con dólar pueden ser casi una sola apuesta (ley fundamental de la gestión activa, IR ≈ IC·√B; 0004, P1).
+- **Expectativa por operación**: lo que se gana de media en cada operación, neto de costes: E = p·G − (1−p)·L − C. Es lo que decide, no el porcentaje de acierto ni el ratio configurado (C24).
+- **Racha de pérdidas esperada**: con un acierto p, en n operaciones la racha más larga de pérdidas ronda ln(n·p) / ln(1/(1−p)). Con 30 % y 300 operaciones, ~12 pérdidas seguidas: es lo normal, no una avería (C24).
+- **Tramo de reserva**: parte final de cada serie que ningún filtro ni selección toca; sirve de examen dentro de una prueba de proceso (fase 1).
+- **Remuestreo por bloques**: fabricar series nuevas reordenando trozos (días, semanas) de la original en vez de velas sueltas, para conservar parte de su estructura (volatilidad, horarios) sin su dirección (fase 1, nulos N2 y N3).
