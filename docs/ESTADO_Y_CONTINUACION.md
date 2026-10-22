@@ -14,6 +14,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    `python -m unittest discover -s tests` (41/41) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
    `PYTHONPATH=src python -m lab verificar` (222 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
+   El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
+   comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write).
 3. Si la sesión es de terminal: abierta con `claude_lab.cmd` (la cabecera no debe decir "API Usage Billing"; si pide
    iniciar sesión, `/login` con la suscripción).
 4. Mirar si Diego ha resuelto algo de la sección 6 y seguir por la sección 7.
