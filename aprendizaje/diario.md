@@ -352,3 +352,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   precisiones útiles (margen de equivalencia, límite de estructuras en C25) y una propuesta que el código desmiente
   (commit por bloque: el ejecutor marcaría sucias las entradas). → Una revisión también se comprueba contra el código.
   Y la regla se cumple: no se incorporan más hasta el resultado de la fase 1.
+- **Lo que dice un trader con experiencia (Gin) también se trata como hipótesis.** Aporta cosas útiles: SQX pide
+  recursos (este PC está en el mínimo de la documentación: 4 núcleos y 11,8 GB frente a 32 GB y 8+ recomendados), las
+  rupturas de máximos y el régimen macro como familias a probar. Y describe sin saberlo el bucle más peligroso: "le paso
+  las operaciones a GPT, me dice a qué horas es rentable, y voy ajustando hasta que consigo la estrategia rentable". Eso
+  es optimizar sobre el mismo histórico hasta que sale bien; nuestro brazo de IA lo hace igual, pero aceptando solo con
+  datos que no se miraron. Y "50 operaciones al año es una mierda" vale para una estrategia sola, no para una cartera.
