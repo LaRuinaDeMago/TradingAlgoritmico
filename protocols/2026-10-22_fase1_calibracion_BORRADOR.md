@@ -83,7 +83,8 @@ ciertos tipos de ruido (0004 §1).
   **Si B20 confirma que SQX recorta Ret/DD o el factor de beneficio** (revisión 18): se conservan dos cosas distintas,
   (a) la **reproducción fiel** del curso, ordenando por la columna de SQX tal cual (con el empate que provoque el
   recorte, resuelto por una regla fija y escrita), y (b) una **evaluación corregida** con las métricas recalculadas
-  en Python. Se documenta la diferencia; nunca se corrige en silencio la reproducción del curso.
+  en Python. Se documenta la diferencia; nunca se corrige en silencio la reproducción del curso. C usa siempre la
+  reproducción fiel y L las métricas verificadas; un "curso corregido" solo entra como **variante adicional registrada**.
 - **L, laboratorio:** los mismos bloques de robustez pero **sin elegir con el OOS** (walk-forward dentro de IS + OOS
   como un tramo más del walk-forward), filtros por **expectativa neta por operación** y su incertidumbre (C24), umbral
   ajustado al número de estrategias probadas (B19), y comprobación de que Ret/DD y PF no están recortados (B20).
@@ -117,6 +118,9 @@ Todo en el tramo RESERVA de los brazos de **aceptación** (N3, S2):
 3. **Por estrategia:** tasa de falsos positivos del embudo (como M1 de B17) y supervivencia en S2.
 4. **Comparaciones:** C frente a L; L + IA frente a L; las dos frente a las referencias sencillas. Con incertidumbre por
    remuestreo por bloques (B19), no solo con recuentos.
+**Cómo se informa cada resultado** (revisión 21): la estimación, su intervalo y la conclusión que permite. "No hay
+diferencia" solo se afirma con un **margen de equivalencia fijado antes** y el intervalo dentro de él; un p alto, por sí
+solo, no demuestra igualdad (la lección del p = 0,99 de B17).
 5. **Supervivencia por etapa** (revisión 20, sin tandas extra): cuántas estrategias de ruido y de ventaja sembrada
    sobreviven a **cada** filtro del embudo, para ver qué etapa elimina falsas señales sin destruir ventajas y cuál solo
    reduce candidatas sin mejorar la discriminación.

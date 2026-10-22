@@ -348,3 +348,7 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   completo ya, agentes autónomos, API) queda por disparador o fuera.
 - **Una cifra de otra IA, verificada antes de escribirla:** los precios de Darwinex Zero (45 €/mes CFD) cuadran con la
   página oficial; el "15 % de comisión" era lo que **cobra** el proveedor, no lo que paga.
+- **La revisión 21 llegó después de la que dimos por última.** De sus seis bloques, cuatro ya estaban; aportó dos
+  precisiones útiles (margen de equivalencia, límite de estructuras en C25) y una propuesta que el código desmiente
+  (commit por bloque: el ejecutor marcaría sucias las entradas). → Una revisión también se comprueba contra el código.
+  Y la regla se cumple: no se incorporan más hasta el resultado de la fase 1.

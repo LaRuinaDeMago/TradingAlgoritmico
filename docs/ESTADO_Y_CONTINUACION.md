@@ -195,7 +195,7 @@ económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · 
 prohibiciones, no una obra que construir antes de empezar.
 1. **Ni documentos de diseño nuevos ni revisiones externas** hasta tener el resultado de la fase 1 (solo se corrige un
    defecto demostrado, por la vía de P7). **Única excepción, ya autorizada (A21, 0004 §7): la auditoría independiente
-   B13.** El diseño de la fase 1 está cerrado (revisiones 13–20; la 20 es la última antes de ejecutar).
+   B13.** El diseño de la fase 1 está cerrado (revisiones 13–21; tras la 21 no se incorpora ninguna más hasta tener el resultado de la fase 1).
 2. **Cada paso, en su versión mínima que responde la pregunta**, reutilizando lo que hay (`b17_sintetico.py`,
    `b17_analizar.py`, plantillas de H0, los `.cfx` del curso).
 3. **Plazo cerrado para la fase 1**, fijado en su protocolo; si se supera, se para y se revisa por qué.
@@ -269,7 +269,7 @@ la 0004 §4; escalado de la máquina en C23.
 05 laboratorio integrado · 06 enmiendas a 0003 · 07 base de conocimiento · 08 auditoría de diseño y prompt maestro ·
 09 auditoría estática de un ZIP (cifras verificadas) · **2026-10-21:** 10 evaluación sincera (amplía A7, sugiere A21) ·
 11 cambio de enfoque (referencias previas C20; Claude añade B17) · 12 diagnóstico con la v6 (B19; coste de B18; misión →
-A5). Desde la 10, en formato corto por la pausa A21. **13–20** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
+A5). Desde la 10, en formato corto por la pausa A21. **13–21** (2026-10-21 y 22): sobre el rumbo → 0004 v3 y el borrador de la fase 1, que queda cerrado
 (`docs/revisiones/2026-10-21_13-16_revisiones_0004.md`); dos citas suyas no se encontraron y no se usan. Si vienen del mismo modelo, que coincidan no es evidencia
 independiente.
 
