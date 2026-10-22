@@ -252,8 +252,10 @@ puertas (borrador de la fase 1, §7).
    suscripción verificada: 45 €/mes CFD) para EURUSD y los candidatos del universo. Sin precios: no contamina.
 6. **Al cerrar la fase 0, Diego decide B23** (registro prospectivo de una regla de tendencia congelada; necesita el
    simulador mínimo de B24).
-7. **B22, curso a fondo:** primera tanda de transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11,
-   SQX tiene prioridad); historiales públicos del autor.
+7. **B22, curso a fondo, empezando por BONUS 2025** (lo más actualizado: ≈ 14 h de vídeo, ≈ 25 h de CPU, unas tres
+   noches): transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11, SQX tiene prioridad) y, con
+   ella, la **ficha del método del curso** (privada), condición previa de la v1 de la fase 1; historiales públicos del
+   autor.
 
 **Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
 8. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
