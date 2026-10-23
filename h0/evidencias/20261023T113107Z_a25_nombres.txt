@@ -1,0 +1,10 @@
+# comando: python -I h0/configs/a25_nombres_m3.py C:/StrategyQuantX145/user/lab_h0/b21/M3_Results.json C:/StrategyQuantX145/user/lab_h0/b21/Results_retirado_A25
+# inicio_utc: 2026-10-23T11:31:07+00:00
+# duracion_s: 0.368
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+manifiesto: 7053; carpeta: 7053; faltan: 0 []; sobran: 0 [] -> OK
+
+=== STDERR ===
