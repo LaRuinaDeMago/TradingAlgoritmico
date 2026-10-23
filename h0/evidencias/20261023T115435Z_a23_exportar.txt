@@ -1,0 +1,75 @@
+# comando: C:/StrategyQuantX145/sqcli.exe -data action=export symbols=USDCHF_M1_dukas timeframe=M1 datefrom=2003.01.01 dateto=2024.10.30 outputdir=C:/StrategyQuantX145/user/lab_h0/a23/E_total format=Custom cIncludeHeader=true cHeader=Date,Time,Open,High,Low,Close,Volume cFormat=[Date:yyyy.MM.dd],[Time:HH:mm:ss],[Open],[High],[Low],[Close],[Volume]
+# inicio_utc: 2026-10-23T11:54:35+00:00
+# duracion_s: 77.282
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+13:54:42.016 [main] DEBUG com.strategyquant.lib.license.Licenser -- L: [REDACTADO:licencia]
+13:54:42.024 [main] DEBUG MainAppStandardImpl -- Initializing log engine...
+Server started on port 5050
+Hardware ID: [REDACTADO:hardware_id]
+Verifying license ...
+SQX version: 145.3191
+AlgoWizard version: 2.1.22
+Results version: 2.3.43
+AI chat version: 2.0.17
+Customizations loaded successfully, count=1
+High priority: OFF
+Using: 7 cores, core usage configuration: '-1'
+Preparing thread executors: 7
+SQAI: AgentScope model ready - sq / openai/gpt-5.6-sol
+Q version: 1.0.15
+Data loaded in 5592 ms
+Volume profile subscription verified: active=false
+Projects loaded in 10122 ms
+API HTTP iniciada, puede acceder a ella en http://localhost:5050/call?cmd=-h
+--------------------------------------------------
+Lanza StrategyQuant X en modo línea de comandos.
+Parámetros: -data action=export symbols=USDCHF_M1_dukas timeframe=M1 datefrom=2003.01.01 dateto=2024.10.30 outputdir=C:/StrategyQuantX145/user/lab_h0/a23/E_total format=Custom cIncludeHeader=true cHeader=Date,Time,Open,High,Low,Close,Volume cFormat=[Date:yyyy.MM.dd],[Time:HH:mm:ss],[Open],[High],[Low],[Close],[Volume] 
+15:55:15 Exporting data.
+--------------------------------------------------
+Exporting data.
+--------------------------------------------------
+USDCHF_M1_dukas, Exportado a CSV 2003.09.12 03:24, 1%
+USDCHF_M1_dukas, Exportado a CSV 2004.05.05 19:26, 4%
+USDCHF_M1_dukas, Exportado a CSV 2004.12.17 15:04, 7%
+USDCHF_M1_dukas, Exportado a CSV 2005.06.17 11:58, 9%
+USDCHF_M1_dukas, Exportado a CSV 2006.03.21 08:00, 13%
+USDCHF_M1_dukas, Exportado a CSV 2006.12.05 13:24, 16%
+USDCHF_M1_dukas, Exportado a CSV 2007.08.16 17:05, 20%
+USDCHF_M1_dukas, Exportado a CSV 2008.04.24 05:26, 23%
+USDCHF_M1_dukas, Exportado a CSV 2008.12.05 14:46, 26%
+USDCHF_M1_dukas, Exportado a CSV 2009.05.07 20:28, 28%
+USDCHF_M1_dukas, Exportado a CSV 2010.01.07 05:30, 31%
+USDCHF_M1_dukas, Exportado a CSV 2010.09.22 21:10, 34%
+USDCHF_M1_dukas, Exportado a CSV 2011.06.20 07:30, 38%
+USDCHF_M1_dukas, Exportado a CSV 2012.03.06 18:37, 41%
+USDCHF_M1_dukas, Exportado a CSV 2012.11.19 00:57, 44%
+USDCHF_M1_dukas, Exportado a CSV 2013.07.25 15:41, 47%
+USDCHF_M1_dukas, Exportado a CSV 2014.04.01 19:16, 51%
+USDCHF_M1_dukas, Exportado a CSV 2014.12.25 07:49, 54%
+USDCHF_M1_dukas, Exportado a CSV 2015.09.21 21:28, 57%
+USDCHF_M1_dukas, Exportado a CSV 2016.05.24 04:22, 60%
+USDCHF_M1_dukas, Exportado a CSV 2017.01.26 02:59, 64%
+USDCHF_M1_dukas, Exportado a CSV 2017.09.29 14:47, 67%
+USDCHF_M1_dukas, Exportado a CSV 2018.06.21 04:39, 70%
+USDCHF_M1_dukas, Exportado a CSV 2019.02.21 07:14, 73%
+USDCHF_M1_dukas, Exportado a CSV 2019.10.04 02:34, 76%
+USDCHF_M1_dukas, Exportado a CSV 2020.05.07 15:53, 79%
+USDCHF_M1_dukas, Exportado a CSV 2021.01.11 13:45, 82%
+USDCHF_M1_dukas, Exportado a CSV 2021.09.28 13:53, 85%
+USDCHF_M1_dukas, Exportado a CSV 2022.06.06 10:03, 88%
+USDCHF_M1_dukas, Exportado a CSV 2023.01.13 18:36, 91%
+USDCHF_M1_dukas, Exportado a CSV 2023.08.31 14:02, 94%
+USDCHF_M1_dukas, Exportado a CSV 2024.04.12 13:22, 97%
+USDCHF_M1_dukas, Completado, 100%
+All tasks completed
+15:55:52 Sincronización de bases de datos con ficheros
+--------------------------------------------------
+Synchronization finished.
+--------------------------------------------------
+Adiós
+Exit app - cmd -exit
+
+=== STDERR ===
