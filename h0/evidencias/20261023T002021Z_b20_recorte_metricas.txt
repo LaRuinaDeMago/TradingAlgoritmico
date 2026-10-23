@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/b20_recorte_metricas.py C:/StrategyQuantX145/user/lab_h0/b21/Results_B21.csv
+# inicio_utc: 2026-10-23T00:20:21+00:00
+# duracion_s: 0.307
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+retdd: tope 10.0; control 5328/5328 coinciden; por encima del tope 0/52 valen justo el tope; máximo en SQX 159.05; filas en el tope 350 -> NO recorta
+pf: tope 5.0; control 12735/12735 coinciden; por encima del tope 0/129 valen justo el tope; máximo en SQX 160.05; filas en el tope 351 -> NO recorta
+
+=== STDERR ===
