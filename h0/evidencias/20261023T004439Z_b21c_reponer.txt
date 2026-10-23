@@ -1,0 +1,10 @@
+# comando: python -I h0/configs/b21_archivo.py reponer C:/StrategyQuantX145/user/lab_h0/b21/archivo_Results C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo
+# inicio_utc: 2026-10-23T00:44:39+00:00
+# duracion_s: 16.986
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+repuestas 7003 en C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo; faltan 0, sobran 0, distintos 0 -> OK
+
+=== STDERR ===
