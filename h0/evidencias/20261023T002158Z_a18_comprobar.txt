@@ -1,0 +1,11 @@
+# comando: python -I -c "import numpy, scipy, scipy.stats; print('numpy', numpy.__version__, 'scipy', scipy.__version__); print('media', numpy.mean([1, 2, 3]), 'p binomial', round(scipy.stats.binomtest(3, 10, 0.5).pvalue, 4))"
+# inicio_utc: 2026-10-23T00:21:58+00:00
+# duracion_s: 2.269
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+numpy 2.5.4 scipy 1.18.1
+media 2.0 p binomial 0.3438
+
+=== STDERR ===
