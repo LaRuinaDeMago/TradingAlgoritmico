@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/b21_archivo.py manifiesto C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo C:/StrategyQuantX145/user/lab_h0/b21/H0_archivo_despues.json
+# inicio_utc: 2026-10-23T00:11:29+00:00
+# duracion_s: 6.515
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+manifiesto: 7003 archivos .sqx, 224415208 bytes -> C:/StrategyQuantX145/user/lab_h0/b21/H0_archivo_despues.json
+sha256 del manifiesto: e2b341a7356b1bdab296e79d3e14f823f074c4ab2b9446100cbdf86c8558b7a3
+
+=== STDERR ===
