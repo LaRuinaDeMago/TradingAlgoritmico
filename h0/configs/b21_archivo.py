@@ -8,6 +8,7 @@ Uso (desde la raíz, por el ejecutor con registro):
   python -I h0/configs/b21_archivo.py manifiesto CARPETA SALIDA.json
   python -I h0/configs/b21_archivo.py copiar ORIGEN DESTINO          (DESTINO no debe existir; escribe DESTINO.json)
   python -I h0/configs/b21_archivo.py conservadas ANTES.json CARPETA (¿siguen todas las de ANTES, idénticas?)
+  python -I h0/configs/b21_archivo.py contenido CARPETA_A CARPETA_B  (¿están todas las de A en B con el mismo CONTENIDO?)
   python -I h0/configs/b21_archivo.py csv A.csv B.csv
 Sale con código 1 si una comprobación falla.
 """
@@ -17,6 +18,7 @@ import hashlib
 import json
 import shutil
 import sys
+import zipfile
 from pathlib import Path
 
 
@@ -36,6 +38,23 @@ def manifiesto(carpeta: str | Path) -> dict[str, dict]:
         sys.exit(f"PARADA: {carpeta} tiene subcarpetas; un banco no debería tenerlas")
     return {p.name: {"bytes": p.stat().st_size, "sha256": _sha256(p)}
             for p in sorted(carpeta.iterdir()) if p.suffix == ".sqx"}
+
+
+def _sha256_contenido(ruta: Path) -> str:
+    """Hash del CONTENIDO de un .sqx (un zip): nombre y bytes de cada archivo interno, sin fechas ni compresión.
+    SQX reescribe el zip en cada arranque con la fecha del momento (B21, registro n.º 225), así que el hash del archivo
+    cambia aunque la estrategia sea la misma."""
+    h = hashlib.sha256()
+    with zipfile.ZipFile(ruta) as z:
+        for nombre in sorted(z.namelist()):
+            h.update(nombre.encode("utf-8") + b"\0" + hashlib.sha256(z.read(nombre)).digest())
+    return h.hexdigest()
+
+
+def manifiesto_contenido(carpeta: str | Path) -> dict[str, dict]:
+    carpeta = Path(carpeta)
+    m = manifiesto(carpeta)
+    return {n: {"contenido": _sha256_contenido(carpeta / n)} for n in m}
 
 
 def comparar(a: dict, b: dict) -> dict[str, list[str]]:
@@ -105,6 +124,15 @@ def main(argv: list[str]) -> int:
         r = comparar(antes, ahora)
         ok = conservadas(antes, ahora)
         print(f"antes {len(antes)}, ahora {len(ahora)}; {_resumen(r)} -> {'OK' if ok else 'FALLO'}")
+        return 0 if ok else 1
+    if orden == "contenido" and len(argv) == 3:
+        a, b = manifiesto_contenido(argv[1]), manifiesto_contenido(argv[2])
+        r = comparar(a, b)
+        ok = conservadas(a, b)
+        print(f"contenido: A {len(a)}, B {len(b)}; {_resumen(r)} -> {'OK (todas las de A en B, mismo contenido)' if ok else 'FALLO'}")
+        for clave in ("faltan", "distintos"):
+            if r[clave]:
+                print(f"  {clave} (primeras 5): {r[clave][:5]}")
         return 0 if ok else 1
     if orden == "csv" and len(argv) == 3:
         r = comparar_csv(argv[1], argv[2])

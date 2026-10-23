@@ -5,6 +5,7 @@ import hashlib
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "h0" / "configs"))
@@ -120,6 +121,46 @@ class TestCompararCsv(unittest.TestCase):
             a = csv_banco(Path(t) / "a.csv", [["S1", "10"], ["S2", "20"]])
             b = csv_banco(Path(t) / "b.csv", [["S1", "10"], ["S2", "20"], ["S2", "20"]])
             self.assertFalse(ar.comparar_csv(a, b)["iguales"])
+
+
+def sqx(ruta: Path, entradas: dict[str, bytes], fecha=(2026, 10, 21, 18, 0, 0)) -> Path:
+    """Un .sqx de prueba: zip con archivos internos y una fecha fija (SQX pone la del guardado)."""
+    with zipfile.ZipFile(ruta, "w", compression=zipfile.ZIP_DEFLATED) as z:
+        for nombre, datos in entradas.items():
+            z.writestr(zipfile.ZipInfo(nombre, date_time=fecha), datos)
+    return ruta
+
+
+ESTRATEGIA = {"settings.xml": b"<s/>", "orders.bin": b"\x01\x02", "version.txt": b"1"}
+
+
+class TestContenido(unittest.TestCase):
+    def test_misma_estrategia_guardada_otro_dia_es_igual(self):
+        with tempfile.TemporaryDirectory() as t:
+            (Path(t) / "a").mkdir()
+            (Path(t) / "b").mkdir()
+            sqx(Path(t) / "a" / "S.sqx", ESTRATEGIA)
+            sqx(Path(t) / "b" / "S.sqx", ESTRATEGIA, fecha=(2026, 10, 23, 0, 5, 56))
+            self.assertNotEqual(ar.manifiesto(Path(t) / "a"), ar.manifiesto(Path(t) / "b"))  # el zip cambia
+            self.assertEqual(ar.manifiesto_contenido(Path(t) / "a"), ar.manifiesto_contenido(Path(t) / "b"))
+
+    def test_control_negativo_una_operacion_distinta(self):
+        with tempfile.TemporaryDirectory() as t:
+            (Path(t) / "a").mkdir()
+            (Path(t) / "b").mkdir()
+            sqx(Path(t) / "a" / "S.sqx", ESTRATEGIA)
+            sqx(Path(t) / "b" / "S.sqx", {**ESTRATEGIA, "orders.bin": b"\x01\x03"})
+            r = ar.comparar(ar.manifiesto_contenido(Path(t) / "a"), ar.manifiesto_contenido(Path(t) / "b"))
+            self.assertEqual(r["distintos"], ["S.sqx"])
+
+    def test_control_negativo_archivo_interno_de_mas(self):
+        with tempfile.TemporaryDirectory() as t:
+            (Path(t) / "a").mkdir()
+            (Path(t) / "b").mkdir()
+            sqx(Path(t) / "a" / "S.sqx", ESTRATEGIA)
+            sqx(Path(t) / "b" / "S.sqx", {**ESTRATEGIA, "extra.xml": b""})
+            self.assertFalse(ar.conservadas(ar.manifiesto_contenido(Path(t) / "a"),
+                                            ar.manifiesto_contenido(Path(t) / "b")))
 
 
 if __name__ == "__main__":
