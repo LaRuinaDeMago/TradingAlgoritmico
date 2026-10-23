@@ -1,0 +1,22 @@
+# comando: python -m pip install --only-binary :all: numpy==2.5.4 scipy==1.18.1
+# inicio_utc: 2026-10-23T00:21:34+00:00
+# duracion_s: 22.849
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+Collecting numpy==2.5.4
+  Using cached numpy-2.5.4-cp314-cp314-win_amd64.whl.metadata (6.6 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp314-cp314-win_amd64.whl.metadata (61 kB)
+Using cached numpy-2.5.4-cp314-cp314-win_amd64.whl (12.7 MB)
+Downloading scipy-1.18.1-cp314-cp314-win_amd64.whl (37.4 MB)
+   ---------------------------------------- 37.4/37.4 MB 34.9 MB/s  0:00:01
+Installing collected packages: numpy, scipy
+
+Successfully installed numpy-2.5.4 scipy-1.18.1
+
+=== STDERR ===
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
