@@ -142,3 +142,8 @@ estrategias de las que se hayan cargado sin error con la memoria vigente.
 - El guion **se para** si una evidencia de SQX contiene "failed" o "Memory usage" (comprobado antes: de 30 evidencias
   de B17 v3 y B21, solo la del fallo de memoria las contiene), y si B1 no da 8,00 GiB con el archivo original intacto.
 - Medición para C23 (sin criterio): memoria de `sqcli.exe` cada 2 s en `lab_h0\b21\memoria_sqcli.csv`.
+- **Primer intento (n.º 244–245): parada correcta en B1.** `sqcli.config` mezcla saltos CRLF (6 líneas) y LF (las 2
+  últimas); el script añadió una línea en blanco de más y la comprobación "una sola línea añadida" paró la tanda antes
+  de arrancar SQX. Se restauró el original (hash `cc75c454…`, n.º 245), se corrigió el script con dos tests nuevos
+  (saltos mezclados; repetible si la copia guardada es el archivo vigente) y se ensayó sobre una copia del archivo real:
+  una sola línea. Los criterios no cambian.

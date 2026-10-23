@@ -17,13 +17,20 @@ def subir(config: str | Path, copia: str | Path, valor: str) -> None:
     if b"-Xmx" in original:
         sys.exit(f"PARADA: {config} ya tiene -Xmx; no se toca nada")
     if copia.exists():
-        sys.exit(f"PARADA: {copia} ya existe; no se sobrescribe")
-    copia.parent.mkdir(parents=True, exist_ok=True)
-    copia.write_bytes(original)
+        if copia.read_bytes() != original:  # repetir solo vale si la copia guardada es el archivo vigente
+            sys.exit(f"PARADA: {copia} ya existe y no es igual a {config}; no se sobrescribe")
+    else:
+        copia.parent.mkdir(parents=True, exist_ok=True)
+        copia.write_bytes(original)
     if copia.read_bytes() != original:
         sys.exit("PARADA: la copia del original no es idéntica; no se toca la configuración")
-    salto = b"\r\n" if b"\r\n" in original else b"\n"
-    base = original if original.endswith(salto) else original + salto
+    # El sqcli.config real mezcla CRLF y LF (registro n.º 244): la línea nueva usa el salto de la última línea, y si
+    # el archivo no acaba en salto, se añade uno (CRLF si el archivo usa alguno).
+    if original.endswith(b"\n"):
+        base, salto = original, (b"\r\n" if original.endswith(b"\r\n") else b"\n")
+    else:
+        salto = b"\r\n" if b"\r\n" in original else b"\n"
+        base = original + salto
     config.write_bytes(base + f"option -Xmx{valor}".encode("ascii") + salto)
 
 

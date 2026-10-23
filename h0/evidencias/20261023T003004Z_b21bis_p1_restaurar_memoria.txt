@@ -1,0 +1,12 @@
+# comando: python -I h0/configs/b21_memoria.py restaurar C:/StrategyQuantX145/sqcli.config C:/StrategyQuantX145/user/lab_h0/b21/sqcli.config.original
+# inicio_utc: 2026-10-23T00:30:04+00:00
+# duracion_s: 0.094
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+original: C:\StrategyQuantX145\user\lab_h0\b21\sqcli.config.original sha256 cc75c454d24a45214728ccffd926e279351ff721ced0f31ea4d700ff6dcc4b35
+vigente:  C:\StrategyQuantX145\sqcli.config sha256 cc75c454d24a45214728ccffd926e279351ff721ced0f31ea4d700ff6dcc4b35
+lineas originales 8, vigentes 8; las originales intactas al principio: True; añadidas: []
+
+=== STDERR ===

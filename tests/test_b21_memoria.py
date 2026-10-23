@@ -40,6 +40,24 @@ class TestMemoria(unittest.TestCase):
             mem.subir(config, copia, "8g")
             self.assertEqual(config.read_bytes(), lf + b"option -Xmx8g\n")
 
+    def test_saltos_mezclados_como_el_sqcli_config_real(self):
+        """El sqcli.config real (registro n.º 244) tiene líneas CRLF y las dos últimas en LF: no se añade una línea
+        en blanco; la nueva usa el salto de la última línea."""
+        with tempfile.TemporaryDirectory() as t:
+            mezcla = b"option -XX:+UseParallelGC\r\noption -Xms4g\r\noption -Dsqx.main=x\noption -Dsqx.console=true\n"
+            config, copia = preparar(t, mezcla)
+            mem.subir(config, copia, "8g")
+            self.assertEqual(config.read_bytes(), mezcla + b"option -Xmx8g\n")
+
+    def test_repetible_si_la_copia_ya_es_el_original(self):
+        with tempfile.TemporaryDirectory() as t:
+            config, copia = preparar(t)
+            copia.parent.mkdir()
+            copia.write_bytes(ORIGINAL)
+            mem.subir(config, copia, "8g")
+            self.assertEqual(config.read_bytes(), ORIGINAL + b"option -Xmx8g\r\n")
+            self.assertEqual(copia.read_bytes(), ORIGINAL)
+
     def test_control_negativo_ya_tiene_xmx(self):
         with tempfile.TemporaryDirectory() as t:
             config, copia = preparar(t, ORIGINAL + b"option -Xmx2g\r\n")
