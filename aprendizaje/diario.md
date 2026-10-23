@@ -455,4 +455,12 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   `\b` y `\a` se convierten en caracteres de control (`lab_h0\b21\archivo` salía como "lab_h021rchivo"). Estaba en
   `PENDIENTES.md` desde la sesión anterior y lo repetí hoy. → Rutas de Windows en código: cadenas *raw* (`r"..."`) o
   barras `/`; y tras editar documentos con un script, buscar caracteres de control.
+- **A23: el ensayo en seco cazó una trampa de SQX antes de que contaminara el análisis.** Pedí enero de 2003 y SQX
+  devolvió una vela de mayo: si el rango no tiene datos, exporta la primera vela disponible. Con un rango que empezara
+  antes de los datos, el análisis habría ido bien, pero un tramo vacío en medio habría parecido un mes con una vela.
+  → Toda exportación se comprueba contra su rango (primera y última vela).
+- **A23, resultado: la calibración usará 2009–2024, no 2003–2024.** En 2007 y 2008, más del 8 % de los minutos son
+  velas planas (sin ningún movimiento: minutos rellenados sin cotización real), cuatro veces más que en la referencia.
+  Un embudo calibrado con esos años vería un mercado "más tranquilo" que el de investigación. Los umbrales estaban
+  escritos antes; no se tocan aunque 2003–2006 pasen sueltos. **Velas planas** entra al glosario.
 

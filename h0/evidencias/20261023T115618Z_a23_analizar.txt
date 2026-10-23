@@ -1,0 +1,33 @@
+# comando: python -I h0/configs/a23_calidad.py "C:/StrategyQuantX145/user/lab_h0/a23/E_total/USDCHF_M1_dukas-M1-No Session.csv" 2023.01.01 2024.10.30 C:/StrategyQuantX145/user/lab_h0/a23/a23_calidad.json
+# inicio_utc: 2026-10-23T11:56:18+00:00
+# duracion_s: 226.352
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+referencia: cobertura 0.985, huecos/52s 1.09, planas 0.0212, apertura [0, '00:00'], cierre [4, '23:59'], vol. mediana 47030000.0
+2003: velas 244816, cob 0.9827, huecos/52s 7.51, planas 0.0039, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 157899990.0 -> PASA
+2004: velas 375434, cob 0.9951, huecos/52s 4.96, planas 0.0002, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 166000000.0 -> PASA
+2005: velas 373930, cob 0.9987, huecos/52s 3.0, planas 0.0008, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 161500000.0 -> PASA
+2006: velas 374375, cob 0.9999, huecos/52s 0.0, planas 0.0025, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 156500000.0 -> PASA
+2007: velas 375839, cob 1.0, huecos/52s 0.0, planas 0.0827, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 370299990.0 -> NO: C4_planas
+2008: velas 377279, cob 1.0, huecos/52s 0.0, planas 0.0841, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 202800000.0 -> NO: C4_planas
+2009: velas 375836, cob 1.0, huecos/52s 0.0, planas 0.0517, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 249399990.0 -> PASA
+2010: velas 375840, cob 1.0, huecos/52s 0.0, planas 0.0492, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 148000000.0 -> PASA
+2011: velas 374393, cob 1.0, huecos/52s 0.0, planas 0.0154, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 91200000.0 -> PASA
+2012: velas 375637, cob 0.9995, huecos/52s 1.0, planas 0.0153, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 93590000.0 -> PASA
+2013: velas 372826, cob 0.992, huecos/52s 1.99, planas 0.0242, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 69060000.0 -> PASA
+2014: velas 372539, cob 0.995, huecos/52s 2.0, planas 0.0452, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 43530000.0 -> PASA
+2015: velas 369633, cob 0.9835, huecos/52s 1.99, planas 0.0357, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 44690000.0 -> PASA
+2016: velas 372503, cob 0.9949, huecos/52s 0.0, planas 0.0204, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 72860000.0 -> PASA
+2017: velas 371761, cob 0.993, huecos/52s 1.0, planas 0.0265, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 62030000.0 -> PASA
+2018: velas 371436, cob 0.9921, huecos/52s 1.0, planas 0.0336, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 58020000.0 -> PASA
+2019: velas 371908, cob 0.9933, huecos/52s 2.0, planas 0.0524, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 50165000.0 -> PASA
+2020: velas 371539, cob 0.9848, huecos/52s 0.99, planas 0.0409, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 46640000.0 -> PASA
+2021: velas 366716, cob 0.9795, huecos/52s 0.0, planas 0.0548, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 32840000.0 -> PASA
+2022: velas 369600, cob 0.9872, huecos/52s 1.0, planas 0.0211, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 88070000.0 -> PASA
+2023: velas 369530, cob 0.987, huecos/52s 1.0, planas 0.019, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 49790000.0 -> PASA
+2024: velas 308494, cob 0.9872, huecos/52s 1.2, planas 0.0239, apert [0, '00:00'], cierre [4, '23:59'], saltos 0, vol 44280000.0 -> PASA
+tramo utilizable: [2009, 2024]
+
+=== STDERR ===

@@ -2,9 +2,11 @@
 
 **Actualizado: 2026-10-23.** Tercera sesión local: **B21 cerrado (SÍ, con dos salvedades)**, B20 cerrado (SQX no
 recorta), B25 primera pasada (D1 se reproduce byte a byte desde GitHub), A18, A23 y A24 decididos por Diego, A25
-propuesto. Último registro: **n.º 289**. Fase 0: queda la segunda pasada de B25 (necesita A14); A25 hecho (n.º 286–289). **Cuarta sesión
+propuesto. Último registro: **n.º 294**. Fase 0: queda la segunda pasada de B25 (necesita A14); A25 hecho (n.º 286–289). **Cuarta sesión
 (2026-10-23, desde las 12:59 hora de España):** B22 había muerto con la sesión anterior sin transcribir nada; desde las
-13:20 corre como **tarea programada de Windows** (§0 punto 4), independiente de las sesiones.
+13:20 corre como **tarea programada de Windows** (§0 punto 4), independiente de las sesiones, y **encadenada al curso
+entero** (BONUS 2025 y después los otros 50 vídeos, n.º 290). **A23 hecho:** la calibración usa USDCHF **2009-01 →
+2024-10** (2007–2008 fallan por velas planas, n.º 291–294).
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -14,8 +16,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 1. Leer `CLAUDE.md` (reglas duras y objetivo), **este documento**, `aprendizaje/diario.md` (errores ya vistos) y
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
-   `python -m unittest discover -s tests` (79/79) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (289 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `python -m unittest discover -s tests` (89/89) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
+   `PYTHONPATH=src python -m lab verificar` (294 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
    El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
    comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write). Y que
@@ -199,6 +201,8 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
    usar `tasklist | grep`. Con 14.006 estrategias cargadas, `sqcli.exe` llegó a 5,65 GB de memoria. **De B25:** el
    hash de un archivo de código solo vale junto a su commit (git en este PC lo saca con CRLF y el hash se calculó sobre
    el LF del commit): para restaurar, se compara con `git show COMMIT:RUTA` (`h0/configs/b25_restaurar.py`).
+   **De A23:** si el rango pedido a `-data action=export` no tiene datos, SQX exporta **una vela fuera del rango** (la
+   primera disponible): comprobar siempre la primera y la última vela frente al rango; USDCHF empieza el 2003-05-05.
    **Regla nueva (2026-10-23):** todo comando o supuesto nuevo se **ensaya una vez contra el sistema real** antes de
    escribir el criterio o el guion que depende de él; y cada asunto de la fase 0 lleva un límite de tiempo.
 7. **Falsos positivos del guardián** (no rodearlo: usar la vía sancionada): en un comando que nombra `registry` o
@@ -296,8 +300,8 @@ Darwinex en `docs/consultas/2026-10-23_darwinex_y_sqx.md`; B13 propuesta otra ve
 progreso en `LAB_PRIVADO_CURSO/b22_progreso.tsv`; **antes de medir tiempos con SQX, crear `LAB_PRIVADO_CURSO/b22_parar`**
 y esperar a que acabe el vídeo en curso; registrar la tanda al terminar). **B25, primera pasada hecha** (n.º 280–282:
 D1 se reproduce byte a byte desde GitHub; tres entradas sin hash). Siguiente: (1) leer cada mañana el progreso de B22;
-(2) **B25, segunda pasada** con la copia de A14 (`ORIGEN=DESTINO`) e inventario; (3) ~~A25~~ hecho (n.º 286–289); (4) A23: calidad
-de USDCHF 2003–2024; (5) construir el ciclo por especificación de la fase 1 (nulos N2/N3 y siembra en
+(2) **B25, segunda pasada** con la copia de A14 (`ORIGEN=DESTINO`) e inventario; (3) ~~A25~~ hecho (n.º 286–289); (4) ~~A23~~ hecho: **calibración con USDCHF
+2009-01 → 2024-10** (n.º 291–294); (5) construir el ciclo por especificación de la fase 1 (nulos N2/N3 y siembra en
 `b17_sintetico.py`, embudo C desde los `.cfx`) y **medir un brazo genético**; (6) v1 del protocolo con la ficha de
 B22. **Límite de tiempo:** la fase 0 no se alarga más allá de B25; lo demás de la fase 0 se hace en paralelo.
 

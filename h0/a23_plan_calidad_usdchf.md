@@ -42,3 +42,19 @@ son años parciales y se evalúan con sus días). Si es 2003–2024, A23 se apli
 usa ese tramo y se dice. Si tiene menos de 5 años, la ventana corta de la 0002 queda solo como exploratoria y las
 conclusiones de la fase 1 se limitan (revisión 18). Los umbrales no se cambian después de ver los resultados (regla 8);
 si un año falla por un motivo que el plan no previó, se diagnostica aparte y se registra como cambio de proceso.
+
+## Resultado (2026-10-23, n.º 293–294): tramo utilizable **2009-01 → 2024-10**
+
+- **C0 SÍ** (n.º 293): 8.011.864 velas, de 2003.05.05 03:00 a 2024.10.30 02:59, en 77 s. CSV SHA-256 `28a43442…92e3`
+  (en `--datos` del n.º 294); resultado `lab_h0\a23\a23_calidad.json`, SHA-256 `21d53a73…35fa`.
+- Referencia (2023.01.01 → 2024.10.30, 678.024 velas): cobertura 0,985; 1,09 huecos por 52 semanas; 2,12 % de velas
+  planas; abre el lunes 00:00 y cierra el viernes 23:59; mediana de volumen 47,0 M.
+- **Pasan C1–C6:** 2003–2006 y 2009–2024. **Fallan solo C4 (velas planas): 2007 (8,27 %) y 2008 (8,41 %)**, frente a un
+  umbral de 7,12 % (R + 0,05). Todos los años: 0 velas desordenadas o incoherentes, cobertura ≥ 0,98, la misma
+  convención horaria y 0 saltos de más del 2 % (salvo la excepción fijada del SNB).
+- VOL: todos los años entre 0,1 y 10 veces la referencia (2003–2010, 3–8 veces más alto: otra escala de volumen,
+  dentro del margen).
+- **Veredicto:** tramo contiguo más largo que termina en 2024 = **2009–2024** (15,8 años, ~8 veces la ventana de la
+  0002). 2003–2006 pasan pero quedan fuera por no ser contiguos. **Spread: INCONCLUSO** (no está en las velas M1).
+- Cautela: las velas planas de 2007–2008 indican menos cotizaciones por minuto; la causa (fuente, liquidez o forma de
+  rellenar) no se investiga: no cambia la decisión. 2009 (5,2 %) y 2019–2021 (4,1–5,5 %) pasan con menos margen.
