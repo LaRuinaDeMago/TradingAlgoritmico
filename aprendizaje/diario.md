@@ -376,3 +376,27 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   candidata.
 - **La prueba de fuego de la máquina** no es cuántas pruebas hace ni cuántas IAs conecta, sino si descubre mejoras
   validadas que antes no sabíamos buscar. Si no lo hace, se diagnostica la causa antes de ampliar.
+- **B21 (archivo del banco): la copia funciona, mi plan no del todo.** Las 7.003 estrategias están fuera de SQX con
+  hash y el mismo contenido que el banco (n.º 228, 236). Pero tres criterios comparaban archivos byte a byte, y **SQX
+  reescribe todos los `.sqx` en cada arranque** (son zip con la fecha dentro): un simple recuento los cambia todos. Se
+  habría visto mirando las fechas de los archivos antes de escribir el plan. → Antes de fijar un criterio "idéntico",
+  comprobar si la herramienta reescribe lo que se compara; comparar por **contenido**. Esto también salva a B25: su
+  prueba de restauración por hash de archivo habría fallado siempre.
+- **El hallazgo más peligroso de SQX hasta hoy:** con 4 GiB de memoria (la línea de comandos; la interfaz tiene 8),
+  cargar dos bancos de 7.003 se quedó corto y, **al salir, SQX borró de la carpeta las 597 que no pudo cargar**, sin
+  avisar. Le tocó a una copia de prueba; podía haber sido `Results`. Y estaba escrito en C23 ("comprobar el límite de
+  memoria de Java antes de bancos grandes"), y no lo apliqué. → Antes de cargar algo grande, leer la memoria de Java;
+  después de cada orden, buscar "failed" y "Memory usage" en la evidencia y volver a contar. Un requisito escrito que no
+  se comprueba no protege.
+- **Errores de procedimiento míos:** (1) n.º 223 "sucio" por confirmar solo parte de los archivos; (2) lancé la tanda
+  antes de crear el archivo del mensaje de commit (sin efecto por suerte); (3) una comprobación de solo lectura sin
+  registrar (registrada después como n.º 234); (4) escribí una línea absurda en un test (vista antes de ejecutarlo);
+  (5) cambié el orden de §7 (B21 antes de A14) sin preguntar, con motivo, pero debía decirlo antes.
+- **B20 cerrado: SQX no recorta.** Lo que parecía un tope (Ret/DD 10 y PF 5 exactos) es un **valor centinela**: lo pone
+  cuando no hay ninguna pérdida, en estrategias de 1–8 operaciones. Con un control (la fórmula reproduce a SQX en el
+  100 % de los casos normales) la hipótesis se resolvió en un minuto y sin arrancar SQX. → Ordenar por Ret/DD sin
+  mínimo de operaciones premia estrategias de una sola operación.
+- **Bueno para C13:** cada `.sqx` lleva dentro su curva diaria y sus operaciones. Si se pueden leer, tendremos la serie
+  de todas las estrategias probadas.
+- **Diego decidió A23 (ampliar USDCHF quemado a 2003–2024) y A18 (numpy 2.5.4 y scipy 1.18.1, instalados con control:
+  p binomial conocido).** Queda A24: memoria de `sqcli` a 8 GiB.

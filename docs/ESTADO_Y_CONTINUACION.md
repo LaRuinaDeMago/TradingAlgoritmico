@@ -1,7 +1,7 @@
 # Estado del proyecto y punto de continuación
 
-**Actualizado: 2026-10-22.** Tras la segunda sesión local (21-10), dos días de conversación de rumbo **sin
-experimentos nuevos**: decisión 0004 y diseño cerrado de la fase 1. Último registro: **n.º 222**.
+**Actualizado: 2026-10-23.** Tercera sesión local: B21 (archivo del banco, parcial), B20 cerrado (SQX no recorta),
+A18 y A23 decididos por Diego, A24 nuevo. Último registro: **n.º 243**.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -11,8 +11,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 1. Leer `CLAUDE.md` (reglas duras y objetivo), **este documento**, `aprendizaje/diario.md` (errores ya vistos) y
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
-   `python -m unittest discover -s tests` (41/41) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (222 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `python -m unittest discover -s tests` (61/61) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
+   `PYTHONPATH=src python -m lab verificar` (243 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
    El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
    comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write).
@@ -72,6 +72,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 | B1. Exportar/importar por fechas | **NO por criterios; causas corregidas (B1-bis SÍ)** | n.º 93–148, `h0/b1_resultados.md`: precios idénticos; volumen > 2³¹−1 recortado al importar; sin margen de calentamiento se pierden las primeras operaciones (con un mes, 1.277 idénticas); zona horaria = solo etiqueta |
 | B11. Piloto de transcripción | SÍ | n.º 92: *medium* + fotogramas; ≈ 50 h de CPU para el curso entero |
 | B17. Control negativo de la búsqueda | **D1: el embudo de filtros no distingue el real del ruido** | n.º 149–222, `h0/b17_resultados.md`: sin costes, el embudo aprueba el 0,8 % de estrategias en datos sin ventaja y el real no lo supera (p = 0,99); con costes, 0,1 %. "Pasa los filtros" es compatible con el azar |
+| B21. Archivo del banco y no desalojo | **PARCIAL** | n.º 223–239, `h0/b21_plan_archivo_banco.md`: copia de las 7.003 fuera de SQX con el mismo contenido (SÍ); lectura completa por SQX falló por memoria (4 GiB) y el no desalojo no se ejecutó → B21-bis, con A24 |
+| B20. ¿Recorta métricas? | **NO** | n.º 240–241, `h0/b20_plan_recorte_metricas.md`: 10 y 5 exactos = valor centinela de estrategias sin pérdidas (1–8 operaciones) |
 
 **No demostrado (y no es objetivo de H0):** ninguna ventaja de mercado; reconstrucción independiente de SQX; costes
 reales de Darwinex Zero; reloj real y volumen de los datos de Darwinex; aislamiento real del bloque sellado; corrección
@@ -91,8 +93,11 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
   Originales en `h0/configs/*_original_145.3191.cfx`.
 - **Bancos** (todo lo nuestro es familia `H0-proceso`, datos quemados): **`Builder/Results` = 7.003** (23 de las 40 de
   H0 + 28 de la calibración + 949 de la v1 de B17 + 3.001 de la v2 + 3.002 de la v3; contado el 2026-10-21); **ojo (B21): la capacidad restaurada es 1.000 y la próxima
-  generación desalojará sin avisar** → guardar el banco antes de volver a usar el Builder. `Builder/H0_T7` y
-  `Builder/H0_archivo` vacíos; `Retester/H0_USDCHF` = 10; `Retester/H0_T7` = 10; `Retester/H0_B1` = 10;
+  generación desalojará sin avisar** → guardar el banco antes de volver a usar el Builder. **Desde el 2026-10-23
+  (B21):** copia verificada de las 7.003 en `lab_h0\b21\archivo_Results` (manifiesto `archivo_Results.json`; mismo
+  contenido que el banco, n.º 236); la copia parcial de la prueba de lectura, en `lab_h0\b21\H0_archivo_parcial`
+  (6.406). **Memoria de Java de `sqcli`: 4 GiB** (A24 propone 8). `Builder/H0_T7` y
+  `Builder/H0_archivo` vacíos (este último, otra vez vacío desde el n.º 239); `Retester/H0_USDCHF` = 10; `Retester/H0_T7` = 10; `Retester/H0_B1` = 10;
   `Retester/Results` = 7 ejemplos de SQX (**no tocar**). **Pérdida registrada:** SQX desalojó 17 de las 40
   estrategias de prueba de H0 durante la v1 de B17 (8 sin copia en otra carpeta; n.º 181).
 - **Símbolos de prueba** (datos quemados, ventana 2023.01.02–2024.10.30): `USDCHF_B1` (importado, EETUS),
@@ -100,7 +105,7 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
   1 y 2). No se han borrado. Archivos de B1 y B17 en `lab_h0\b1\` y `lab_h0\b17\`.
 - **Datos quemados** (decisión 0002): `USDCHF_M1_dukas`, 2023-01-01 → 2024-10-30, zona "(EST+07) New York, US DST"
   (`EETUS`). Solo para pruebas de proceso; **USDCHF no será el primer mercado de investigación**.
-- **Python 3.14.6** del laboratorio; `pdfplumber` sí; **numpy, pandas y scipy NO** (A18). `pip install -e .` no hecho:
+- **Python 3.14.6** del laboratorio; `pdfplumber` sí; **numpy 2.5.4 y scipy 1.18.1 sí** (A18, 2026-10-23); pandas no. `pip install -e .` no hecho:
   usar `PYTHONPATH=src python -m lab …`. El transcriptor vive en **otro** entorno (abajo).
 - **Git:** sin identidad configurada; commits con `git -c user.name=Claude -c user.email=noreply@anthropic.com commit
   -F <archivo>` (A13). `core.autocrlf=true` (por eso `.gitattributes`: evidencias byte a byte, registro y `.sh` en LF,
@@ -145,7 +150,14 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
    y comprobar recuentos antes y después); genera alguna más de las pedidas (7 hilos); descarta las estrategias "con
    problemas" antes de contarlas; las exportaciones del banco tardan más cuanto más grande es (de 22 a 74 s); posible
    recorte de métricas (Ret/DD 10, factor de beneficio 5: B20); un tramo fuera de muestra se añade con
-   `<OutOfSample><Range dateFrom= dateTo= type="oos"/>`.
+   `<OutOfSample><Range dateFrom= dateTo= type="oos"/>`. **De B21 y B20 (2026-10-23):** cada arranque de SQX **reescribe
+   todos los `.sqx`** del proyecto (zip con fecha): comparar estrategias por **contenido**
+   (`h0/configs/b21_archivo.py contenido`), nunca por hash de archivo; al arrancar, SQX carga **todos** los bancos del
+   proyecto; con **4 GiB** (`sqcli`) no caben 14.006 estrategias y, **si no carga una, al salir la borra de la carpeta**:
+   antes de cada orden, saber cuántas hay cargadas; después, buscar "failed" y "Memory usage" en la evidencia y volver a
+   contar; cargar (`action=load`) no aplica el tope de 1.000; un banco se saca de SQX con la orden `retirar` (copia
+   verificada y, solo entonces, se vacía la carpeta, con SQX cerrado); **Ret/DD = 10 y PF = 5 exactos son el valor de
+   una estrategia sin pérdidas** (1–8 operaciones): ordenar por Ret/DD exige un mínimo de operaciones.
 7. **Falsos positivos del guardián** (no rodearlo: usar la vía sancionada): en un comando que nombra `registry` o
    `.claude`, evitar "del", `>`, `>=`, `2>&1`, `->`, `<…>`; los textos que contienen órdenes peligrosas literales
    también saltan; "zip" en rutas, `find` y `.find(` saltan. Vía sancionada: **commit con `-F archivo`**, código en un
@@ -187,10 +199,12 @@ hasta superar la demo), A3 (horas variables, se registran), A5 (objetivo), A8 (c
 (clave API: se queda, el laboratorio no la usa), A17 (transcriptor), A19 (EURUSD), A20 (rigor con presupuesto de tiempo
 por fase), A21 (pausa de revisiones externas hasta el piloto). **Por la tarde:** 0004 aceptada en v3; varios mercados
 como dirección; la caducidad de SQX deja de ser fecha límite (se puede renovar la prueba; no verificado).
-**Abiertas:** **A23 ampliar USDCHF quemado para calibrar** · **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
+**Cerradas el 2026-10-23 (Diego, con la recomendación de Claude):** A23 (USDCHF quemado 2003–2024 para calibrar,
+tras comprobar su calidad) y A18 (numpy y scipy, instalados).
+**Abiertas:** **A24 memoria de `sqcli` a 8 GiB (bloquea B21-bis)** · **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
 licencia (se decide con la evidencia de la fase 1) · A1b cifras del piloto
 (propuestas en la 0003) · A4 repositorio público/privado · A6 regla de proporcionalidad · A7 cifras del criterio
-económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · A15 protección de rama · A18 numpy/pandas/scipy.
+económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · A15 protección de rama.
 
 ## 7. Siguiente paso (fases de la 0004; poco a poco, una puerta cada vez)
 
@@ -220,18 +234,20 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
    prepara el texto (B16).
 3. **A22, Darwinex:** enviar la consulta (Claude prepara el texto), incluidos los requisitos de DarwinIA: el capital de
    terceros es un **objetivo desde el principio**, y la incubadora se diseñará para que su historial cuente.
-4. **A23:** ¿ampliar USDCHF quemado a 2003–2024 para la calibración? (más operaciones y regímenes; ~10× más tiempo de
-   cálculo; no gasta datos de investigación).
-5. **B13, auditoría independiente:** la tarjeta `task_fe8910bc` caduca hacia el **2026-10-27**; empezarla o, si
-   caduca, volver a proponerla con `docs/auditoria/prompt_auditoria_maestra.md`.
+4. **A24:** aprobar (o no) la memoria de `sqcli` a 8 GiB; bloquea B21-bis y la fase 1 con bancos grandes.
+5. **B13, auditoría independiente:** tarjeta nueva `task_906f63f9` (2026-10-23, caduca hacia el 2026-10-30; la
+   antigua `task_fe8910bc` caduca hacia el 27-10). Lanzarla con un clic.
 6. Cerrar la interfaz de SQX antes de cada tanda por línea de comandos.
 
 ### Lo que hace Claude, en orden
 
-**Orden al abrir la próxima sesión:** (1) Diego hace las copias de A14 y Claude comprueba con él que se abren (B21 no
-toca esas carpetas, pero se empieza por proteger lo que no tiene copia); (2) B21; (3) **B25: inventario y prueba de
-restauración** (rehacer B17 v3 desde un clon limpio + la copia y obtener los mismos números); (4) B20; (5) textos de
-renovación de SQX, Darwinex y B13 antes de sus fechas; (6) A23 y v1 del protocolo; (7) medir y ejecutar.
+**Estado el 2026-10-23 y orden siguiente:** hechos B20 (cerrado), la copia de B21, A18 y los textos (SQX en B16 §5;
+Darwinex en `docs/consultas/2026-10-23_darwinex_y_sqx.md`; B13 propuesta otra vez como tarjeta `task_906f63f9`).
+Siguiente: (1) **A24** (Diego) y, con él, **B21-bis pasos 1–5** (plan ya en git); (2) A14: Diego copia también
+`lab_h0` (ya con el archivo del banco) y `h0/evidencias_privadas`, y Claude lo comprueba por hashes; (3) **B25**:
+inventario y prueba de restauración **por contenido**; (4) decidir con Diego si se vacía `Builder/Results` (tras
+B21-bis); (5) A23: comprobar la calidad de USDCHF 2003–2024 antes de usarlo; (6) v1 del protocolo de la fase 1 (falta
+B22 para el embudo C) y medir un brazo genético.
 
 **Que B17 no nos limite:** B17 midió generación aleatoria, un embudo genérico y 21 meses de USDCHF; no se generaliza.
 Si en la fase 1 el embudo de SQX no distingue, se limita **la vía de minería con SQX**, no el proyecto: la vía por
