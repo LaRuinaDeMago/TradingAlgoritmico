@@ -72,3 +72,60 @@ puede volver a serializarlos); tiempos de cada paso (exportar, cargar 7.003, gen
 
 Que la copia sobreviva fuera de este disco (eso es A14 y la prueba de restauración de B25); que la capacidad funcione
 igual con la generación genética o con bancos de cientos de miles (se comprobará con recuentos en cada brazo).
+
+---
+
+## Resultado de la primera tanda y enmienda B21-bis (escrita el 2026-10-23, ANTES de cualquier orden nueva)
+
+### Qué pasó (registro n.º 224–238)
+
+| Criterio | Resultado | Registro |
+|---|---|---|
+| A0 7.003 `.sqx` | **SÍ** (224.406.772 bytes) | 224 |
+| A1 SQX cuenta 7.003 | **SÍ** | 225 |
+| A2 CSV igual al último de B17 | **SÍ** (7.003 filas idénticas: métricas sin cambios desde el 21-10) | 226–227 |
+| A3 copia byte a byte | **SÍ** (0 faltan, 0 sobran, 0 distintos; origen estable) | 228 |
+| A4 7.003 en `H0_archivo` | **SÍ** al cargar (SQX cuenta 7.003 y hay 7.003 `.sqx`) | 230–231 |
+| A5 CSV de `H0_archivo` igual al de `Results` | **NO**: 6.406 filas frente a 7.003 (las 6.406 idénticas) | 232–233 |
+| A5b–A9 | **No ejecutados** (la tanda se paró en A5, antes de tocar la configuración del Builder) | — |
+
+**Causa de A5 (demostrada):** al arrancar para exportar, SQX cargó `Results` (7.003) y después `H0_archivo`; al llegar
+a 6.406 se quedó sin memoria ("Memory usage is too high (92%)", n.º 232) y, **al salir, sincronizó la carpeta con lo
+que tenía en memoria y borró 597 archivos de `H0_archivo` sin avisar** ("removed 597"). La línea de comandos tiene
+**4 GiB** de memoria de Java (`sqcli.config`: `-Xms4g`, sin `-Xmx`) y la interfaz **8 GiB** (`-Xmx8g`) (n.º 238).
+No es un defecto de la copia: las 6.406 cargadas tienen el mismo contenido que la copia (n.º 237) y nuestra copia está
+intacta (n.º 235).
+
+**Defecto de este plan (demostrado):** A5b, A7 y A8 comparaban archivos byte a byte, pero **SQX reescribe todos los
+`.sqx` en cada arranque** (son zip y cada archivo interno lleva la fecha del guardado): 7.003 "distintos" tras un
+simple recuento (n.º 234). En cambio, el **contenido** (nombre y SHA-256 de cada archivo interno) de `Results` coincide
+con la copia en las 7.003, tras cuatro reescrituras (n.º 236). → Los criterios pasan a ser **por contenido**
+(`b21_archivo.py contenido`, con tests que detectan una operación cambiada o un archivo interno de más).
+
+**Hallazgo útil para C13:** cada `.sqx` guarda dentro `dailyEquity.bin` y `orders.bin` (curva diaria y operaciones).
+Hipótesis por comprobar: que de ahí se puedan leer las series de todas las estrategias probadas.
+
+### Riesgo nuevo (el más grave visto con SQX)
+
+Si SQX no puede cargar un banco por memoria, **al salir borra de la carpeta lo que no cargó**. Le ha pasado a una copia
+de prueba; podría pasarle a `Results` (los originales) si un proyecto acumula más estrategias de las que caben en 4 GiB.
+Hoy el Builder tiene 7.003 + 6.406 = 13.409: **ninguna orden más al Builder** hasta sacar `H0_archivo` de SQX.
+
+### Pasos de B21-bis y criterios (fijados ahora)
+
+| Paso | Qué | Criterio |
+|---|---|---|
+| 0 | Sin arrancar SQX: copiar las 6.406 de `H0_archivo` a `lab_h0\b21\H0_archivo_parcial\` (verificada), y **solo si la copia es idéntica**, quitar los `.sqx` de la carpeta del banco | **B0:** copia de 6.406 idéntica; carpeta del banco con 0 `.sqx` |
+| 1 | **Si Diego aprueba A24** (memoria de `sqcli` a 8 GiB, como la interfaz): guardar `sqcli.config` original en `lab_h0\b21\`, añadir `option -Xmx8g` y medir | **B1:** `b21_heap.py` da 8,00 GiB para `sqcli.config`; el resto del archivo, idéntico al original |
+| 2 | Lectura: `-run` que carga `archivo_Results` en `H0_archivo`, sincroniza y cuenta; después exportar `H0_archivo` | **B2:** 7.003 contadas y 7.003 `.sqx`; **ninguna línea "failed" ni "Memory usage" en ninguna evidencia del paso**; CSV idéntico a `Results_B21.csv`; contenido de `H0_archivo` = contenido de la copia (7.003). Control negativo: el CSV frente a `Results_despues_v3_real.csv` da DISTINTOS |
+| 3 | Sin arrancar SQX: sacar otra vez las 7.003 de `H0_archivo` como en el paso 0 (la copia ya existe; se comprueba por contenido antes de quitar) | **B3:** carpeta del banco con 0 `.sqx`; contenido de `Results` = copia |
+| 4 | Plantilla de trabajo con capacidad 100.000, generar 50 (como A6) | **B4 = A6:** 50–57 nuevas, ninguna de antes falta. **B5 (sustituye a A7):** contenido de las 7.003 de la copia presente en `Results`. **B6 (sustituye a A8):** la copia, byte a byte, igual a su manifiesto (SQX no la toca). Ninguna línea "failed" ni "Memory usage" |
+| 5 | Restaurar la configuración del Builder | **A9** sin cambios |
+
+**Si Diego no aprueba A24:** los pasos 2–3 no se hacen con el Builder (cargar dos bancos de 7.003 no cabe en 4 GiB).
+B21 se cierra con lo demostrado (copia íntegra con hash y contenido verificado; SQX contó las 7.003 al cargarlas) y
+la lectura completa por SQX pasa a la prueba de restauración de B25, en un banco vacío.
+
+**Regla nueva para todas las tandas** (también la fase 1): antes de cada orden de SQX, contar lo que tiene cargado el
+proyecto; después, buscar "failed" y "Memory usage" en la evidencia y volver a contar archivos. Ningún proyecto con más
+estrategias de las que se hayan cargado sin error con la memoria vigente.
