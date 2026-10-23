@@ -163,3 +163,21 @@ copia byte a byte); después, **una orden `count` sola** (sin `load` en el mismo
 contiene "Loaded 7003 strategies to databank H0_archivo" y "Records: 7003", y no contiene "failed" ni "Memory usage";
 el contenido de la copia está en `H0_archivo` (7.003); al final se retira otra vez (`retirar`, carpeta en 0). Es el
 camino de una restauración real (B25). Control: el mismo recuento con la carga en el mismo proceso dio 6.747 (n.º 248).
+
+### Resultado de B2c (n.º 266–273) y siguiente paso (escrito ANTES de ejecutarlo)
+
+- **Reposición: SÍ** (7.003 copiadas a la carpeta vacía, idénticas byte a byte, n.º 266).
+- **Recuento sin carrera: SÍ** ("Loaded 7003 strategies to databank H0_archivo", "Records: 7003", sin "failed" ni
+  "Memory usage", 0 quitadas; 14.056 estrategias en el proyecto con 8 GiB, n.º 267).
+- **Contenido: NO** (7.003 distintas, n.º 268). Diagnóstico (n.º 269–273): solo cambia `settings.xml`; las reglas
+  (`strategy_Portfolio.xml`), operaciones (`orders.bin`) y curvas (`dailyEquity.bin`) son idénticas. Dentro de
+  `settings.xml` cambian los **15 bloques `SQStats`** (estadísticas serializadas en binario y en base64); los archivos
+  miden lo mismo (34.643 bytes en el ejemplo) y los nombres de las estadísticas aparecen en otro orden. **Lo mismo le
+  ha pasado a `Results`** frente a la copia (7.003, n.º 270), que en el n.º 261 era igual: entre medias solo se
+  restauró la configuración de fábrica del Builder (n.º 263) y SQX arrancó con ella. Lo retirado en B2 sigue igual
+  que la copia (n.º 271) y la copia, intacta (n.º 272). Hipótesis: SQX vuelve a serializar las estadísticas al
+  arrancar con otra configuración del proyecto. **No demostrado** que los valores sean los mismos.
+- **Siguiente (diagnóstico, sin criterio nuevo para B2c):** exportar `H0_archivo` a CSV y compararlo con
+  `Results_B21.csv` (las métricas tal como las da SQX, que es lo que se usa para filtrar); después retirar
+  `H0_archivo` a `lab_h0\b21\H0_archivo_ter`, como prevé B2c. B2c queda **NO en el contenido**; el cierre de B21 se
+  decide con lo demostrado en B2 (contenido idéntico tras `load`), B2c (recuento) y B4–B6, y se dice así.
