@@ -38,3 +38,25 @@ seguir con la fase 1 (un resultado que no se reproduce no puede sostener decisio
 Que la copia de A14 exista y se lea (eso es la segunda pasada); que un experimento **de SQX** se reproduzca (la
 generación no tiene semilla, C18); que los CSV sin hash sean los que se usaron el 21-10 (no hay con qué comprobarlo,
 salvo por coherencia: "antes del nulo 1" = "después del real", n.º 223).
+
+## Resultado de la primera pasada (n.º 280–281, 2026-10-23)
+
+- **R1 SÍ:** clon en `65e9a57`, sin cambios.
+- **R3 SÍ:** la salida del análisis de B17 v3 es **byte a byte** la registrada (1.811 bytes, código 0). D1 se reproduce
+  desde GitHub más los CSV de `lab_h0\b17`.
+- **R2 SÍ en los tres CSV; NO, tal como se escribió, en `b17_analizar.py`.** Causa demostrada (n.º 281): el hash
+  registrado es el del contenido del commit tal como lo guarda git (LF, 6.606 bytes); el clon lo saca con CRLF
+  (`core.autocrlf=true` en este PC: 147 saltos, 6.753 bytes). Mismo código, distinto envoltorio.
+- **Sin hash registrado:** los tres `Results_antes_*` (como se esperaba).
+- **Veredicto:** restauración desde GitHub con datos locales **SÍ en lo que importa (mismo resultado, mismos datos)**;
+  R2 queda NO para el código en esta pasada, como se midió.
+
+## Criterio R2 para la segunda pasada (con la copia de A14), fijado ahora
+
+Para los archivos **del repositorio** (rutas relativas), la referencia es su contenido en el **commit registrado**
+(`git show COMMIT:RUTA`), no la copia de trabajo, cuyo salto de línea depende de cómo esté configurado git en cada
+máquina. Para los archivos de fuera del repositorio, su hash tal cual. Implementado en `b25_restaurar.py` con dos tests
+nuevos (CRLF en la copia de trabajo → igual; contenido distinto en el commit → distinto).
+
+**Hacia delante (desde la fase 1):** todo archivo que lea un análisis va en `--datos`, también los que hoy se quedaron
+sin hash.

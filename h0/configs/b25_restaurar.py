@@ -47,8 +47,12 @@ def remapear(ruta: str, cambios: list[tuple[str, str]]) -> str:
     return ruta
 
 
+def sha256_bytes(datos: bytes) -> str:
+    return hashlib.sha256(datos).hexdigest()
+
+
 def sha256(ruta: Path) -> str:
-    return hashlib.sha256(ruta.read_bytes()).hexdigest()
+    return sha256_bytes(ruta.read_bytes())
 
 
 def resolver(ruta: str, clon: Path, cambios: list[tuple[str, str]]) -> Path:
@@ -65,6 +69,16 @@ def restaurar(registro, n: int, clon, evidencias, cambios: list[tuple[str, str]]
     hashes = {}
     for ruta, esperado in sorted(e["datos"].items()):
         p = resolver(ruta, clon, cambios)
+        if not Path(remapear(ruta, cambios)).is_absolute():
+            # Archivo del repositorio: la referencia es su contenido en el commit registrado (git lo guarda con LF).
+            # La copia de trabajo puede tener CRLF según core.autocrlf de cada máquina (B25, registro n.º 280-281).
+            blob = subprocess.run(["git", "-C", str(clon), "show", f"{e['codigo']['commit']}:{ruta}"],
+                                  capture_output=True)
+            if blob.returncode != 0:
+                hashes[ruta] = "falta"
+            else:
+                hashes[ruta] = "igual (contenido del commit)" if sha256_bytes(blob.stdout) == esperado else "distinto"
+            continue
         hashes[ruta] = "falta" if not p.is_file() else ("igual" if sha256(p) == esperado else "distinto")
     fichas = shlex.split(e["comando"])
     con_hash = set(e["datos"])
@@ -85,7 +99,7 @@ def main(argv: list[str]) -> int:
     cambios = [tuple(c.split("=", 1)) for c in argv[4:]]
     r = restaurar(argv[0], int(argv[1]), argv[2], argv[3], cambios)
     commit_ok = r["commit_clon"] == r["commit_registrado"] and r["clon_limpio"]
-    hashes_ok = all(v == "igual" for v in r["hashes"].values())
+    hashes_ok = all(v.startswith("igual") for v in r["hashes"].values())
     print(f"entrada n.º {r['n']}: commit registrado {r['commit_registrado'][:10]}, clon {r['commit_clon'][:10]}, "
           f"clon limpio {r['clon_limpio']} -> {'OK' if commit_ok else 'FALLO'}")
     for ruta, estado in r["hashes"].items():

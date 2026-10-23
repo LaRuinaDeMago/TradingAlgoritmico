@@ -82,6 +82,24 @@ class TestRestaurar(unittest.TestCase):
             (m.clon / "otro.txt").write_text("x", encoding="utf-8")
             self.assertEqual(b25.main(m.args()), 1)
 
+    def test_codigo_con_crlf_en_la_copia_de_trabajo(self):
+        """Como en el n.º 280: git en Windows (core.autocrlf) saca el código con CRLF, pero el hash registrado es el
+        del contenido del commit (LF). La referencia para un archivo del repositorio es el commit, no la copia."""
+        with tempfile.TemporaryDirectory() as t:
+            m = Montaje(t)
+            (m.clon / "cuenta.py").write_bytes(SCRIPT.replace("\n", "\r\n").encode())
+            git(m.clon, "update-index", "--assume-unchanged", "cuenta.py")  # el clon sigue "limpio", como tras checkout
+            r = b25.restaurar(m.registro, 7, m.clon, m.evidencias, [])
+            self.assertEqual(r["hashes"]["cuenta.py"], "igual (contenido del commit)")
+
+    def test_control_negativo_codigo_distinto_en_el_commit(self):
+        with tempfile.TemporaryDirectory() as t:
+            m = Montaje(t)
+            e = [json.loads(l) for l in m.registro.read_text(encoding="utf-8").splitlines()]
+            e[1]["datos"]["cuenta.py"] = hashlib.sha256(b"otro codigo").hexdigest()
+            m.registro.write_text("\n".join(json.dumps(x) for x in e) + "\n", encoding="utf-8")
+            self.assertEqual(b25.restaurar(m.registro, 7, m.clon, m.evidencias, [])["hashes"]["cuenta.py"], "distinto")
+
     def test_detecta_archivos_sin_hash(self):
         with tempfile.TemporaryDirectory() as t:
             m = Montaje(t, con_hash_b=False)

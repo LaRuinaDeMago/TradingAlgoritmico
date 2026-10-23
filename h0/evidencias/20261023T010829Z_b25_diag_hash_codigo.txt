@@ -1,0 +1,15 @@
+# comando: python -I h0/configs/b25_diag_hash_codigo.py C:/Users/SERVILAB/AppData/Local/Temp/claude/C--Users-SERVILAB-Documents-TRADING-ALGORITMICO/8e934b5f-0cf1-4729-9028-0bd7c88a00d5/scratchpad/b25/clon_221 65e9a572f508f9f1318201b6910f2aa4bb9dc93b h0/configs/b17_analizar.py 0ea31e21af2b7a920d7cf417a5c140103d856115f92b53a9030c74fbc6755724
+# inicio_utc: 2026-10-23T01:08:29+00:00
+# duracion_s: 0.488
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+registrado:                0ea31e21af2b7a920d7cf417a5c140103d856115f92b53a9030c74fbc6755724
+archivo del clon:          ee1b1b4e96c10de8399cd6e31c47cc90e06662b614b2be53be5147f4b556c32c (147 CRLF, 6753 bytes)
+commit tal cual (git, LF): 0ea31e21af2b7a920d7cf417a5c140103d856115f92b53a9030c74fbc6755724 (0 CRLF, 6606 bytes)
+commit con CRLF:           ee1b1b4e96c10de8399cd6e31c47cc90e06662b614b2be53be5147f4b556c32c (6753 bytes)
+core.autocrlf en el clon: true
+coincide el registrado con: LF
+
+=== STDERR ===
