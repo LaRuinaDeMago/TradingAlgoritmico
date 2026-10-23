@@ -1,0 +1,20 @@
+# comando: python -I h0/configs/b25_restaurar.py C:/Users/SERVILAB/AppData/Local/Temp/claude/C--Users-SERVILAB-Documents-TRADING-ALGORITMICO/8e934b5f-0cf1-4729-9028-0bd7c88a00d5/scratchpad/b25/clon_head/registry/experimentos.jsonl 221 C:/Users/SERVILAB/AppData/Local/Temp/claude/C--Users-SERVILAB-Documents-TRADING-ALGORITMICO/8e934b5f-0cf1-4729-9028-0bd7c88a00d5/scratchpad/b25/clon_221 C:/Users/SERVILAB/AppData/Local/Temp/claude/C--Users-SERVILAB-Documents-TRADING-ALGORITMICO/8e934b5f-0cf1-4729-9028-0bd7c88a00d5/scratchpad/b25/clon_head/h0/evidencias
+# inicio_utc: 2026-10-23T01:10:39+00:00
+# duracion_s: 18.502
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+entrada n.º 221: commit registrado 65e9a572f5, clon 65e9a572f5, clon limpio True -> OK
+  hash igual: C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v3_nulo1.csv
+  hash igual: C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v3_nulo2.csv
+  hash igual: C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v3_real.csv
+  hash igual (contenido del commit): h0/configs/b17_analizar.py
+archivos leídos SIN hash registrado: 3
+  sin hash: C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v3_nulo1.csv
+  sin hash: C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v3_nulo2.csv
+  sin hash: C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v3_real.csv
+salida: 1811 bytes registrados, 1811 ahora, código 0; byte a byte igual: True
+RESTAURACIÓN OK
+
+=== STDERR ===

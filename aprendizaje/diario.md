@@ -420,3 +420,11 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   estado desfasado, commits sin subir) era correcto y lo adopto; su detalle técnico no se pudo confirmar.
 - **Para B25, encontrado leyendo el registro:** el análisis de B17 v3 (n.º 221) leyó seis CSV y solo guardó el hash de
   tres. La prueba de restauración está para destapar justo esto.
+- **B25, primera pasada: lo importante se reproduce.** Desde clones de GitHub (no de este disco) y los CSV de
+  `lab_h0`, el análisis de B17 v3 da la misma salida **byte a byte** (n.º 280). Pero el hash registrado del código no
+  coincidió: git en Windows saca los archivos con CRLF y el hash se había calculado sobre el LF del commit (n.º 281).
+  → **Un hash de código solo tiene sentido junto a su commit**; la referencia es lo que guarda git, no la copia de
+  trabajo, que cambia con la configuración de cada máquina. Igual que con los zip de SQX: comparar el contenido, no el
+  envoltorio.
+- **B22 lanzado por fin** (BONUS 2025, ≈ 24 h de CPU), con un ensayo en seco antes (los 32 vídeos existen una sola vez en
+  el zip) y una forma limpia de pararlo para no estropear mediciones de SQX.

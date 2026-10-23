@@ -1,7 +1,7 @@
 # Estado del proyecto y punto de continuación
 
 **Actualizado: 2026-10-23.** Tercera sesión local: **B21 cerrado (SÍ, con dos salvedades)**, B20 cerrado (SQX no
-recorta), A18, A23 y A24 decididos por Diego, A25 propuesto. Último registro: **n.º 279**. Fase 0: quedan B25, A14 y A25.
+recorta), A18, A23 y A24 decididos por Diego, A25 propuesto. Último registro: **n.º 282**. Fase 0: quedan la segunda pasada de B25 (necesita A14) y A25.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -11,8 +11,8 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 1. Leer `CLAUDE.md` (reglas duras y objetivo), **este documento**, `aprendizaje/diario.md` (errores ya vistos) y
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
-   `python -m unittest discover -s tests` (71/71) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (279 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `python -m unittest discover -s tests` (79/79) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
+   `PYTHONPATH=src python -m lab verificar` (282 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
    El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
    comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write). Y que
@@ -256,10 +256,11 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
 
 **Estado el 2026-10-23 y orden siguiente:** hechos B20 (cerrado), la copia de B21, A18 y los textos (SQX en B16 §5;
 Darwinex en `docs/consultas/2026-10-23_darwinex_y_sqx.md`; B13 propuesta otra vez como tarjeta `task_906f63f9`).
-**B21 cerrado (SÍ), A24 aplicado.** Siguiente: (1) **B22: transcripción de BONUS 2025 por la noche** (camino crítico
-de la v1 de la fase 1; nunca a la vez que una medición de tiempo de SQX); (2) **B25: prueba de restauración** de B17
-v3 desde un clon de GitHub (script `b25_restaurar.py`; destapa además las entradas leídas sin hash, como los tres
-`Results_antes_*` del n.º 221) y, con la copia de A14, desde la copia; (3) A25 si Diego lo aprueba; (4) A23: calidad
+**B21 cerrado (SÍ), A24 aplicado.** **B22 en marcha** desde el 2026-10-23 a las 01:06 UTC (BONUS 2025, ≈ 24 h de CPU;
+progreso en `LAB_PRIVADO_CURSO/b22_progreso.tsv`; **antes de medir tiempos con SQX, crear `LAB_PRIVADO_CURSO/b22_parar`**
+y esperar a que acabe el vídeo en curso; registrar la tanda al terminar). **B25, primera pasada hecha** (n.º 280–282:
+D1 se reproduce byte a byte desde GitHub; tres entradas sin hash). Siguiente: (1) leer cada mañana el progreso de B22;
+(2) **B25, segunda pasada** con la copia de A14 (`ORIGEN=DESTINO`) e inventario; (3) A25 si Diego lo aprueba; (4) A23: calidad
 de USDCHF 2003–2024; (5) construir el ciclo por especificación de la fase 1 (nulos N2/N3 y siembra en
 `b17_sintetico.py`, embudo C desde los `.cfx`) y **medir un brazo genético**; (6) v1 del protocolo con la ficha de
 B22. **Límite de tiempo:** la fase 0 no se alarga más allá de B25; lo demás de la fase 0 se hace en paralelo.
