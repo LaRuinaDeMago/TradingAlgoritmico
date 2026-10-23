@@ -129,3 +129,16 @@ la lectura completa por SQX pasa a la prueba de restauración de B25, en un banc
 **Regla nueva para todas las tandas** (también la fase 1): antes de cada orden de SQX, contar lo que tiene cargado el
 proyecto; después, buscar "failed" y "Memory usage" en la evidencia y volver a contar archivos. Ningún proyecto con más
 estrategias de las que se hayan cargado sin error con la memoria vigente.
+
+### Antes de lanzar B21-bis (2026-10-23)
+
+- **A24 aprobado por Diego** ("vamos a aprobarlo si a ti también te parece lo correcto"; Claude lo recomendó).
+- Guion: `h0/configs/b21bis_tanda.sh`; cambio de memoria: `h0/configs/b21_memoria.py` (7 tests: copia del original,
+  una sola línea, respeta el salto de línea del archivo, no sobrescribe, restaura exacto). Para deshacerlo:
+  `python -I h0/configs/b21_memoria.py restaurar C:/StrategyQuantX145/sqcli.config <lab_h0>/b21/sqcli.config.original`.
+- **Cómo se sabe que el cambio surte efecto:** `sqcli.exe` arranca Java dentro de su propio proceso (el registro del
+  lanzador solo dice "Invoking main class"), así que no se puede leer `-Xmx` en su línea de comandos. La prueba es de
+  comportamiento: el paso 2 repite **la misma carga y exportación** que falló con 4 GiB (n.º 232), que hace de control.
+- El guion **se para** si una evidencia de SQX contiene "failed" o "Memory usage" (comprobado antes: de 30 evidencias
+  de B17 v3 y B21, solo la del fallo de memoria las contiene), y si B1 no da 8,00 GiB con el archivo original intacto.
+- Medición para C23 (sin criterio): memoria de `sqcli.exe` cada 2 s en `lab_h0\b21\memoria_sqcli.csv`.
