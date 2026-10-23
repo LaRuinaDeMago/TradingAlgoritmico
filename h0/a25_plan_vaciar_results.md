@@ -35,3 +35,15 @@ repone con `b21_archivo.py reponer` y se diagnostica antes de volver a intentarl
 
 **Después:** `Results_retirado_A25` entra en la copia de A14 (vive en `lab_h0`); `docs/ESTADO_Y_CONTINUACION.md` §3 y
 `PENDIENTES.md` (A25) se ponen al día.
+
+## Resultado (2026-10-23, n.º 286–289): SÍ
+
+- **R** (n.º 286): "retiradas 7053 (225.929.138 bytes) … copia idéntica; quedan en el origen 0". Manifiesto
+  `lab_h0\b21\Results_retirado_A25.json`, SHA-256 `8fec16fb…8661`.
+- **C** (n.º 287): las 7.003 del archivo de B21 están en la copia con el mismo contenido (faltan 0, distintos 0);
+  sobran 50, las de la prueba de no desalojo.
+- **N** (n.º 288): 7.053 nombres, exactamente los de `M3_Results.json` (faltan 0, sobran 0).
+- **S** (n.º 289): "Loaded 0 strategies to databank Results", "Records: 0", sin "failed" ni "Memory usage"; los 7
+  bancos del Builder con 0 `.sqx` después.
+- Tiempo: unos 6 min de reloj, dentro del límite. La orden `count` tardó 50 s, pero **con la transcripción B22
+  ocupando la CPU**: no sirve para medir el ahorro de A25; eso se mide en la fase 1, con `b22_parar`.

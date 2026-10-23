@@ -2,7 +2,7 @@
 
 **Actualizado: 2026-10-23.** Tercera sesión local: **B21 cerrado (SÍ, con dos salvedades)**, B20 cerrado (SQX no
 recorta), B25 primera pasada (D1 se reproduce byte a byte desde GitHub), A18, A23 y A24 decididos por Diego, A25
-propuesto. Último registro: **n.º 285**. Fase 0: quedan la segunda pasada de B25 (necesita A14) y A25. **Cuarta sesión
+propuesto. Último registro: **n.º 289**. Fase 0: queda la segunda pasada de B25 (necesita A14); A25 hecho (n.º 286–289). **Cuarta sesión
 (2026-10-23, desde las 12:59 hora de España):** B22 había muerto con la sesión anterior sin transcribir nada; desde las
 13:20 corre como **tarea programada de Windows** (§0 punto 4), independiente de las sesiones.
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
@@ -15,7 +15,7 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
    `python -m unittest discover -s tests` (79/79) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (285 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `PYTHONPATH=src python -m lab verificar` (289 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
    El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
    comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write). Y que
@@ -112,11 +112,12 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 - **Proyectos:** Builder (último: n.º 263–264, tras B21-bis) y Retester (último: n.º 146–147, tras B1-bis) **restaurados y
   comprobados** a su configuración original (0 diferencias en todos los bloques).
   Originales en `h0/configs/*_original_145.3191.cfx`.
-- **Bancos** (todo lo nuestro es familia `H0-proceso`, datos quemados): **`Builder/Results` = 7.053**: las 7.003 de
+- **Bancos** (todo lo nuestro es familia `H0-proceso`, datos quemados): **`Builder/Results` = 0 desde A25** (2026-10-23,
+  n.º 286–289; las 7.053 están en `lab_h0\b21\Results_retirado_A25`, copia idéntica con manifiesto; **todos los bancos
+  del Builder, vacíos**). Antes tenía 7.053: las 7.003 de
   H0 y B17 (23 de las 40 de H0 + 28 de la calibración + 949 de la v1 + 3.001 de la v2 + 3.002 de la v3) y **50 de la
-  prueba de no desalojo de B21** (n.º 258; en el manifiesto `lab_h0\b21\M3_Results.json`, sin copia). **Ojo: la
-  capacidad restaurada es 1.000 y la próxima generación con la configuración de fábrica desalojará sin avisar** → A25
-  (vaciar `Results` con `retirar`) o cargar siempre una plantilla con capacidad. **Archivo (B21):** las 7.003 en
+  prueba de no desalojo de B21** (n.º 258; en el manifiesto `lab_h0\b21\M3_Results.json`, sin copia). La capacidad de fábrica sigue en 1.000: **cada
+  brazo de la fase 1 carga una plantilla con capacidad mayor que lo que genera** y cuenta antes y después. **Archivo (B21):** las 7.003 en
   `lab_h0\b21\archivo_Results` (manifiesto `archivo_Results.json`, intacto en el n.º 272); copias de las pruebas de
   lectura en `lab_h0\b21\H0_archivo_parcial` (6.406), `H0_archivo_bis` y `H0_archivo_ter` (7.003 cada una).
   **Memoria de Java de `sqcli`: 8 GiB** (A24). `Builder/H0_T7` y `Builder/H0_archivo` vacíos (este, desde el n.º 276); `Retester/H0_USDCHF` = 10; `Retester/H0_T7` = 10; `Retester/H0_B1` = 10;
@@ -246,7 +247,8 @@ como dirección; la caducidad de SQX deja de ser fecha límite (se puede renovar
 **Cerradas el 2026-10-23 (Diego, con la recomendación de Claude):** A23 (USDCHF quemado 2003–2024 para calibrar,
 tras comprobar su calidad) y A18 (numpy y scipy, instalados).
 **A24** (memoria de `sqcli` a 8 GiB) aprobado por Diego el 2026-10-23 y aplicado (n.º 246–247).
-**Abiertas:** **A25 vaciar `Builder/Results` antes de la fase 1** · **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
+**A25** (vaciar `Builder/Results`) delegado por Diego el 2026-10-23 y hecho (SÍ, n.º 286–289).
+**Abiertas:** **A22 vehículo y datos desde España** (Diego pregunta por escrito a Darwinex; no bloquea la fase 1) · A12
 licencia (se decide con la evidencia de la fase 1) · A1b cifras del piloto
 (propuestas en la 0003) · A4 repositorio público/privado · A6 regla de proporcionalidad · A7 cifras del criterio
 económico · A11 MetaTrader · A13 identidad git · A14 copias de seguridad · A15 protección de rama.
@@ -279,8 +281,7 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
    prepara el texto (B16).
 3. **A22, Darwinex:** enviar la consulta (Claude prepara el texto), incluidos los requisitos de DarwinIA: el capital de
    terceros es un **objetivo desde el principio**, y la incubadora se diseñará para que su historial cuente.
-4. **A25:** vaciar `Builder/Results` con `retirar` (copia verificada; no se pierde nada) antes de la fase 1.
-   Recomendación de Claude: sí (quita el desalojo y unos 30–55 s de guardado por orden que toca bancos).
+4. ~~**A25**~~ **hecho** (2026-10-23, n.º 286–289).
 5. **B22:** dejar el PC encendido (la transcripción sigue sola ≈ 24 h de CPU; ventana minimizada de Python). Si
    necesita el PC libre, crear el archivo vacío `LAB_PRIVADO_CURSO\b22_parar`: para al acabar el vídeo en curso.
 6. **B13, auditoría independiente:** tarjeta nueva `task_906f63f9` (2026-10-23, caduca hacia el 2026-10-30; la
@@ -295,7 +296,7 @@ Darwinex en `docs/consultas/2026-10-23_darwinex_y_sqx.md`; B13 propuesta otra ve
 progreso en `LAB_PRIVADO_CURSO/b22_progreso.tsv`; **antes de medir tiempos con SQX, crear `LAB_PRIVADO_CURSO/b22_parar`**
 y esperar a que acabe el vídeo en curso; registrar la tanda al terminar). **B25, primera pasada hecha** (n.º 280–282:
 D1 se reproduce byte a byte desde GitHub; tres entradas sin hash). Siguiente: (1) leer cada mañana el progreso de B22;
-(2) **B25, segunda pasada** con la copia de A14 (`ORIGEN=DESTINO`) e inventario; (3) A25 si Diego lo aprueba; (4) A23: calidad
+(2) **B25, segunda pasada** con la copia de A14 (`ORIGEN=DESTINO`) e inventario; (3) ~~A25~~ hecho (n.º 286–289); (4) A23: calidad
 de USDCHF 2003–2024; (5) construir el ciclo por especificación de la fase 1 (nulos N2/N3 y siembra en
 `b17_sintetico.py`, embudo C desde los `.cfx`) y **medir un brazo genético**; (6) v1 del protocolo con la ficha de
 B22. **Límite de tiempo:** la fase 0 no se alarga más allá de B25; lo demás de la fase 0 se hace en paralelo.

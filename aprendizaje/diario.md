@@ -448,3 +448,11 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   Y la razón de que "no se guardó nada" anoche: el transcriptor solo escribe al **terminar** cada vídeo; una
   interrupción a mitad pierde el vídeo entero. → Para trabajos largos, saber **cuándo guarda** cada herramienta, no
   solo si guarda.
+- **A25 hecho en 6 minutos y a la primera** (n.º 286–289): las cuatro órdenes ya estaban ensayadas en B21, y los
+  criterios se escribieron y subieron antes. Contraste con B21 (57 entradas): la diferencia no es suerte, es no tener
+  supuestos nuevos. El banco `Results` está vacío y nada se perdió (7.053 en una copia idéntica byte a byte).
+- **Un fallo pequeño que llevaba días publicado:** al escribir rutas de Windows dentro de una cadena de Python normal,
+  `\b` y `\a` se convierten en caracteres de control (`lab_h0\b21\archivo` salía como "lab_h021rchivo"). Estaba en
+  `PENDIENTES.md` desde la sesión anterior y lo repetí hoy. → Rutas de Windows en código: cadenas *raw* (`r"..."`) o
+  barras `/`; y tras editar documentos con un script, buscar caracteres de control.
+
