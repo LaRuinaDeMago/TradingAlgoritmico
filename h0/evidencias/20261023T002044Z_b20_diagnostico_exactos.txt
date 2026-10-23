@@ -1,0 +1,20 @@
+# comando: python -I h0/configs/b20_diagnostico_exactos.py C:/StrategyQuantX145/user/lab_h0/b21/Results_B21.csv
+# inicio_utc: 2026-10-23T00:20:44+00:00
+# duracion_s: 0.324
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+== retdd = 10.0 exacto: 350 casos; por tramo {'OOS': 177, 'IS': 173}
+   operaciones: mín 1, mediana 1, máx 8
+   drawdown = 0: 350; pérdida media = 0: 350; beneficio neto <= 0: 0
+   recalculado: 0 con valor; sin valor (división por cero) 350
+   cerca del tope (±5 %) sin ser exactos: 8
+== pf = 5.0 exacto: 351 casos; por tramo {'OOS': 178, 'IS': 173}
+   operaciones: mín 1, mediana 1, máx 8
+   drawdown = 0: 350; pérdida media = 0: 350; beneficio neto <= 0: 0
+   recalculado: 1 con valor; sin valor (división por cero) 350
+   recalculado mín 4.998, mediana 4.998, máx 4.998
+   cerca del tope (±5 %) sin ser exactos: 21
+
+=== STDERR ===
