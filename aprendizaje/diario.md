@@ -400,3 +400,23 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   de todas las estrategias probadas.
 - **Diego decidió A23 (ampliar USDCHF quemado a 2003–2024) y A18 (numpy 2.5.4 y scipy 1.18.1, instalados con control:
   p binomial conocido).** Queda A24: memoria de `sqcli` a 8 GiB.
+- **A24 y B21-bis: el cambio de memoria funciona, y se demostró con el propio fallo como control.** La misma
+  exportación que con 4 GiB perdió 597 estrategias (n.º 232) carga 7.003 + 7.003 sin error con 8 GiB (n.º 250). Como
+  `sqcli.exe` arranca Java dentro de su proceso, no había forma de leer `-Xmx` desde fuera: la prueba tenía que ser de
+  comportamiento. → Cuando no se puede mirar una configuración, se repite la operación que fallaba.
+- **B21 cerrado (SÍ), pero con 57 entradas: demasiado.** Otra sesión lo señaló y tiene razón. Casi todo el exceso
+  salió de **supuestos míos sin comprobar**: (1) que SQX no reescribe sus archivos; (2) que `sqcli.config` usaba LF (lo
+  deduje mirando solo su final y tiene saltos mezclados: la tanda se paró en B1, n.º 244); (3) que cargar y contar en
+  el mismo `-run` era seguro, cuando la carrera la habíamos visto el 20-10 (recuento 6.747, n.º 248); (4) que
+  `tasklist /FI` funcionaba en Git Bash (0 muestras de memoria). → **Regla nueva: todo comando o supuesto nuevo se
+  ensaya una vez contra el sistema real antes de escribir el criterio o el guion que depende de él.** Y un límite de
+  tiempo por asunto de la fase 0, escrito al empezarlo.
+- **Una diferencia que desapareció sola.** Tras restaurar la configuración del Builder, SQX reescribió `settings.xml`
+  en las 7.003 (n.º 268–273); en el arranque siguiente volvió a coincidir con la copia (n.º 277–279) y las métricas no
+  cambiaron (n.º 275). Mi explicación ("claves reordenadas") y la de otra sesión ("Boolean → Double") eran hipótesis
+  sobre un estado que ya no existe. → Se dejó de investigar cuando la causa dejó de cambiar decisiones: la identidad de
+  una estrategia se comprueba con reglas, operaciones, curva y métricas.
+- **Lo que dice otra sesión (u otra IA) se comprueba igual que lo demás.** Su diagnóstico de fondo (ritmo, calendario,
+  estado desfasado, commits sin subir) era correcto y lo adopto; su detalle técnico no se pudo confirmar.
+- **Para B25, encontrado leyendo el registro:** el análisis de B17 v3 (n.º 221) leyó seis CSV y solo guardó el hash de
+  tres. La prueba de restauración está para destapar justo esto.

@@ -181,3 +181,23 @@ camino de una restauración real (B25). Control: el mismo recuento con la carga 
   `Results_B21.csv` (las métricas tal como las da SQX, que es lo que se usa para filtrar); después retirar
   `H0_archivo` a `lab_h0\b21\H0_archivo_ter`, como prevé B2c. B2c queda **NO en el contenido**; el cierre de B21 se
   decide con lo demostrado en B2 (contenido idéntico tras `load`), B2c (recuento) y B4–B6, y se dice así.
+
+### Cierre de B21 (2026-10-23, n.º 274–279): SÍ, con dos salvedades
+
+- Métricas de SQX de lo repuesto en B2c, tras la reserialización: **7.003 filas idénticas** a `Results_B21.csv`
+  (n.º 275). Retirado otra vez a `lab_h0\b21\H0_archivo_ter`, `H0_archivo` con 0 (n.º 276).
+- **La diferencia de `settings.xml` fue pasajera:** tras un arranque más de SQX (el de la exportación, n.º 274), los
+  15 bloques `SQStats` de `Results` vuelven a ser idénticos byte a byte a los de la copia (n.º 277) y el contenido
+  completo coincide en las 7.003 de `Results` (n.º 278) y en las 7.003 retiradas tras B2c (n.º 279). La causa exacta
+  (orden de serialización, tipo de dato u otra) no es observable ya y no cambia ninguna decisión: no se sigue.
+- **Veredicto:** los tres requisitos de la 0004 (fase 0) se cumplen: (1) copia con hash y metadatos (n.º 228, 235,
+  272); (2) leída y restaurada en un lugar separado con recuento e integridad (B2, n.º 249–254; recuento sin carrera
+  B2c, n.º 267; métricas n.º 275; contenido n.º 279); (3) capacidad en una copia de trabajo y generación sin desalojo
+  (B4–B6, n.º 258–262). **Salvedades escritas:** el recuento con la carga en el mismo proceso da un valor parcial
+  (carrera, n.º 248) y SQX puede reescribir `settings.xml` de forma pasajera al arrancar tras cambiar la configuración
+  (n.º 268–273; el criterio de contenido de B2c queda NO, como se midió).
+- **Consecuencia de procedimiento:** la identidad de una estrategia entre arranques de SQX se comprueba con sus reglas
+  (`strategy_Portfolio.xml`), operaciones (`orders.bin`), curva (`dailyEquity.bin`) y métricas exportadas; `settings.xml`
+  no sirve de referencia. Recuentos de SQX siempre en una orden aparte de la carga.
+- Coste: n.º 223–279 (57 entradas). Demasiado para guardar un banco; el motivo fueron supuestos míos sin comprobar
+  (diario del 2026-10-23).
