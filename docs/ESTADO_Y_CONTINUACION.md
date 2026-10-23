@@ -1,7 +1,9 @@
 # Estado del proyecto y punto de continuación
 
 **Actualizado: 2026-10-23.** Tercera sesión local: **B21 cerrado (SÍ, con dos salvedades)**, B20 cerrado (SQX no
-recorta), A18, A23 y A24 decididos por Diego, A25 propuesto. Último registro: **n.º 282**. Fase 0: quedan la segunda pasada de B25 (necesita A14) y A25.
+recorta), B25 primera pasada (D1 se reproduce byte a byte desde GitHub), A18, A23 y A24 decididos por Diego, A25
+propuesto, **B22 transcribiendo BONUS 2025 en segundo plano**. Último registro: **n.º 282**. Fase 0: quedan la segunda
+pasada de B25 (necesita A14) y A25. **Traspaso a una sesión nueva el 2026-10-23 hacia las 03:20 (hora de España).**
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -20,7 +22,17 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    SHA-256 `cc75c454…`; vigente `a2193b56…`): una actualización de SQX podría devolverlo a 4 GiB.
 3. Si la sesión es de terminal: abierta con `claude_lab.cmd` (la cabecera no debe decir "API Usage Billing"; si pide
    iniciar sesión, `/login` con la suscripción).
-4. Mirar si Diego ha resuelto algo de la sección 6 y seguir por la sección 7.
+4. **Comprobar la transcripción B22** (se lanzó independiente de la sesión; puede haber muerto al cerrar la anterior):
+   en PowerShell, `Get-CimInstance Win32_Process -Filter "Name='python.exe'" | Where-Object { $_.CommandLine -match
+   'b22_tanda|transcribir' }` (debe salir la tanda y un `transcribir.py medium`); progreso en
+   `LAB_PRIVADO_CURSO\b22_progreso.tsv` (una línea por vídeo terminado, con `estado`) y salida en `b22_salida.txt` /
+   `b22_errores.txt`. **Si no está viva y quedan vídeos:** borrar `LAB_PRIVADO_CURSO\b22_parar` si existe y relanzar,
+   independiente de la sesión: `Start-Process -FilePath python -ArgumentList "-I","herramientas/b22_tanda_bonus.py"
+   -WorkingDirectory C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO -WindowStyle Minimized -RedirectStandardOutput
+   C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\b22_salida_2.txt` (se reanuda sola: salta lo ya transcrito y rehace el
+   vídeo que estuviera a medias; ensayado el 2026-10-23; en PowerShell 5.1 `Start-Process` no entrecomilla argumentos
+   con espacios: no meterlos). Antes de medir tiempos con SQX: crear `b22_parar` y esperar a que acabe el vídeo.
+5. Mirar si Diego ha resuelto algo de la sección 6 y seguir por la sección 7.
 
 ## 1. Objetivo y fase
 
@@ -75,6 +87,7 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
 | B11. Piloto de transcripción | SÍ | n.º 92: *medium* + fotogramas; ≈ 50 h de CPU para el curso entero |
 | B17. Control negativo de la búsqueda | **D1: el embudo de filtros no distingue el real del ruido** | n.º 149–222, `h0/b17_resultados.md`: sin costes, el embudo aprueba el 0,8 % de estrategias en datos sin ventaja y el real no lo supera (p = 0,99); con costes, 0,1 %. "Pasa los filtros" es compatible con el azar |
 | B21. Archivo del banco y no desalojo | **SÍ, con dos salvedades** | n.º 223–279, `h0/b21_plan_archivo_banco.md`: copia fuera de SQX con hash; leída y restaurada con recuento e integridad; 0 desalojadas con capacidad 100.000; memoria de `sqcli` a 8 GiB (A24). Salvedades: recuento en el mismo proceso que la carga (carrera) y `settings.xml` reescrito de forma pasajera |
+| B25. Restauración (1.ª pasada) | **SÍ en lo que importa** | n.º 280–282, `h0/b25_plan_restauracion.md`: desde clones de GitHub y los CSV de `lab_h0\b17`, el análisis de B17 v3 sale byte a byte igual; hash del código distinto por la conversión CRLF de git (contenido igual al del commit); tres entradas leídas sin hash. Falta la 2.ª pasada con la copia de A14 |
 | B20. ¿Recorta métricas? | **NO** | n.º 240–241, `h0/b20_plan_recorte_metricas.md`: 10 y 5 exactos = valor centinela de estrategias sin pérdidas (1–8 operaciones) |
 
 **No demostrado (y no es objetivo de H0):** ninguna ventaja de mercado; reconstrucción independiente de SQX; costes
@@ -124,6 +137,13 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
   `IMOX TRADING.zip` del escritorio es una extracción parcial (8 vídeos). El guardián bloquea comandos que nombren esa
   ruta (`zip`, B9): se usan los scripts de `LAB_PRIVADO_CURSO/herramientas/`, que llevan la ruta dentro. Nada del curso
   va a GitHub (tampoco las cifras de sus filtros).
+- **Transcripción B22 (privada):** `LAB_PRIVADO_CURSO\herramientas\b22_tanda_bonus.py` (32 vídeos de BONUS 2025, 7,40 GB,
+  ≈ 13,6 h de audio, ≈ 24 h de CPU; mismos `transcribir.py` y `extraer_videos.py` que el piloto, hashes `caf06bed…` y
+  `8874fc7e…`). Primer lanzamiento 01:06 UTC dentro de la sesión; **relanzada independiente a las 01:15 UTC (PID 14756)**
+  porque las tareas de la sesión mueren con ella (comprobado al pararla). Vídeos extraídos en `videos_b22\`,
+  transcripciones en `transcripciones\medium\`. Al terminar: registrarla con `python -m lab registrar --comando
+  "MANUAL: ..." --resultado archivo.json` (solo hashes, tiempos y recuentos, como el n.º 92) y leer las transcripciones
+  para la ficha del método (con fotogramas donde hablen de datos, fechas, filtros o resultados).
 - **Repositorio de GitHub público** (`LaRuinaDeMago/TradingAlgoritmico`, rama `claude/proyecto-2026-fps66g`); A4.
 
 ## 4. Cómo se trabaja aquí (procedimiento probado)
@@ -151,8 +171,8 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
    y saldo (comparar con `b1_diagnostico_operaciones.py`). **De B17:** el banco tiene capacidad
    (`<Rankings><MaxStrategies>`, 1.000 de fábrica) y, lleno, **desaloja por fitness sin avisar** (fijarla en la plantilla
    y comprobar recuentos antes y después); genera alguna más de las pedidas (7 hilos); descarta las estrategias "con
-   problemas" antes de contarlas; las exportaciones del banco tardan más cuanto más grande es (de 22 a 74 s); posible
-   recorte de métricas (Ret/DD 10, factor de beneficio 5: B20); un tramo fuera de muestra se añade con
+   problemas" antes de contarlas; las exportaciones del banco tardan más cuanto más grande es (de 22 a 74 s); Ret/DD 10
+   y factor de beneficio 5 exactos **no son un recorte** (B20: valor de estrategias sin pérdidas); un tramo fuera de muestra se añade con
    `<OutOfSample><Range dateFrom= dateTo= type="oos"/>`. **De B21 y B20 (2026-10-23):** cada arranque de SQX **reescribe
    todos los `.sqx`** del proyecto (zip con fecha): comparar estrategias por **contenido**
    (`h0/configs/b21_archivo.py contenido`), nunca por hash de archivo; al arrancar, SQX carga **todos** los bancos del
@@ -167,7 +187,11 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
    `settings.xml` de forma pasajera (la identidad de una estrategia se comprueba con reglas, operaciones, curva y
    métricas, no con ese archivo); `sqcli.exe` arranca Java dentro de su proceso (no se ve `-Xmx` en su línea de
    comandos); `sqcli.config` mezcla saltos CRLF y LF; en Git Bash, `tasklist /FI` falla (convierte `/FI` en una ruta):
-   usar `tasklist | grep`. Con 14.006 estrategias cargadas, `sqcli.exe` llegó a 5,65 GB de memoria.
+   usar `tasklist | grep`. Con 14.006 estrategias cargadas, `sqcli.exe` llegó a 5,65 GB de memoria. **De B25:** el
+   hash de un archivo de código solo vale junto a su commit (git en este PC lo saca con CRLF y el hash se calculó sobre
+   el LF del commit): para restaurar, se compara con `git show COMMIT:RUTA` (`h0/configs/b25_restaurar.py`).
+   **Regla nueva (2026-10-23):** todo comando o supuesto nuevo se **ensaya una vez contra el sistema real** antes de
+   escribir el criterio o el guion que depende de él; y cada asunto de la fase 0 lleva un límite de tiempo.
 7. **Falsos positivos del guardián** (no rodearlo: usar la vía sancionada): en un comando que nombra `registry` o
    `.claude`, evitar "del", `>`, `>=`, `2>&1`, `->`, `<…>`; los textos que contienen órdenes peligrosas literales
    también saltan; "zip" en rutas, `find` y `.find(` saltan. Vía sancionada: **commit con `-F archivo`**, código en un
@@ -191,6 +215,8 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
 | B1: plan con criterios previos y resultados | `h0/b1_plan_integridad.md`, `h0/b1_resultados.md` |
 | B16: licencia frente al calendario (precios, inconclusos, texto para el soporte) | `h0/b16_licencia_calendario.md` |
 | B17: control negativo (plan con enmiendas v2, v2.1 y v3, y resultados) | `h0/b17_plan_control_negativo.md`, `h0/b17_resultados.md` |
+| B20, B21 (con B21-bis y B2c) y B25: planes con criterios previos, resultados y veredictos | `h0/b20_plan_recorte_metricas.md`, `h0/b21_plan_archivo_banco.md`, `h0/b25_plan_restauracion.md` |
+| Textos para Diego (Darwinex y ampliación de SQX) | `docs/consultas/2026-10-23_darwinex_y_sqx.md` (y `h0/b16_licencia_calendario.md` §5) |
 | Fase 1 (calibración del embudo, B17 mejorado): diseño BORRADOR v0 | `protocols/2026-10-22_fase1_calibracion_BORRADOR.md` |
 | Plantillas, scripts de preparación, tandas y comparadores | `h0/configs/` |
 | Guiones exactos de las tandas del 2026-10-20 | `h0/scripts_sesion_2026-10-20/` |
@@ -247,7 +273,8 @@ calcular entra cuando una medición diga que el cálculo frena (C23 c); la VPS c
    terceros es un **objetivo desde el principio**, y la incubadora se diseñará para que su historial cuente.
 4. **A25:** vaciar `Builder/Results` con `retirar` (copia verificada; no se pierde nada) antes de la fase 1.
    Recomendación de Claude: sí (quita el desalojo y unos 30–55 s de guardado por orden que toca bancos).
-5. **B22:** dejar el PC encendido por la noche para transcribir BONUS 2025 (≈ 25 h de CPU en varias noches).
+5. **B22:** dejar el PC encendido (la transcripción sigue sola ≈ 24 h de CPU; ventana minimizada de Python). Si
+   necesita el PC libre, crear el archivo vacío `LAB_PRIVADO_CURSO\b22_parar`: para al acabar el vídeo en curso.
 6. **B13, auditoría independiente:** tarjeta nueva `task_906f63f9` (2026-10-23, caduca hacia el 2026-10-30; la
    antigua `task_fe8910bc` caduca hacia el 27-10). Lanzarla con un clic.
 7. Cerrar la interfaz de SQX antes de cada tanda por línea de comandos.
@@ -271,24 +298,19 @@ hipótesis (pocas reglas fijadas antes: tendencia, rupturas de máximos; C25 i) 
 puertas (borrador de la fase 1, §7).
 
 **Fase 0 – condiciones previas:**
-1. **B21:** plan corto con criterios en git antes de la primera orden (como B1); copiar las 7.003 estrategias de
-   `Builder/Results` con hash y metadatos; leer o restaurar la copia en otro lugar y verificar recuento e integridad;
-   ajustar la capacidad en una **copia de trabajo** de la plantilla y **probar** que una generación nueva no desaloja
-   lo conservado.
-2. **B25, memoria experimental fiable:** inventario de qué vive dónde y qué hace falta para reproducir cada
-   experimento; con la copia de A14, **prueba de restauración** (B17 v3: falsos positivos 16/2.002, p = 0,99, mismos
-   hashes). Desde la fase 1, todo lo que lea un análisis queda en `lab_h0` con hash y entra en la copia.
-3. **B20:** ¿recorta SQX Ret/DD y factor de beneficio? Documentación y una estrategia de métricas conocidas; ¿afecta a
-   la ordenación o la selección?
-4. Textos para Diego: renovación o ampliación de SQX (B16) y consulta a Darwinex (A22, con DarwinIA).
+1. ~~**B21**~~ **hecho (SÍ, con dos salvedades), 2026-10-23.**
+2. **B25, memoria experimental fiable:** primera pasada hecha (desde GitHub, datos locales). Falta: inventario de qué
+   vive dónde y qué hace falta para reproducir cada experimento, y la **segunda pasada con la copia de A14**
+   (`b25_restaurar.py … ORIGEN=DESTINO`). Desde la fase 1, todo lo que lea un análisis va en `--datos` y entra en la copia.
+3. ~~**B20**~~ **hecho (NO recorta), 2026-10-23.**
+4. ~~Textos para Diego~~ **hechos** (`docs/consultas/2026-10-23_darwinex_y_sqx.md`; los envía Diego).
 5. **B5 en paralelo:** recoger las condiciones públicas de Darwinex Zero (spread, comisión, swap por instrumento;
    suscripción verificada: 45 €/mes CFD) para EURUSD y los candidatos del universo. Sin precios: no contamina.
 6. **Al cerrar la fase 0, Diego decide B23** (registro prospectivo de una regla de tendencia congelada; necesita el
    simulador mínimo de B24).
-7. **B22, curso a fondo, empezando por BONUS 2025** (lo más actualizado: ≈ 14 h de vídeo, ≈ 25 h de CPU, unas tres
-   noches): transcripción (*medium* + fotogramas) en los huecos de CPU (hasta el 02-11, SQX tiene prioridad) y, con
-   ella, la **ficha del método del curso** (privada), condición previa de la v1 de la fase 1; historiales públicos del
-   autor.
+7. **B22, curso a fondo, empezando por BONUS 2025: transcripción en marcha** (§0 punto 4 y §3). Después: leer las
+   transcripciones y los fotogramas que hagan falta y escribir la **ficha del método del curso** (privada), condición
+   previa de la v1 de la fase 1; historiales públicos del autor.
 
 **Fase 1 – calibración** (diseño cerrado en `protocols/2026-10-22_fase1_calibracion_BORRADOR.md`):
 8. **Construir lo mínimo:** nulos N2 y N3 y siembra S1/S2 en `b17_sintetico.py` con tests; embudo C desde los `.cfx`
@@ -301,7 +323,7 @@ puertas (borrador de la fase 1, §7).
 9. **Medir un brazo completo** (genética + embudo C) y dimensionar N y R con ese dato.
 10. **Escribir la v1** rellenando los huecos (B20, B21, B5, A23, B22 para lo que no esté en los `.cfx`, niveles,
    presupuesto, plazo) y subirla **antes** de ejecutar. B14 y B19 en su versión mínima antes de la primera tanda que
-   cuente; probable A18 (numpy/scipy).
+   cuente (numpy 2.5.4 y scipy 1.18.1 ya instalados, A18).
 11. **Núcleo mínimo antes del 02-11** (C y L sobre N3 y S2 tamaño 1, R = 3), etiquetado **EXPLORATORIO**: con 0 carteras
    de ruido aceptadas en 3 réplicas, el límite superior de falsos positivos sigue siendo 63 %. Interpretación con la
    tabla fijada en el borrador §8.
@@ -337,4 +359,6 @@ SQX no está sellado; lo que se ha visto (el curso, el conocimiento de Claude) n
 es "privado"; la memoria y los resúmenes también se equivocan; los criterios se fijan antes y no se tocan después.
 **De B17:** "pasa los filtros" es compatible con el azar (el embudo aprueba ruido al mismo ritmo que datos reales); la
 referencia es una distribución nula simulada con los mismos costes, no el cero; una herramienta puede borrar datos en
-silencio (el banco desaloja al llenarse): contar antes y después de cada paso.
+silencio (el banco desaloja al llenarse): contar antes y después de cada paso. **De B21 y B25:** SQX puede borrar lo
+que no cabe en memoria; la identidad de algo se comprueba por su contenido (reglas, operaciones, métricas; el código,
+por su commit), no por el envoltorio; casi todo el coste de B21 salió de supuestos sin ensayar: se ensaya en seco antes.

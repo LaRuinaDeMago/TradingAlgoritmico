@@ -21,9 +21,13 @@ y dime la verdad aunque no me guste. No me des la razón por darla.
   archivos, los comandos. Si memoria y sistema no coinciden, manda el sistema y corrige la memoria.
 - Comprueba el banco de trabajo (§0 del estado): tests, guardián (en un comando aparte), `lab verificar`, evidencias,
   git limpio y sin divergencias con origin. Dime el resultado con números.
-- Mira la fecha de hoy frente a las fechas límite (auditoría B13 hacia el 27-10; prueba de SQX el 02-11) y avísame.
-- Resúmeme en pocas líneas dónde estamos y qué toca, y pregúntame lo que dependa de mí (A14 copias, renovación de SQX,
-  A23, Darwinex...). No empieces una tanda sin que yo haya cerrado la interfaz de SQX.
+- Comprueba que la transcripción del curso (B22) sigue viva y cuánto lleva (§0 punto 4 del estado); si murió,
+  relánzala como dice ahí. Y que sqcli.config sigue con 8 GiB.
+- Mira la fecha de hoy frente a las fechas límite (auditoría B13: tarjeta hacia el 30-10; prueba de SQX el 02-11) y
+  avísame.
+- Resúmeme en pocas líneas dónde estamos y qué toca, y pregúntame lo que dependa de mí (A14 copias, A25 vaciar Results,
+  renovación de SQX, Darwinex...). No empieces una tanda sin que yo haya cerrado la interfaz de SQX, y antes de medir
+  tiempos con SQX para la transcripción (archivo b22_parar).
 
 2. CÓMO TRABAJAMOS (máximo rigor)
 - Reglas duras de CLAUDE.md, siempre: nunca data/sealed/, nunca real, registrarlo todo, no inventar comandos de SQX,
@@ -31,6 +35,8 @@ y dime la verdad aunque no me guste. No me des la razón por darla.
 - Medir, no escribir: nada de documentos de diseño ni revisiones externas nuevas hasta el resultado de la fase 1
   (salvo B13). Cada paso en su versión mínima. Antes de algo nuevo: ¿qué error evita y qué decisión cambia?
 - Criterios de aceptación y controles negativos escritos y en git ANTES de la primera orden de cada bloque.
+- Ensaya en seco todo comando o supuesto nuevo contra el sistema real antes de escribir el criterio o el guion que
+  depende de él (B21 costó 57 entradas por no hacerlo). Cada asunto con su límite de tiempo.
 - Todo comando de SQX por `python -m lab ejecutar`; commit antes de cada orden; no tocar el repo mientras corre.
 - Contar antes y después de todo lo que toque bancos o símbolos. Leer la evidencia entera: el código 0 miente.
 - Antes de dar una cifra o un plazo, búscalo en lo ya medido; si no está medido, dilo.
