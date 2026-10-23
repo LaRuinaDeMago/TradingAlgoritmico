@@ -1,0 +1,10 @@
+# comando: python -I h0/configs/b21_archivo.py csv C:/StrategyQuantX145/user/lab_h0/b17/Results_despues_v3_real.csv C:/StrategyQuantX145/user/lab_h0/b17/Results_antes_v3_nulo1.csv
+# inicio_utc: 2026-10-23T00:03:39+00:00
+# duracion_s: 0.161
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+filas 5001 y 5001; misma cabecera: True; solo en A 0, solo en B 0 -> IGUALES
+
+=== STDERR ===
