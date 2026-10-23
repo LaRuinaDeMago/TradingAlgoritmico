@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/b21_archivo.py retirar C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo C:/StrategyQuantX145/user/lab_h0/b21/H0_archivo_bis
+# inicio_utc: 2026-10-23T00:37:24+00:00
+# duracion_s: 26.919
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+retiradas 7003 (224406772 bytes) a C:/StrategyQuantX145/user/lab_h0/b21/H0_archivo_bis, copia idéntica; quedan en el origen 0 -> OK
+manifiesto: C:\StrategyQuantX145\user\lab_h0\b21\H0_archivo_bis.json (sha256 d8c2f1bdc8cc765e32c7da1746354d78f3ee246a70e85892d621e2030e08aca3)
+
+=== STDERR ===
