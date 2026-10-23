@@ -2,8 +2,9 @@
 
 **Actualizado: 2026-10-23.** Tercera sesión local: **B21 cerrado (SÍ, con dos salvedades)**, B20 cerrado (SQX no
 recorta), B25 primera pasada (D1 se reproduce byte a byte desde GitHub), A18, A23 y A24 decididos por Diego, A25
-propuesto, **B22 transcribiendo BONUS 2025 en segundo plano**. Último registro: **n.º 282**. Fase 0: quedan la segunda
-pasada de B25 (necesita A14) y A25. **Traspaso a una sesión nueva el 2026-10-23 hacia las 03:20 (hora de España).**
+propuesto. Último registro: **n.º 284**. Fase 0: quedan la segunda pasada de B25 (necesita A14) y A25. **Cuarta sesión
+(2026-10-23, desde las 12:59 hora de España):** B22 había muerto con la sesión anterior sin transcribir nada; relanzada
+(viva solo mientras la sesión siga abierta; vía permanente pendiente de permiso, §0 punto 4).
 Este documento es el **punto de entrada al reiniciar una sesión**. Si algo aquí contradice a un archivo más específico,
 manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/decisiones/PENDIENTES.md`; hechos:
 `registry/experimentos.jsonl`), y se corrige este documento.
@@ -14,7 +15,7 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    `docs/decisiones/PENDIENTES.md` (todo lo abierto).
 2. Comprobar el banco de trabajo:
    `python -m unittest discover -s tests` (79/79) · `python .claude/hooks/guardian.py --autotest` (44/44) ·
-   `PYTHONPATH=src python -m lab verificar` (282 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
+   `PYTHONPATH=src python -m lab verificar` (284 entradas o más) · `python -I h0/configs/comprobar_evidencias.py`
    (0 fallos) · `git status` limpio · `git fetch` y sin divergencias con `origin/claude/proyecto-2026-fps66g`.
    El autotest del guardián, en un comando aparte (junto a `2>&1` o `2>/dev/null` salta un falso positivo); y en
    comandos que nombran `registry`, nada de `>` ni `2>` (usar un script escrito con Write). Y que
@@ -22,16 +23,20 @@ manda el más específico (estado de H0: `h0/ficha.md`; asuntos abiertos: `docs/
    SHA-256 `cc75c454…`; vigente `a2193b56…`): una actualización de SQX podría devolverlo a 4 GiB.
 3. Si la sesión es de terminal: abierta con `claude_lab.cmd` (la cabecera no debe decir "API Usage Billing"; si pide
    iniciar sesión, `/login` con la suscripción).
-4. **Comprobar la transcripción B22** (se lanzó independiente de la sesión; puede haber muerto al cerrar la anterior):
-   en PowerShell, `Get-CimInstance Win32_Process -Filter "Name='python.exe'" | Where-Object { $_.CommandLine -match
-   'b22_tanda|transcribir' }` (debe salir la tanda y un `transcribir.py medium`); progreso en
-   `LAB_PRIVADO_CURSO\b22_progreso.tsv` (una línea por vídeo terminado, con `estado`) y salida en `b22_salida.txt` /
-   `b22_errores.txt`. **Si no está viva y quedan vídeos:** borrar `LAB_PRIVADO_CURSO\b22_parar` si existe y relanzar,
-   independiente de la sesión: `Start-Process -FilePath python -ArgumentList "-I","herramientas/b22_tanda_bonus.py"
+4. **Comprobar la transcripción B22:** en PowerShell, `Get-CimInstance Win32_Process | Where-Object { $_.CommandLine
+   -match 'b22_tanda|transcribir' } | Select-Object ProcessId, ParentProcessId, Name` (debe salir la tanda y un
+   `transcribir.py medium`); progreso en `LAB_PRIVADO_CURSO\b22_progreso.tsv` (una línea por vídeo terminado, con
+   `estado`) y salida en `b22_salida_N.txt` / `b22_errores_N.txt` (el N más alto). **Si no está viva y quedan
+   vídeos:** borrar `LAB_PRIVADO_CURSO\b22_parar` si existe y relanzar (se reanuda sola: salta lo ya transcrito y rehace
+   el vídeo que estuviera a medias). **Vías ya probadas que NO sobreviven:** `Start-Process` desde la sesión muere al
+   cerrarla (01:15 UTC del 2026-10-23: ningún vídeo terminado, 9,8 h perdidas, n.º 283); **por WMI**
+   (`Win32_Process Create`) Windows lo mata al pasar de ~2 GiB, y el modelo *medium* usa ~1,6 GB más el resto (ensayado,
+   n.º 284). Con la sesión abierta vale `Start-Process -FilePath python -ArgumentList "-I","herramientas/b22_tanda_bonus.py"
    -WorkingDirectory C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO -WindowStyle Minimized -RedirectStandardOutput
-   C:\Users\SERVILAB\Documents\LAB_PRIVADO_CURSO\b22_salida_2.txt` (se reanuda sola: salta lo ya transcrito y rehace el
-   vídeo que estuviera a medias; ensayado el 2026-10-23; en PowerShell 5.1 `Start-Process` no entrecomilla argumentos
-   con espacios: no meterlos). Antes de medir tiempos con SQX: crear `b22_parar` y esperar a que acabe el vídeo.
+   <dir>\b22_salida_N.txt -RedirectStandardError <dir>\b22_errores_N.txt` (sin espacios en los argumentos). Para que
+   sobreviva al cierre: **tarea programada de Windows de una sola vez** (§3, B22), solo con permiso de Diego y ensayada
+   antes con un script que reserve 2 GiB. Antes de medir tiempos con SQX: crear `b22_parar` y esperar a que acabe el
+   vídeo.
 5. Mirar si Diego ha resuelto algo de la sección 6 y seguir por la sección 7.
 
 ## 1. Objetivo y fase
@@ -139,8 +144,10 @@ un embudo típico en el USDCHF quemado, no; falta probarlo con el motor y los fi
   va a GitHub (tampoco las cifras de sus filtros).
 - **Transcripción B22 (privada):** `LAB_PRIVADO_CURSO\herramientas\b22_tanda_bonus.py` (32 vídeos de BONUS 2025, 7,40 GB,
   ≈ 13,6 h de audio, ≈ 24 h de CPU; mismos `transcribir.py` y `extraer_videos.py` que el piloto, hashes `caf06bed…` y
-  `8874fc7e…`). Primer lanzamiento 01:06 UTC dentro de la sesión; **relanzada independiente a las 01:15 UTC (PID 14756)**
-  porque las tareas de la sesión mueren con ella (comprobado al pararla). Vídeos extraídos en `videos_b22\`,
+  `8874fc7e…`). Primer lanzamiento 01:06 UTC dentro de la sesión; relanzada con `Start-Process` a las 01:15 UTC (PID
+  14756), **que murió con la sesión sin terminar ningún vídeo** (n.º 283); por WMI a las 11:01 UTC, muerta al cargar el
+  modelo (límite de memoria de WMI, n.º 284); **relanzada desde la sesión a las 11:07 UTC (PID 19204)**, viva mientras
+  esta sesión siga abierta. Vídeos extraídos en `videos_b22\`,
   transcripciones en `transcripciones\medium\`. Al terminar: registrarla con `python -m lab registrar --comando
   "MANUAL: ..." --resultado archivo.json` (solo hashes, tiempos y recuentos, como el n.º 92) y leer las transcripciones
   para la ficha del método (con fotogramas donde hablen de datos, fechas, filtros o resultados).

@@ -428,3 +428,17 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   envoltorio.
 - **B22 lanzado por fin** (BONUS 2025, ≈ 24 h de CPU), con un ensayo en seco antes (los 32 vídeos existen una sola vez en
   el zip) y una forma limpia de pararlo para no estropear mediciones de SQX.
+- **2026-10-23 (cuarta sesión): "independiente" sin comprobar era falso.** La transcripción B22 que dejé "lanzada
+  independiente" (`Start-Process` desde la shell de la sesión) murió al cerrarse esa sesión sin terminar ni un vídeo:
+  9,8 h de PC encendido para nada (n.º 283). Lo había ensayado... pero solo que arrancaba y se reanudaba, no que
+  sobrevivía al cierre, que era justo lo que importaba. → El ensayo en seco tiene que probar **la propiedad de la que
+  depende el plan**, no una cercana. Ahora se lanza por WMI (el proceso cuelga de `WmiPrvSE.exe`, no de la
+  aplicación)... y **tampoco**: Windows mata lo que crea WMI al pasar de ~2 GiB, y el transcriptor usa más (n.º 284).
+  Lo vi porque comprobé a los dos minutos, no al día siguiente; un ensayo con un script que reserva memoria por pasos
+  lo aisló en un minuto (sin memoria, el proceso de WMI vive; con 2 GiB, muere). → Una solución que "debería
+  funcionar" se prueba **con la carga real** (aquí, memoria), y pronto.
+- **Y un desliz mío de privacidad en el registro:** en la entrada n.º 283 escribí el nombre de archivo de un vídeo del
+  curso. El barrido de privacidad lo cazó antes de subir (para eso está), pero el registro solo admite añadir: no se
+  puede quitar. No se sube hasta que Diego decida. → En lo que va al registro, describir los archivos del curso por su
+  posición o su hash ("el primer vídeo de la tanda"), nunca por su nombre; y pasar el barrido **antes** de registrar,
+  no solo antes de subir.
