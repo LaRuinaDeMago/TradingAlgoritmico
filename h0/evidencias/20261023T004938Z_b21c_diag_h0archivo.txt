@@ -1,0 +1,17 @@
+# comando: python -I h0/configs/b21_diag_contenido.py C:/StrategyQuantX145/user/lab_h0/b21/archivo_Results C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo
+# inicio_utc: 2026-10-23T00:49:38+00:00
+# duracion_s: 15.841
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+estrategias comparadas: 7003
+archivos internos que difieren (nombre: n.º de estrategias): {'settings.xml': 7003}
+solo en A: {}; solo en B: {}
+== ejemplo: Strategy 0.0(1).sqx / settings.xml (34643 y 34643 bytes)
+líneas distintas: 2
+@@ -2 +2 @@
+-<ResultsGroup ResultName="Strategy 0.0(1)"><ResultsMap><Results><Result resultKey="Main: USDCHF_SINT1/H1" special="false"><Fitnesses IS="0.298925" FS="0.377358" IST="0.298925" ISV="0.0" ISV1="0.0" ISV2="0.0" ISV3="0.0" ISV4="0.0" ISV5="0.0" ISV6="0.0" ISV7="0.0" ISV8="0.0" ISV9="0.0" ISV10="0.0" OO
++<ResultsGroup ResultName="Strategy 0.0(1)"><ResultsMap><Results><Result resultKey="Main: USDCHF_SINT1/H1" special="false"><Fitnesses IS="0.298925" FS="0.377358" IST="0.298925" ISV="0.0" ISV1="0.0" ISV2="0.0" ISV3="0.0" ISV4="0.0" ISV5="0.0" ISV6="0.0" ISV7="0.0" ISV8="0.0" ISV9="0.0" ISV10="0.0" OO
+
+=== STDERR ===
