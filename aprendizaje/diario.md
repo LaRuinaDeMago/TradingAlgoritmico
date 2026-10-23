@@ -442,3 +442,9 @@ Formato: fecha · qué pasó · qué aprendimos · qué cambia.
   puede quitar. No se sube hasta que Diego decida. → En lo que va al registro, describir los archivos del curso por su
   posición o su hash ("el primer vídeo de la tanda"), nunca por su nombre; y pasar el barrido **antes** de registrar,
   no solo antes de subir.
+  **Diego decidió subirlo** (es solo un título, sin método ni cifras); la regla queda.
+- **La vía que sí sobrevive: tarea programada de Windows** (n.º 285), ensayada antes con el mismo script de 2 GiB que
+  mató a WMI. El ensayo cazó otro fallo antes de que costara nada: `cmd /c` se come las comillas si hay más de dos.
+  Y la razón de que "no se guardó nada" anoche: el transcriptor solo escribe al **terminar** cada vídeo; una
+  interrupción a mitad pierde el vídeo entero. → Para trabajos largos, saber **cuándo guarda** cada herramienta, no
+  solo si guarda.
