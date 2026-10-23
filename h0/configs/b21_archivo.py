@@ -8,6 +8,7 @@ Uso (desde la raíz, por el ejecutor con registro):
   python -I h0/configs/b21_archivo.py manifiesto CARPETA SALIDA.json
   python -I h0/configs/b21_archivo.py copiar ORIGEN DESTINO          (DESTINO no debe existir; escribe DESTINO.json)
   python -I h0/configs/b21_archivo.py retirar BANCO DESTINO   (copia verificada y, si es idéntica, vacía BANCO)
+  python -I h0/configs/b21_archivo.py reponer COPIA BANCO_VACIO   (restauración: copia la copia en el banco vacío)
   python -I h0/configs/b21_archivo.py conservadas ANTES.json CARPETA (¿siguen todas las de ANTES, idénticas?)
   python -I h0/configs/b21_archivo.py contenido CARPETA_A CARPETA_B  (¿están todas las de A en B con el mismo CONTENIDO?)
   python -I h0/configs/b21_archivo.py csv A.csv B.csv
@@ -96,6 +97,18 @@ def retirar(origen: str | Path, destino: str | Path) -> dict:
     return r
 
 
+def reponer(copia: str | Path, banco: str | Path) -> dict:
+    """Restauración (con SQX cerrado): copia los .sqx de una copia de archivo en la carpeta VACÍA de un banco y comprueba
+    que quedan byte a byte iguales. Al arrancar, SQX sincroniza el banco desde sus archivos (B21-bis, B2c)."""
+    copia, banco = Path(copia), Path(banco)
+    if not banco.is_dir() or any(banco.glob("*.sqx")):
+        sys.exit(f"PARADA: {banco} no es una carpeta de banco vacía; no se repone nada")
+    m_copia = manifiesto(copia)
+    for nombre in m_copia:
+        shutil.copy2(copia / nombre, banco / nombre)
+    return {"n": len(m_copia), "comparacion": comparar(m_copia, manifiesto(banco))}
+
+
 def _filas_csv(ruta: str | Path) -> tuple[str, list[str]]:
     lineas = [l for l in Path(ruta).read_bytes().decode("utf-8-sig").splitlines() if l.strip()]
     return lineas[0], lineas[1:]
@@ -139,6 +152,11 @@ def main(argv: list[str]) -> int:
               f"-> {'OK' if r['quedan'] == 0 else 'FALLO'}")
         print(f"manifiesto: {salida} (sha256 {_sha256(salida)})")
         return 0 if r["quedan"] == 0 else 1
+    if orden == "reponer" and len(argv) == 3:
+        r = reponer(argv[1], argv[2])
+        ok = not any(r["comparacion"].values())
+        print(f"repuestas {r['n']} en {argv[2]}; {_resumen(r['comparacion'])} -> {'OK' if ok else 'FALLO'}")
+        return 0 if ok else 1
     if orden == "conservadas" and len(argv) == 3:
         antes = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
         ahora = manifiesto(argv[2])

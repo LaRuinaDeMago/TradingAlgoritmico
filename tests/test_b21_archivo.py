@@ -181,5 +181,24 @@ class TestRetirar(unittest.TestCase):
             self.assertEqual(len(list(origen.glob("*.sqx"))), 3)
 
 
+class TestReponer(unittest.TestCase):
+    def test_repone_en_un_banco_vacio(self):
+        with tempfile.TemporaryDirectory() as t:
+            copia = banco(Path(t) / "copia", EJEMPLO)
+            destino = Path(t) / "banco"
+            destino.mkdir()
+            r = ar.reponer(copia, destino)
+            self.assertEqual(r["n"], 3)
+            self.assertEqual(ar.manifiesto(destino), ar.manifiesto(copia))
+
+    def test_control_negativo_no_repone_sobre_un_banco_con_estrategias(self):
+        with tempfile.TemporaryDirectory() as t:
+            copia = banco(Path(t) / "copia", EJEMPLO)
+            destino = banco(Path(t) / "banco", {"otra.sqx": b"x"})
+            with self.assertRaises(SystemExit):
+                ar.reponer(copia, destino)
+            self.assertEqual(sorted(p.name for p in destino.iterdir()), ["otra.sqx"])
+
+
 if __name__ == "__main__":
     unittest.main()

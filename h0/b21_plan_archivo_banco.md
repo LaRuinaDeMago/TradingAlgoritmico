@@ -147,3 +147,19 @@ estrategias de las que se hayan cargado sin error con la memoria vigente.
   de arrancar SQX. Se restauró el original (hash `cc75c454…`, n.º 245), se corrigió el script con dos tests nuevos
   (saltos mezclados; repetible si la copia guardada es el archivo vigente) y se ensayó sobre una copia del archivo real:
   una sola línea. Los criterios no cambian.
+
+### Resultado de B21-bis (n.º 246–265) y criterio B2c (escrito ANTES de probarlo)
+
+B1, B3, B4, B5, B6 y A9: **SÍ**. B2: **SÍ** en archivos (7.003), CSV (7.003 filas idénticas; control negativo
+DISTINTOS: 7.003 frente a 5.001), contenido (7.003 en `H0_archivo` y en `Results`) y memoria (la exportación con
+14.006 estrategias, que con 4 GiB falló en el n.º 232, con 8 GiB carga 7.003 + 7.003 y no quita ninguna, n.º 250);
+**NO en el recuento**: la orden `count` dio **6.747** porque se ejecutó en el mismo proceso que la carga, que es
+asíncrona ("Records: 6747" antes de "Strategies loaded", n.º 248). Carrera ya vista el 2026-10-20; el `-run` no la
+evitaba. No se redefine: se prueba un criterio nuevo.
+
+**B2c (restauración y recuento sin carrera):** con SQX cerrado, se reponen los 7.003 `.sqx` de la copia en la carpeta
+vacía de `Builder/H0_archivo` (`b21_archivo.py reponer`, que se niega si la carpeta tiene algún `.sqx` y comprueba la
+copia byte a byte); después, **una orden `count` sola** (sin `load` en el mismo proceso). Criterios: la evidencia
+contiene "Loaded 7003 strategies to databank H0_archivo" y "Records: 7003", y no contiene "failed" ni "Memory usage";
+el contenido de la copia está en `H0_archivo` (7.003); al final se retira otra vez (`retirar`, carpeta en 0). Es el
+camino de una restauración real (B25). Control: el mismo recuento con la carga en el mismo proceso dio 6.747 (n.º 248).
