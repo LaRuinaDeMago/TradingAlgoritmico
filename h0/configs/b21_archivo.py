@@ -7,6 +7,7 @@ También compara dos exportaciones CSV de un banco (`-databank action=export`) c
 Uso (desde la raíz, por el ejecutor con registro):
   python -I h0/configs/b21_archivo.py manifiesto CARPETA SALIDA.json
   python -I h0/configs/b21_archivo.py copiar ORIGEN DESTINO          (DESTINO no debe existir; escribe DESTINO.json)
+  python -I h0/configs/b21_archivo.py retirar BANCO DESTINO   (copia verificada y, si es idéntica, vacía BANCO)
   python -I h0/configs/b21_archivo.py conservadas ANTES.json CARPETA (¿siguen todas las de ANTES, idénticas?)
   python -I h0/configs/b21_archivo.py contenido CARPETA_A CARPETA_B  (¿están todas las de A en B con el mismo CONTENIDO?)
   python -I h0/configs/b21_archivo.py csv A.csv B.csv
@@ -83,6 +84,18 @@ def copiar(origen: str | Path, destino: str | Path) -> dict:
             "origen_estable": m_origen == m_origen_despues, "manifiesto": m_origen}
 
 
+def retirar(origen: str | Path, destino: str | Path) -> dict:
+    """Saca un banco de SQX (con SQX cerrado): copia verificada a DESTINO y, solo si es idéntica, quita los .sqx del
+    origen. B21-bis: un banco que no cabe en memoria lo borra SQX al salir; uno que no está en la carpeta no se carga."""
+    r = copiar(origen, destino)
+    if any(r["comparacion"].values()) or not r["origen_estable"]:
+        sys.exit(f"PARADA: la copia en {destino} no es idéntica; no se quita nada del origen")
+    for nombre in r["manifiesto"]:
+        (Path(origen) / nombre).unlink()
+    r["quedan"] = len(manifiesto(origen))
+    return r
+
+
 def _filas_csv(ruta: str | Path) -> tuple[str, list[str]]:
     lineas = [l for l in Path(ruta).read_bytes().decode("utf-8-sig").splitlines() if l.strip()]
     return lineas[0], lineas[1:]
@@ -118,6 +131,14 @@ def main(argv: list[str]) -> int:
               f"origen estable: {r['origen_estable']} -> {'OK' if ok else 'FALLO'}")
         print(f"manifiesto del origen: {salida} (sha256 {_sha256(salida)})")
         return 0 if ok else 1
+    if orden == "retirar" and len(argv) == 3:
+        r = retirar(argv[1], argv[2])
+        salida = Path(argv[2]).with_suffix(".json")
+        salida.write_text(json.dumps(r["manifiesto"], indent=0, sort_keys=True), encoding="utf-8")
+        print(f"retiradas {r['n']} ({r['bytes']} bytes) a {argv[2]}, copia idéntica; quedan en el origen {r['quedan']} "
+              f"-> {'OK' if r['quedan'] == 0 else 'FALLO'}")
+        print(f"manifiesto: {salida} (sha256 {_sha256(salida)})")
+        return 0 if r["quedan"] == 0 else 1
     if orden == "conservadas" and len(argv) == 3:
         antes = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
         ahora = manifiesto(argv[2])

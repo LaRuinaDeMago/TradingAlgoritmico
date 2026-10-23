@@ -163,5 +163,23 @@ class TestContenido(unittest.TestCase):
                                             ar.manifiesto_contenido(Path(t) / "b")))
 
 
+class TestRetirar(unittest.TestCase):
+    def test_copia_y_vacia_el_banco(self):
+        with tempfile.TemporaryDirectory() as t:
+            origen = banco(Path(t) / "banco", EJEMPLO)
+            r = ar.retirar(origen, Path(t) / "fuera")
+            self.assertEqual(r["n"], 3)
+            self.assertEqual(list(origen.glob("*.sqx")), [])
+            self.assertEqual(ar.manifiesto(Path(t) / "fuera"), r["manifiesto"])
+
+    def test_control_negativo_no_quita_si_el_destino_existe(self):
+        with tempfile.TemporaryDirectory() as t:
+            origen = banco(Path(t) / "banco", EJEMPLO)
+            banco(Path(t) / "fuera", {"x.sqx": b"x"})
+            with self.assertRaises(SystemExit):
+                ar.retirar(origen, Path(t) / "fuera")
+            self.assertEqual(len(list(origen.glob("*.sqx"))), 3)
+
+
 if __name__ == "__main__":
     unittest.main()
