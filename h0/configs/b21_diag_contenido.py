@@ -49,5 +49,10 @@ if ejemplo:
     lb = xb.decode("utf-8", "replace").splitlines()
     diff = [l for l in difflib.unified_diff(la, lb, "A", "B", n=0, lineterm="") if not l.startswith(("---", "+++"))]
     print(f"líneas distintas: {sum(1 for l in diff if l[:1] in '+-')}")
-    for l in diff[:30]:
-        print(l[:300])
+    # Las líneas son muy largas (un XML por línea): se muestran los tramos distintos con su contexto.
+    sa, sb = xa.decode("utf-8", "replace"), xb.decode("utf-8", "replace")
+    tramos = [op for op in difflib.SequenceMatcher(None, sa, sb, autojunk=False).get_opcodes() if op[0] != "equal"]
+    print(f"tramos distintos: {len(tramos)}")
+    for _, i1, i2, j1, j2 in tramos[:12]:
+        print(f"  A[{i1}:{i2}] {sa[max(0, i1 - 120):i2 + 40]!r}")
+        print(f"  B[{j1}:{j2}] {sb[max(0, j1 - 120):j2 + 40]!r}")
