@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/b21_heap.py
+# inicio_utc: 2026-10-23T00:17:30+00:00
+# duracion_s: 0.515
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+sqcli.config: opciones ['-Xms4g'] -> MaxHeapSize 4.00 GiB
+StrategyQuantX.config: opciones ['-Xms4g', '-Xmx8g'] -> MaxHeapSize 8.00 GiB
+
+=== STDERR ===
