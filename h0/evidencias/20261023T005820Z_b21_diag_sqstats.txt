@@ -1,0 +1,25 @@
+# comando: python -I h0/configs/b21_diag_sqstats.py "C:/StrategyQuantX145/user/lab_h0/b21/archivo_Results/Strategy 0.0(1).sqx" "C:/StrategyQuantX145/user/projects/Builder/databanks/Results/Strategy 0.0(1).sqx"
+# inicio_utc: 2026-10-23T00:58:20+00:00
+# duracion_s: 0.132
+# codigo_salida: 0
+# incidencia: -
+
+=== STDOUT ===
+bloques SQStats: 15 y 15
+  bloque 0: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 1: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 2: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 3: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 4: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 5: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 6: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 7: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 8: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 9: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 10: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 11: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 12: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 13: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+  bloque 14: versión 2/2; bytes 1183/1183; posiciones distintas 0; mismos bytes en otro orden: True
+
+=== STDERR ===
