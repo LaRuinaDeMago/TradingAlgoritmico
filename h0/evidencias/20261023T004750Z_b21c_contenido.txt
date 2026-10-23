@@ -1,0 +1,11 @@
+# comando: python -I h0/configs/b21_archivo.py contenido C:/StrategyQuantX145/user/lab_h0/b21/archivo_Results C:/StrategyQuantX145/user/projects/Builder/databanks/H0_archivo
+# inicio_utc: 2026-10-23T00:47:50+00:00
+# duracion_s: 34.77
+# codigo_salida: 1
+# incidencia: -
+
+=== STDOUT ===
+contenido: A 7003, B 7003; faltan 0, sobran 0, distintos 7003 -> FALLO
+  distintos (primeras 5): ['Strategy 0.0(1).sqx', 'Strategy 0.0(2).sqx', 'Strategy 0.0(3).sqx', 'Strategy 0.0(4).sqx', 'Strategy 0.0(5).sqx']
+
+=== STDERR ===
